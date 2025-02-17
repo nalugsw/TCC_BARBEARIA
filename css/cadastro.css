@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+}
+
+body{
+    background-color: #232323;
+    padding: 60px 150px;
+}
+
+section.login{
+    margin: 0 auto;
+    max-width: 880px;
+    height: 500px;
+    background-color: #FDFDFD;
+    display: flex;
+    border-radius: 3px;
+    
+}
+
+.titulo-externo{
+    display: none;
+}
+
+section.login .container{
+    max-width: 334px;
+    margin: 25px 76px 4px 84px;
+}
+
+section.login .container .titulo{
+    text-align: center;
+    font-size: 15.5px;
+    color: #313131;
+    margin-bottom: 6px;
+    padding: 0px 45px 0px 2px;
+    
+}
+
+section.login .container .form {
+    margin-bottom: 150px;
+}
+
+section.login .container .form form {
+    max-width: 334px;
+    height: 157px;
+    padding: 0px 45px 0px 2px;
+    
+    
+}
+
+section.login .container .form form ::placeholder{
+    font-weight: bold;
+    padding: 10px 13px ;
+}
+
+section.login .container .form form p{
+    font-size: 10px;
+    color: #5E6168;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: -8px;
+    
+}
+
+section.login .container .form form label{
+        pointer-events: none;
+        position: relative;
+        top: 5px;
+        left: 14.5px;
+        font-size: 10px;
+        color: #3F4346;
+        font-weight: bold;
+        transition: all .1s linear;
+        -webkit-transition: all .1s linear;
+        -moz-transition: all .1s linear;
+        background-color: #FDFDFD;
+        padding: 1px 5.5px;
+        box-sizing: border-box;
+}
+
+section.login .container .form form input{
+    border: solid #D9DCDE;
+    width: 290px;
+    height: 40px;
+    display: block;
+    transition: 0.1s;
+}
+
+section.login .container .form form input:focus{
+    outline: 2px solid #4891E6;
+    width: 290px;
+    height: 40px;
+    display: block;
+    
+}
+
+section.login .container .esqueceusenha{
+    padding: 0px 45px 0px 2px;
+    
+}
+
+section.login .container .esqueceusenha a{
+    font-size: 11px;
+    color: #4065AB;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+    
+}
+
+section.login .container .esqueceusenha a:hover{
+    font-size: 11px;
+    color: #22355a;
+    font-weight: bold;
+    text-align: center;
+    
+
+}
+
+section.login .container .voltar{
+    display: none;
+}
+
+section.login .container .voltar a{
+    font-size: 11px;
+    color: #4065AB;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+    
+}
+
+section.login .container .voltar a:hover{
+    font-size: 11px;
+    color: #22355a;
+    font-weight: bold;
+    text-align: center;
+    
+
+}
+
+section.login .container .btn-login{
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+    margin-bottom: 14px;
+    padding: 0px 45px 0px 2px;
+}
+
+
+section.login .container .btn-login a button{
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #D9E6FF;
+    padding: 11px 48px;
+    background-color: #4065AB;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 3px;
+    
+}
+
+section.login .container .btn-login a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+    
+}
+
+section.login .container .termos{
+    margin-top: 0px;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 45px 0px 2px;
+    display: none;
+}
+
+section.login .container .termos a{
+    color: #4065AB;
+}
+
+section.login .container .img-login{
+    max-width: 100%;
+    
+}
+
+section.login .container .img-login img{
+    border-radius: 0px 3px 3px 0px;
+    
+}
+
+section.login .container .img-login-mobile{
+    display: none;
+}
+
+
+
+
+
+
