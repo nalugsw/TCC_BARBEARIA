@@ -1,0 +1,127 @@
+@media screen and (max-width: 1033px){
+
+    section.login{
+        margin: 0 auto;
+        max-width: 880px;
+        height: 490px;
+        background-color: #FDFDFD;
+        display: flex;
+        padding-top: 36px;
+        border-radius: 3px;
+        
+    }
+
+    .titulo-externo{
+        display: block;
+        color: #FDFDFD;
+        font-weight: bold;
+        font-size: 15.5px;
+        margin-bottom: 10px;
+    }
+
+    section.login .container{
+        max-width: 334px;
+        margin: 61px 35px 4px 64px;
+    }
+
+    section.login .img-login{
+        display: none;
+        
+    }
+
+    section.login .container{
+        max-width: 334px;
+        /* background-color: red; */
+        margin: 0 auto;
+    }
+
+    section.login .container .img-login-mobile{
+        display: none;
+    }
+
+    section.login .container .img-login-mobile{
+        text-align: center;
+    }
+
+    section.login .container .titulo{
+        /* text-align: center;
+        font-size: 15.5px;
+        color: #313131;
+        margin-bottom: 26px;
+        padding: 0px 0px 0px 0px; */
+        display: none;
+        
+    }
+
+    section.login .container .termos{
+        display: block;
+        font-size: 13px;
+        padding: 0px 0px 0px 0px;
+    }
+
+    section.login .container .form form input{
+        border: solid #D9DCDE;
+        width: 290px;
+        height: 40px;
+        display: block;
+        transition: 0.1s;
+    }
+
+    section.login .container .form form {
+        max-width: 334px;
+        height: 157px;
+        padding: 0px 0px 0px 2px;
+        
+        
+    }
+
+    section.login .container .esqueceusenha{
+        padding: 0px 0px 0px 0px;
+        display: none;
+        
+    }
+
+    section.login .container .voltar{
+        display: block;
+    }
+    
+    section.login .container .voltar a{
+        font-size: 13px;
+        color: #4065AB;
+        font-weight: bold;
+        text-align: center;
+        transition: 0.3s;
+        
+    }
+    
+    section.login .container .voltar a:hover{
+        font-size: 13px;
+        color: #22355a;
+        font-weight: bold;
+        text-align: center;
+        
+    
+    }
+
+    section.login .container .btn-login{
+        display: flex;
+        justify-content: center;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        padding: 0px 0px 0px 0px;
+    }
+    
+    
+}
+
+@media screen and (max-width: 630px){
+    body{
+        background-color: #232323;
+        padding:  50px 24px;
+    }
+
+    section.login .container{
+        max-width: 334px;
+        margin: 0 auto;
+    }
+}
