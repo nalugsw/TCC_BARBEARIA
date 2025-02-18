@@ -1,0 +1,12 @@
+# Ignorar arquivos sensíveis
+/config/database.php
+
+# Ignorar backups do banco de dados
+/database/barbertech.sql
+
+# Ignorar uploads (caso sejam enviados por usuários)
+/uploads/
+
+# Ignorar arquivos do sistema operacional
+.DS_Store  # macOS
+Thumbs.db  # Windows
