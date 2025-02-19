@@ -1,3 +1,9 @@
+<?php
+
+include('config/conexao.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,7 +30,7 @@
                 <h1>Seja bem vindo!</h1>
             </div>
             <div class="form">
-                <form action="">
+                <form action="functions/autenticacao.php">
                     <p>*Digite seu Email/Telefone</p>
                     <label for="">Email/Telefone</label>
                     <input type="text" placeholder="Email/Telefone" name="email">
@@ -40,7 +46,7 @@
                 <a href="#"><button>LOGIN</button></a>
             </div>
             <div class="esqueceusenha">
-                <a href="cadastro.html"><p>CADASTRAR CONTA</p></a>
+                <a href="public/cadastro.html"><p>CADASTRAR CONTA</p></a>
             </div>
             <div class="termos">
                 <a href="#">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>
