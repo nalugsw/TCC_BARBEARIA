@@ -52,7 +52,6 @@ section.login .container .form form {
 
 section.login .container .form form ::placeholder{
     font-weight: bold;
-    padding: 10px 13px ;
 }
 
 section.login .container .form form p{
@@ -61,7 +60,6 @@ section.login .container .form form p{
     font-weight: bold;
     margin-top: 26px;
     margin-bottom: -8px;
-    
 }
 
 section.login .container .form form label{
@@ -86,6 +84,7 @@ section.login .container .form form input{
     height: 40px;
     display: block;
     transition: 0.1s;
+    padding-left: 10px;
 }
 
 section.login .container .form form input:focus{
