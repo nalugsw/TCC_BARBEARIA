@@ -2,7 +2,7 @@
 
 // Conecta com o banco de dados
 
-$banco = 'barbearia';
+$banco = 'barbertech';
 $usuario = 'root';
 $senha = '';
 $servidor = 'localhost';

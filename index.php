@@ -31,12 +31,15 @@ include('config/conexao.php');
             </div>
             <div class="form">
                 <form action="functions/autenticacao.php">
-                    <p>*Digite seu Email/Telefone</p>
-                    <label for="">Email/Telefone</label>
-                    <input type="text" placeholder="Email/Telefone" name="email">
-                    <p>*Digite sua senha</p>
-                    <label for="">Senha</label>
-                    <input type="text" placeholder="SENHA" name="senha">
+                    <div class="input-container">
+                        <label for="email">Email/Telefone</label>
+                        <input type="text" id="email" name="email" placeholder="Digite seu email ou telefone" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    </div>
                 </form>
             </div>
             <div class="esqueceusenha">
