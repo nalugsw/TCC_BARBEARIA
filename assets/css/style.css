@@ -23,6 +23,10 @@ section.login{
 .titulo-externo{
     display: none;
 }
+.titulo{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
 
 section.login .container{
     max-width: 334px;
@@ -85,6 +89,7 @@ section.login .container .form form input{
     width: 290px;
     height: 40px;
     display: block;
+
     transition: 0.1s;
 }
 
@@ -170,6 +175,14 @@ section.login .container .img-login-mobile{
     display: none;
 }
 
+
+input:focus + label,
+input:valid + label {
+    
+    top: 0;
+    font-size: 12px;
+    color: #000;
+}
 
 
 
