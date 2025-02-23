@@ -49,7 +49,7 @@ include('config/conexao.php');
                 <a href="#"><button>LOGIN</button></a>
             </div>
             <div class="esqueceusenha">
-                <a href="public/cadastro.html"><p>CADASTRAR CONTA</p></a>
+                <a href="public/cadastro.php"><p>CADASTRAR CONTA</p></a>
             </div>
             <div class="termos">
                 <a href="#">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>

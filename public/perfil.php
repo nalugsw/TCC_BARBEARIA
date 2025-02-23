@@ -49,7 +49,7 @@
             </li>
         </ul>
         <div class="btn-sair">
-            <a href="#"><button>
+            <a href="../functions/logout.php"><button>
                 <img src="../assets/img/icon-sair.png" alt="">SAIR</button></a>
         </div>
     </nav>
