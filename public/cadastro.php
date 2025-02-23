@@ -1,3 +1,9 @@
+<?php
+
+include("../config/conexao.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,15 +30,15 @@
                 <h1>Cadastre-se</h1>
             </div>
             <div class="form">
-                <form action="">
+                <form action="../functions/cadastro.php">
                         <label for="">Nome</label>
                         <input type="text" placeholder="NOME" name="nome">
 
                         <label for="">Número de telefone</label>
-                        <input type="text" placeholder="NUMERO DE TELEFONE" name="senha">
+                        <input type="text" placeholder="NUMERO DE TELEFONE" name="numero_telefone">
 
                         <label for="">Email</label>
-                        <input type="text" placeholder="EMAIL" name="senha">
+                        <input type="text" placeholder="EMAIL" name="email">
                         
                         <label for="">Senha</label>
                         <input type="text" placeholder="SENHA" name="senha">
@@ -45,10 +51,10 @@
                 <a href="#"><button>CADASTRAR</button></a>
             </div>
             <div class="esqueceusenha">
-                <a href="../index.html"><p>JÁ TEM UMA CONTA? FAÇA SEU LOGIN AQUI!</p></a>
+                <a href="../index.php"><p>JÁ TEM UMA CONTA? FAÇA SEU LOGIN AQUI!</p></a>
             </div>
             <div class="voltar">
-                <a href="../index.html"><p>VOLTAR</p></a>
+                <a href="../index.php"><p>VOLTAR</p></a>
             </div>
           <!-- TESTE       -->
 
