@@ -1,0 +1,286 @@
+@media screen and (max-width: 1129px){
+
+    section.home{
+        width: 100%;
+       padding: 80px 0px;
+    }
+
+    section.home .container-home{
+        display: flex;
+        gap: 47px;
+        margin: 0 auto;
+        justify-content: center;
+        justify-self: center
+        
+    }
+
+    section.home .container-home  .marcar-horario .btn-marcar-horario a button{
+        border: none;
+        
+        cursor: pointer;
+        height: 38px;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 7px  21px;
+        color: #d4d4d4;
+        background-color: #4065AB;
+        border-radius: 3px;
+        transition: 0.5s;
+    }
+    
+
+    
+
+
+}
+
+@media screen and (max-width: 925px){
+    section.perfil .container-perfil{
+        margin: 0 auto;
+        justify-content: center;
+        justify-self: center
+        
+        
+    }
+
+    /* Ligando o Menu mobile e fazendo com que ele apareça apenas aqui na versão para celulares e etc */
+    nav.menu-inferior-mobile{
+        display: block;
+    }
+    /* Desligando o Menu Desktop */
+
+    body{
+        background-color: #232323;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav.menu-lateral-desktop{
+        display: none;
+    }
+    
+  
+}
+
+/* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
+
+
+@media screen and (max-width: 947px){
+    section.home{
+        height: 100%;
+        padding: 36px 0px;
+    }
+
+   
+
+    section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
+        color: #232323;
+        font-size: 8.5px;
+    }
+
+    /* Responsividade menu mobile */
+
+    html{
+        height: 100vh;
+    }
+
+    body{
+        height: 100%;
+    }
+
+    nav.menu-inferior-mobile{
+        
+    }
+
+    nav.menu-inferior-mobile ul{
+        width: 100%;
+        display: flex;
+        gap: 5px;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+}
+
+@media screen and (max-width: 947px){
+
+    section.home .submenu{
+        width: 386px;
+        height: 44px;
+        margin: 0 auto;
+        display: flex;
+        
+        padding-left: 0px;
+       
+    }
+
+    section.home .submenu button {
+        /* padding: 6px 85px; */
+        width: 257px;
+        background-color: transparent;
+        border: none;
+        font-size: 14px;
+        color: #F6F7F9;
+        position: relative;
+        margin-left: 3px;
+    }
+
+    section.home .grids-container .grid .item{
+        max-width: 127px;
+        height: 132px;
+    }
+
+    section.home .grids-container .grid .item img{
+        max-width: 127px;
+        height: 132px;
+    }
+    
+
+    section.home .grids-container .grid.ativo{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0px;
+        width: 386px;
+        height: 407px;
+        margin: 0 auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        
+    }
+
+    section.home .container-home{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 316px;
+        gap: 0px;
+        margin: 0 auto;
+        justify-content: center;
+        justify-self: center;
+        
+        
+    }
+    
+    section.home .container-home .foto-home{
+       
+        width: 140px;
+        height: 10px;
+    }
+    
+    section.home .container-home .foto-home .profile-pic{
+        border-radius: 100%;
+        width: 120px;
+        margin: 0 auto;
+        height: 120px;
+        background-image: url(../img/foto-barbeiro-tela-home.png);
+        background-size: cover;
+        background-position: center;
+    }
+    
+    section.home .container-home .informacoes-home{
+        padding: 26px 0px;
+        height: 120px;
+        width: 214px;
+        color: #F9F9F9;
+        margin: 0 auto;
+    }
+    
+    section.home .container-home .informacoes-home h1{
+        font-size: 26px;
+        font-weight: bold;
+        
+    }
+    
+    section.home .container-home .informacoes-home .estrelas-icons i{
+        color: #FFD25E;
+        font-size: 18px;
+        
+    
+    }
+    
+    section.home .container-home .informacoes-home .endereco-info p{
+        font-weight: 100;
+        font-size: 14px;
+       
+    }
+    
+    section.home .container-home  .marcar-horario {
+        vertical-align: middle;
+        transform: translatex(170px);
+        padding: 15px 0px;
+    }
+    
+    section.home .container-home  .marcar-horario .btn-marcar-horario{
+        height: 40px;
+    
+    }
+    
+    section.home .container-home  .marcar-horario .btn-marcar-horario a button{
+        border: none;
+        
+        cursor: pointer;
+        height: 38px;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 7px  5px;
+        color: #d4d4d4;
+        background-color: #4065AB;
+        border-radius: 3px;
+        transition: 0.5s;
+    }
+    
+    section.home .container-home  .marcar-horario .btn-marcar-horario a button:hover{
+        scale: 0.9;
+        background-color: #2d4777;
+        
+    }
+
+    #grid2{
+        grid-template-columns: 1fr ;
+        gap: 0px;
+        row-gap: 2px;
+        column-gap: 2px;
+        width: 350px;
+        background-color: #d4d4d4;
+    }
+    
+    #grid2 .item{
+        height: 150px;
+    }
+    
+    
+    #grid2 .item img{
+        max-width: 389px;
+        height: 150px;
+        transition: 0.5s;
+       
+    }
+    
+    #grid2 .item img:hover{
+        opacity: 0.5;
+    }
+    
+    
+    #grid2 .item .txt-teste {
+        position: absolute;
+        bottom: 0; /* Alinha no rodapé da imagem */
+        left: 0;
+        width: 100%; /* Faz o texto ocupar toda a largura da imagem */
+        padding: 10px;
+        color: white;
+        font-size: 14px;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        gap: 97px;
+    }
+    
+    #grid2 .item .txt-teste .preco{
+        transform: translateY(-70px);
+        font-size: 20px;
+        font-weight: 100;
+    }
+    
+}
+

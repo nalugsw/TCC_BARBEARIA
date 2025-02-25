@@ -18,13 +18,13 @@
 
         <ul>
             <li class="item-menu">
-                <a href="#">
+                <a href="perfil.html">
                     <img src="../assets/img/icon-perfil.png" alt="">
                     <span class="txt-link">Perfil</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="#">
+                <a href="home.html">
                     <img src="../assets/img/icon-home.png" alt="">
                     <span class="txt-link">Home</span>
                 </a>
@@ -125,48 +125,53 @@
 
     <!-- Menu Mobile para dispositivos de telas pequenas -->
 
-    <nav class="menu-inferior-mobile">
+    
+        <nav class="menu-inferior-mobile">
 
-        <ul>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../assets/img/mobile-icon-perfil.png" alt="">
-                    
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../assets/img/mobile-icon-home.png" alt="">
-                    
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../assets/img/mobile-icon-produtos.png" alt="">
-                    
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../assets/img/mobile-icon-informacoes.png" alt="">
-             
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../assets/img/mobile-icon-agendar.png" alt="">
-                  
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../assets/img/mobile-icon-sair.png" alt="">
-                  
-                </a>
-            </li>
-        </ul>
-      
-    </nav>
+            <ul>
+                <li class="item-menu">
+                    <a href="perfil.html">
+                        <img src="../assets/img/mobile-icon-perfil.png" alt="">
+                        
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="home.html">
+                        <img src="../assets/img/mobile-icon-home.png" alt="">
+                        
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <img src="../assets/img/mobile-icon-produtos.png" alt="">
+                        
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <img src="../assets/img/mobile-icon-informacoes.png" alt="">
+                 
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <img src="../assets/img/mobile-icon-agendar.png" alt="">
+                      
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <img src="../assets/img/mobile-icon-sair.png" alt="">
+                      
+                    </a>
+                </li>
+            </ul>
+          
+        </nav>
+
+   
+
+    
 
 </body>
 </html>

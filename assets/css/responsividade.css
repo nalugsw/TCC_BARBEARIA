@@ -1,6 +1,6 @@
 @media screen and (max-width: 1033px){
 
-    /* section.login{
+    section.login{
         margin: 0 auto;
         max-width: 880px;
         height: 540px;
@@ -9,7 +9,7 @@
         padding-top: 36px;
         border-radius: 3px;
         
-    } */
+    }
 
     .titulo-externo{
         display: block;
@@ -84,6 +84,7 @@
         margin-bottom: 14px;
         padding: 0px 0px 0px 0px;
     }
+    
     
 }
 

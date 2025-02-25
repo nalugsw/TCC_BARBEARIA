@@ -386,8 +386,8 @@
 
 @media screen and (max-width: 657px){
     section.perfil{
-        height: 90vh;
-        padding: 36px 32px;
+        height: 100%;
+        padding: 36px 0px;
     }
 
     section.perfil .container-perfil{
@@ -540,8 +540,16 @@
 
     /* Responsividade menu mobile */
 
+    html{
+        height: 100vh;
+    }
+
+    body{
+        height: 100%;
+    }
+
     nav.menu-inferior-mobile{
-        bottom: 0;
+        
     }
 
     nav.menu-inferior-mobile ul{
