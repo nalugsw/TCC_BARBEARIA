@@ -21,7 +21,6 @@ include('config/conexao.php');
         <h1>Login</h1>
     </div>
     <section class="login">
-       
         <div class="container">
             <div class="img-login-mobile">
                 <img src="assets/img/img-login-mobile.png" alt="">
@@ -55,6 +54,7 @@ include('config/conexao.php');
                 <a href="#">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>
             </div>
         </div>
+                    
         <div class="img-login">
             <img src="assets/img/Group 132.png" alt="">
         </div>
