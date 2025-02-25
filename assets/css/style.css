@@ -7,9 +7,17 @@
 
 body{
     background-color: #232323;
-    padding: 60px 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* padding: 60px 150px; */
 }
-
+main{
+    width: 80%;
+    min-width: 324px;
+    display: block;
+}
 section.login{
     margin: 0 auto;
     max-width: 880px;
@@ -17,20 +25,25 @@ section.login{
     background-color: #FDFDFD;
     display: flex;
     border-radius: 3px;
+    justify-content: space-between;
     
 }
-
 .titulo-externo{
     display: none;
 }
 .titulo{
     margin-top: 30px;
     margin-bottom: 50px;
+
 }
 
 section.login .container{
     max-width: 334px;
-    margin: 61px 35px 4px 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 section.login .container .titulo{
@@ -38,7 +51,6 @@ section.login .container .titulo{
     font-size: 15.5px;
     color: #313131;
     margin-bottom: 26px;
-    padding: 0px 45px 0px 2px;
     
 }
 
@@ -49,7 +61,6 @@ section.login .container .form {
 section.login .container .form form {
     max-width: 334px;
     height: 157px;
-    padding: 0px 45px 0px 2px;
     
     
 }
@@ -100,10 +111,6 @@ section.login .container .form form input:focus{
     
 }
 
-section.login .container .esqueceusenha{
-    padding: 0px 45px 0px 2px;
-}
-
 section.login .container .esqueceusenha a{
     font-size: 11px;
     color: #4065AB;
@@ -125,7 +132,6 @@ section.login .container .btn-login{
     justify-content: center;
     margin-top: 14px;
     margin-bottom: 14px;
-    padding: 0px 45px 0px 2px;
 }
 
 
@@ -153,7 +159,6 @@ section.login .container .termos{
     font-size: 8px;
     font-weight: bold;
     text-align: center;
-    padding: 0px 45px 0px 2px;
     
 }
 
