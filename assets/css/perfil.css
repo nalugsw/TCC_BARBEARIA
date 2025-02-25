@@ -1,0 +1,396 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+}
+
+body{
+    background-color: #232323;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Menu mobile inferior >desligado< nessa versão desktop(CSS para que ele não apareça) */
+
+nav.menu-inferior-mobile{
+    display: none;
+}
+
+
+/* CSS do Menu Lateral DESKTOP e seus comportamnentos */
+
+nav.menu-lateral-desktop {
+    background-color: #313131;
+    padding-top: 40px;
+    width: 219px;
+    height: 100vh;
+    text-align: center;
+}
+
+nav.menu-lateral-desktop .logo {
+    width: 100%;
+}
+
+nav.menu-lateral-desktop .logo img{
+    margin-bottom: 40px;
+    
+    
+}
+
+nav.menu-lateral-desktop ul{
+    width: 100%;
+    
+}
+
+nav.menu-lateral-desktop ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding-left: 21px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    transition: 0.5s;
+    
+}
+nav.menu-lateral-desktop ul li.item-menu:hover{
+    background-color: #232323;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 31px;
+    border-radius: 3px;
+    
+}
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-lateral-desktop ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-lateral-desktop .btn-sair{
+    padding-left: 21px;
+    text-align: left;
+}
+
+
+nav.menu-lateral-desktop .btn-sair a button{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    margin-top: 20vh;
+    transition: 0.5s;
+   
+    
+}
+
+nav.menu-lateral-desktop .btn-sair a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+    
+}
+
+nav.menu-lateral-desktop .btn-sair a button img{
+    margin-right: 18px;
+    vertical-align: middle;
+}
+
+/* CSS da sessão perfil */
+
+section.perfil{
+    width: 100%;
+   padding: 200px 72px;
+}
+
+section.perfil .container-perfil{
+    display: flex;
+    gap: 20px;
+    
+}
+
+section.perfil .container-perfil .foto-perfil{
+    
+    width: 160px;
+    height: 160px;
+}
+
+section.perfil .container-perfil .foto-perfil .profile-pic{
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    background-image: url(../img/homem-sorrindo-teste.avif);
+    background-size: cover;
+    background-position: center;
+}
+
+section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
+    transform: translateY(-20px);
+}
+
+section.perfil .container-perfil .foto-perfil .btn-alterar-foto img{
+    margin-left: 88%;
+    
+}
+
+section.perfil .container-perfil .form {
+    
+}
+
+section.perfil .container-perfil.form form {
+    max-width: 104px;
+    height: 157px;
+    padding: 0px 45px 0px 2px;
+    
+    
+}
+
+section.perfil .container-perfil .form form ::placeholder{
+    font-weight: 500;
+    font-size: 20px;
+    padding: 12px;
+    color: #898989;
+   
+}
+
+section.perfil .container-perfil .form form p{
+    font-size: 10px;
+    color: #d4d4d4;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    
+}
+
+section.perfil .container-perfil .form form label{
+        pointer-events: none;
+        position: relative;
+        top: 5px;
+        left: 14.5px;
+        font-size: 10px;
+        color: #3F4346;
+        font-weight: bold;
+        transition: all .1s linear;
+        -webkit-transition: all .1s linear;
+        -moz-transition: all .1s linear;
+        background-color: #FDFDFD;
+        padding: 1px 5.5px;
+        box-sizing: border-box;
+}
+
+section.perfil .container-perfil .form form .input-campo{
+    display:flex;
+}
+
+section.perfil .container-perfil .form form .input-campo img{
+    transform: translateX(-30px) translatey(5px);
+    width: 25px;
+    height: 25px;
+    transition: 0.5s;
+}
+
+section.perfil .container-perfil .form form .input-campo img:hover{
+    opacity: 0.5;
+}
+
+section.perfil .container-perfil .form form input{
+    border-radius: 3px;
+    border: none;
+    width: 290px;
+    height: 40px;
+    display: block;
+    transition: 0.1s;
+}
+
+section.perfil .container-perfil .form form input:focus{
+    outline: 2px solid #4891E6;
+    width: 290px;
+    height: 40px;
+    display: block;
+    
+}
+
+section.perfil .container-perfil .horarios-marcados p{
+    font-size: 10px;
+    color: #d4d4d4;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    
+}
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios::-webkit-scrollbar{
+    width: 10px;
+}
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios::-webkit-scrollbar-thumb{
+    background-color: #2d4777;
+    border-radius: 1px;
+}
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios::-webkit-scrollbar-thumb:hover{
+    background-color: #4065AB;
+}
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios{
+    background-color: #FDFDFD;
+    height: 107px;
+    max-width: 300px;
+    border-radius: 3px;
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: auto;
+    
+    
+}
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa{
+    height: 32px;
+    max-width: 90%;
+    background-color: #898989;
+    border-radius: 3px;
+    margin-left: 7px;
+    display: flex;
+    gap: 10px;
+    
+    
+    
+}
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
+    color: #232323;
+    font-size: 10px;
+}
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa .nome-barbeiro{
+    margin-left: 7px;
+}
+
+
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
+    font-size: 11px;
+    color: #898989;
+    font-weight: 500;
+    /* padding: ; */
+}
+
+/* CSS menu mobile */
+
+nav.menu-inferior-mobile {
+    background-color: #898989;
+    padding-top: 7px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    bottom: 0;    
+}
+
+nav.menu-inferior-mobile .logo {
+    width: 100%;
+}
+
+nav.menu-inferior-mobile .logo img{
+    margin-bottom: 40px;
+    
+    
+}
+
+nav.menu-inferior-mobile ul{
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+nav.menu-inferior-mobile ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+    
+}
+nav.menu-inferior-mobile ul li.item-menu:hover{
+    background-color: #d4d4d4;
+    
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    /* padding-left: 31px; */
+    border-radius: 100%;
+    transform: translateY(-15px);
+    
+}
+
+
+nav.menu-inferior-mobile ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-inferior-mobile ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-inferior-mobile ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-inferior-mobile .btn-sair{
+    padding-left: 21px;
+    text-align: left;
+}
+
+
+nav.menu-inferior-mobile .btn-sair a button{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    margin-top: 20vh;
+    transition: 0.5s;
+   
+    
+}
+
+nav.menu-inferior-mobile .btn-sair a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+    
+}
+
+nav.menu-inferior-mobile .btn-sair a button img{
+    margin-right: 18px;
+    vertical-align: middle;
+}

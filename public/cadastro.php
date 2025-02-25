@@ -1,3 +1,9 @@
+<?php
+
+include("../config/conexao.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,34 +30,33 @@
                 <h1>Cadastre-se</h1>
             </div>
             <div class="form">
-                <form action="">
-                    <p>*Digite seu nome completo</p>
-                    <label for="">Nome</label>
-                    <input type="text" placeholder="NOME" name="nome">
-                    <p>*Digite seu número de telefone</p>
-                    <label for="">Número de telefone</label>
-                    <input type="text" placeholder="NUMERO DE TELEFONE" name="senha">
-                    <p>*Digite seu email</p>
-                    <label for="">Email</label>
-                    <input type="text" placeholder="EMAIL" name="senha">
-                    <p>*Digite sua senha</p>
-                    <label for="">Senha</label>
-                    <input type="text" placeholder="SENHA" name="senha">
-                    <div class="termos">
-                        <a href="#">POLITICAS DE PRIVACIDADE</a>
-                    </div>
-                    <div class="btn-login">
-                        <a href="#"><button>CADASTRAR</button></a>
-                    </div>
-                    <div class="esqueceusenha">
-                        <a href="../index.html"><p>ENTRE NA SUA CONTA</p></a>
-                    </div>
-                    <div class="voltar">
-                        <a href="../index.html"><p>VOLTAR</p></a>
-                    </div>
+                <form action="../functions/cadastro.php">
+                        <label for="">Nome</label>
+                        <input type="text" placeholder="NOME" name="nome">
+
+                        <label for="">Número de telefone</label>
+                        <input type="text" placeholder="NUMERO DE TELEFONE" name="numero_telefone">
+
+                        <label for="">Email</label>
+                        <input type="text" placeholder="EMAIL" name="email">
+                        
+                        <label for="">Senha</label>
+                        <input type="text" placeholder="SENHA" name="senha">
                 </form>
             </div>
-<!-- TESTE       -->
+            <div class="termos">
+                <a href="#">POLITICAS DE PRIVACIDADE</a>
+            </div>
+            <div class="btn-login">
+                <a href="#"><button>CADASTRAR</button></a>
+            </div>
+            <div class="esqueceusenha">
+                <a href="../index.php"><p>JÁ TEM UMA CONTA? FAÇA SEU LOGIN AQUI!</p></a>
+            </div>
+            <div class="voltar">
+                <a href="../index.php"><p>VOLTAR</p></a>
+            </div>
+          <!-- TESTE       -->
 
         </div>
         <div class="img-login">
@@ -68,3 +73,4 @@
     quero pegar o murilo bigode 
     Carlinhos ta mamando 333 cavalos-->
     <!-- devDudu chegou tropinha -->
+     

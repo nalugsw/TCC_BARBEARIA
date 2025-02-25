@@ -1,3 +1,9 @@
+<?php
+
+include('config/conexao.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,26 +29,29 @@
                 <h1>Seja bem vindo!</h1>
             </div>
             <div class="form">
-                <form action="">
-                    <p>*Digite seu Email/Telefone</p>
-                    <label for="">Email/Telefone</label>
-                    <input type="text" placeholder="Email/Telefone" name="email">
-                    <p>*Digite sua senha</p>
-                    <label for="">Senha</label>
-                    <input type="text" placeholder="SENHA" name="senha">
-                    <div class="esqueceusenha">
-                        <a href="#"><p>ESQUECEU SUA SENHA?</p></a>
+                <form action="functions/autenticacao.php">
+                    <div class="input-container">
+                        <label for="email">Email/Telefone</label>
+                        <input type="text" id="email" name="email" placeholder="Digite seu email ou telefone" required>
                     </div>
-                    <div class="btn-login">
-                        <a href="#"><button>LOGIN</button></a>
-                    </div>
-                    <div class="esqueceusenha">
-                        <a href="/public/cadastro.html"><p>CADASTRAR CONTA</p></a>
-                    </div>
-                    <div class="termos">
-                        <a href="#">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>
+
+                    <div class="input-container">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                     </div>
                 </form>
+            </div>
+            <div class="esqueceusenha">
+                <a href="#"><p>ESQUECEU SUA SENHA?</p></a>
+            </div>
+            <div class="btn-login">
+                <a href="#"><button>LOGIN</button></a>
+            </div>
+            <div class="esqueceusenha">
+                <a href="public/cadastro.php"><p>CADASTRAR CONTA</p></a>
+            </div>
+            <div class="termos">
+                <a href="#">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>
             </div>
         </div>
                     
