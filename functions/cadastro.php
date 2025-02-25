@@ -7,6 +7,7 @@ $nome = $_SESSION['nome'];
 $numero_telefone = $_SESSION['numero_telefone'];
 $email = $_SESSION['email'];
 $senha = $_SESSION['senha'];
+$senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 $tipo_usuario = "cliente";
 
 $verifica_email = $pdo->prepare("SELECT * FROM usuario where email = :email");
@@ -25,7 +26,7 @@ if($total_reg > 0){
     $sql = "INSERT INTO usuario(email, senha, tipo_usuario) values(:email, :senha, :tipo_usuario)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":email", $email);
-    $stmt->bindParam(":senha", $senha);
+    $stmt->bindParam(":senha", $senha_hash);
     $stmt->bindParam(":tipo_usuario", $tipo_usuario);
     $stmt->execute();
     
