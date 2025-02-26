@@ -20,6 +20,9 @@ if($total_reg > 0){
     header("Location: ../public/cadastro.php");
     exit();
 }else{
+
+    $pdo->beginTransaction();
+
     $sql = "INSERT INTO usuario(email, senha, tipo_usuario) values(:email, :senha, :tipo_usuario)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":email", $email);
@@ -28,6 +31,13 @@ if($total_reg > 0){
     $stmt->execute();
     
     $id_usuario = $pdo->lastInsertId();
+
+    if(!$id_usuario){
+        $pdo->rollBack();
+        $_SESSION['erro'] = "Erro ao cadastrar usuário";
+        header("location: ../public/cadastro.php");
+        exit();
+    }
     
     $sql = "INSERT INTO cliente(nome, numero_telefone, id_usuario) values(:nome, :numero_telefone, :id_usuario)";
     $stmt = $pdo->prepare($sql);
@@ -36,7 +46,18 @@ if($total_reg > 0){
     $stmt->bindParam(":id_usuario", $id_usuario);
     $stmt->execute();
 
-    header("location: ../index.php");
+    if($cadastro){
+        $pdo->commit();
+        $_SESSION['cadastro_realizado'] = "Cadastro realizado com sucesso.";
+        header("location: ../index.php");
+        exit();
+    }else{
+        $pdo->rollBack();
+        $_SESSION['erro'] = "Erro ao cadastrar o usuário. Tente novamente";
+        header("location: ../public/cadastro.php");
+        exit();
+    }
+
 }
 
 
