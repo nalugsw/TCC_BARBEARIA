@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include("../config/conexao.php");
 
 ?>
@@ -30,7 +31,7 @@ include("../config/conexao.php");
                     <h1>Cadastre-se</h1>
                 </div>
                 <div class="form">
-                    <form action="../functions/cadastro.php">
+                    <form action="../functions/cadastro.php" method="POST">
                         <label for="nome">Nome</label>
                         <input type="text" placeholder="NOME" id="nome" name="nome">
 
@@ -41,7 +42,7 @@ include("../config/conexao.php");
                         <input type="text" placeholder="EMAIL" id="email" name="email">
                             
                         <label for="senha">Senha</label>
-                        <input type="text" placeholder="SENHA" id="senha" name="senha">
+                        <input type="password" placeholder="SENHA" id="senha" name="senha">
                     
                         </div>
                         <div class="termos">

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once("conexao.php");
+include("../config/conexao.php");
 
 if(!isset($_POST['email']) || !isset($_POST['senha'])){
     $_SESSION['erro'] = "Preencha todos os campos";
@@ -19,7 +19,6 @@ $stmt->execute();
 $res = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if($res){
-        $ativo = $res['status'];
         $senha_hash = $res['senha'];
 
         if(password_verify($senha, $senha_hash)){
@@ -28,13 +27,13 @@ if($res){
             header("location: ../public/perfil.php");
             exit();
         }else{
-        $_SESSION['erro'] = "Email ou senha incorretos.";
-        header("Location: ../public/index.php");
-        exit();
+            $_SESSION['erro'] = "Email ou senha incorretos.";
+            header("Location: ../index.php");
+            exit();
         }
 }else{
-    $_SESSION['erro'] = "Usuário ou senha incorretos.";
-    header("Location: ../public/index.php");
+    $_SESSION['erro'] = "Email ou senha incorretos.";
+    header("Location: ../index.php");
     exit();
     }
 

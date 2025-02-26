@@ -1,11 +1,12 @@
 <?php
 
-@session_start();
+session_start();
+include("../config/conexao.php");
 
-$nome = $_SESSION['nome'];
-$numero_telefone = $_SESSION['numero_telefone'];
-$email = $_SESSION['email'];
-$senha = $_SESSION['senha'];
+$nome = $_POST['nome'];
+$numero_telefone = $_POST['numero_telefone'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
 $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 $tipo_usuario = "cliente";
 
@@ -28,12 +29,14 @@ if($total_reg > 0){
     
     $id_usuario = $pdo->lastInsertId();
     
-    $sql = "INSERT INTO cliente(nome, numero_telefone, id_usuario) values(:nome, :numero_telefone, id_usuario)";
+    $sql = "INSERT INTO cliente(nome, numero_telefone, id_usuario) values(:nome, :numero_telefone, :id_usuario)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":nome", $nome);
     $stmt->bindParam(":numero_telefone", $numero_telefone);
     $stmt->bindParam(":id_usuario", $id_usuario);
     $stmt->execute();
+
+    header("location: ../index.php");
 }
 
 
