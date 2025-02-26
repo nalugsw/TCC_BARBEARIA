@@ -255,10 +255,10 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios::-webkit-scr
     background-color: #bababa;
     border-radius: 10px;
 }
-
+/* 
 section.perfil .container-perfil .horarios-marcados .caixa-horarios::-webkit-scrollbar-thumb:hover{
     background-color: #;
-}
+} */
 
 section.perfil .container-perfil .horarios-marcados .caixa-horarios{
     background-color: #FDFDFD;
