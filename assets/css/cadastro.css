@@ -20,6 +20,7 @@ main{
 
 }
 section.login{
+    margin: 0 auto;
     max-width: 880px;
     height: 500px;
     background-color: #FDFDFD;

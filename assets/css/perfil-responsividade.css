@@ -1,5 +1,5 @@
 @media screen and (max-width: 1100px){
-    
+
 }
 @media screen and (max-width: 980px){
     .perfil{
@@ -13,7 +13,7 @@
         width: 160px;
         height: 160px;
     }
-    
+
     section.perfil .container-perfil .foto-perfil .profile-pic{
         border-radius: 100%;
         width: 160px;
@@ -22,46 +22,46 @@
         background-size: cover;
         background-position: center;
     }
-    
+
     section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
         transform: translateY(-20px);
     }
-    
+
     section.perfil .container-perfil .foto-perfil .btn-alterar-foto img{
         margin-left: 88%;
         width: 15px;
-        
+
     }
-    
+
     section.perfil .container-perfil .form-perfil {
         margin-top: 0;
         margin-bottom: 15px;
     }
-    
+
     section.perfil .container-perfil.form form {
         max-width: 100px;
         height: 100px;
         padding: 0px 45px 0px 2px;
-        
-        
+
+
     }
-    
+
     section.perfil .container-perfil .form form ::placeholder{
         font-weight: 500;
         font-size: 15px;
         padding: 8px;
         color: #898989;
     }
-    
+
     section.perfil .container-perfil .form form p{
         font-size: 10px;
         color: #d4d4d4;
         font-weight: bold;
         margin-top: 10px;
         margin-bottom: 5px;
-        
+
     }
-    
+
     section.perfil .container-perfil .form form label{
             pointer-events: none;
             position: relative;
@@ -77,7 +77,7 @@
             padding: 1px 5.5px;
             box-sizing: border-box;
     }
-    
+
     section.perfil .container-perfil .form form input{
         border-radius: 3px;
         border: none;
@@ -86,13 +86,13 @@
         display: block;
         transition: 0.1s;
     }
-    
+
     section.perfil .container-perfil .form form input:focus{
         outline: 2px solid #4891E6;
         width: 290px;
         height: 40px;
         display: block;
-        
+
     }
     section.perfil .container-perfil .horarios-marcados{
         width: 350px;
@@ -103,22 +103,22 @@
         font-weight: bold;
         margin-top: 8px;
         margin-bottom: 5px;
-        
+
     }
-    
+
     section.perfil .container-perfil .horarios-marcados .caixa-horarios{
         background-color: #FDFDFD;
         height: 107px;
         width: 350px;
         border-radius: 3px;
-        
+
     }
-    
+
     section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
         font-size: 11px;
         color: #898989;
         font-weight: 500;
-        
+
     }
 }
 
@@ -129,8 +129,8 @@
         margin: 0 auto;
         justify-content: center;
         justify-self: center
-        
-        
+
+
     }
 
     /* Ligando o Menu mobile e fazendo com que ele apareça apenas aqui na versão para celulares e etc */
@@ -148,7 +148,7 @@
     nav.menu-lateral-desktop{
         display: none;
     }
-    
+
 
 }
 
@@ -161,8 +161,8 @@
     section.perfil .container-perfil{
         display: flex;
         flex-direction: column;
-        
-        
+
+
     }
 
     section.perfil .container-perfil .foto-perfil{
@@ -180,44 +180,44 @@
         background-size: cover;
         background-position: center;
     }
-    
+
     section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
         transform: translateY(-20px);
     }
-    
+
     section.perfil .container-perfil .foto-perfil .btn-alterar-foto img{
         margin-left: 88%;
         width: 15px;
-        
+
     }
-    
+
     section.perfil .container-perfil .form {
         max-width: 200px;
         margin: 0 auto;
     }
-    
+
     section.perfil .container-perfil.form form {
         max-width: 0px;
         height: 100px;
         padding: 0px 0px 0px 0px;
     }
-    
+
     section.perfil .container-perfil .form form ::placeholder{
         font-weight: 500;
         font-size: 15px;
         padding: 8px;
         color: #898989;
     }
-    
+
     section.perfil .container-perfil .form form p{
         font-size: 10px;
         color: #d4d4d4;
         font-weight: bold;
         margin-top: 10px;
         margin-bottom: 5px;
-        
+
     }
-    
+
     section.perfil .container-perfil .form form label{
             pointer-events: none;
             position: relative;
@@ -233,7 +233,7 @@
             padding: 1px 5.5px;
             box-sizing: border-box;
     }
-    
+
     section.perfil .container-perfil .form form input{
         border-radius: 3px;
         border: none;
@@ -242,37 +242,37 @@
         display: block;
         transition: 0.1s;
     }
-    
+
     section.perfil .container-perfil .form form input:focus{
         outline: 2px solid #4891E6;
         width: 290px;
         height: 40px;
         display: block;
-        
+
     }
     section.perfil .container-perfil .horarios-marcados{
         margin: 0 auto;
-        
+
     }
-    
+
     section.perfil .container-perfil .horarios-marcados p{
         font-size: 10px;
         color: #d4d4d4;
         font-weight: bold;
         margin-top: 8px;
         margin-bottom: 5px;
-        
+
     }
-    
+
     section.perfil .container-perfil .horarios-marcados .caixa-horarios{
         background-color: #FDFDFD;
         height: 107px;
         width: 200px;
         border-radius: 3px;
-        
-        
+
+
     }
-    
+
     section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
         font-size: 8.5px;
         color: #898989;
@@ -288,11 +288,11 @@
         margin-left: 3px;
         display: flex;
         gap: 10px;
-        
-        
-        
+
+
+
     }
-    
+
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
         color: #232323;
@@ -308,10 +308,10 @@
     body{
         height: 100%;
     }
-
+/* 
     nav.menu-inferior-mobile{
-        
-    }
+
+    } */
 
     nav.menu-inferior-mobile ul{
         width: 100%;
