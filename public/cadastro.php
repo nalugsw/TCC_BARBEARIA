@@ -17,52 +17,53 @@ include("../config/conexao.php");
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="titulo-externo">
-        <h1>Cadastrar</h1>
-    </div>
-    <section class="login">
-       
-        <div class="container">
-            <div class="img-login-mobile">
-                <img src="../assets/img/img-login-mobile.png" alt="">
-            </div>
-            <div class="titulo">
-                <h1>Cadastre-se</h1>
-            </div>
-            <div class="form">
-                <form action="../functions/cadastro.php">
-                        <label for="">Nome</label>
-                        <input type="text" placeholder="NOME" name="nome">
-
-                        <label for="">Número de telefone</label>
-                        <input type="text" placeholder="NUMERO DE TELEFONE" name="numero_telefone">
-
-                        <label for="">Email</label>
-                        <input type="text" placeholder="EMAIL" name="email">
-                        
-                        <label for="">Senha</label>
-                        <input type="text" placeholder="SENHA" name="senha">
-                </form>
-            </div>
-            <div class="termos">
-                <a href="#">POLITICAS DE PRIVACIDADE</a>
-            </div>
-            <div class="btn-login">
-                <a href="#"><button>CADASTRAR</button></a>
-            </div>
-            <div class="esqueceusenha">
-                <a href="../index.php"><p>JÁ TEM UMA CONTA? FAÇA SEU LOGIN AQUI!</p></a>
-            </div>
-            <div class="voltar">
-                <a href="../index.php"><p>VOLTAR</p></a>
-            </div>
-          <!-- TESTE       -->
-
+    <main>
+        <div class="titulo-externo">
+            <h1>Cadastrar</h1>
         </div>
-        <div class="img-login">
-            <img src="../assets/img/Group 132.png" alt="">
-        </div>
-    </section>
+        <section class="login">
+            <div class="container">
+                <div class="img-login-mobile">
+                    <img src="../assets/img/img-login-mobile.png" alt="">
+                </div>
+                <div class="titulo">
+                    <h1>Cadastre-se</h1>
+                </div>
+                <div class="form">
+                    <form action="../functions/cadastro.php">
+                        <label for="nome">Nome</label>
+                        <input type="text" placeholder="NOME" id="nome" name="nome">
+
+                        <label for="numero_telefone">Número de telefone</label>
+                        <input type="text" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone">
+
+                        <label for="email">Email</label>
+                        <input type="text" placeholder="EMAIL" id="email" name="email">
+                            
+                        <label for="senha">Senha</label>
+                        <input type="text" placeholder="SENHA" id="senha" name="senha">
+                    
+                        </div>
+                        <div class="termos">
+                            <a href="#">POLITICAS DE PRIVACIDADE</a>
+                        </div>
+                        <div class="btn-login">
+                            <a ><button type="submit">CADASTRAR</button></a>
+                        </div>
+                        <div class="esqueceusenha">
+                            <a href="../index.php"><p>JÁ TEM UMA CONTA? FAÇA SEU LOGIN AQUI!</p></a>
+                        </div>
+                        <div class="voltar">
+                            <a href="../index.php"><p>VOLTAR</p></a>
+                        </div>
+                    </form>
+            <!-- TESTE       -->
+            </div>
+            <div class="img-login">
+                <img src="../assets/img/Group 132.png" alt="">
+            </div>
+        </section>
+    </main>
 </body>
 </html>
 

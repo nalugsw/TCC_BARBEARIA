@@ -6,9 +6,8 @@
         height: 540px;
         background-color: #FDFDFD;
         display: flex;
-        padding-top: 36px;
         border-radius: 3px;
-        
+    
     }
 
     .titulo-externo{
@@ -60,17 +59,12 @@
     section.login .container .form form input{
         border: solid #D9DCDE;
         width: 290px;
-        height: 40px;
         display: block;
         transition: 0.1s;
     }
 
     section.login .container .form form {
         max-width: 334px;
-        height: 157px;
-        padding: 0px 0px 0px 2px;
-        
-        
     }
 
     section.login .container .esqueceusenha{
