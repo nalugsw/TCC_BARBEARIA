@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../assets/css/perfil.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- Importando pacote de icones do Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
     <link rel="stylesheet" href="../assets/css/perfil-responsividade.css">
@@ -18,7 +22,7 @@
 
         <ul>
             <li class="item-menu">
-                <a href="perfil.html">
+                <a href="perfil.php">
                     <img src="../assets/img/icon-perfil.png" alt="">
                     <span class="txt-link">Perfil</span>
                 </a>
@@ -62,7 +66,7 @@
             <div class="foto-perfil">
                 <div class="profile-pic"></div>
                 <div class="btn-alterar-foto">
-                    <img src="../assets/img/icon-alterar-imagem.png" alt="">
+                    <a href=""><img src="../assets/img/icon-alterar-imagem.png" alt=""></a>
                 </div>
             </div>
             <div class="form-perfil">
@@ -70,13 +74,13 @@
                     <form action="">
                         <p>*Nome do perfil</p>
                         <div class="input-campo">
-                        <input type="text" placeholder="Albertin da Vila" name="nome" disabled>
-                        <img src="../assets/img/icon-lapis-alterar-campo.png" alt="">
+                            <input type="text" placeholder="Albertin da Vila" name="nome" disabled>
+                            <img src="../assets/img/icon-lapis-alterar-campo.png" alt="">
                         </div>
                         <p>*Numero do perfil</p>
                         <div class="input-campo">
-                        <input type="text" placeholder="11 99999-9999" name="telefone" disabled>
-                        <img src="../assets/img/icon-lapis-alterar-campo.png" alt="">
+                            <input type="text" placeholder="11 99999-9999" name="telefone" disabled>
+                            <img src="../assets/img/icon-lapis-alterar-campo.png" alt="">
                         </div>
                     </form>
                 </div>

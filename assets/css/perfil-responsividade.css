@@ -1,257 +1,23 @@
 @media screen and (max-width: 1100px){
-
-    section.perfil{
-        width: 100%;
-        padding: 200px 32px;
-    }
-
     
-
-
-
-    /* nav.menu-lateral-desktop {
-        background-color: #313131;
-        padding-top: 40px;
-        width: 219px;
-        height: 100vh;
-        text-align: center;
+}
+@media screen and (max-width: 980px){
+    .perfil{
+        flex-wrap: wrap;
     }
-    
-    nav.menu-lateral-desktop .logo {
-        width: 100%;
-    }
-    
-    nav.menu-lateral-desktop .logo img{
-        margin-bottom: 40px;
-        width: 70px;
-        
-        
-    }
-    
-    nav.menu-lateral-desktop ul{
-        width: 100%;
-        
-    }
-    
-    nav.menu-lateral-desktop ul li.item-menu{
-        list-style: none;
-        display: flex;
-        margin-bottom: 12px;
-        padding-left: 5px;
-        padding-top: 7px;
-        padding-bottom: 7px;
-        text-align: left;
-        transition: 0.5s;
-        
-    }
-    nav.menu-lateral-desktop ul li.item-menu:hover{
-        background-color: #232323;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding-left: 31px;
-        border-radius: 3px;
-        
-    }
-    
-    nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
-        font-size: 12px;
-        margin-left: 5px;
-        font-weight: 300;
-        color: #d4d4d4;
-        
-    }
-    
-    nav.menu-lateral-desktop ul li.item-menu a img{
-        vertical-align: middle;
-        width: 13px;
-    }
-    
-    nav.menu-lateral-desktop ul li.item-menu a{
-        text-decoration: none;
-    }
-    
-    nav.menu-lateral-desktop .btn-sair{
-        padding-left: 5px;
-        text-align: left;
-    }
-    
-    
-    nav.menu-lateral-desktop .btn-sair a button{
-        border: none;
-        cursor: pointer;
-        height: 25px;
-        font-size: 10px;
-        font-weight: bold;
-        padding: 3px  10px;
-        color: #d4d4d4;
-        background-color: #4065AB;
-        border-radius: 3px;
-        margin-top: 20vh;
-        transition: 0.5s;
-       
-        
-    }
-    
-    nav.menu-lateral-desktop .btn-sair a button:hover{
-        scale: 0.9;
-        background-color: #2d4777;
-        
-    }
-    
-    nav.menu-lateral-desktop .btn-sair a button img{
-        width: 11px;
-        margin-right: 18px;
-        vertical-align: middle;
-    }
-
-    Responsividade da sessão perfil
-
-    section.perfil{
-        width: 100%;
-    }
-    
     section.perfil .container-perfil{
         display: flex;
-        gap: 50px;
-        padding-top: 14%;
-        padding-left: 25px;
+        align-items: center;
     }
-    
     section.perfil .container-perfil .foto-perfil{
-        
         width: 160px;
         height: 160px;
     }
     
     section.perfil .container-perfil .foto-perfil .profile-pic{
         border-radius: 100%;
-        width: 130px;
-        height: 130px;
-        background-image: url(../assets/homem-sorrindo-teste.avif);
-        background-size: cover;
-        background-position: center;
-    }
-    
-    section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
-        transform: translateY(-20px);
-    }
-    
-    section.perfil .container-perfil .foto-perfil .btn-alterar-foto img{
-        margin-left: 80%;
-        
-    }
-    
-    section.perfil .container-perfil .form {
-        
-    }
-    
-    section.perfil .container-perfil.form form {
-        max-width: 104px;
-        height: 150px;
-        padding: 0px 45px 0px 2px;
-        
-        
-    }
-    
-    section.perfil .container-perfil .form form ::placeholder{
-        font-weight: 500;
-        font-size: 13px;
-        padding: 12px;
-        color: #898989;
-       
-    }
-    
-    section.perfil .container-perfil .form form p{
-        font-size: 10px;
-        color: #d4d4d4;
-        font-weight: bold;
-        margin-top: 10px;
-        margin-bottom: 5px;
-        
-    }
-    
-    section.perfil .container-perfil .form form label{
-            pointer-events: none;
-            position: relative;
-            top: 5px;
-            left: 14.5px;
-            font-size: 10px;
-            color: #3F4346;
-            font-weight: bold;
-            transition: all .1s linear;
-            -webkit-transition: all .1s linear;
-            -moz-transition: all .1s linear;
-            background-color: #FDFDFD;
-            padding: 1px 5.5px;
-            box-sizing: border-box;
-    }
-    
-    section.perfil .container-perfil .form form input{
-        border-radius: 3px;
-        border: none;
-        width: 290px;
-        height: 40px;
-        display: block;
-        transition: 0.1s;
-    }
-    
-    section.perfil .container-perfil .form form input:focus{
-        outline: 2px solid #4891E6;
-        width: 250px;
-        height: 40px;
-        display: block;
-        
-    }
-    
-    section.perfil .container-perfil .horarios-marcados p{
-        font-size: 10px;
-        color: #d4d4d4;
-        font-weight: bold;
-        margin-top: 8px;
-        margin-bottom: 5px;
-        
-    }
-    
-    section.perfil .container-perfil .horarios-marcados .caixa-horarios{
-        background-color: #FDFDFD;
-        height: 107px;
-        width: 300px;
-        border-radius: 3px;
-        
-    }
-    
-    section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
-        font-size: 11px;
-        color: #898989;
-        font-weight: 500;
-        padding: 46px 79px;
-    } */
-}
-
-@media screen and (max-width: 1021px){
-    section.perfil{
-        width: 100%;
-        height: 90vh;
-        padding: 200px 12px;
-    }
-
-    section.perfil .container-perfil{
-        display: flex;
-        gap: 20px;
-        
-    }
-    
-    section.perfil .container-perfil .foto-perfil{
-        padding-top: 25px;
-        width: 100px;
-        height: 100px;
-    }
-    
-    section.perfil .container-perfil .foto-perfil .profile-pic{
-       
-        border-radius: 100%;
-        width: 100px;
-        height: 100px;
+        width: 160px;
+        height: 160px;
         background-image: url(../img/homem-sorrindo-teste.avif);
         background-size: cover;
         background-position: center;
@@ -267,8 +33,9 @@
         
     }
     
-    section.perfil .container-perfil .form {
-        
+    section.perfil .container-perfil .form-perfil {
+        margin-top: 0;
+        margin-bottom: 15px;
     }
     
     section.perfil .container-perfil.form form {
@@ -284,7 +51,6 @@
         font-size: 15px;
         padding: 8px;
         color: #898989;
-       
     }
     
     section.perfil .container-perfil .form form p{
@@ -328,7 +94,9 @@
         display: block;
         
     }
-    
+    section.perfil .container-perfil .horarios-marcados{
+        width: 350px;
+    }
     section.perfil .container-perfil .horarios-marcados p{
         font-size: 10px;
         color: #d4d4d4;
@@ -341,7 +109,7 @@
     section.perfil .container-perfil .horarios-marcados .caixa-horarios{
         background-color: #FDFDFD;
         height: 107px;
-        width: 300px;
+        width: 350px;
         border-radius: 3px;
         
     }
@@ -405,7 +173,6 @@
     }
 
     section.perfil .container-perfil .foto-perfil .profile-pic{
-       
         border-radius: 100%;
         width: 160px;
         height: 160px;
@@ -432,19 +199,14 @@
     section.perfil .container-perfil.form form {
         max-width: 0px;
         height: 100px;
-       
         padding: 0px 0px 0px 0px;
-       
-        
     }
     
     section.perfil .container-perfil .form form ::placeholder{
         font-weight: 500;
-      
         font-size: 15px;
         padding: 8px;
         color: #898989;
-       
     }
     
     section.perfil .container-perfil .form form p{
@@ -517,7 +279,6 @@
         font-weight: 500;
         /* padding: 18%; */
         text-align: center;
-      
     }
     section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa{
         height: 32px;
@@ -559,7 +320,5 @@
         margin: 0 auto;
         justify-content: center;
         align-items: center;
-       
-        
     }
 }
