@@ -2,6 +2,7 @@
 
 include("../config/conexao.php");
 session_start();
+require("../functions/helpers.php");
 
 ?>
 
@@ -81,12 +82,12 @@ session_start();
                     <form action="">
                         <p>*Nome do perfil</p>
                         <div class="input-campo">
-                            <input type="text" placeholder="Albertin da Vila" name="nome" disabled>
+                            <input type="text" placeholder="<?php echo nomeCliente($_SESSION['id_usuario']); ?>" name="nome" disabled>
                             <img src="../assets/img/icon-lapis-alterar-campo.png" alt="">
                         </div>
                         <p>*Numero do perfil</p>
                         <div class="input-campo">
-                            <input type="text" placeholder="11 99999-9999" name="telefone" disabled>
+                            <input type="text" placeholder="<?php echo numeroCliente($_SESSION['id_usuario']); ?>" name="telefone" disabled>
                             <img src="../assets/img/icon-lapis-alterar-campo.png" alt="">
                         </div>
                     </form>
