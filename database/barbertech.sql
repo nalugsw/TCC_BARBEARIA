@@ -45,8 +45,8 @@ CREATE TABLE AGENDA (
 
 CREATE TABLE USUARIO (
     id_usuario int auto_increment PRIMARY KEY,
-    email varchar(80) not null UNIQUE,
-    senha varchar(30) not null,
+    email varchar(80) not null,
+    senha varchar(90) not null,
     token varchar(20) null,
     validade_token datetime null,
     status enum('verificado','pendente') not null,

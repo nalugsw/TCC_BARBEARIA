@@ -1,7 +1,8 @@
 <?php
 
+session_start();
 include('config/conexao.php');
-// oii
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +31,7 @@ include('config/conexao.php');
                         <h1>Seja bem vindo!</h1>
                     </div>
                     <div class="form">
-                        <form action="functions/autenticacao.php">
+                        <form action="functions/autenticacao.php" method="POST">
                             <div class="input-container">
                                 <label for="email">Email/Telefone</label>
                                 <input type="text" id="email" name="email" placeholder="Digite seu email ou telefone" required>
@@ -44,7 +45,7 @@ include('config/conexao.php');
                                 <a href="#"><p>ESQUECEU SUA SENHA?</p></a>
                             </div>
                             <div class="btn-login">
-                                    <a href="#"><button type="submit" >LOGIN</button></a>
+                                <button type="submit">LOGIN</button>
                             </div>
                             <div class="esqueceusenha">
                                     <a href="public/cadastro.php"><p>CADASTRAR CONTA</p></a>

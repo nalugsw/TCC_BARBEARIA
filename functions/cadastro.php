@@ -44,7 +44,7 @@ if($total_reg > 0){
     $stmt->bindParam(":nome", $nome);
     $stmt->bindParam(":numero_telefone", $numero_telefone);
     $stmt->bindParam(":id_usuario", $id_usuario);
-    $stmt->execute();
+    $cadastro = $stmt->execute();
 
     if($cadastro){
         $pdo->commit();
