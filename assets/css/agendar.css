@@ -1,5 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #1e1e1e;
     color: white;
     display: flex;
@@ -8,56 +7,86 @@ body {
     height: 100vh;
 }
 
-.agenda-container {
-    width: 200px;
-    
+.agenda{
+    grid-column:1/4;
 }
 
 .dia {
-    background: #333;
-    padding: 15px;
-    margin: 10px 0;
+    margin-right: 15px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    border-radius: 5px;
+    margin-bottom: 10px;
 }
-
+.dia p{
+    font-weight: bold;
+}
 .horarios-btn {
-    background-color: #007bff;
+    background-color: #4065AB;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    border-radius: 3px;
+    font-weight: bolder;
+}
+.horarios-btn-ativo{
+    padding: 5px 10px 20px 10px;
+    border: none;
+    background-color: #f9f9f9;
+    border-radius: 3px 3px 0 0 ;
+    font-weight: bolder;
+}
+
+.selecao-horaio{
+    width: 750px;
+    background: #b3b3b3;
+    color: #232323;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    max-height: 55px;
 }
 
 .horarios {
-    background: #444;
-    display: none;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
+    background: #f9f9f9;
+    width: 720px;
+    height: 300px;
+    border-radius: 0 0 5px 5px;
+    color: #232323;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
 }
-
+.horario-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 670px;
+    margin: 15px 25px;
+    border-bottom: #d9d9d9 solid 2px;
+    padding-bottom: 5px;
+}
 .selecionar {
-    display: block;
-    width: 100%;
     margin: 5px 0;
     padding: 5px;
-    background: #007bff;
+    background: #4065AB;
     border: none;
+    border-radius: 3px;
     color: white;
     cursor: pointer;
 }
 
-.fechado {
-    background: #555;
-    color: yellow;
-}
-
-.fechado-label {
-    background: yellow;
-    color: black;
-    padding: 3px 8px;
+.horarios-btn-fechado {
+    background: #f3d90e;
+    color: #232323;
+    border: none;
+    padding: 5px 10px;
+    font-weight: bolder;
     border-radius: 3px;
 }
+
