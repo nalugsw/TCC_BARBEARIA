@@ -3,6 +3,7 @@
 include("../config/conexao.php");
 session_start();
 require("../functions/helpers.php");
+include("../functions/verificar.php");
 
 ?>
 
