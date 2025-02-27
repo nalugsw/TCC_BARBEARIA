@@ -7,8 +7,8 @@
 
 body{
     background-color: #232323;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 230px 1fr;
 }
 
 /* Menu mobile inferior >desligado< nessa versão desktop(CSS para que ele não apareça) */
@@ -22,25 +22,22 @@ nav.menu-inferior-mobile{
 
 nav.menu-lateral-desktop {
     background-color: #313131;
-    padding-top: 40px;
-    width: 219px;
     height: 100vh;
-    text-align: center;
-}
-
-nav.menu-lateral-desktop .logo {
-    width: 100%;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 nav.menu-lateral-desktop .logo img{
     margin-bottom: 40px;
-    
-    
+    margin-top: 40px;
 }
 
 nav.menu-lateral-desktop ul{
     width: 100%;
-    
+    height: 60%;
 }
 
 nav.menu-lateral-desktop ul li.item-menu{
@@ -60,7 +57,11 @@ nav.menu-lateral-desktop ul li.item-menu:hover{
     margin-right: 5px;
     padding-left: 31px;
     border-radius: 3px;
-    
+    font-weight: bold;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link:hover{
+    font-weight: bold;
 }
 
 nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
@@ -80,10 +81,10 @@ nav.menu-lateral-desktop ul li.item-menu a{
 }
 
 nav.menu-lateral-desktop .btn-sair{
-    padding-left: 21px;
     text-align: left;
+    margin-bottom: 20px;
+    margin-right: 80px;
 }
-
 
 nav.menu-lateral-desktop .btn-sair a button{
     border: none;
@@ -95,11 +96,9 @@ nav.menu-lateral-desktop .btn-sair a button{
     color: #d4d4d4;
     background-color: #4065AB;
     border-radius: 3px;
-    margin-top: 20vh;
     transition: 0.5s;
-   
-    
 }
+
 
 nav.menu-lateral-desktop .btn-sair a button:hover{
     scale: 0.9;
@@ -115,9 +114,10 @@ nav.menu-lateral-desktop .btn-sair a button img{
 /* CSS da sessão perfil */
 
 section.home{
-   
-    width: 100%;
-    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 }
 
 section.home .container-home{
@@ -359,22 +359,25 @@ section.home .grids-container .grid {
 
 
 section.home .grids-container .grid::-webkit-scrollbar{
-    width: 18px;
-    
-    background-color: #D5D5D5;
+    width: 13px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
 }
 
 section.home .grids-container .grid::-webkit-scrollbar-thumb{
-    background-color: #2d4777;
-    border-radius: 1px;
-    
+    background-color: #aaaaaa;
+    border-radius: 10px;
+    border: solid #e0e0e0 2px;
 }
+
 
 section.home .grids-container .grid .item img{
     max-width: 257px;
     height: 269.93px;
 }
-
+.grids-container{
+    margin-top: 5px;
+}
 
 
 /* CSS menu mobile */
