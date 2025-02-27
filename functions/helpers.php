@@ -1,6 +1,6 @@
 <?php
 
-include_once("../config/conexao.php");
+include("../../config/conexao.php");
 
 //RECUPERA O NOME DO USUARIO
 

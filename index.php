@@ -48,7 +48,7 @@ include('config/conexao.php');
                                 <button type="submit">LOGIN</button>
                             </div>
                             <div class="esqueceusenha">
-                                    <a href="public/cadastro.php"><p>CADASTRAR CONTA</p></a>
+                                    <a href="public/user/cadastro.php"><p>CADASTRAR CONTA</p></a>
                             </div>
                             <div class="termos">
                                     <a href="#">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>

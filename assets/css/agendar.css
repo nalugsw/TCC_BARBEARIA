@@ -50,7 +50,7 @@ body {
     max-height: 55px;
 }
 
-.horarios {
+.horarios{
     background: #f9f9f9;
     width: 720px;
     height: 300px;
@@ -71,7 +71,7 @@ body {
     border-bottom: #d9d9d9 solid 2px;
     padding-bottom: 5px;
 }
-.selecionar {
+.selecionar{
     margin: 5px 0;
     padding: 5px;
     background: #4065AB;
