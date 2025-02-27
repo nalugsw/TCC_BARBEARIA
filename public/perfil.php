@@ -98,38 +98,14 @@ include("../functions/verificar.php");
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
                     <!-- <div class="txt-sem-horarios"><p>SEM HORARIO MARCADO</p></div> -->
-                    <div class="horario-caixa">
-                        <div class="nome-barbeiro"><p>Luis Pereira</p></div>
-                        <p>-</p>
-                        <div class="data-barbeiro"><p>13/09</p></div>
-                        <p>|</p>
-                        <div class="dia-barbeiro"><p>Sabádo</p></div>
-                        <div class="horario-barbeiro"><p>10:00</p></div>
-                    </div>
-                    <div class="horario-caixa">
-                        <div class="nome-barbeiro"><p>Luis Pereira</p></div>
-                        <p>-</p>
-                        <div class="data-barbeiro"><p>22/09</p></div>
-                        <p>|</p>
-                        <div class="dia-barbeiro"><p>Sexta-feira</p></div>
-                        <div class="horario-barbeiro"><p>12:00</p></div>
-                    </div>
-                    <div class="horario-caixa">
-                        <div class="nome-barbeiro"><p>Luis Pereira</p></div>
-                        <p>-</p>
-                        <div class="data-barbeiro"><p>12/10</p></div>
-                        <p>|</p>
-                        <div class="dia-barbeiro"><p>Segunda-feira</p></div>
-                        <div class="horario-barbeiro"><p>15:00</p></div>
-                    </div>
-                    <div class="horario-caixa">
-                        <div class="nome-barbeiro"><p>Luis Pereira</p></div>
-                        <p>-</p>
-                        <div class="data-barbeiro"><p>25/10</p></div>
-                        <p>|</p>
-                        <div class="dia-barbeiro"><p>quarta-feira</p></div>
-                        <div class="horario-barbeiro"><p>18:00</p></div>
-                    </div>
+                        <div class="horario-caixa">
+                            <div class="nome-barbeiro"><p>Luis Pereira</p></div>
+                            <p>-</p>
+                            <div class="data-barbeiro"><p>13/09</p></div>
+                            <p>|</p>
+                            <div class="dia-barbeiro"><p>Sabádo</p></div>
+                            <div class="horario-barbeiro"><p>10:00</p></div>
+                        </div>
                 </div>
             </div>
             
