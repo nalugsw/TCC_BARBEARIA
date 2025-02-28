@@ -1,14 +1,16 @@
+function toggleHorarios(button) {
+  // Encontrar o elemento pai da div 'selecao-horaio'
+  const diaDiv = button.closest('.dia');
 
-// function toggleHorarios(botao) {
-//     let horarios = botao.nextElementSibling;
+  // Encontrar a div 'horarios' dentro deste dia específico
+  const horariosDiv = diaDiv.querySelector('.horarios');
 
-//     if (horarios && horarios.classList.contains("horarios")) {
-//         if (horarios.style.display === "none" || horarios.style.display === "") {
-//             horarios.style.display = "block";
-//             botao.innerText = "HORÁRIOS"; 
-//         } else {
-//             horarios.style.display = "none";
-//             botao.innerText = "HORÁRIOS"; 
-//         }
-//     }
-// }
+  // Verificar se a div está visível e mostrar ou esconder
+  if (horariosDiv.style.display === "none" || horariosDiv.style.display === "") {
+      horariosDiv.style.display = "block";
+      button.classList.add("ativo");
+  } else {
+      horariosDiv.style.display = "none";
+      button.classList.remove("ativo");
+  }
+}
