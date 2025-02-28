@@ -30,6 +30,20 @@ body {
     border-radius: 3px;
     font-weight: bolder;
 }
+
+.horarios-btn:hover {
+    background-color: #2d4777;
+    
+}
+
+.horarios-btn i:before {
+        transition: transform 0.2s linear; /* Agora a transição funciona nos dois sentidos */
+}
+    
+.horarios-btn.ativo i:before {
+        transform: rotate(180deg); /* Mantém a rotação quando o botão está ativo */
+}
+
 .horarios-btn-ativo{
     padding: 5px 10px 20px 10px;
     border: none;
