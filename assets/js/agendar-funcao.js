@@ -1,10 +1,4 @@
 
-const horaios = document.querySelector('.horaios');
-function toggleHorarios(){
-    
-    
-}
-
 // function toggleHorarios(botao) {
 //     let horarios = botao.nextElementSibling;
 
