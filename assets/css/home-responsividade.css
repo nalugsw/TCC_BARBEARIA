@@ -35,6 +35,12 @@
 }
 
 @media screen and (max-width: 925px){
+    .btn-menu-mob {
+        display: block;
+        position: relative;
+        z-index: 9999;
+    }
+
     section.perfil .container-perfil{
         margin: 0 auto;
         justify-content: center;
@@ -45,7 +51,7 @@
 
     /* Ligando o Menu mobile e fazendo com que ele apareça apenas aqui na versão para celulares e etc */
     nav.menu-inferior-mobile{
-        display: block;
+        display: none;
     }
     /* Desligando o Menu Desktop */
 
@@ -59,7 +65,7 @@
         display: none;
     }
     
-  
+
 }
 
 /* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
@@ -70,8 +76,6 @@
         height: 100%;
         padding: 36px 0px;
     }
-
-   
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
         color: #232323;
@@ -88,10 +92,6 @@
         height: 100%;
     }
 
-    nav.menu-inferior-mobile{
-        
-    }
-
     nav.menu-inferior-mobile ul{
         width: 100%;
         display: flex;
@@ -99,8 +99,6 @@
         margin: 0 auto;
         justify-content: center;
         align-items: center;
-       
-        
     }
 }
 
@@ -111,9 +109,7 @@
         height: 44px;
         margin: 0 auto;
         display: flex;
-        
         padding-left: 0px;
-       
     }
 
     section.home .submenu button {
@@ -202,7 +198,6 @@
     section.home .container-home .informacoes-home .endereco-info p{
         font-weight: 100;
         font-size: 14px;
-       
     }
     
     section.home .container-home  .marcar-horario {
@@ -280,6 +275,46 @@
         transform: translateY(-70px);
         font-size: 20px;
         font-weight: 100;
+    }
+
+    .selecao-horaio{
+        width: 370px;
+        background: #b3b3b3;
+        color: #232323;
+        padding: 15px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        max-height: 55px;
+    }
+
+    .horarios {
+   
+        background: #f9f9f9;
+        width: 340px;
+        min-height: none;
+        max-height: 250px;
+        border-radius: 0 0 5px 5px;
+        color: #232323;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        overflow-x: hidden;
+    }
+
+    .horario-div{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        width: 250px;
+        margin: 15px 25px;
+        border-bottom: #d9d9d9 solid 2px;
+        padding-bottom: 5px;
+        
+        
     }
     
 }

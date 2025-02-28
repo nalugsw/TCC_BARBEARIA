@@ -2,7 +2,7 @@
 
 session_start();
 include('config/conexao.php');
-
+// oii
 ?>
 
 <!DOCTYPE html>
@@ -45,10 +45,17 @@ include('config/conexao.php');
                                 <a href="#"><p>ESQUECEU SUA SENHA?</p></a>
                             </div>
                             <div class="btn-login">
+<<<<<<< HEAD
                                 <button type="submit">LOGIN</button>
                             </div>
                             <div class="esqueceusenha">
                                     <a href="public/user/cadastro.php"><p>CADASTRAR CONTA</p></a>
+=======
+                                    <a href="#"><button type="submit" >LOGIN</button></a>
+                            </div>
+                            <div class="esqueceusenha">
+                                    <a href="public/cadastro.php"><p>CADASTRAR CONTA</p></a>
+>>>>>>> 21ba2dd3ba489505ec68d6d723a7183be8e5ea96
                             </div>
                             <div class="termos">
                                     <a href="#">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>
