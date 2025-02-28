@@ -1,0 +1,488 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+}
+
+body{
+    background-color: #232323;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+}
+
+/* Menu mobile inferior >desligado< nessa versão desktop(CSS para que ele não apareça) */
+
+nav.menu-inferior-mobile{
+    display: none;
+}
+
+
+
+
+/* CSS do Menu Lateral DESKTOP e seus comportamnentos */
+
+nav.menu-lateral-desktop {
+    background-color: #313131;
+    height: 100vh;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.menu-lateral-desktop .logo img{
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+nav.menu-lateral-desktop ul{
+    width: 100%;
+    height: 60%;
+}
+
+nav.menu-lateral-desktop ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding-left: 21px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    transition: 0.5s;
+    
+}
+nav.menu-lateral-desktop ul li.item-menu:hover{
+    background-color: #232323;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 31px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link:hover{
+    font-weight: bold;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-lateral-desktop ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-lateral-desktop .btn-sair{
+    text-align: left;
+    margin-bottom: 20px;
+    margin-right: 80px;
+}
+
+nav.menu-lateral-desktop .btn-sair a button{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+
+nav.menu-lateral-desktop .btn-sair a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+    
+}
+
+nav.menu-lateral-desktop .btn-sair a button img{
+    margin-right: 18px;
+    vertical-align: middle;
+}
+
+/* CSS da sessão perfil */
+
+section.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+section.home .container-home{
+    display: flex;
+    gap: 87px;
+    margin: 0 auto;
+    justify-content: center;
+    justify-self: center
+    
+}
+
+section.home .container-home .foto-home{
+    
+    width: 160px;
+    height: 160px;
+}
+
+section.home .container-home .foto-home .profile-pic{
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    background-image: url(../img/foto-barbeiro-tela-home.png);
+    background-size: cover;
+    background-position: center;
+}
+
+section.home .container-home .informacoes-home{
+   padding: 26px 0px;
+    height: 160px;
+    width: 214px;
+    color: #F9F9F9;
+}
+
+section.home .container-home .informacoes-home h1{
+    font-size: 36px;
+    font-weight: bold;
+    
+}
+
+section.home .container-home .informacoes-home .estrelas-icons i{
+    color: #FFD25E;
+    font-size: 28px;
+    
+
+}
+
+section.home .container-home .informacoes-home .endereco-info p{
+    font-weight: 100;
+    font-size: 14px;
+   
+}
+
+section.home .container-home  .marcar-horario {
+    vertical-align: middle;
+    padding: 65px 0px;
+}
+
+section.home .container-home  .marcar-horario .btn-marcar-horario{
+    height: 40px;
+
+}
+
+section.home .container-home  .marcar-horario .btn-marcar-horario a button{
+    border: none;
+    
+    cursor: pointer;
+    height: 38px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 7px  51px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+section.home .container-home  .marcar-horario .btn-marcar-horario a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+    
+}
+
+/* CSS do Submenu do home */
+
+section.home .submenu{
+    width: 786px;
+    height: 44px;
+    margin: 0 auto;
+    display: flex;
+    
+    padding-left: 0px;
+   
+}
+
+section.home .submenu button {
+    /* padding: 6px 85px; */
+    width: 257px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #F6F7F9;
+    position: relative;
+    margin-left: 3px;
+}
+
+section.home .submenu button::after {
+    content: '';
+    width: 0;
+    height: 3px;  
+    background-color: #F6F7F9;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;  
+}
+
+section.home .submenu button:hover::after,
+section.home .submenu button:focus::after {
+    width: 100%;  
+}
+
+
+section.home .submenu button:focus {
+    outline: none;  
+}
+
+
+section.home .grids-container .grid.ativo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    width: 780px;
+    height: 407px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+section.home .grids-container #grid2 .item{
+    position: relative; /* Define um contexto para a .txt-teste */
+     /* Evita que o texto saia da imagem */
+
+}
+
+#grid2{
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    row-gap: 2px;
+    column-gap: 2px;
+}
+
+#grid2 .item{
+    height: 150px;
+}
+
+
+#grid2 .item img{
+    max-width: 389px;
+    height: 150px;
+    transition: 0.5s;
+   
+}
+
+#grid2 .item img:hover{
+    opacity: 0.5;
+}
+
+
+#grid2 .item .txt-teste {
+    position: absolute;
+    bottom: 0; /* Alinha no rodapé da imagem */
+    left: 0;
+    width: 100%; /* Faz o texto ocupar toda a largura da imagem */
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    gap: 97px;
+}
+
+#grid2 .item .txt-teste .preco{
+    transform: translateY(-70px);
+    font-size: 20px;
+    font-weight: 100;
+}
+
+
+
+
+
+section.home .grids-container .grid.ativo .item .image-container{
+    position: relative;
+}
+
+
+section.home .grids-container .grid.ativo .item .image-container .servicos-txt{
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 95px;
+    top: 0;
+    left: 0;
+    color: #F6F7F9;
+    z-index: 9999;
+}
+
+/* section.home .grids-container .grid.ativo .item .image-container .servicos-txt .preco{
+    font-size: 16px;
+}
+
+
+section.home .grids-container .grid.ativo .item .image-container .servicos-txt .preco .duracao{
+    font-size: 14px;
+}
+
+section.home .grids-container .grid.ativo .item .image-container .servicos-txt .nome-servico{
+    font-size: 24px;
+    margin-top: 100px;
+    font-weight: bold;
+} */
+
+section.home .grids-container .grid {
+    display: none; /* Oculta todos os grids */
+}
+
+
+
+/* section.home .grids-container .grid {
+    display: none; 
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+} */
+
+
+
+section.home .grids-container .grid::-webkit-scrollbar{
+    width: 13px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+section.home .grids-container .grid::-webkit-scrollbar-thumb{
+    background-color: #aaaaaa;
+    border-radius: 10px;
+    border: solid #e0e0e0 2px;
+}
+
+
+section.home .grids-container .grid .item img{
+    max-width: 257px;
+    height: 269.93px;
+}
+.grids-container{
+    margin-top: 5px;
+}
+
+
+/* CSS menu mobile */
+
+nav.menu-inferior-mobile {
+    margin-top: 20%;
+    position: fixed;
+    bottom: 0;
+    background-color: #898989;
+    /* padding-top: 7px; */
+    width: 100%;
+    height: 70px;
+    text-align: center;
+
+}
+
+nav.menu-inferior-mobile .logo {
+    width: 100%;
+}
+
+nav.menu-inferior-mobile .logo img{
+    margin-bottom: 40px;
+    
+    
+}
+
+nav.menu-inferior-mobile ul{
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+nav.menu-inferior-mobile ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+    
+}
+nav.menu-inferior-mobile ul li.item-menu:hover{
+    background-color: #d4d4d4;
+    
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    /* padding-left: 31px; */
+    border-radius: 100%;
+    transform: translateY(-15px);
+    
+}
+
+
+nav.menu-inferior-mobile ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-inferior-mobile ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-inferior-mobile ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-inferior-mobile .btn-sair{
+    padding-left: 21px;
+    text-align: left;
+}
+
+
+nav.menu-inferior-mobile .btn-sair a button{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    margin-top: 20vh;
+    transition: 0.5s;
+   
+    
+}
+
+nav.menu-inferior-mobile .btn-sair a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+    
+}
+
+nav.menu-inferior-mobile .btn-sair a button img{
+    margin-right: 18px;
+    vertical-align: middle;
+}

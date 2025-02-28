@@ -7,17 +7,27 @@
 
 body{
     background-color: #232323;
-    padding: 60px 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
+main{
+    width: 80%;
+    min-width: 324px;
+    display: block;
+
+}
 section.login{
     margin: 0 auto;
     max-width: 880px;
     height: 500px;
     background-color: #FDFDFD;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     border-radius: 3px;
-    
+    padding: 50;
 }
 
 .titulo-externo{
@@ -25,8 +35,10 @@ section.login{
 }
 
 section.login .container{
-    max-width: 334px;
-    margin: 25px 76px 4px 84px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 section.login .container .titulo{
@@ -34,25 +46,15 @@ section.login .container .titulo{
     font-size: 15.5px;
     color: #313131;
     margin-bottom: 6px;
-    padding: 0px 45px 0px 2px;
     
-}
-
-section.login .container .form {
-    margin-bottom: 150px;
 }
 
 section.login .container .form form {
     max-width: 334px;
-    height: 157px;
-    padding: 0px 45px 0px 2px;
-    
-    
 }
 
 section.login .container .form form ::placeholder{
     font-weight: bold;
-    padding: 10px 13px ;
 }
 
 section.login .container .form form p{
@@ -60,7 +62,6 @@ section.login .container .form form p{
     color: #5E6168;
     font-weight: bold;
     margin-top: 10px;
-    margin-bottom: -8px;
     
 }
 
@@ -86,6 +87,7 @@ section.login .container .form form input{
     height: 40px;
     display: block;
     transition: 0.1s;
+    padding: 10px;
 }
 
 section.login .container .form form input:focus{
@@ -93,11 +95,6 @@ section.login .container .form form input:focus{
     width: 290px;
     height: 40px;
     display: block;
-    
-}
-
-section.login .container .esqueceusenha{
-    padding: 0px 45px 0px 2px;
     
 }
 
@@ -144,9 +141,8 @@ section.login .container .voltar a:hover{
 section.login .container .btn-login{
     display: flex;
     justify-content: center;
-    margin-top: 36px;
-    margin-bottom: 14px;
-    padding: 0px 45px 0px 2px;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 
@@ -174,7 +170,6 @@ section.login .container .termos{
     font-size: 8px;
     font-weight: bold;
     text-align: center;
-    padding: 0px 45px 0px 2px;
     display: none;
 }
 
