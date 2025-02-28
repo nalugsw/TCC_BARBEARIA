@@ -61,13 +61,23 @@ include("../../functions/verificar.php");
                 </a>
             </li>
         </ul>
-        <div class="btn-sair">
-            <a href="../../functions/logout.php"><button>
-                <img src="../../assets/img/icon-sair.png" alt="">SAIR</button></a>
-        </div>
+
+        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
+
     </nav>
 
     
+    <dialog close id="modal-sair" >
+        <div class="modal-sair">
+            <p>realmente deseja sair?</p>
+            <div class="btns-modal">
+                <a href="../../functions/logout.php">
+                    <button class="btn-sair">Sair</button>
+                </a>
+                <button id="cancelar">Voltar</button>
+            </div>
+        </div>
+    </dialog>
     <!-- Fim do menu Desktop e inicio da sessão perfil -->
 
     <section class="perfil">
@@ -153,6 +163,6 @@ include("../../functions/verificar.php");
                 </li>
             </ul>
         </nav> -->
-
+        <script src="../../assets/js/modal.js"></script>
 </body>
 </html>
