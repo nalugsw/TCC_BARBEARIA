@@ -1,13 +1,4 @@
 
-const horaios = document.querySelector('.horaios');
-const btn = document.querySelector('button');
-
-function toggleHorarios(){
-    btn.addEventListener("click", function () {
-        horaios.classList.add('');
-    })
-}
-
 // function toggleHorarios(botao) {
 //     let horarios = botao.nextElementSibling;
 
