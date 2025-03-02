@@ -24,7 +24,7 @@ $res = $stmt->fetch(PDO::FETCH_ASSOC);
          if(password_verify($senha, $senha_hash)){
              $_SESSION['id_usuario'] = $res['id_usuario'];
              $_SESSION['tipo_usuario'] = $res['tipo_usuario'];
-             header("location: ../public/perfil.php");
+             header("location: ../public/user/perfil.php");
              exit();
          }else{
              $_SESSION['erro'] = "Email ou senha incorretos.";

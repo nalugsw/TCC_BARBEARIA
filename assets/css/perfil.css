@@ -89,7 +89,7 @@ nav.menu-lateral-desktop .btn-sair{
 }
 
 
-nav.menu-lateral-desktop .btn-sair a button{
+nav.menu-lateral-desktop .btn-sair {
     border: none;
     cursor: pointer;
     height: 25px;
@@ -102,13 +102,13 @@ nav.menu-lateral-desktop .btn-sair a button{
     transition: 0.5s;
 }
 
-nav.menu-lateral-desktop .btn-sair a button:hover{
+nav.menu-lateral-desktop .btn-sair:hover{
     scale: 0.9;
     background-color: #2d4777;
     
 }
 
-nav.menu-lateral-desktop .btn-sair a button img{
+nav.menu-lateral-desktop .btn-sair img{
     margin-right: 18px;
     vertical-align: middle;
 }
@@ -297,6 +297,37 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     /* padding: ; */
 }
 
+#modal-sair{
+    margin: auto;
+    margin-top: 150px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 300px;
+    border: none;
+}
+.modal-sair{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btns-modal{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.btns-modal a{
+    text-decoration: none;
+}
+.btns-modal button{
+    padding: 5px;
+    width: 70px;
+}
+#modal-sair::backdrop{
+    background-color: #23232383;
+}
 /* CSS menu mobile */
 
 nav.menu-inferior-mobile {
