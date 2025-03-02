@@ -1,0 +1,359 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+}
+
+body{
+    background-color: #232323;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+}
+
+/* Menu mobile inferior >desligado< nessa versão desktop(CSS para que ele não apareça) */
+
+nav.menu-inferior-mobile{
+    display: none;
+}
+
+
+/* CSS do Menu Lateral DESKTOP e seus comportamnentos */
+
+nav.menu-lateral-desktop {
+    background-color: #313131;
+    height: 100vh;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.menu-lateral-desktop .logo img{
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+nav.menu-lateral-desktop ul{
+    width: 100%;
+    height: 60%;
+}
+
+nav.menu-lateral-desktop ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding-left: 21px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    transition: 0.5s;
+    
+}
+nav.menu-lateral-desktop ul li.item-menu:hover{
+    background-color: #232323;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 31px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link:hover{
+    font-weight: bold;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-lateral-desktop ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-lateral-desktop .btn-sair{
+    text-align: left;
+    margin-bottom: 20px;
+    margin-right: 80px;
+}
+
+nav.menu-lateral-desktop .btn-sair a button{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+
+nav.menu-lateral-desktop .btn-sair a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+    
+}
+
+nav.menu-lateral-desktop .btn-sair a button img{
+    margin-right: 18px;
+    vertical-align: middle;
+}
+
+/* CSS da sessão produtos */
+
+section.produtos{
+    padding-top: 80px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+section.produtos .titulo-produtos{
+    width: 796px;
+    color:#FFFFFF;
+    font-weight: bold;
+    text-align: left;
+    font-size: 26px;
+}
+
+section.produtos .grid-catalogo-produtos{
+    display: grid;
+    row-gap: 75px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 453px;
+    margin-top: 55px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+section.produtos .grid-catalogo-produtos::-webkit-scrollbar{
+    width: 13px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+section.produtos .grid-catalogo-produtos::-webkit-scrollbar-thumb{
+    background-color: #aaaaaa;
+    border-radius: 10px;
+    border: solid #e0e0e0 2px;
+}
+
+
+section.produtos .grid-catalogo-produtos .item-produto{
+    width: 170px;
+    height: 200px;
+    transition: 0.5s;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+
+section.produtos .grid-catalogo-produtos .item-produto:hover{
+    width: 170px;
+    height: 200px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+section.produtos .grid-catalogo-produtos .item-produto .img-produto img{
+    width: 170px;
+    height: 150px;
+    border-radius: 3px;
+}
+
+section.produtos .grid-catalogo-produtos .item-produto .txt-produto{
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+section.produtos .grid-catalogo-produtos .item-produto .txt-produto p{
+    font-size: 12px;
+    font-weight: 200;
+}
+
+section.produtos .modal{
+    display: none;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000a3;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-container #popup-descricao{
+    width: 308px;
+    font-size: 11px;
+    text-align: left;
+    font-weight: 800;
+    color: #3d3d3d;
+}
+
+.popup-container {
+    background: white;
+    padding: 30px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.popup-container p{
+    font-weight: bold;
+}
+
+.popup-container img {
+    width: 456px;
+    height: 300px;
+    
+    border-radius: 10px;
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    color: #B3B6BC;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.btn-fechar:hover {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    color: #A23333;
+    font-size: 20px;
+}
+
+
+/* CSS menu mobile */
+
+nav.menu-inferior-mobile {
+    margin-top: 20%;
+    position: fixed;
+    bottom: 0;
+    background-color: #898989;
+    /* padding-top: 7px; */
+    width: 100%;
+    height: 70px;
+    text-align: center;
+
+}
+
+nav.menu-inferior-mobile .logo {
+    width: 100%;
+}
+
+nav.menu-inferior-mobile .logo img{
+    margin-bottom: 40px;
+    
+    
+}
+
+nav.menu-inferior-mobile ul{
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+nav.menu-inferior-mobile ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+    
+}
+nav.menu-inferior-mobile ul li.item-menu:hover{
+    background-color: #d4d4d4;
+    
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    /* padding-left: 31px; */
+    border-radius: 100%;
+    transform: translateY(-15px);
+    
+}
+
+
+nav.menu-inferior-mobile ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-inferior-mobile ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-inferior-mobile ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-inferior-mobile .btn-sair{
+    padding-left: 21px;
+    text-align: left;
+}
+
+
+nav.menu-inferior-mobile .btn-sair a button{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    margin-top: 20vh;
+    transition: 0.5s;
+   
+    
+}
+
+nav.menu-inferior-mobile .btn-sair a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+    
+}
+
+nav.menu-inferior-mobile .btn-sair a button img{
+    margin-right: 18px;
+    vertical-align: middle;
+}
