@@ -44,13 +44,19 @@ body {
         transform: rotate(180deg); /* Mantém a rotação quando o botão está ativo */
 }
 
-.horarios-btn-ativo{
+.horarios-btn.ativo{
+    color: #1e1e1e;
     padding: 5px 10px 20px 10px;
     border: none;
     background-color: #f9f9f9;
     border-radius: 3px 3px 0 0 ;
     font-weight: bolder;
+    
+    
 }
+
+
+
 
 .selecao-horaio{
     width: 750px;
@@ -64,17 +70,39 @@ body {
     max-height: 55px;
 }
 
-.horarios{
+.horarios p{
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+}
+
+.horarios {
+   
     background: #f9f9f9;
-    width: 720px;
-    height: 300px;
+    max-width: 720px;
+    min-height: none;
+    max-height: 300px;
     border-radius: 0 0 5px 5px;
     color: #232323;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 10px;
+    overflow-x: hidden;
 }
+
+.horarios::-webkit-scrollbar{
+    width: 13px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+.horarios::-webkit-scrollbar-thumb{
+    background-color: #4065AB;
+    border-radius: 10px;
+    border: solid #e0e0e0 2px;
+}
+
 .horario-div{
     display: flex;
     justify-content: space-between;
@@ -84,10 +112,15 @@ body {
     margin: 15px 25px;
     border-bottom: #d9d9d9 solid 2px;
     padding-bottom: 5px;
+    
+    
 }
-.selecionar{
+
+.selecionar {
     margin: 5px 0;
-    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding:  3px 20px;
     background: #4065AB;
     border: none;
     border-radius: 3px;
