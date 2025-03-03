@@ -3,6 +3,7 @@
 include("../../config/conexao.php");
 session_start();
 require("../../functions/helpers.php");
+require("../../functions/agendamento.php");
 include("../../functions/verificar.php");
 
 ?>
@@ -93,12 +94,12 @@ include("../../functions/verificar.php");
                     <form action="">
                         <p>*Nome do perfil</p>
                         <div class="input-campo">
-                            <input type="text" placeholder="<?php echo nomeCliente($_SESSION['id_usuario']); ?>" name="nome" disabled>
+                            <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome" disabled>
                             <img src="../../assets/img/icon-lapis-alterar-campo.png" alt="">
                         </div>
                         <p>*Numero do perfil</p>
                         <div class="input-campo">
-                            <input type="text" placeholder="<?php echo numeroCliente($_SESSION['id_usuario']); ?>" name="telefone" disabled>
+                            <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" disabled>
                             <img src="../../assets/img/icon-lapis-alterar-campo.png" alt="">
                         </div>
                     </form>
@@ -109,12 +110,15 @@ include("../../functions/verificar.php");
                 <div class="caixa-horarios">
                     <!-- <div class="txt-sem-horarios"><p>SEM HORARIO MARCADO</p></div> -->
                         <div class="horario-caixa">
-                            <div class="nome-barbeiro"><p>Luis Pereira</p></div>
-                            <p>-</p>
-                            <div class="data-barbeiro"><p>13/09</p></div>
-                            <p>|</p>
-                            <div class="dia-barbeiro"><p>Sabádo</p></div>
-                            <div class="horario-barbeiro"><p>10:00</p></div>
+                            <?php $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
+                                foreach($dados as $agenda): ?>
+                                <div class="nome-barbeiro"><p><?php echo $agenda['funcionario']; ?></p></div>
+                                <p>-</p>
+                                <div class="data-barbeiro"><p><?php echo $agenda['data']; ?></p></div>
+                                <p>|</p>
+                                <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?></p></div>
+                                <div class="horario-barbeiro"><p><?php echo $agenda['horario']; ?></p></div>
+                                <?php endforeach; ?>
                         </div>
                 </div>
             </div>
