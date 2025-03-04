@@ -1,3 +1,12 @@
+<?php
+
+include("../../config/conexao.php");
+session_start();
+include("../../functions/helpers.php");
+verificaSession("cliente");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
