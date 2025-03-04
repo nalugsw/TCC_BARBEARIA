@@ -127,27 +127,36 @@ section.perfil .container-perfil{
 }
 
 section.perfil .container-perfil .foto-perfil{
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 170px;
     margin-right: 20px;
 }
 
 section.perfil .container-perfil .foto-perfil .profile-pic{
+    width: 150px;
+    height: 150px;
+}
+section.perfil .container-perfil .foto-perfil .profile-pic img{
+    width: 150px;
+    height:150px;
+    object-fit: cover;
     border-radius: 100%;
-    width: 180px;
-    height: 180px;
-    background-image: url(../img/homem-sorrindo-teste.avif);
-    background-size: cover;
-    background-position: center;
 }
 
 section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
     transform: translateY(-20px);
+    margin-left: 75%;
 }
 
+section.perfil .container-perfil .foto-perfil .btn-alterar-foto a{
+    width: 30px;
+    height: 30px;
+}
 section.perfil .container-perfil .foto-perfil .btn-alterar-foto img{
-    margin-left: 88%;
-    
+    width: 30px;
+    height: 30px;
+    object-fit:contain;
+
 }
 
 section.perfil .container-perfil {
