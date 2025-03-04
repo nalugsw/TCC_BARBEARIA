@@ -33,4 +33,42 @@ function DiaDaSemana($data) {
     return $diasDaSemana[$diaDaSemana];
 }
 
+//FUNÇÃO DE VERIFICAR SESSÃO
+
+function verificaSession($permissao){
+    if(!isset($_SESSION['id_usuario'])){
+        header("location: /TCC_BARBEARIA/index.php");
+        exit();
+    }
+    if($_SESSION['tipo_usuario'] !== $permissao){
+        header("location: /TCC_BARBEARIA/index.php");
+        exit();
+    }
+}
+
+//FUNÇÃO DE BUSCAR IMAGEM NO DATABASE
+
+function buscaImagemUsuario($id_usuario){
+    global $pdo;
+    $sql = "SELECT foto FROM CLIENTE WHERE id_usuario = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($imagem && !empty($imagem['foto'])) {
+        return "uploads/fotos/" . $imagem['foto']; 
+
+    }
+
+    $sql = "SELECT foto FROM FUNCIONARIO WHERE id_usuario = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($imagem && !empty($imagem['foto'])) {
+        return "uploads/fotos/" . $imagem['foto']; 
+    }
+    return "assets/img/avatar-padrao.jpg"; // Retorna a imagem padrão se não tiver nenhuma de nenhum cliente ou funcionario
+}
+
 ?>

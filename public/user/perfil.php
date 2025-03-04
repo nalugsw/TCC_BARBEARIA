@@ -3,8 +3,9 @@
 include("../../config/conexao.php");
 session_start();
 require("../../functions/helpers.php");
+verificaSession("cliente");
 require("../../functions/agendamento.php");
-include("../../functions/verificar.php");
+$id_usuario = $_SESSION['id_usuario'];
 
 ?>
 
@@ -66,7 +67,7 @@ include("../../functions/verificar.php");
         <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
 
     </nav>
-
+    
     
     <dialog close id="modal-sair" >
         <div class="modal-sair">
@@ -86,7 +87,7 @@ include("../../functions/verificar.php");
             <div class="foto-perfil">
                 <div class="profile-pic"></div>
                 <div class="btn-alterar-foto">
-                    <a href=""><img src="../../assets/img/icon-alterar-imagem.png" alt=""></a>
+                    <a href=""><img src="../../assets/img/icon-lapis-alterar-campo.png" alt="Foto perfil"></a>
                 </div>
             </div>
             <div class="form-perfil">
@@ -112,12 +113,12 @@ include("../../functions/verificar.php");
                         <div class="horario-caixa">
                             <?php $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
                                 foreach($dados as $agenda): ?>
-                                <div class="nome-barbeiro"><p><?php echo $agenda['funcionario']; ?></p></div>
-                                <p>-</p>
-                                <div class="data-barbeiro"><p><?php echo $agenda['data']; ?></p></div>
-                                <p>|</p>
-                                <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?></p></div>
-                                <div class="horario-barbeiro"><p><?php echo $agenda['horario']; ?></p></div>
+                                <div class="nome-barbeiro"><p><?php echo $agenda['funcionario']; ?> </p></div>
+                                <p> - </p>
+                                <div class="data-barbeiro"><p><?php echo $agenda['data']; ?> </p></div>
+                                <p> | </p>
+                                <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?> </p></div>
+                                <div class="horario-barbeiro"><p><?php echo $agenda['horario']; ?></p> </div>
                                 <?php endforeach; ?>
                         </div>
                 </div>
