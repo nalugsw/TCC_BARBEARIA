@@ -13,16 +13,6 @@
         width: 160px;
         height: 160px;
     }
-
-    section.perfil .container-perfil .foto-perfil .profile-pic{
-        border-radius: 100%;
-        width: 160px;
-        height: 160px;
-        background-image: url(../img/homem-sorrindo-teste.avif);
-        background-size: cover;
-        background-position: center;
-    }
-
     section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
         transform: translateY(-20px);
     }
