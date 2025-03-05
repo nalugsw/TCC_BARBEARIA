@@ -85,7 +85,7 @@ $id_usuario = $_SESSION['id_usuario'];
     <section class="perfil">
         <div class="container-perfil">
             <div class="foto-perfil">
-                <div class="profile-pic"><img src="../../assets/img/homem-sorrindo-teste.avif" alt=""></div>
+            <div class="profile-pic"><img src="<?php echo "../../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
                 <div class="btn-alterar-foto">
                     <a href=""><img src="../../assets/img/icon-lapis-alterar-campo.png" alt="Foto perfil"></a>
                 </div>
