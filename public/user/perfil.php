@@ -5,7 +5,6 @@ session_start();
 require("../../functions/helpers.php");
 verificaSession("cliente");
 require("../../functions/agendamento.php");
-$id_usuario = $_SESSION['id_usuario'];
 
 ?>
 
@@ -39,13 +38,13 @@ $id_usuario = $_SESSION['id_usuario'];
                 </a>
             </li>
             <li class="item-menu">
-                <a href="home.html">
+                <a href="home.php">
                     <img src="../../assets/img/icon-home.png" alt="">
                     <span class="txt-link">Home</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="#">
+                <a href="../produtos.php">
                     <img src="../../assets/img/icon-produtos.png" alt="">
                     <span class="txt-link">Produtos</span>
                 </a>

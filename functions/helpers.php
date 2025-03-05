@@ -56,7 +56,7 @@ function buscaImagemUsuario($id_usuario){
     $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($imagem && !empty($imagem['foto'])) {
-        return "uploads/fotos/" . $imagem['foto']; 
+        return "uploads/fotos/" . $imagem['foto'];
 
     }
 
