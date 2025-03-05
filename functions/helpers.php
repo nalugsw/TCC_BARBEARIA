@@ -52,7 +52,7 @@ function buscaImagemUsuario($id_usuario){
     global $pdo;
     $sql = "SELECT foto FROM CLIENTE WHERE id_usuario = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute();
+    $stmt->execute([$id_usuario]);
     $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($imagem && !empty($imagem['foto'])) {
@@ -62,7 +62,7 @@ function buscaImagemUsuario($id_usuario){
 
     $sql = "SELECT foto FROM FUNCIONARIO WHERE id_usuario = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute();
+    $stmt->execute([$id_usuario]);
     $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($imagem && !empty($imagem['foto'])) {
