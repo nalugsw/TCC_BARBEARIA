@@ -32,6 +32,7 @@ CREATE TABLE FUNCIONARIO (
     numero_telefone varchar(11) not null UNIQUE,
     biografia varchar(255) null,
     foto varchar(255) null,
+    portfolio varchar(255) null,
     id_usuario int
 );
 
