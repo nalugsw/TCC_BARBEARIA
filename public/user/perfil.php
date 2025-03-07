@@ -44,7 +44,7 @@ require("../../functions/agendamento.php");
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../produtos.php">
+                <a href="produtos.php">
                     <img src="../../assets/img/icon-produtos.png" alt="">
                     <span class="txt-link">Produtos</span>
                 </a>
