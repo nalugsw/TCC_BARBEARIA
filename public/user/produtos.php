@@ -14,8 +14,8 @@ verificaSession("cliente");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
-    <link rel="stylesheet" href="../assets/css/produtos.css">
-    <link rel="stylesheet" href="../assets/css/produtos-reponsividade.css">
+    <link rel="stylesheet" href="../../assets/css/produtos.css">
+    <link rel="stylesheet" href="../../assets/css/produtos-reponsividade.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,47 +30,57 @@ verificaSession("cliente");
     <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
     <nav class="menu-lateral-desktop">
         <div class="logo">
-            <img src="../assets/img/LOGO.png" alt="">
+            <img src="../../assets/img/LOGO.png" alt="">
         </div>
 
         <ul>
             <li class="item-menu">
                 <a href="perfil.php">
-                    <img src="../assets/img/icon-perfil.png" alt="">
+                    <img src="../../assets/img/icon-perfil.png" alt="">
                     <span class="txt-link">Perfil</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="home.html">
-                    <img src="../assets/img/icon-home.png" alt="">
+                <a href="home.php">
+                    <img src="../../assets/img/icon-home.png" alt="">
                     <span class="txt-link">Home</span>
                 </a>
             </li>
             <li class="item-menu">
                 <a href="#">
-                    <img src="../assets/img/icon-produtos.png" alt="">
+                    <img src="../../assets/img/icon-produtos.png" alt="">
                     <span class="txt-link">Produtos</span>
                 </a>
             </li>
             <li class="item-menu">
                 <a href="#">
-                    <img src="../assets/img/icon-informacoes.png" alt="">
+                    <img src="../../assets/img/icon-informacoes.png" alt="">
                     <span class="txt-link">Informações</span>
                 </a>
             </li>
             <li class="item-menu">
                 <a href="#">
-                    <img src="../assets/img/icon-agendar.png" alt="">
+                    <img src="../../assets/img/icon-agendar.png" alt="">
                     <span class="txt-link">Agendar</span>
                 </a>
             </li>
         </ul>
-        <div class="btn-sair">
-            <a href="../functions/logout.php"><button>
-                <img src="../assets/img/icon-sair.png" alt="">SAIR</button></a>
-        </div>
-    </nav>
+        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
 
+    </nav>
+    
+    
+    <dialog close id="modal-sair" >
+        <div class="modal-sair">
+            <p>realmente deseja sair?</p>
+            <div class="btns-modal">
+                <a href="../../functions/logout.php">
+                    <button class="btn-sair">Sair</button>
+                </a>
+                <button id="cancelar">Voltar</button>
+            </div>
+        </div>
+    </dialog>
     
     <!-- Fim do menu Desktop e inicio da sessão perfil -->
 
@@ -83,7 +93,7 @@ verificaSession("cliente");
         <div class="grid-catalogo-produtos">
             <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
                 <div class="img-produto">
-                    <img src="../assets/img/produto-teste.webp" alt="Kit Barba Balm">
+                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
                 </div>
                 <div class="txt-produto">
                     <h2>Kit Barba Balm</h2>
@@ -92,7 +102,7 @@ verificaSession("cliente");
             </div>
             <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
                 <div class="img-produto">
-                    <img src="../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
+                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
                 </div>
                 <div class="txt-produto">
                     <h2>Kit Barba Balm</h2>
@@ -101,7 +111,7 @@ verificaSession("cliente");
             </div>
             <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
                 <div class="img-produto">
-                    <img src="../assets/img/produto-teste.webp" alt="Kit Barba Balm">
+                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
                 </div>
                 <div class="txt-produto">
                     <h2>Kit Barba Balm</h2>
@@ -110,7 +120,7 @@ verificaSession("cliente");
             </div>
             <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
                 <div class="img-produto">
-                    <img src="../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
+                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
                 </div>
                 <div class="txt-produto">
                     <h2>Kit Barba Balm</h2>
@@ -119,7 +129,7 @@ verificaSession("cliente");
             </div>
             <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
                 <div class="img-produto">
-                    <img src="../assets/img/produto-teste.webp" alt="Kit Barba Balm">
+                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
                 </div>
                 <div class="txt-produto">
                     <h2>Kit Barba Balm</h2>
@@ -128,7 +138,7 @@ verificaSession("cliente");
             </div>
             <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
                 <div class="img-produto">
-                    <img src="../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
+                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
                 </div>
                 <div class="txt-produto">
                     <h2>Kit Barba Balm</h2>
@@ -137,7 +147,7 @@ verificaSession("cliente");
             </div>
             <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
                 <div class="img-produto">
-                    <img src="../assets/img/produto-teste.webp" alt="Kit Barba Balm">
+                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
                 </div>
                 <div class="txt-produto">
                     <h2>Kit Barba Balm</h2>
@@ -146,7 +156,7 @@ verificaSession("cliente");
             </div>
             <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
                 <div class="img-produto">
-                    <img src="../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
+                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
                 </div>
                 <div class="txt-produto">
                     <h2>Kit Barba Balm</h2>
@@ -180,37 +190,37 @@ verificaSession("cliente");
             <ul>
                 <li class="item-menu">
                     <a href="#">
-                        <img src="../assets/img/mobile-icon-perfil.png" alt="">
+                        <img src="../../assets/img/mobile-icon-perfil.png" alt="">
                         
                     </a>
                 </li>
                 <li class="item-menu">
                     <a href="#">
-                        <img src="../assets/img/mobile-icon-home.png" alt="">
+                        <img src="../../assets/img/mobile-icon-home.png" alt="">
                         
                     </a>
                 </li>
                 <li class="item-menu">
                     <a href="#">
-                        <img src="../assets/img/mobile-icon-produtos.png" alt="">
+                        <img src="../../assets/img/mobile-icon-produtos.png" alt="">
                         
                     </a>
                 </li>
                 <li class="item-menu">
                     <a href="#">
-                        <img src="../assets/img/mobile-icon-informacoes.png" alt="">
+                        <img src="../../assets/img/mobile-icon-informacoes.png" alt="">
                  
                     </a>
                 </li>
                 <li class="item-menu">
                     <a href="#">
-                        <img src="../assets/img/mobile-icon-agendar.png" alt="">
+                        <img src="../../assets/img/mobile-icon-agendar.png" alt="">
                       
                     </a>
                 </li>
                 <li class="item-menu">
                     <a href="#">
-                        <img src="../assets/img/mobile-icon-sair.png" alt="">
+                        <img src="../../assets/img/mobile-icon-sair.png" alt="">
                       
                     </a>
                 </li>
@@ -220,9 +230,10 @@ verificaSession("cliente");
 
    
 
-    
-        <script src="../assets/js/submenu-funcao.js"></script>
-        <script src="../assets/js/agendar-funcao.js"></script>
-        <script src="../assets/js/popup-produtos.js"></script>
+        
+        <script src="../../assets/js/modal.js"></script>
+        <script src="../../assets/js/submenu-funcao.js"></script>
+        <script src="../../assets/js/agendar-funcao.js"></script>
+        <script src="../../assets/js/popup-produtos.js"></script>
 </body>
 </html>

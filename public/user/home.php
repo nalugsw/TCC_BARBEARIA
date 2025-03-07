@@ -40,13 +40,13 @@ verificaSession("cliente");
                 </a>
             </li>
             <li class="item-menu">
-                <a href="home.html">
+                <a href="home.php">
                     <img src="../../assets/img/icon-home.png" alt="">
                     <span class="txt-link">Home</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="#">
+                <a href="produtos.php">
                     <img src="../../assets/img/icon-produtos.png" alt="">
                     <span class="txt-link">Produtos</span>
                 </a>
@@ -64,13 +64,22 @@ verificaSession("cliente");
                 </a>
             </li>
         </ul>
-        <div class="btn-sair">
-            <a href="../../functions/logout.php">
-                <button><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
-            </a>
-        </div>
+        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
+
     </nav>
     
+    
+    <dialog close id="modal-sair" >
+        <div class="modal-sair">
+            <p>realmente deseja sair?</p>
+            <div class="btns-modal">
+                <a href="../../functions/logout.php">
+                    <button class="btn-sair">Sair</button>
+                </a>
+                <button id="cancelar">Voltar</button>
+            </div>
+        </div>
+    </dialog>
     <!-- Fim do menu Desktop e inicio da sessão perfil -->
 
     <section class="home">
@@ -307,6 +316,7 @@ verificaSession("cliente");
     -->
 
     
+    <script src="../../assets/js/modal.js"></script>
     <script src="../../assets/js/submenu-funcao.js"></script>
     <script src="../../assets/js/agendar-funcao.js"></script>
 </body>

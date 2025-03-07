@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+}
+
+body{
+    background-color: #232323;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+}
+
+/* Menu mobile inferior >desligado< nessa versão desktop(CSS para que ele não apareça) */
+
+nav.menu-inferior-mobile{
+    display: none;
+}
+
+
+/* CSS do Menu Lateral DESKTOP e seus comportamnentos */
+
+nav.menu-lateral-desktop {
+    background-color: #313131;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+nav.menu-lateral-desktop .logo img{
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+nav.menu-lateral-desktop ul{
+    width: 100%;
+    height: 60%;
+
+}
+
+nav.menu-lateral-desktop ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding-left: 21px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    transition: 0.5s;
+
+}
+nav.menu-lateral-desktop ul li.item-menu:hover{
+    background-color: #232323;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 31px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link:hover{
+    font-weight: bold;
+}
+
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-lateral-desktop ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-lateral-desktop .btn-sair{
+    text-align: left;
+    margin-bottom: 20px;
+    margin-right: 80px;
+}
+
+
+nav.menu-lateral-desktop .btn-sair {
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+nav.menu-lateral-desktop .btn-sair:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+
+}
+
+nav.menu-lateral-desktop .btn-sair img{
+    margin-right: 18px;
+    vertical-align: middle;
+}
+
+/* CSS da sessão perfil */
+section{
+    display: flex;
+    justify-content: center;
+}
+.horarios-marcados{
+    display: flex;
+    flex-direction: column;
+}
+.servico-marcado{
+    display: grid;
+    grid-template-columns: 150px  1fr;
+    grid-template-rows: 40px 40px 40px 40px;
+}
+.servico-marcado .foto-cliente{
+    grid-column: 1/2;
+    grid-row: 1/5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #666;
+}
+.servico-marcado .foto-cliente img{
+    object-fit: cover;
+    border-radius: 100%;
+    width: 90px;
+}
+.servico-marcado .foto-cliente button{
+    width: 90%;
+    padding: 5px 0 ;
+    margin-top: 10px;
+    border: none;
+    background-color: #0A6A28;
+    color: #D3FAE0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #4e4e4e;
+}
+.dia-servicos{
+    text-align: center;
+    width: 800px;
+    background-color: #313131;
+    border-radius: 3px 3px 0 0;
+}
+.nome-cliente{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+}
+.numero-cliente{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+}
+.servico-cliente{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: flex;
+}
+.horario-cliente{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    display: flex;
+}
+.servico-marcado h3{
+    width: 150px;
+    padding-left: 10px;
+    background-color: #666;
+    padding: 8px 10px;
+    text-align:left;
+}
+.servico-marcado input{
+   width: 500px;
+   border: none;
+   border-radius: 0;
+   background-color: #878787;
+   padding: 10px 20px;
+   
+   
+}
+.servico-marcado input::placeholder{
+    color: #ffffff;
+    font-weight: bold;
+}
+.horario-cliente input{
+    width: 300px;
+}
+.horario-cliente button{
+    width: 200px;
+    background-color: #b13434;
+    color: #FFEAEA;
+    border: none;
+}
+/* modal */
+#modal-sair{
+    margin: auto;
+    margin-top: 150px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 300px;
+    border: none;
+}
+.modal-sair{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btns-modal{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.btns-modal a{
+    text-decoration: none;
+}
+.btns-modal button{
+    padding: 5px;
+    width: 70px;
+}
+#modal-sair::backdrop{
+    background-color: #23232383;
+}
+/* CSS menu mobile */
+
+nav.menu-inferior-mobile {
+    margin-top: 20%;
+    position: fixed;
+    bottom: 0;
+    background-color: #898989;
+    /* padding-top: 7px; */
+    width: 100%;
+    height: 70px;
+    text-align: center;
+
+}
+
+nav.menu-inferior-mobile .logo {
+    width: 100%;
+}
+
+nav.menu-inferior-mobile .logo img{
+    margin-bottom: 40px;
+
+
+}
+
+nav.menu-inferior-mobile ul{
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+nav.menu-inferior-mobile ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+
+}
+nav.menu-inferior-mobile ul li.item-menu:hover{
+    background-color: #d4d4d4;
+
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    /* padding-left: 31px; */
+    border-radius: 100%;
+    transform: translateY(-15px);
+
+}
+
+
+nav.menu-inferior-mobile ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-inferior-mobile ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-inferior-mobile ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-inferior-mobile .btn-sair{
+    padding-left: 21px;
+    text-align: left;
+}
+
+
+nav.menu-inferior-mobile .btn-sair a button{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    margin-top: 20vh;
+    transition: 0.5s;
+
+
+}
+
+nav.menu-inferior-mobile .btn-sair a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+
+}
+
+nav.menu-inferior-mobile .btn-sair a button img{
+    margin-right: 18px;
+    vertical-align: middle;
+}
