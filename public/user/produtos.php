@@ -1,9 +1,10 @@
 <?php
 
-include("../../config/conexao.php");
+include("../config/conexao.php");
 session_start();
-include("../../functions/helpers.php");
+require("../functions/helpers.php");
 verificaSession("cliente");
+require("../functions/produtos.php");
 
 ?>
 
