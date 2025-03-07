@@ -1,7 +1,5 @@
 <?php
 
-include("../config/conexao.php");
-
 function mostrarProdutos(){
     $sql = "SELECT * FROM produto";
     $stmt = $pdo->prepare($sql);

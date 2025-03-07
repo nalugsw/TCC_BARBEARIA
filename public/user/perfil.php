@@ -24,62 +24,8 @@ require("../../functions/agendamento.php");
     <link rel="stylesheet" href="../../assets/css/perfil-responsividade.css">
 </head>
 <body>
-    <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
-    <nav class="menu-lateral-desktop">
-        <div class="logo">
-            <img src="../../assets/img/LOGO.png" alt="">
-        </div>
 
-        <ul>
-            <li class="item-menu">
-                <a href="perfil.php">
-                    <img src="../../assets/img/icon-perfil.png" alt="">
-                    <span class="txt-link">Perfil</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="home.php">
-                    <img src="../../assets/img/icon-home.png" alt="">
-                    <span class="txt-link">Home</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="produtos.php">
-                    <img src="../../assets/img/icon-produtos.png" alt="">
-                    <span class="txt-link">Produtos</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-informacoes.png" alt="">
-                    <span class="txt-link">Informações</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-agendar.png" alt="">
-                    <span class="txt-link">Agendar</span>
-                </a>
-            </li>
-        </ul>
-
-        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
-
-    </nav>
-    
-    
-    <dialog close id="modal-sair" >
-        <div class="modal-sair">
-            <p>realmente deseja sair?</p>
-            <div class="btns-modal">
-                <a href="../../functions/logout.php">
-                    <button class="btn-sair">Sair</button>
-                </a>
-                <button id="cancelar">Voltar</button>
-            </div>
-        </div>
-    </dialog>
-    <!-- Fim do menu Desktop e inicio da sessão perfil -->
+<?php include("../../views/nav-padrao.php"); ?>
 
     <section class="perfil">
         <div class="container-perfil">
@@ -109,17 +55,17 @@ require("../../functions/agendamento.php");
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
                     <!-- <div class="txt-sem-horarios"><p>SEM HORARIO MARCADO</p></div> -->
-                        <div class="horario-caixa">
-                            <?php $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
+                    <?php $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
                                 foreach($dados as $agenda): ?>
+                            <div class="horario-caixa">
                                 <div class="nome-barbeiro"><p><?php echo $agenda['funcionario']; ?> </p></div>
                                 <p> - </p>
                                 <div class="data-barbeiro"><p><?php echo $agenda['data']; ?> </p></div>
                                 <p> | </p>
                                 <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?> </p></div>
                                 <div class="horario-barbeiro"><p><?php echo $agenda['horario']; ?></p> </div>
+                            </div>
                                 <?php endforeach; ?>
-                        </div>
                 </div>
             </div>
             
