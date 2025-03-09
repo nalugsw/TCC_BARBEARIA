@@ -20,6 +20,7 @@ CREATE TABLE CLIENTE (
 
 CREATE TABLE PRODUTO (
     id_produto int auto_increment PRIMARY KEY,
+    nome varchar(30) not null,
     preco decimal(6,2) not null,
     foto varchar(255) null,
     quantidade int(4) not null,
