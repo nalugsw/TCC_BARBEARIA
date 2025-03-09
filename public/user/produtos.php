@@ -5,6 +5,7 @@ session_start();
 require("../../functions/helpers.php");
 verificaSession("cliente");
 require("../../functions/produtos.php");
+$produtos = mostrarProdutos();
 
 ?>
 
@@ -38,83 +39,18 @@ require("../../functions/produtos.php");
             <h1>PRODUTOS</h1>
         </div>
 
-
         <div class="grid-catalogo-produtos">
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
+            <?php foreach($produtos as $produto): ?>
+                <div class="item-produto" data-titulo="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" data-descricao="<?php echo $produto['descricao']; ?>">
+                    <div class="img-produto">
+                        <img src="<?php echo BASE_URL; ?>uploads/produtos/<?php echo $produto['foto']; ?>" alt="Kit Barba Balm">
+                    </div>
+                    <div class="txt-produto">
+                        <h2><?php echo $produto['nome']; ?></h2>
+                        <p><?php echo $produto['preco']; ?></p>
+                    </div>
                 </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-
-           
-
+            <?php endforeach; ?>
         </div>
 
         <div id="popup" class="popup">
