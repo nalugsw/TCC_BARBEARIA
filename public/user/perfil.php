@@ -26,62 +26,7 @@ require("../../functions/agendamento.php");
 </head>
 <body>
     <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
-    <nav class="menu-lateral-desktop">
-        <div class="logo">
-            <img src="../../assets/img/LOGO.png" alt="">
-        </div>
-
-        <ul>
-            <li class="item-menu">
-                <a href="perfil.php">
-                    <img src="../../assets/img/icon-perfil.png" alt="">
-                    <span class="txt-link">Perfil</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="home.php">
-                    <img src="../../assets/img/icon-home.png" alt="">
-                    <span class="txt-link">Home</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="produtos.php">
-                    <img src="../../assets/img/icon-produtos.png" alt="">
-                    <span class="txt-link">Produtos</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-informacoes.png" alt="">
-                    <span class="txt-link">Informações</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-agendar.png" alt="">
-                    <span class="txt-link">Agendar</span>
-                </a>
-            </li>
-        </ul>
-
-        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
-
-    </nav>
-    
-    
-    <dialog close id="modal-sair" >
-        <div class="modal-sair">
-            <p>realmente deseja sair?</p>
-            <div class="btns-modal">
-                <a href="../../functions/logout.php">
-                    <button class="btn-sair">Sair</button>
-                </a>
-                <button id="cancelar-sair">Voltar</button>
-            </div>
-        </div>
-    </dialog>
     <!-- Fim do menu Desktop e inicio da sessão perfil -->
-
 <?php include("../../views/nav-padrao.php"); ?>
 
     <section class="perfil">
