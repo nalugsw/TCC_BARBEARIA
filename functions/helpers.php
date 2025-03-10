@@ -1,5 +1,9 @@
 <?php
 
+//CAMINHO ABSOLUTO DE PASTAS E ARQUIVOS
+
+define("BASE_URL", "http://localhost/TCC_BARBEARIA/");
+
 //RECUPERA OS DADOS DO CLIENTE
 
 function dadosCliente($id_usuario){
@@ -33,7 +37,7 @@ function DiaDaSemana($data) {
     return $diasDaSemana[$diaDaSemana];
 }
 
-//FUNÇÃO DE VERIFICAR SESSÃO
+//FUNÇÃO DE VERIFICAR SESSÃO ATIVA E SE O USUARIO PODE USAR A TELA
 
 function verificaSession($permissao){
     if(!isset($_SESSION['id_usuario'])){

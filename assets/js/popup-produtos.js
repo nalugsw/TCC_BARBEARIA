@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     produtos.forEach(produto => {
         produto.addEventListener("click", () => {
-            const titulo = produto.querySelector(".txt-produto h2").textContent;
-            const preco = produto.querySelector(".txt-produto p").textContent;
-            const imgSrc = produto.querySelector(".img-produto img").src;
-            const descricao = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing"; // Substitua com descrições reais
+            const titulo = produto.getAttribute("data-titulo");
+            const preco = produto.getAttribute("data-preco");
+            const descricao = produto.getAttribute("data-descricao");
+            const imgSrc = produto.querySelector(".img-produto img").src; // Substitua com descrições reais
 
             popupTitulo.textContent = titulo;
             popupPreco.textContent = preco;

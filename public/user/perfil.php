@@ -82,6 +82,8 @@ require("../../functions/agendamento.php");
     </dialog>
     <!-- Fim do menu Desktop e inicio da sessão perfil -->
 
+<?php include("../../views/nav-padrao.php"); ?>
+
     <section class="perfil">
         <div class="container-perfil">
             <div class="foto-perfil">
@@ -134,17 +136,17 @@ require("../../functions/agendamento.php");
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
                     <!-- <div class="txt-sem-horarios"><p>SEM HORARIO MARCADO</p></div> -->
-                        <div class="horario-caixa">
-                            <?php $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
+                    <?php $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
                                 foreach($dados as $agenda): ?>
+                            <div class="horario-caixa">
                                 <div class="nome-barbeiro"><p><?php echo $agenda['funcionario']; ?> </p></div>
                                 <p> - </p>
                                 <div class="data-barbeiro"><p><?php echo $agenda['data']; ?> </p></div>
                                 <p> | </p>
                                 <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?> </p></div>
                                 <div class="horario-barbeiro"><p><?php echo $agenda['horario']; ?></p> </div>
+                            </div>
                                 <?php endforeach; ?>
-                        </div>
                 </div>
             </div>
             

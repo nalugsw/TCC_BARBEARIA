@@ -1,10 +1,11 @@
 <?php
 
-include("../config/conexao.php");
+include("../../config/conexao.php");
 session_start();
-require("../functions/helpers.php");
+require("../../functions/helpers.php");
 verificaSession("cliente");
-require("../functions/produtos.php");
+require("../../functions/produtos.php");
+$produtos = mostrarProdutos();
 
 ?>
 
@@ -28,60 +29,8 @@ require("../functions/produtos.php");
     <link rel="stylesheet" href="../assets/css/home-responsividade.css">
 </head>
 <body>
-    <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
-    <nav class="menu-lateral-desktop">
-        <div class="logo">
-            <img src="../../assets/img/LOGO.png" alt="">
-        </div>
 
-        <ul>
-            <li class="item-menu">
-                <a href="perfil.php">
-                    <img src="../../assets/img/icon-perfil.png" alt="">
-                    <span class="txt-link">Perfil</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="home.php">
-                    <img src="../../assets/img/icon-home.png" alt="">
-                    <span class="txt-link">Home</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-produtos.png" alt="">
-                    <span class="txt-link">Produtos</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-informacoes.png" alt="">
-                    <span class="txt-link">Informações</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-agendar.png" alt="">
-                    <span class="txt-link">Agendar</span>
-                </a>
-            </li>
-        </ul>
-        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
-
-    </nav>
-    
-    
-    <dialog close id="modal-sair" >
-        <div class="modal-sair">
-            <p>realmente deseja sair?</p>
-            <div class="btns-modal">
-                <a href="../../functions/logout.php">
-                    <button class="btn-sair">Sair</button>
-                </a>
-                <button id="cancelar">Voltar</button>
-            </div>
-        </div>
-    </dialog>
+<?php include("../../views/nav-padrao.php"); ?>
     
     <!-- Fim do menu Desktop e inicio da sessão perfil -->
 
@@ -90,83 +39,18 @@ require("../functions/produtos.php");
             <h1>PRODUTOS</h1>
         </div>
 
-
         <div class="grid-catalogo-produtos">
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
+            <?php foreach($produtos as $produto): ?>
+                <div class="item-produto" data-titulo="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" data-descricao="<?php echo $produto['descricao']; ?>">
+                    <div class="img-produto">
+                        <img src="<?php echo BASE_URL; ?>uploads/produtos/<?php echo $produto['foto']; ?>" alt="Kit Barba Balm">
+                    </div>
+                    <div class="txt-produto">
+                        <h2><?php echo $produto['nome']; ?></h2>
+                        <p><?php echo $produto['preco']; ?></p>
+                    </div>
                 </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-            <div class="item-produto" data-titulo="Kit Barba Balm" data-preco="R$20,00" data-descricao="Kit para cuidar da barba com balm hidratante.">
-                <div class="img-produto">
-                    <img src="../../assets/img/produto-teste-2.webp" alt="Kit Barba Balm">
-                </div>
-                <div class="txt-produto">
-                    <h2>Kit Barba Balm</h2>
-                    <p>R$20,00</p>
-                </div>
-            </div>
-
-           
-
+            <?php endforeach; ?>
         </div>
 
         <div id="popup" class="popup">

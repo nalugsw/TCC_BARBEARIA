@@ -1,13 +1,12 @@
 <?php
 
-include("../config/conexao.php");
-
 function mostrarProdutos(){
+    global $pdo;
     $sql = "SELECT * FROM produto";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 ?>
