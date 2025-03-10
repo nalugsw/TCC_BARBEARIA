@@ -1,6 +1,6 @@
 (function() {
   let modalSair = document.getElementById("modal-sair");
-  let cancelar = document.getElementById("cancelar");
+  let cancelar = document.getElementById("cancelar-sair");
   let btnSair = document.getElementById("btn-sair");
 
   btnSair.addEventListener("click", function(){

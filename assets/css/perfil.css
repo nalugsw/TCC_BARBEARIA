@@ -151,6 +151,7 @@ section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
 section.perfil .container-perfil .foto-perfil .btn-alterar-foto a{
     width: 30px;
     height: 30px;
+    color: #3F4346;
 }
 section.perfil .container-perfil .foto-perfil .btn-alterar-foto img{
     width: 30px;
@@ -169,15 +170,14 @@ section.perfil .container-perfil.form form {
     max-width: 104px;
     height: 157px;
     padding: 0px 45px 0px 2px;
-    
-    
 }
 
-section.perfil .container-perfil .form form ::placeholder{
+section.perfil .container-perfil .form form input{
     font-weight: 500;
     font-size: 20px;
     padding: 12px;
     color: #898989;
+    background-color: #f9f9f9;
 }
 
 section.perfil .container-perfil .form form p{
@@ -200,7 +200,6 @@ section.perfil .container-perfil .form form label{
         transition: all .1s linear;
         -webkit-transition: all .1s linear;
         -moz-transition: all .1s linear;
-        background-color: #FDFDFD;
         padding: 1px 5.5px;
         box-sizing: border-box;
 }
@@ -210,17 +209,18 @@ section.perfil .container-perfil .form form .input-campo{
     margin-bottom: 20px;
 }
 
-section.perfil .container-perfil .form form .input-campo img{
+section.perfil .container-perfil .form form .input-campo span{
     transform: translateX(-30px) translatey(5px);
     width: 25px;
     height: 25px;
-    transition: 0.5s;
+    color: #3F4346;
 }
+
 .form-perfil{
     height: 145px;
 }
 
-section.perfil .container-perfil .form form .input-campo img:hover{
+section.perfil .container-perfil .form form .input-campo span:hover{
     opacity: 0.5;
 }
 
@@ -262,10 +262,6 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios::-webkit-scr
     background-color: #bababa;
     border-radius: 10px;
 }
-/* 
-section.perfil .container-perfil .horarios-marcados .caixa-horarios::-webkit-scrollbar-thumb:hover{
-    background-color: #;
-} */
 
 section.perfil .container-perfil .horarios-marcados .caixa-horarios{
     background-color: #FDFDFD;
@@ -336,6 +332,67 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
 }
 #modal-sair::backdrop{
     background-color: #23232383;
+}
+
+
+#modal-edit{
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+    border-radius: 3px;
+    width: 500px;
+    border: none;
+}
+#modal-edit::backdrop{
+    background-color: #23232383;
+}
+#modal-edit p{
+    font-size: 15px;
+    color: #313131;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    
+}
+#modal-edit .input-campo{
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+#modal-edit .input-campo input{
+    padding: 5px 20px 5px 20px
+}
+.input-file {
+    display: none; /* Esconde o input padrão */
+}
+
+.custom-file-button {
+    display: inline-block;
+    background-color: #898989;
+    color: #232323;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 1px 1px 1px #23232348;
+}
+
+.custom-file-button:hover,
+#modal-edit button:hover{
+    background-color: #646464;
+}
+
+#modal-edit button{
+    padding: 5px 10px;
+    background-color: #898989;
+    border: none;
+    border-radius: 3px;
+    color: #232323;
+    box-shadow: 1px 1px 1px #23232348;
+
 }
 /* CSS menu mobile */
 

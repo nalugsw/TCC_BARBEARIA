@@ -20,11 +20,13 @@ require("../../functions/agendamento.php");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- Importando pacote de icones do Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
     <link rel="stylesheet" href="../../assets/css/perfil-responsividade.css">
 </head>
 <body>
-
+    <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
+    <!-- Fim do menu Desktop e inicio da sessão perfil -->
 <?php include("../../views/nav-padrao.php"); ?>
 
     <section class="perfil">
@@ -32,7 +34,7 @@ require("../../functions/agendamento.php");
             <div class="foto-perfil">
             <div class="profile-pic"><img src="<?php echo "../../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
                 <div class="btn-alterar-foto">
-                    <a href=""><img src="../../assets/img/icon-lapis-alterar-campo.png" alt="Foto perfil"></a>
+                    <a href="" class="btn-edit"><span class="material-symbols-outlined">edit</span></a>
                 </div>
             </div>
             <div class="form-perfil">
@@ -40,17 +42,41 @@ require("../../functions/agendamento.php");
                     <form action="">
                         <p>*Nome do perfil</p>
                         <div class="input-campo">
-                            <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome" disabled>
-                            <img src="../../assets/img/icon-lapis-alterar-campo.png" alt="">
+                            <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome" readonly>
+                            <a href="" class="btn-edit"><span class="material-symbols-outlined">edit</span></a>
                         </div>
                         <p>*Numero do perfil</p>
                         <div class="input-campo">
-                            <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" disabled>
-                            <img src="../../assets/img/icon-lapis-alterar-campo.png" alt="">
+                            <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
+                            <a href="" class="btn-edit"><span class="material-symbols-outlined">edit</span></a>
                         </div>
                     </form>
                 </div>
             </div>
+            
+            <dialog closedir
+            id="modal-edit" >
+                <form action="">
+                    <p>*Foto do perfil</p>
+                    <div class="input-campo">
+                        <input type="file" id="arquivo" class="input-file">
+                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                    </div>
+                    <p>*Nome do perfil</p>
+                    <div class="input-campo">
+                        <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome">
+                    </div>
+                    <p>*Numero do perfil</p>
+                    <div class="input-campo">
+                        <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
+                    </div>
+                    <div class="btns-edit">
+                        <button type="submit">Atualizar</button>
+                        <button id="cancelar-edit">Voltar</button>
+                    </div>
+                </form>
+            </dialog>
+
             <div class="horarios-marcados">
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
@@ -113,6 +139,8 @@ require("../../functions/agendamento.php");
                 </li>
             </ul>
         </nav> -->
-        <script src="../../assets/js/modal.js"></script>
+        <script src="../../assets/js/formatar-telefone.js"></script>
+        <script src="../../assets/js/modal-deslogar.js"></script>
+        <script src="../../assets/js/modal-perfilEdit.js"></script>
 </body>
 </html>
