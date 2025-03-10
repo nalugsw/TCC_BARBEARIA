@@ -107,7 +107,8 @@ require("../../functions/agendamento.php");
                 </div>
             </div>
             
-            <dialog close id="modal-edit" >
+            <dialog closedir
+            id="modal-edit" >
                 <form action="">
                     <p>*Foto do perfil</p>
                     <div class="input-campo">
