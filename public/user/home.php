@@ -26,8 +26,7 @@ verificaSession("cliente");
     
 </head>
 <body>
- 
-<?php include("../../views/nav-padrao.php"); ?>
+    <?php include("../../views/nav-padrao.php"); ?>
 
     <section class="home">
         <div class="container-home">
@@ -48,20 +47,17 @@ verificaSession("cliente");
                         Jardim setadoido</p>
                 </div>
             </div>
-           <div class="marcar-horario">
-            <div class="btn-marcar-horario">
-                <a href="#"><button>MARCAR HORARIO</button></a>
+            <div class="marcar-horario">
+                <div class="btn-marcar-horario">
+                    <a href="#"><button>MARCAR HORARIO</button></a>
+                </div>
             </div>
-           </div>
         </div>
-
         <div class="submenu">
             <button class="btn ativo" data-target="grid1" >Portfolio</button>
             <button class="btn" data-target="grid2" >Serviços</button>
             <button class="btn" data-target="grid3" onclick="showHorarios()">Agenda</button>
         </div>
-       
-
         <div class="grids-container">
             <div class="grid" id="grid1">
                 <div class="item"><img src="../../assets/img/foto-grid1.png" alt=""></div>
@@ -88,7 +84,7 @@ verificaSession("cliente");
                             <div class="duracao">30 min</div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div class="item">
                     <img src="../../assets/img/servicos-2.png" alt="">
                     <div class="txt-teste">
@@ -98,7 +94,7 @@ verificaSession("cliente");
                             <div class="duracao">30 min</div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div class="item">
                     <img src="../../assets/img/servicos-3.png" alt="">
                     <div class="txt-teste">
@@ -108,7 +104,7 @@ verificaSession("cliente");
                             <div class="duracao">30 min</div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div class="item">
                     <img src="../../assets/img/imagem-servicos-teste.png" alt="">
                     <div class="txt-teste">
@@ -118,7 +114,7 @@ verificaSession("cliente");
                             <div class="duracao">30 min</div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div class="item">
                     <img src="../../assets/img/servicos-2.png" alt="">
                     <div class="txt-teste">
@@ -128,7 +124,7 @@ verificaSession("cliente");
                             <div class="duracao">30 min</div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div class="item">
                     <img src="../../assets/img/servicos-3.png" alt="">
                     <div class="txt-teste">
@@ -138,34 +134,99 @@ verificaSession("cliente");
                             <div class="duracao">30 min</div>
                         </div>
                     </div>
-                </div>  
-                
+                </div>
             </div>
-
-            
 
             <div class="grid" id="grid3">
                 <div class="agenda">
                     <div class="dia">
                         <div class="selecao-horaio">
                             <span><p>12/09 - segunda</p></span>
-                            <button class="horarios-btn-ativo" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
                         </div>
-                        <div class="horarios">
+                        <div class="horarios" style="display: none;">
                             <p>HORÁRIOS DISPONÍVEIS</p>
                             <div class="horario-div">
                                 <p><span>11:00</span><span> AM</span></p>
                                 <button class="selecionar">Selecionar</button>
                             </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:30</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>15:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>15:30</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>16:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>16:30</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>17:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
                         </div>
                     </div>
-                    
                     <div class="dia">
                         <div class="selecao-horaio">
                             <span><p>12/09 - terça</p></span>
-                            <button class="horarios-btn-fechado" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
                         </div>
-                        <div class="horarios">
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - quarta</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div> <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - quinta</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
                             <p>HORÁRIOS DISPONÍVEIS</p>
                             <div class="horario-div">
                                 <p><span>11:00</span><span> AM</span></p>
@@ -173,44 +234,43 @@ verificaSession("cliente");
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="dia">
-                        <div class="selecao-horaio">
-                            <span><p>12/09 - quarta</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
-                        </div>
-                    </div>
-                    
-                    <div class="dia">
-                        <div class="selecao-horaio">
-                            <span><p>12/09 - quinta</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
-                        </div>
-                    </div>
-                    
                     <div class="dia">
                         <div class="selecao-horaio">
                             <span><p>12/09 - sexta</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
                         </div>
                     </div>
-                    
                     <div class="dia">
                         <div class="selecao-horaio">
-                            <span><p>12/09 - sabado</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <span><p>12/09 - sábado</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
                         </div>
                     </div>
-                    
                     <div class="dia">
                         <div class="selecao-horaio">
                             <span><p>12/09 - domingo</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <button class="horarios-btn-fechado" onclick="toggleHorarios()">FECHADO  <i class="bi bi-x-square-fill"></i> </button>
                         </div>
                     </div>
-
+                    
+            
                 </div>
             </div>
+            
         </div>
     </section>
 
