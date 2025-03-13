@@ -1,13 +1,11 @@
-@media screen and (max-width: 1100px){
-
-}
-@media screen and (max-width: 980px){
-    .perfil{
-        flex-wrap: wrap;
+@media screen and (max-width: 925px){
+    section.perfil{
+        height: 100%;
+        margin: 0 51px;
     }
+
     section.perfil .container-perfil{
         display: flex;
-        align-items: center;
     }
     section.perfil .container-perfil .foto-perfil{
         width: 160px;
@@ -27,18 +25,20 @@
         margin-top: 0;
         margin-bottom: 15px;
     }
+    section.perfil .container-perfil .input-campo input{
+        font-size: 10px;
+    }
+    section.perfil .container-perfil .input-campo{
+        width: 270px;
+    }
 
     section.perfil .container-perfil.form form {
-        max-width: 100px;
+        max-width: 120px;
         height: 100px;
-        padding: 0px 45px 0px 2px;
-
-
     }
 
     section.perfil .container-perfil .form form ::placeholder{
         font-weight: 500;
-        font-size: 15px;
         padding: 8px;
         color: #898989;
     }
@@ -71,21 +71,15 @@
     section.perfil .container-perfil .form form input{
         border-radius: 3px;
         border: none;
-        width: 200px;
+        width: 100%;
         height: 40px;
         display: block;
         transition: 0.1s;
     }
 
-    section.perfil .container-perfil .form form input:focus{
-        outline: 2px solid #4891E6;
-        width: 290px;
-        height: 40px;
-        display: block;
-
-    }
     section.perfil .container-perfil .horarios-marcados{
         width: 350px;
+        margin-left: 25px;
     }
     section.perfil .container-perfil .horarios-marcados p{
         font-size: 10px;
@@ -101,7 +95,6 @@
         height: 107px;
         width: 350px;
         border-radius: 3px;
-
     }
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
@@ -114,13 +107,11 @@
 
 /* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
 
-@media screen and (max-width: 856px){
+@media screen and (max-width: 768px){
     section.perfil .container-perfil{
         margin: 0 auto;
         justify-content: center;
         justify-self: center
-
-
     }
 
     /* Ligando o Menu mobile e fazendo com que ele apareça apenas aqui na versão para celulares e etc */
@@ -136,7 +127,7 @@
     }
 
     nav.menu-lateral-desktop{
-        display: none;
+        /* display: none; */
     }
 
 
@@ -151,24 +142,19 @@
     section.perfil .container-perfil{
         display: flex;
         flex-direction: column;
-
-
     }
 
     section.perfil .container-perfil .foto-perfil{
         padding-top: 0px;
-        width: 160px;
-        height: 160px;
-        margin: 0 auto;
+        width: 150;
+        height: 150px;
+        margin: 0;
     }
 
     section.perfil .container-perfil .foto-perfil .profile-pic{
         border-radius: 100%;
         width: 160px;
         height: 160px;
-        background-image: url(../img/homem-sorrindo-teste.avif);
-        background-size: cover;
-        background-position: center;
     }
 
     section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
@@ -182,8 +168,7 @@
     }
 
     section.perfil .container-perfil .form {
-        max-width: 200px;
-        margin: 0 auto;
+        max-width: 220px;
     }
 
     section.perfil .container-perfil.form form {
@@ -224,25 +209,18 @@
             box-sizing: border-box;
     }
 
-    section.perfil .container-perfil .form form input{
+    section.perfil .container-perfil .form form .input-campo{
         border-radius: 3px;
         border: none;
-        width: 200px;
+        width: 250px;
         height: 40px;
-        display: block;
         transition: 0.1s;
+        margin-right: 0;
     }
 
-    section.perfil .container-perfil .form form input:focus{
-        outline: 2px solid #4891E6;
-        width: 290px;
-        height: 40px;
-        display: block;
-
-    }
     section.perfil .container-perfil .horarios-marcados{
-        margin: 0 auto;
-
+        display: block;
+        width: 270px;
     }
 
     section.perfil .container-perfil .horarios-marcados p{
@@ -257,7 +235,7 @@
     section.perfil .container-perfil .horarios-marcados .caixa-horarios{
         background-color: #FDFDFD;
         height: 107px;
-        width: 200px;
+        width: 270px;
         border-radius: 3px;
 
 

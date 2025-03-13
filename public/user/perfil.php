@@ -15,6 +15,7 @@ require("../../functions/agendamento.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/perfil.css">
+    <link rel="stylesheet" href="../../assets/css/perfil-responsividade.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,19 +23,18 @@ require("../../functions/agendamento.php");
     <!-- Importando pacote de icones do Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
-    <link rel="stylesheet" href="../../assets/css/perfil-responsividade.css">
 </head>
 <body>
     <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
     <!-- Fim do menu Desktop e inicio da sessão perfil -->
-<?php include("../../views/nav-padrao.php"); ?>
+    <?php include("../../views/nav-padrao.php"); ?>
 
     <section class="perfil">
         <div class="container-perfil">
             <div class="foto-perfil">
             <div class="profile-pic"><img src="<?php echo "../../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
                 <div class="btn-alterar-foto">
-                    <a href="" class="btn-edit"><span class="material-symbols-outlined">edit</span></a>
+                    <span class="material-symbols-outlined btn-edit">edit</span>
                 </div>
             </div>
             <div class="form-perfil">
@@ -43,12 +43,12 @@ require("../../functions/agendamento.php");
                         <p>*Nome do perfil</p>
                         <div class="input-campo">
                             <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome" readonly>
-                            <a href="" class="btn-edit"><span class="material-symbols-outlined">edit</span></a>
+                            <a href="" class="btn-edit"><span class="material-symbols-outlined ">edit</span></a>
                         </div>
                         <p>*Numero do perfil</p>
                         <div class="input-campo">
-                            <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
-                            <a href="" class="btn-edit"><span class="material-symbols-outlined">edit</span></a>
+                            <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" readonly>
+                            <a href="" class="btn-edit"><span class="material-symbols-outlined ">edit</span></a>
                         </div>
                     </form>
                 </div>
