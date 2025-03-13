@@ -49,7 +49,9 @@ if($total_reg > 0){
     if($cadastro){
         $pdo->commit();
         $_SESSION['cadastro_realizado'] = "Cadastro realizado com sucesso.";
-        header("location: ../index.php");
+        $_SESSION['id_usuario'] = $id_usuario;
+        $_SESSION['tipo_usuario'] = $tipo_usuario;
+        header("location: ../public/user/home.php");
         exit();
     }else{
         $pdo->rollBack();
