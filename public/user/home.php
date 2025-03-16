@@ -4,6 +4,9 @@ include("../../config/conexao.php");
 session_start();
 include("../../functions/helpers.php");
 verificaSession("cliente");
+include("../../functions/home.php");
+$produtos = mostrarServicos();
+$portfolio = mostrarImagemPortfolio();
 
 ?>
 
@@ -60,81 +63,25 @@ verificaSession("cliente");
         </div>
         <div class="grids-container">
             <div class="grid" id="grid1">
-                <div class="item"><img src="../../assets/img/foto-grid1.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid2.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid3.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid4.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid5.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid6.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid1.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid2.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid3.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid4.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid5.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid6.png" alt=""></div>
+                <?php foreach ($portfolio as $imagemPortfolio): ?>
+                    <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio; ?> " alt=""></div>
+                <?php endforeach; ?>
             </div>
 
             <div class="grid" id="grid2">
-                <div class="item">
-                    <img src="../../assets/img/imagem-servicos-teste.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
+                <?php foreach ($produtos as $produto): ?>
+                    <div class="item">
+                        <img src="../../uploads/servicos/<?php echo $produto['foto']; ?>" alt="">
+                        <div class="txt-teste">
+                            <h1><?php echo $produto['nome']; ?></h1>
+                            <div class="preco">
+                                <p><?php echo $produto['valor']; ?></p>
+                                <div class="duracao"><?php $duracaoEmMinutos = (int)date('i', strtotime($produto['duracao'])) . " min";
+                                echo $duracaoEmMinutos; ?></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-3.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/imagem-servicos-teste.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-3.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="grid" id="grid3">
