@@ -94,3 +94,16 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
 ('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 120, 'Condicionador para cabelos macios e brilhantes'),
 ('Escova de Dente', 4.50, 'escova_de_dente.png', 180, 'Escova de dente com cerdas macias'),
 ('Perfume Feminino', 89.90, 'perfume_feminino.png', 30, 'Perfume floral suave para o dia a dia');
+
+INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
+('Corte Masculino', 35.00, '00:30:00', 'corte_masculino.png'),
+('Corte Infantil', 25.00, '00:30:00', 'corte_infantil.png'),
+('Barba Completa', 30.00, '00:25:00', 'barba_completa.png'),
+('Corte e Barba', 60.00, '01:00:00', 'corte_e_barba.png'),
+('Sobrancelha', 15.00, '00:15:00', 'sobrancelha.png'),
+('Luzes Masculinas', 80.00, '01:30:00', 'luzes_masculinas.png'),
+('Progressiva', 120.00, '02:00:00', 'progressiva.png'),
+('Hidratação Capilar', 50.00, '00:40:00', 'hidratacao_capilar.png'),
+('Pigmentação de Barba', 40.00, '00:35:00', 'pigmentacao_barba.png'),
+('Relaxamento Capilar', 90.00, '01:45:00', 'relaxamento_capilar.png');
+
