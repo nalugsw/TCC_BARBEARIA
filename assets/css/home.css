@@ -226,36 +226,36 @@ section.home .submenu button {
 section.home .submenu button::after {
     content: '';
     width: 0;
-    height: 3px;  
+    height: 3px;
     background-color: #F6F7F9;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    transition: width 0.3s ease;  
+    transition: width 0.3s ease;
 }
 
 section.home .submenu button:hover::after,
 section.home .submenu button:focus::after {
-    width: 100%;  
+    width: 100%;
 }
 
 
 section.home .submenu button:focus {
-    outline: none;  
+    outline: none;
 }
 
+section.home .grids-container{
+}
 
 section.home .grids-container .grid.ativo{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 3px;
     width: 780px;
     height: 407px;
     margin: 0 auto;
     overflow-y: scroll;
     overflow-x: hidden;
-    
 }
 
 section.home .grids-container #grid2 .item{
@@ -270,17 +270,14 @@ section.home .grids-container #grid2 .item{
     row-gap: 2px;
     column-gap: 2px;
 }
-
 #grid2 .item{
     height: 150px;
 }
-
 
 #grid2 .item img{
     max-width: 389px;
     height: 150px;
     transition: 0.5s;
-   
 }
 
 #grid2 .item img:hover{
@@ -365,9 +362,9 @@ section.home .grids-container .grid::-webkit-scrollbar{
 }
 
 section.home .grids-container .grid::-webkit-scrollbar-thumb{
-    background-color: #aaaaaa;
     border-radius: 10px;
-    border: solid #e0e0e0 2px;
+    background-color: #898989;
+    border: solid  #e0e0e0 2px;
 }
 
 

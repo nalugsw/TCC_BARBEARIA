@@ -57,7 +57,7 @@ $portfolio = mostrarImagemPortfolio();
             </div>
         </div>
         <div class="submenu">
-            <button class="btn ativo" data-target="grid1" >Portfolio</button>
+            <button class="btn" data-target="grid1" >Portfolio</button>
             <button class="btn" data-target="grid2" >Serviços</button>
             <button class="btn" data-target="grid3" onclick="showHorarios()">Agenda</button>
         </div>
