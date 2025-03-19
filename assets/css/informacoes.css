@@ -8,6 +8,7 @@ main{
 h1{
   grid-column: 1/3;
   height: 50px;
+  color: #f3f3f3;
 }
 main{
   margin: 0 50px;

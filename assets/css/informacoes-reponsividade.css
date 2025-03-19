@@ -32,3 +32,8 @@
     margin-bottom: 60px;
   }
 }
+@media screen and (max-width: 1000px) {
+  iframe{
+    width: 400px;
+  }
+}

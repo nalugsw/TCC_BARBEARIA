@@ -108,29 +108,21 @@
 /* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
 
 @media screen and (max-width: 768px){
+
+    nav.menu-lateral-desktop{
+        display: none;
+    }
     section.perfil .container-perfil{
         margin: 0 auto;
         justify-content: center;
         justify-self: center
     }
 
-    /* Ligando o Menu mobile e fazendo com que ele apareça apenas aqui na versão para celulares e etc */
-    nav.menu-inferior-mobile{
-        display: block;
-    }
-    /* Desligando o Menu Desktop */
-
     body{
         background-color: #232323;
         display: flex;
         flex-direction: column;
     }
-
-    nav.menu-lateral-desktop{
-        /* display: none; */
-    }
-
-
 }
 
 @media screen and (max-width: 657px){
@@ -233,7 +225,6 @@
         font-size: 8.5px;
         color: #898989;
         font-weight: 500;
-        /* padding: 18%; */
         text-align: center;
     }
     section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa{
@@ -244,18 +235,12 @@
         margin-left: 3px;
         display: flex;
         gap: 10px;
-
-
-
     }
-
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
         color: #232323;
         font-size: 8.5px;
     }
-
-    /* Responsividade menu mobile */
 
     html{
         height: 100vh;
@@ -264,17 +249,4 @@
     body{
         height: 100%;
     }
-/* 
-    nav.menu-inferior-mobile{
-
-    } */
-
-    nav.menu-inferior-mobile ul{
-        width: 100%;
-        display: flex;
-        gap: 5px;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
-    }
-}
+} 
