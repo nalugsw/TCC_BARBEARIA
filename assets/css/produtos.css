@@ -113,11 +113,14 @@ nav.menu-lateral-desktop .btn-sair a button img{
 }
 
 /* CSS da sessão produtos */
+section{
+    margin: 0 30px;
+}
 
 section.produtos{
-    padding-top: 80px;
     align-items: center;
     margin: 0 auto;
+    padding: 0 30px;
 }
 
 section.produtos .titulo-produtos{
@@ -125,7 +128,7 @@ section.produtos .titulo-produtos{
     color:#FFFFFF;
     font-weight: bold;
     text-align: left;
-    font-size: 26px;
+    font-size: large;
 }
 
 section.produtos .grid-catalogo-produtos{

@@ -18,7 +18,7 @@ $produtos = mostrarProdutos();
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/produtos.css">
     <link rel="stylesheet" href="../../assets/css/produtos-reponsividade.css">
-
+    <link rel="stylesheet" href="../../assets/css/perfil.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,8 +117,8 @@ $produtos = mostrarProdutos();
 
         
         <script src="../../assets/js/modal.js"></script>
+        <script src="../../assets/js/modal-deslogar.js"></script>
         <script src="../../assets/js/submenu-funcao.js"></script>
-        <script src="../../assets/js/agendar-funcao.js"></script>
         <script src="../../assets/js/popup-produtos.js"></script>
 </body>
 </html>
