@@ -167,19 +167,8 @@
 
     }
 
-    section.perfil .container-perfil .form {
-        max-width: 220px;
-    }
-
-    section.perfil .container-perfil.form form {
-        max-width: 0px;
-        height: 100px;
-        padding: 0px 0px 0px 0px;
-    }
-
     section.perfil .container-perfil .form form ::placeholder{
         font-weight: 500;
-        font-size: 15px;
         padding: 8px;
         color: #898989;
     }
@@ -212,8 +201,6 @@
     section.perfil .container-perfil .form form .input-campo{
         border-radius: 3px;
         border: none;
-        width: 250px;
-        height: 40px;
         transition: 0.1s;
         margin-right: 0;
     }
@@ -221,6 +208,7 @@
     section.perfil .container-perfil .horarios-marcados{
         display: block;
         width: 270px;
+        margin: 0;
     }
 
     section.perfil .container-perfil .horarios-marcados p{

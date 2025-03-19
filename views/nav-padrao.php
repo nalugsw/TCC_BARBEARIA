@@ -43,13 +43,13 @@
             </a>
         </li>
         <li class="item-menu">
-            <a href="#">
+            <a href="<?php echo BASE_URL; ?>public/user/informacoes.php">
                 <img src="<?php echo BASE_URL; ?>assets/img/icon-informacoes.png" alt="">
                 <span class="txt-link">Informações</span>
             </a>
         </li>
         <li class="item-menu">
-            <a href="#">
+            <a href="">
                 <img src="<?php echo BASE_URL; ?>assets/img/icon-agendar.png" alt="">
                 <span class="txt-link">Agendar</span>
             </a>
@@ -68,7 +68,7 @@
             <a href="<?php echo BASE_URL; ?>functions/logout.php">
                 <button class="btn-sair">Sair</button>
             </a>
-            <button id="cancelar">Voltar</button>
+            <button id="cancelar-sair">Voltar</button>
         </div>
     </div>
 </dialog>
