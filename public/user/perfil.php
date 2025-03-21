@@ -100,45 +100,6 @@ require("../../functions/agendamento.php");
 
     <!-- Menu Mobile para dispositivos de telas pequenas -->
 
-<!--
-        <nav class="menu-inferior-mobile">
-
-            <ul>
-                <li class="item-menu">
-                    <a href="perfil.html">
-                        <img src="../assets/img/mobile-icon-perfil.png" alt="">
-                        
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="home.html">
-                        <img src="../assets/img/mobile-icon-home.png" alt="">
-                        
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-produtos.png" alt="">
-                        
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-informacoes.png" alt="">
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-agendar.png" alt="">
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-sair.png" alt="">
-                    </a>
-                </li>
-            </ul>
-        </nav> -->
         <script src="../../assets/js/formatar-telefone.js"></script>
         <script src="../../assets/js/modal-deslogar.js"></script>
         <script src="../../assets/js/modal-perfilEdit.js"></script>

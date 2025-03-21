@@ -19,7 +19,8 @@ $portfolio = mostrarImagemPortfolio();
     <link rel="stylesheet" href="../../assets/css/home.css">
     <link rel="stylesheet" href="../../assets/css/agendar.css">
     <link rel="stylesheet" href="../../assets/css/home-responsividade.css">
-    
+    <link rel="stylesheet" href="../../assets/css/perfil.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -57,7 +58,7 @@ $portfolio = mostrarImagemPortfolio();
             </div>
         </div>
         <div class="submenu">
-            <button class="btn ativo" data-target="grid1" >Portfolio</button>
+            <button class="btn" data-target="grid1" >Portfolio</button>
             <button class="btn" data-target="grid2" >Serviços</button>
             <button class="btn" data-target="grid3" onclick="showHorarios()">Agenda</button>
         </div>
@@ -271,6 +272,7 @@ $portfolio = mostrarImagemPortfolio();
 
     
     <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/modal-deslogar.js"></script>
     <script src="../../assets/js/submenu-funcao.js"></script>
     <script src="../../assets/js/agendar-funcao.js"></script>
 </body>
