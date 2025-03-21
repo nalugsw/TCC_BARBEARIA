@@ -56,7 +56,7 @@ require("../../functions/agendamento.php");
             
             <dialog closedir
             id="modal-edit" >
-                <form action="">
+                <form action="../../functions/editarPerfil.php" method="POST" enctype = "multipart/form-data">
                     <p>*Foto do perfil</p>
                     <div class="input-campo">
                         <input type="file" id="arquivo" class="input-file">
