@@ -35,7 +35,7 @@ if($total_reg > 0){
     if(!$id_usuario){
         $pdo->rollBack();
         $_SESSION['erro'] = "Erro ao cadastrar usuário";
-        header("location: ../public/cadastro.php");
+        header("location: ../public/user/cadastro.php");
         exit();
     }
     
@@ -56,7 +56,7 @@ if($total_reg > 0){
     }else{
         $pdo->rollBack();
         $_SESSION['erro'] = "Erro ao cadastrar o usuário. Tente novamente";
-        header("location: ../public/cadastro.php");
+        header("location: ../public/user/cadastro.php");
         exit();
     }
 

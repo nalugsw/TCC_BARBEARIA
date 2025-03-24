@@ -30,6 +30,7 @@
     }
     section.perfil .container-perfil .input-campo{
         width: 270px;
+        margin-right: 0;
     }
 
     section.perfil .container-perfil.form form {
@@ -79,7 +80,6 @@
 
     section.perfil .container-perfil .horarios-marcados{
         width: 350px;
-        margin-left: 25px;
     }
     section.perfil .container-perfil .horarios-marcados p{
         font-size: 10px;
@@ -105,13 +105,7 @@
     }
 }
 
-/* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
-
 @media screen and (max-width: 768px){
-
-    nav.menu-lateral-desktop{
-        display: none;
-    }
     section.perfil .container-perfil{
         margin: 0 auto;
         justify-content: center;
@@ -123,9 +117,8 @@
         display: flex;
         flex-direction: column;
     }
-}
 
-@media screen and (max-width: 657px){
+
     section.perfil{
         height: 100%;
         padding: 36px 0px;
@@ -247,6 +240,6 @@
     }
 
     body{
-        height: 100%;
+        height: 100vh;
     }
 } 
