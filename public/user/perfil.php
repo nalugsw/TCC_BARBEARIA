@@ -56,10 +56,10 @@ require("../../functions/agendamento.php");
             
             <dialog closedir
             id="modal-edit" >
-                <form action="../../functions/editarPerfil.php" method="POST" enctype = "multipart/form-data">
+            <form action="../../functions/editarPerfil.php" method="POST" enctype="multipart/form-data">
                     <p>*Foto do perfil</p>
                     <div class="input-campo">
-                        <input type="file" id="arquivo" class="input-file">
+                        <input type="file" id="arquivo" class="input-file" name="foto">
                         <label for="arquivo" class="custom-file-button">Escolha a foto</label>
                     </div>
                     <p>*Nome do perfil</p>
