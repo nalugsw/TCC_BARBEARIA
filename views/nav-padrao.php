@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
-    <link rel="stylesheet" href="../../assets/css/home.css">
-    <link rel="stylesheet" href="../../assets/css/agendar.css">
-    <link rel="stylesheet" href="../../assets/css/home-responsividade.css">
+    <link rel="stylesheet" href="../../assets/css/nav.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +47,7 @@
             </a>
         </li>
         <li class="item-menu">
-            <a href="">
+            <a href="<?php echo BASE_URL; ?>public/user/agenda.php">
                 <img src="<?php echo BASE_URL; ?>assets/img/icon-agendar.png" alt="">
                 <span class="txt-link">Agendar</span>
             </a>
