@@ -1,5 +1,7 @@
 <?php
 
+$id_usuario = $_SESSION['id_usuario'];
+
 //CAMINHO ABSOLUTO DE PASTAS E ARQUIVOS
 
 define("BASE_URL", "http://localhost/TCC_BARBEARIA/");
@@ -60,8 +62,7 @@ function buscaImagemUsuario($id_usuario){
     $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($imagem && !empty($imagem['foto'])) {
-        return "uploads/fotos/" . $imagem['foto'];
-
+        return $imagem['foto'];
     }
 
     $sql = "SELECT foto FROM FUNCIONARIO WHERE id_usuario = ?";
@@ -70,7 +71,7 @@ function buscaImagemUsuario($id_usuario){
     $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($imagem && !empty($imagem['foto'])) {
-        return "uploads/fotos/" . $imagem['foto']; 
+        return $imagem['foto']; 
     }
     return "assets/img/avatar-padrao.jpg"; // Retorna a imagem padrão se não tiver nenhuma de nenhum cliente ou funcionario
 }
