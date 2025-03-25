@@ -21,23 +21,35 @@ if(!in_array($extensao, $formatos_permitidos)){
     exit();
 }
 
-$nome_foto = $cliente['id_cliente'] . "." . $extensao;
-$caminho_foto = "uploads/fotos/" . $nome_foto;
+$nome_foto = $id_usuario . "." . $extensao;
+$caminho_foto = "../uploads/fotos/" . $nome_foto;
 
-if(!move_uploaded_file($foto['tmp_name'], $caminho_foto)){
-    $_SESSION['erro'] = "Erro ao enviar a imagem";
-    header("location: ../public/user/perfil.php");
-    exit();
+$origem = $_FILES['foto']['tmp_name'];
+$destino = __DIR__ . "/../uploads/fotos/" . $nome_foto;
+
+if (!file_exists($origem)) {
+    die("Erro: Arquivo temporário não encontrado.");
 }
+
+if (!is_writable(dirname($destino))) {
+    die("Erro: O diretório de destino não tem permissão de escrita.");
+}
+
+if (!move_uploaded_file($origem, $destino)) {
+    die("Erro ao mover o arquivo.");
+}
+
+echo "Upload realizado com sucesso!";
+
 
 $pdo->beginTransaction();
 
-$sql = "UPDATE cliente SET nome = :nome, foto = :foto, numero_telefone = :numero_telefone WHERE id_cliente = :id_cliente";
+$sql = "UPDATE cliente SET nome = :nome, foto = :foto, numero_telefone = :numero_telefone WHERE id_usuario = :id_usuario";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(":nome", $nome);
 $stmt->bindParam(":foto", $caminho_foto);
 $stmt->bindParam(":numero_telefone", $telefone);
-$stmt->bindParam(":id_cliente", $cliente['id_cliente']);
+$stmt->bindParam(":id_usuario", $id_usuario);
 
 if($stmt->execute()){
     $_SESSION['realizado'] = "Perfil atualizado com sucesso";
