@@ -1,5 +1,11 @@
 <?php
 
+$id_usuario = $_SESSION['id_usuario'];
+
+//CAMINHO ABSOLUTO DE PASTAS E ARQUIVOS
+
+define("BASE_URL", "http://localhost/TCC_BARBEARIA/");
+
 //RECUPERA OS DADOS DO CLIENTE
 
 function dadosCliente($id_usuario){
@@ -33,7 +39,7 @@ function DiaDaSemana($data) {
     return $diasDaSemana[$diaDaSemana];
 }
 
-//FUNÇÃO DE VERIFICAR SESSÃO
+//FUNÇÃO DE VERIFICAR SESSÃO ATIVA E SE O USUARIO PODE USAR A TELA
 
 function verificaSession($permissao){
     if(!isset($_SESSION['id_usuario'])){
@@ -44,31 +50,6 @@ function verificaSession($permissao){
         header("location: /TCC_BARBEARIA/index.php");
         exit();
     }
-}
-
-//FUNÇÃO DE BUSCAR IMAGEM NO DATABASE
-
-function buscaImagemUsuario($id_usuario){
-    global $pdo;
-    $sql = "SELECT foto FROM CLIENTE WHERE id_usuario = ?";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$id_usuario]);
-    $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($imagem && !empty($imagem['foto'])) {
-        return "uploads/fotos/" . $imagem['foto'];
-
-    }
-
-    $sql = "SELECT foto FROM FUNCIONARIO WHERE id_usuario = ?";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$id_usuario]);
-    $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($imagem && !empty($imagem['foto'])) {
-        return "uploads/fotos/" . $imagem['foto']; 
-    }
-    return "assets/img/avatar-padrao.jpg"; // Retorna a imagem padrão se não tiver nenhuma de nenhum cliente ou funcionario
 }
 
 ?>

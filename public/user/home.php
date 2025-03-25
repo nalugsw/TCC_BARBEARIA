@@ -4,6 +4,9 @@ include("../../config/conexao.php");
 session_start();
 include("../../functions/helpers.php");
 verificaSession("cliente");
+include("../../functions/home.php");
+$produtos = mostrarServicos();
+$portfolio = mostrarImagemPortfolio();
 
 ?>
 
@@ -16,7 +19,8 @@ verificaSession("cliente");
     <link rel="stylesheet" href="../../assets/css/home.css">
     <link rel="stylesheet" href="../../assets/css/agendar.css">
     <link rel="stylesheet" href="../../assets/css/home-responsividade.css">
-    
+    <link rel="stylesheet" href="../../assets/css/perfil.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -26,52 +30,7 @@ verificaSession("cliente");
     
 </head>
 <body>
-    <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
-    <nav class="menu-lateral-desktop">
-        <div class="logo">
-            <img src="../../assets/img/LOGO.png" alt="">
-        </div>
-
-        <ul>
-            <li class="item-menu">
-                <a href="perfil.php">
-                    <img src="../../assets/img/icon-perfil.png" alt="">
-                    <span class="txt-link">Perfil</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="home.html">
-                    <img src="../../assets/img/icon-home.png" alt="">
-                    <span class="txt-link">Home</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-produtos.png" alt="">
-                    <span class="txt-link">Produtos</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-informacoes.png" alt="">
-                    <span class="txt-link">Informações</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <img src="../../assets/img/icon-agendar.png" alt="">
-                    <span class="txt-link">Agendar</span>
-                </a>
-            </li>
-        </ul>
-        <div class="btn-sair">
-            <a href="../../functions/logout.php">
-                <button><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
-            </a>
-        </div>
-    </nav>
-    
-    <!-- Fim do menu Desktop e inicio da sessão perfil -->
+    <?php include("../../views/nav-padrao.php"); ?>
 
     <section class="home">
         <div class="container-home">
@@ -92,124 +51,130 @@ verificaSession("cliente");
                         Jardim setadoido</p>
                 </div>
             </div>
-           <div class="marcar-horario">
-            <div class="btn-marcar-horario">
-                <a href="#"><button>MARCAR HORARIO</button></a>
+            <div class="marcar-horario">
+                <div class="btn-marcar-horario">
+                    <a href="#"><button>MARCAR HORARIO</button></a>
+                </div>
             </div>
-           </div>
         </div>
-
         <div class="submenu">
-            <button class="btn ativo" data-target="grid1" >Portfolio</button>
+            <button class="btn" data-target="grid1" >Portfolio</button>
             <button class="btn" data-target="grid2" >Serviços</button>
             <button class="btn" data-target="grid3" onclick="showHorarios()">Agenda</button>
         </div>
-       
-
         <div class="grids-container">
             <div class="grid" id="grid1">
-                <div class="item"><img src="../../assets/img/foto-grid1.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid2.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid3.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid4.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid5.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid6.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid1.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid2.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid3.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid4.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid5.png" alt=""></div>
-                <div class="item"><img src="../../assets/img/foto-grid6.png" alt=""></div>
+                <?php foreach ($portfolio as $imagemPortfolio): ?>
+                    <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio; ?> " alt=""></div>
+                <?php endforeach; ?>
             </div>
 
             <div class="grid" id="grid2">
-                <div class="item">
-                    <img src="../../assets/img/imagem-servicos-teste.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
+                <?php foreach ($produtos as $produto): ?>
+                    <div class="item">
+                        <img src="../../uploads/servicos/<?php echo $produto['foto']; ?>" alt="">
+                        <div class="txt-teste">
+                            <h1><?php echo $produto['nome']; ?></h1>
+                            <div class="preco">
+                                <p><?php echo $produto['valor']; ?></p>
+                                <div class="duracao"><?php $duracaoEmMinutos = (int)date('i', strtotime($produto['duracao'])) . " min";
+                                echo $duracaoEmMinutos; ?></div>
+                            </div>
                         </div>
                     </div>
-                </div>  
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>  
-                <div class="item">
-                    <img src="../../assets/img/servicos-3.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>  
-                <div class="item">
-                    <img src="../../assets/img/imagem-servicos-teste.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>  
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>  
-                <div class="item">
-                    <img src="../../assets/img/servicos-3.png" alt="">
-                    <div class="txt-teste">
-                        <h1>Corte e Sombracelha</h1>
-                        <div class="preco">
-                            <p>R$40,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                </div>  
-                
+                <?php endforeach; ?>
             </div>
-
-            
 
             <div class="grid" id="grid3">
                 <div class="agenda">
                     <div class="dia">
                         <div class="selecao-horaio">
                             <span><p>12/09 - segunda</p></span>
-                            <button class="horarios-btn-ativo" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
                         </div>
-                        <div class="horarios">
+                        <div class="horarios" style="display: none;">
                             <p>HORÁRIOS DISPONÍVEIS</p>
                             <div class="horario-div">
                                 <p><span>11:00</span><span> AM</span></p>
                                 <button class="selecionar">Selecionar</button>
                             </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:30</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>15:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>15:30</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>16:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>16:30</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>17:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
                         </div>
                     </div>
-                    
                     <div class="dia">
                         <div class="selecao-horaio">
                             <span><p>12/09 - terça</p></span>
-                            <button class="horarios-btn-fechado" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
                         </div>
-                        <div class="horarios">
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - quarta</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div> <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - quinta</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
                             <p>HORÁRIOS DISPONÍVEIS</p>
                             <div class="horario-div">
                                 <p><span>11:00</span><span> AM</span></p>
@@ -217,44 +182,43 @@ verificaSession("cliente");
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="dia">
-                        <div class="selecao-horaio">
-                            <span><p>12/09 - quarta</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
-                        </div>
-                    </div>
-                    
-                    <div class="dia">
-                        <div class="selecao-horaio">
-                            <span><p>12/09 - quinta</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
-                        </div>
-                    </div>
-                    
                     <div class="dia">
                         <div class="selecao-horaio">
                             <span><p>12/09 - sexta</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
                         </div>
                     </div>
-                    
                     <div class="dia">
                         <div class="selecao-horaio">
-                            <span><p>12/09 - sabado</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <span><p>12/09 - sábado</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
                         </div>
                     </div>
-                    
                     <div class="dia">
                         <div class="selecao-horaio">
                             <span><p>12/09 - domingo</p></span>
-                            <button class="horarios-btn" onclick="toggleHorarios()">HORÁRIOS </button>
+                            <button class="horarios-btn-fechado" onclick="toggleHorarios()">FECHADO  <i class="bi bi-x-square-fill"></i> </button>
                         </div>
                     </div>
-
+                    
+            
                 </div>
             </div>
+            
         </div>
     </section>
 
@@ -307,6 +271,8 @@ verificaSession("cliente");
     -->
 
     
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/modal-deslogar.js"></script>
     <script src="../../assets/js/submenu-funcao.js"></script>
     <script src="../../assets/js/agendar-funcao.js"></script>
 </body>
