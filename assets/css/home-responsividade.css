@@ -2,7 +2,7 @@
 
     section.home{
         width: 100%;
-       padding: 80px 0px;
+        justify-content: center;
     }
 
     section.home .container-home{
@@ -10,13 +10,11 @@
         gap: 47px;
         margin: 0 auto;
         justify-content: center;
-        justify-self: center
-        
+        justify-self: center;
     }
 
     section.home .container-home  .marcar-horario .btn-marcar-horario a button{
         border: none;
-        
         cursor: pointer;
         height: 38px;
         font-size: 12px;
@@ -48,33 +46,15 @@
         
         
     }
-
-    /* Ligando o Menu mobile e fazendo com que ele apareça apenas aqui na versão para celulares e etc */
-    nav.menu-inferior-mobile{
-        display: none;
-    }
-    /* Desligando o Menu Desktop */
-
-    body{
-        background-color: #232323;
-        display: flex;
-        flex-direction: column;
-    }
-
-    nav.menu-lateral-desktop{
-        display: none;
-    }
-    
-
 }
 
 /* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
 
 
-@media screen and (max-width: 947px){
+@media screen and (max-width: 1016px){
     section.home{
         height: 100%;
-        padding: 36px 0px;
+        align-items: center;
     }
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
@@ -92,18 +72,6 @@
         height: 100%;
     }
 
-    nav.menu-inferior-mobile ul{
-        width: 100%;
-        display: flex;
-        gap: 5px;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-@media screen and (max-width: 947px){
-
     section.home .submenu{
         width: 386px;
         height: 44px;
@@ -113,11 +81,10 @@
     }
 
     section.home .submenu button {
-        /* padding: 6px 85px; */
         width: 257px;
         background-color: transparent;
         border: none;
-        font-size: 14px;
+        font-size: 17px;
         color: #F6F7F9;
         position: relative;
         margin-left: 3px;
@@ -139,7 +106,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 0px;
         width: 386px;
-        height: 407px;
+        height: 460px;
         margin: 0 auto;
         overflow-y: scroll;
         overflow-x: hidden;
@@ -159,7 +126,6 @@
     }
     
     section.home .container-home .foto-home{
-       
         width: 140px;
         height: 10px;
     }
@@ -213,10 +179,9 @@
     
     section.home .container-home  .marcar-horario .btn-marcar-horario a button{
         border: none;
-        
         cursor: pointer;
         height: 38px;
-        font-size: 15px;
+        font-size: 13px;
         font-weight: bold;
         padding: 7px  5px;
         color: #d4d4d4;
@@ -236,7 +201,7 @@
         gap: 0px;
         row-gap: 2px;
         column-gap: 2px;
-        width: 350px;
+        width: 386px;
         background-color: #d4d4d4;
     }
     
@@ -244,12 +209,10 @@
         height: 150px;
     }
     
-    
     #grid2 .item img{
         max-width: 389px;
         height: 150px;
         transition: 0.5s;
-       
     }
     
     #grid2 .item img:hover{
@@ -290,7 +253,6 @@
     }
 
     .horarios {
-   
         background: #f9f9f9;
         width: 340px;
         min-height: none;

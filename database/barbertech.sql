@@ -20,7 +20,8 @@ CREATE TABLE CLIENTE (
 
 CREATE TABLE PRODUTO (
     id_produto int auto_increment PRIMARY KEY,
-    valor decimal(6,2) not null,
+    nome varchar(30) not null,
+    preco decimal(6,2) not null,
     foto varchar(255) null,
     quantidade int(4) not null,
     descricao varchar(50) null
@@ -32,6 +33,7 @@ CREATE TABLE FUNCIONARIO (
     numero_telefone varchar(11) not null UNIQUE,
     biografia varchar(255) null,
     foto varchar(255) null,
+    portfolio varchar(255) null,
     id_usuario int
 );
 
@@ -82,3 +84,26 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_cliente
 ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
     FOREIGN KEY (id_servico)
     REFERENCES SERVICO (id_servico);
+
+    INSERT INTO PRODUTO (nome, preco, foto, quantidade, descricao) VALUES
+('Desodorante', 15.90, 'desodorante.png', 100, 'Desodorante em spray de longa duração'),
+('Shampoo Hidratante', 25.50, 'shampoo_hidratante.png', 50, 'Shampoo para cabelos secos e danificados'),
+('Sabonete Líquido', 7.40, 'sabonete_liquido.png', 200, 'Sabonete líquido com extrato de aloe vera'),
+('Pasta de Dente', 6.30, 'pasta_de_dente.png', 150, 'Pasta de dente para proteção contra cáries'),
+('Creme para Mãos', 12.80, 'creme_para_maos.png', 75, 'Creme hidratante para as mãos'),
+('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 120, 'Condicionador para cabelos macios e brilhantes'),
+('Escova de Dente', 4.50, 'escova_de_dente.png', 180, 'Escova de dente com cerdas macias'),
+('Perfume Feminino', 89.90, 'perfume_feminino.png', 30, 'Perfume floral suave para o dia a dia');
+
+INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
+('Corte Masculino', 35.00, '00:30:00', 'corte_masculino.png'),
+('Corte Infantil', 25.00, '00:30:00', 'corte_infantil.png'),
+('Barba Completa', 30.00, '00:25:00', 'barba_completa.png'),
+('Corte e Barba', 60.00, '01:00:00', 'corte_e_barba.png'),
+('Sobrancelha', 15.00, '00:15:00', 'sobrancelha.png'),
+('Luzes Masculinas', 80.00, '01:30:00', 'luzes_masculinas.png'),
+('Progressiva', 120.00, '02:00:00', 'progressiva.png'),
+('Hidratação Capilar', 50.00, '00:40:00', 'hidratacao_capilar.png'),
+('Pigmentação de Barba', 40.00, '00:35:00', 'pigmentacao_barba.png'),
+('Relaxamento Capilar', 90.00, '01:45:00', 'relaxamento_capilar.png');
+

@@ -1,11 +1,11 @@
-@media screen and (max-width: 1027px){
+@media screen and (max-width: 1090px){
 
     section.produtos .titulo-produtos{
         width: 596px;
         color: #FFFFFF;
         font-weight: bold;
         text-align: left;
-        font-size: 26px;
+        font-size: large;
     }
 
     section.produtos .grid-catalogo-produtos{
@@ -65,9 +65,7 @@
         display: none;
     }
 
-
 }
-
 @media screen and (max-width: 657px){
     section.perfil{
         height: 100%;
