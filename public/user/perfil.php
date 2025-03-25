@@ -5,6 +5,7 @@ session_start();
 require("../../functions/helpers.php");
 verificaSession("cliente");
 require("../../functions/agendamento.php");
+require("../../functions/perfil.php");
 
 ?>
 
@@ -32,7 +33,7 @@ require("../../functions/agendamento.php");
     <section class="perfil">
         <div class="container-perfil">
             <div class="foto-perfil">
-            <div class="profile-pic"><img src="<?php echo "../../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
+            <div class="profile-pic"><img src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
                 <div class="btn-alterar-foto">
                     <span class="material-symbols-outlined btn-edit">edit</span>
                 </div>
