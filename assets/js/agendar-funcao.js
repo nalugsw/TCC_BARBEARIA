@@ -1,3 +1,4 @@
+
 function toggleHorarios(button) {
   // Encontrar o elemento pai da div 'selecao-horaio'
   const diaDiv = button.closest('.dia');
@@ -14,3 +15,4 @@ function toggleHorarios(button) {
       button.classList.remove("ativo");
   }
 }
+
