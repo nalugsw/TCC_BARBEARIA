@@ -1,0 +1,39 @@
+@media screen and (max-width: 1400px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 100vh;
+    height: 800px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 40px;
+  }
+
+  main::-webkit-scrollbar{
+    width: 20px;
+    border-radius: 10px;
+  }
+
+  main::-webkit-scrollbar-thumb{
+      background-color: #aaaaaa;
+      border-radius: 10px;
+      background-clip: content-box;
+      border: 6px solid transparent;
+  }
+
+  .info-barbeiro,
+  .info-barbearia,
+  .info-projeto {
+    max-width: max-content;
+  }
+  
+  .info-projeto{
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  iframe{
+    width: 400px;
+  }
+}

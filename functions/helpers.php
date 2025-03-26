@@ -1,39 +1,55 @@
 <?php
 
-include("../config/conexao.php");
+$id_usuario = $_SESSION['id_usuario'];
 
-//RECUPERA O NOME DO USUARIO
+//CAMINHO ABSOLUTO DE PASTAS E ARQUIVOS
 
-function nomeCliente($id_usuario){
+define("BASE_URL", "http://localhost/TCC_BARBEARIA/");
+
+//RECUPERA OS DADOS DO CLIENTE
+
+function dadosCliente($id_usuario){
     global $pdo;
-    $sql = "SELECT CLIENTE.nome
-    FROM CLIENTE
-    JOIN USUARIO ON CLIENTE.id_usuario = USUARIO.id_usuario
-    WHERE USUARIO.id_usuario = :id_usuario";
+    $sql = "SELECT CLIENTE.nome, CLIENTE.numero_telefone, USUARIO.email
+            FROM CLIENTE
+            JOIN USUARIO ON CLIENTE.id_usuario = USUARIO.id_usuario
+            WHERE USUARIO.id_usuario = :id_usuario";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":id_usuario", $id_usuario, PDO::PARAM_INT);
     $stmt->execute();
 
-    $nome = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    return $nome['nome'];
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-//RECUPERA O NÚMERO DE TELEFONE
+//PEGA O DIA DA SEMANA
 
-function numeroCliente($id_usuario){
-    global $pdo;
-    $sql = "SELECT CLIENTE.numero_telefone
-    FROM CLIENTE
-    JOIN USUARIO ON CLIENTE.id_usuario = USUARIO.id_usuario
-    WHERE USUARIO.id_usuario = :id_usuario";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(":id_usuario", $id_usuario, PDO::PARAM_INT);
-    $stmt->execute();
+function DiaDaSemana($data) {
 
-    $numero_telefone = $stmt->fetch(PDO::FETCH_ASSOC);
+    $diaDaSemana = date('l', strtotime($data));
+    $diasDaSemana = [
+        'Sunday' => 'Domingo',
+        'Monday' => 'Segunda feira',
+        'Tuesday' => 'Terça feira',
+        'Wednesday' => 'Quarta feira',
+        'Thursday' => 'Quinta feira',
+        'Friday' => 'Sexta feira',
+        'Saturday' => 'Sábado'
+    ];
+    
+    return $diasDaSemana[$diaDaSemana];
+}
 
-    return $numero_telefone['numero_telefone'];
+//FUNÇÃO DE VERIFICAR SESSÃO ATIVA E SE O USUARIO PODE USAR A TELA
+
+function verificaSession($permissao){
+    if(!isset($_SESSION['id_usuario'])){
+        header("location: /TCC_BARBEARIA/index.php");
+        exit();
+    }
+    if($_SESSION['tipo_usuario'] !== $permissao){
+        header("location: /TCC_BARBEARIA/index.php");
+        exit();
+    }
 }
 
 ?>
