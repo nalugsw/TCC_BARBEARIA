@@ -21,7 +21,7 @@ function buscaImagemUsuario($id_usuario){
     if ($imagem && !empty($imagem['foto'])) {
         return $imagem['foto']; 
     }
-    return "assets/img/avatar-padrao.jpg"; // Retorna a imagem padrão se não tiver nenhuma de nenhum cliente ou funcionario
+    return "../assets/img/avatar-padrao.jpg"; // Retorna a imagem padrão se não tiver nenhuma de nenhum cliente ou funcionario
 }
 
 ?>
