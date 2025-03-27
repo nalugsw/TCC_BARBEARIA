@@ -1,5 +1,7 @@
 <?php
 
+require_once("helpers.php");
+
 function mostrarAgendamentos($id_usuario, $pdo){
     $sql = "SELECT 
     CLIENTE.nome AS nome,
@@ -70,9 +72,8 @@ function gerarProximosDiasUteis($conexao, $dias = 6, $idFuncionario = null) {
         $dataAtual->modify('+1 day');
         $dataFormatada = $dataAtual->format('Y-m-d');
         $diaSemana = strtolower($dataAtual->format('l'));
-        
         // Ajusta para nomes em português
-        $diaSemanaPt = traduzirDiaSemana($diaSemana);
+        $diaSemanaPt = DiaDaSemana($diaSemana); 
         
         // Verifica se está aberto e não é dia fechado
         if (isset($configHorarios[$diaSemanaPt]) && 
@@ -88,10 +89,10 @@ function gerarProximosDiasUteis($conexao, $dias = 6, $idFuncionario = null) {
                 'intervalo' => $configHorarios[$diaSemanaPt]['intervalo_minutos']
             ];
         }
-    }
+    
     
     return $diasUteis;
-}
+    }
 
 function gerarHorariosDisponiveis($horaAbertura, $horaFechamento, $intervalo) {
     $horarios = [];
