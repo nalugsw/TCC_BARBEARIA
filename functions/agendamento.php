@@ -72,8 +72,6 @@ function gerarProximosDiasUteis($conexao, $dias = 6, $idFuncionario = null) {
         $dataAtual->modify('+1 day');
         $dataFormatada = $dataAtual->format('Y-m-d');
         $diaSemana = strtolower($dataAtual->format('l'));
-    }
-
         // Ajusta para nomes em português
         $diaSemanaPt = DiaDaSemana($diaSemana); 
         

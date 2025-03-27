@@ -185,6 +185,47 @@ input:valid + label {
     color: #000;
 }
 
+/* CSS das error box e corrects box */
+
+.error-box{
+    align-items: center;
+    background-color: #FFB0B0;
+    padding: 12px 14px;
+    display: none;
+    font-weight: 700;
+    font-size: 10px;
+    width: 290px;
+    border-radius: 3px;
+    gap: 11px;
+}
+
+.error-box .txt-error{
+    width: 213px;
+}
+
+.error-box .icon i{
+    font-size: 24px;
+}
+
+.correct-box{
+    align-items: center;
+    background-color: #D3FAE0;
+    padding: 12px 14px;
+    display: none;
+    font-weight: 700;
+    font-size: 10px;
+    width: 290px;
+    border-radius: 3px;
+    gap: 11px;
+}
+
+.correct-box .txt-error{
+    width: 213px;
+}
+
+.correct-box .icon i{
+    font-size: 24px;
+}
 
 
 

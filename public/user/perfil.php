@@ -35,7 +35,7 @@ require_once("../../functions/perfil.php");
             <div class="foto-perfil">
             <div class="profile-pic"><img src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
                 <div class="btn-alterar-foto">
-                    <span class="material-symbols-outlined btn-edit">edit</span>
+                    <span class="material-symbols-outlined btn-edit" id="btn-edit-foto">edit</span>
                 </div>
             </div>
             <div class="form-perfil">
@@ -55,8 +55,7 @@ require_once("../../functions/perfil.php");
                 </div>
             </div>
             
-            <dialog closedir
-            id="modal-edit" >
+            <dialog closed id="modal-edit" >
             <form action="../../functions/editarPerfil.php" method="POST" enctype="multipart/form-data">
                     <p>*Foto do perfil</p>
                     <div class="input-campo">

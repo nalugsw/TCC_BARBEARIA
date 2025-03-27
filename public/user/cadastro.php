@@ -33,16 +33,16 @@ include("../../config/conexao.php");
                 <div class="form">
                     <form action="../../functions/cadastro.php" method="POST">
                         <label for="nome">Nome</label>
-                        <input type="text" placeholder="NOME" id="nome" name="nome">
+                        <input type="text" placeholder="NOME" id="nome" name="nome" required>
 
                         <label for="numero_telefone">Número de telefone</label>
-                        <input type="text" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone">
+                        <input type="" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone" maxlength="11" required>
 
                         <label for="email">Email</label>
-                        <input type="text" placeholder="EMAIL" id="email" name="email">
+                        <input type="text" placeholder="EMAIL" id="email" name="email" required>
                             
                         <label for="senha">Senha</label>
-                        <input type="password" placeholder="SENHA" id="senha" name="senha" minlength="8">
+                        <input type="password" placeholder="SENHA" id="senha" name="senha" minlength="8" required>
                     
                         </div>
                         <div class="termos">

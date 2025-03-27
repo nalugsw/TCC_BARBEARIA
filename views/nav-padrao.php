@@ -61,12 +61,12 @@
 
 <dialog close id="modal-sair" >
     <div class="modal-sair">
-        <p>realmente deseja sair?</p>
+        <p>Realmente deseja sair?</p>
         <div class="btns-modal">
             <a href="<?php echo BASE_URL; ?>functions/logout.php">
                 <button class="btn-sair">Sair</button>
             </a>
-            <button id="cancelar-sair">Voltar</button>
+            <button id="cancelar-sair">Cancelar</button>
         </div>
     </div>
 </dialog>
