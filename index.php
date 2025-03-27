@@ -15,6 +15,7 @@ include('config/conexao.php');
     <link rel="stylesheet" href="assets/css/responsividade.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -29,6 +30,22 @@ include('config/conexao.php');
                     </div>
                     <div class="titulo">
                         <h1>Seja bem vindo!</h1>
+                    </div>
+                    <div class="error-box">
+                        <div class="icon">
+                            <i class="bi bi-exclamation-circle"></i>
+                        </div>
+                        <div class="txt-error">
+                            <p>Usuário ou senha não conferem! Tente novamente!</p>
+                        </div>
+                    </div>
+                    <div class="correct-box">
+                        <div class="icon">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                        <div class="txt-correct">
+                            <p>Usuário cadastrado com sucesso! Parabéns!</p>
+                        </div>
                     </div>
                     <div class="form">
                         <form action="functions/autenticacao.php" method="POST">
