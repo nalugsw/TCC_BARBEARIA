@@ -63,8 +63,8 @@ CREATE TABLE CLIENTE_SERVICO (
 
 CREATE TABLE INFORMACOES(
     id_informacoes int AUTO_INCREMENT PRIMARY KEY,
-    informacoes_barbeiro VARCHAR(255) NOT NULL,
-    informacoes_barbearia VARCHAR(255) NOT NULL
+    informacoes_barbeiro TEXT NOT NULL,
+    informacoes_barbearia TEXT NOT NULL
 );
 
 CREATE TABLE PORTFOLIO(
