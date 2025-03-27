@@ -9,6 +9,7 @@ body{
   background-color: #232323;
   display: grid;
   grid-template-columns: 230px 1fr;
+  overflow: hidden;
 }
 
 /* Menu mobile inferior >desligado< nessa versão desktop(CSS para que ele não apareça) */
@@ -106,6 +107,38 @@ nav.menu-lateral-desktop .btn-sair:hover{
 nav.menu-lateral-desktop .btn-sair img{
   margin-right: 18px;
   vertical-align: middle;
+}
+
+#modal-sair{
+  margin: auto;
+  margin-top: 150px;
+  padding: 10px;
+  border-radius: 3px;
+  width: 300px;
+  border: none;
+}
+.modal-sair{
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btns-modal{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.btns-modal a{
+  text-decoration: none;
+}
+.btns-modal button{
+  padding: 5px;
+  width: 70px;
+}
+#modal-sair::backdrop{
+  background-color: #23232383;
 }
 
 .btn-sair{

@@ -102,6 +102,11 @@ section.perfil .container-perfil .form form .input-campo span{
     color: #3F4346;
 }
 
+#btn-edit-foto{
+    color: #FDFDFD;
+    cursor: pointer;
+}
+
 .form-perfil{
     height: 145px;
 }
@@ -181,21 +186,6 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     /* padding: ; */
 }
 
-#modal-sair{
-    margin: auto;
-    margin-top: 150px;
-    padding: 10px;
-    border-radius: 3px;
-    width: 300px;
-    border: none;
-}
-.modal-sair{
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 .btns-modal{
     margin-top: 20px;
     width: 100%;
@@ -213,12 +203,8 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     background-color: #23232383;
 }
 
-
 #modal-edit{
     height: 300px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: auto;
     padding: 10px;
     border-radius: 3px;
@@ -273,103 +259,3 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     box-shadow: 1px 1px 1px #23232348;
 
 }
-/* CSS menu mobile */
-/*
-nav.menu-inferior-mobile {
-    margin-top: 20%;
-    position: fixed;
-    bottom: 0;
-    background-color: #898989;
-    padding-top: 7px;
-    width: 100%;
-    height: 70px;
-    text-align: center;
-
-}
-
-nav.menu-inferior-mobile .logo {
-    width: 100%;
-}
-
-nav.menu-inferior-mobile .logo img{
-    margin-bottom: 40px;
-    
-    
-}
-
-nav.menu-inferior-mobile ul{
-    width: 100%;
-    display: flex;
-    gap: 25px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-}
-
-nav.menu-inferior-mobile ul li.item-menu{
-    list-style: none;
-    display: flex;
-    margin-bottom: 12px;
-    padding: 10px;
-    text-align: center;
-    transition: 0.5s;
-    
-}
-nav.menu-inferior-mobile ul li.item-menu:hover{
-    background-color: #d4d4d4;
-    
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-left: 31px;
-    border-radius: 100%;
-    transform: translateY(-15px);
-    
-}
-
-
-nav.menu-inferior-mobile ul li.item-menu a span.txt-link{
-    font-size: 15px;
-    margin-left: 15px;
-    font-weight: 300;
-    color: #d4d4d4;
-    /* text-decoration: none;
-}
-
-nav.menu-inferior-mobile ul li.item-menu a img{
-    vertical-align: middle;
-}
-
-nav.menu-inferior-mobile ul li.item-menu a{
-    text-decoration: none;
-}
-
-nav.menu-inferior-mobile .btn-sair{
-    padding-left: 21px;
-    text-align: left;
-}
-
-
-nav.menu-inferior-mobile .btn-sair a button{
-    border: none;
-    cursor: pointer;
-    height: 25px;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 3px  10px;
-    color: #d4d4d4;
-    background-color: #4065AB;
-    border-radius: 3px;
-    margin-top: 20vh;
-    transition: 0.5s;
-}
-
-nav.menu-inferior-mobile .btn-sair a button:hover{
-    scale: 0.9;
-    background-color: #2d4777;
-    
-}
-
-nav.menu-inferior-mobile .btn-sair a button img{
-    margin-right: 18px;
-    vertical-align: middle;
-}*/
