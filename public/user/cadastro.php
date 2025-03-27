@@ -36,7 +36,7 @@ include("../../config/conexao.php");
                         <input type="text" placeholder="NOME" id="nome" name="nome">
 
                         <label for="numero_telefone">Número de telefone</label>
-                        <input type="text" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone">
+                        <input type="text" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone" maxlenght="11">
 
                         <label for="email">Email</label>
                         <input type="text" placeholder="EMAIL" id="email" name="email">
