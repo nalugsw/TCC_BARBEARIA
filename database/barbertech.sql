@@ -179,3 +179,13 @@ INSERT INTO USUARIO (email, senha, status, tipo_usuario) VALUES
 INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
 ('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
 
+INSERT INTO PORTFOLIO (imagem) VALUES
+('macaquinho.jpg'),
+('macaquinho2.jpg'),
+('macaquinho3.jpg'),
+('macaquinho4.jpg'),
+('macaquinho5.jpg'),
+('macaquinho6.jpg'),
+('macaquinho7.jpg'),
+('macaquinho8.jpg'),
+('macaquinho9.jpg');

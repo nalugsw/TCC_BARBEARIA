@@ -12,7 +12,6 @@ $portfolio = mostrarImagemPortfolio();
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,16 +23,12 @@ $portfolio = mostrarImagemPortfolio();
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- Importando pacote de icones do Google Icons -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    
 </head>
-
 <body>
     <?php include("../../views/nav-padrao.php"); ?>
 
@@ -63,86 +58,86 @@ $portfolio = mostrarImagemPortfolio();
             </div>
         </div>
         <div class="submenu">
-            <button class="btn" data-target="grid1">Portfolio</button>
-            <button class="btn" data-target="grid2">Serviços</button>
+            <button class="btn" data-target="grid1" >Portfolio</button>
+            <button class="btn" data-target="grid2" >Serviços</button>
             <button class="btn" data-target="grid3" onclick="showHorarios()">Agenda</button>
         </div>
         <div class="grids-container">
             <div class="grid" id="grid1">
                 <?php foreach ($portfolio as $imagemPortfolio): ?>
-                <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio; ?> " alt=""></div>
+                    <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio; ?> " alt=""></div>
                 <?php endforeach; ?>
             </div>
 
             <div class="grid" id="grid2">
                 <?php foreach ($produtos as $produto): ?>
-                <div class="item">
-                    <img src="../../uploads/servicos/<?php echo $produto['foto']; ?>" alt="">
-                    <div class="txt-teste">
-                        <h1><?php echo $produto['nome']; ?></h1>
-                        <div class="preco">
-                            <p><?php echo $produto['valor']; ?></p>
-                            <div class="duracao"><?php $duracaoEmMinutos = (int)date('i', strtotime($produto['duracao'])) . " min";
+                    <div class="item">
+                        <img src="../../uploads/servicos/<?php echo $produto['foto']; ?>" alt="">
+                        <div class="txt-teste">
+                            <h1><?php echo $produto['nome']; ?></h1>
+                            <div class="preco">
+                                <p><?php echo $produto['valor']; ?></p>
+                                <div class="duracao"><?php $duracaoEmMinutos = (int)date('i', strtotime($produto['duracao'])) . " min";
                                 echo $duracaoEmMinutos; ?></div>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
             </div>
 
             <div class="grid" id="grid3">
-                <div class="agenda">
-                    <?php 
+    <div class="agenda">
+        <?php 
         $diasHorarios = mostrarDiasHorariosDisponiveis($conexao);
         
         if (empty($diasHorarios)): ?>
-                    <div class="sem-horarios">
-                        <p>Não há horários disponíveis para agendamento nos próximos dias.</p>
-                    </div>
-                    <?php else: 
+            <div class="sem-horarios">
+                <p>Não há horários disponíveis para agendamento nos próximos dias.</p>
+            </div>
+        <?php else: 
             foreach ($diasHorarios as $dia): 
         ?>
-                    <div class="dia">
-                        <div class="selecao-horaio">
-                            <span>
-                                <p><?= $dia['data'] ?> - <?= ucfirst($dia['dia_semana']) ?></p>
-                            </span>
-                            <button class="horarios-btn" onclick="toggleHorarios(this)">
-                                HORÁRIOS <i class="bi bi-caret-down-fill"></i>
-                            </button>
-                        </div>
-
-                        <div class="horarios" style="display: none;">
-                            <?php if (empty($dia['horarios'])): ?>
-                            <p class="nenhum-horario">Nenhum horário disponível</p>
-                            <?php else: ?>
-                            <p>HORÁRIOS DISPONÍVEIS</p>
-                            <?php foreach ($dia['horarios'] as $horario): ?>
+            <div class="dia">
+                <div class="selecao-horaio">
+                    <span><p><?= $dia['data'] ?> - <?= ucfirst($dia['dia_semana']) ?></p></span>
+                    <button class="horarios-btn" onclick="toggleHorarios(this)">
+                        HORÁRIOS <i class="bi bi-caret-down-fill"></i>
+                    </button>
+                </div>
+                
+                <div class="horarios" style="display: none;">
+                    <?php if (empty($dia['horarios'])): ?>
+                        <p class="nenhum-horario">Nenhum horário disponível</p>
+                    <?php else: ?>
+                        <p>HORÁRIOS DISPONÍVEIS</p>
+                        <?php foreach ($dia['horarios'] as $horario): ?>
                             <div class="horario-div">
                                 <p><span><?= $horario['hora'] ?></span><span> <?= $horario['periodo'] ?></span></p>
-                                <button class="selecionar" data-data="<?= $dia['data_completa'] ?>"
-                                    data-horario="<?= $horario['horario_completo'] ?>"
-                                    onclick="selecionarHorario(this)">
+                                <button class="selecionar" 
+                                        data-data="<?= $dia['data_completa'] ?>"
+                                        data-horario="<?= $horario['horario_completo'] ?>"
+                                        onclick="selecionarHorario(this)">
                                     Selecionar
                                 </button>
                             </div>
-                            <?php endforeach; ?>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                    <?php 
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php 
             endforeach;
         endif; 
         ?>
-                </div>
-            </div>
+    </div>
+</div>
+</div>
+            
         </div>
-
     </section>
 
     <!-- Menu Mobile para dispositivos de telas pequenas -->
 
-    <!--     
+<!--     
         <nav class="menu-inferior-mobile">
 
             <ul>
@@ -188,11 +183,11 @@ $portfolio = mostrarImagemPortfolio();
 
     -->
 
-
+    
     <script src="../../assets/js/modal.js"></script>
     <script src="../../assets/js/modal-deslogar.js"></script>
     <script src="../../assets/js/submenu-funcao.js"></script>
     <script src="../../assets/js/agendar-funcao.js"></script>
 </body>
-
 </html>
+
