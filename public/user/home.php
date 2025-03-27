@@ -65,7 +65,7 @@ $portfolio = mostrarImagemPortfolio();
         <div class="grids-container">
             <div class="grid" id="grid1">
                 <?php foreach ($portfolio as $imagemPortfolio): ?>
-                    <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio; ?> " alt=""></div>
+                    <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio['imagem']; ?> " alt=""></div>
                 <?php endforeach; ?>
             </div>
 
@@ -86,51 +86,138 @@ $portfolio = mostrarImagemPortfolio();
             </div>
 
             <div class="grid" id="grid3">
-    <div class="agenda">
-        <?php 
-        $diasHorarios = mostrarDiasHorariosDisponiveis($conexao);
-        
-        if (empty($diasHorarios)): ?>
-            <div class="sem-horarios">
-                <p>Não há horários disponíveis para agendamento nos próximos dias.</p>
-            </div>
-        <?php else: 
-            foreach ($diasHorarios as $dia): 
-        ?>
-            <div class="dia">
-                <div class="selecao-horaio">
-                    <span><p><?= $dia['data'] ?> - <?= ucfirst($dia['dia_semana']) ?></p></span>
-                    <button class="horarios-btn" onclick="toggleHorarios(this)">
-                        HORÁRIOS <i class="bi bi-caret-down-fill"></i>
-                    </button>
-                </div>
-                
-                <div class="horarios" style="display: none;">
-                    <?php if (empty($dia['horarios'])): ?>
-                        <p class="nenhum-horario">Nenhum horário disponível</p>
-                    <?php else: ?>
-                        <p>HORÁRIOS DISPONÍVEIS</p>
-                        <?php foreach ($dia['horarios'] as $horario): ?>
+                <div class="agenda">
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - segunda</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
                             <div class="horario-div">
-                                <p><span><?= $horario['hora'] ?></span><span> <?= $horario['periodo'] ?></span></p>
-                                <button class="selecionar" 
-                                        data-data="<?= $dia['data_completa'] ?>"
-                                        data-horario="<?= $horario['horario_completo'] ?>"
-                                        onclick="selecionarHorario(this)">
-                                    Selecionar
-                                </button>
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
                             </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:30</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>15:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>15:30</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>16:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>16:30</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>17:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - terça</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - quarta</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div> <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                            <div class="horario-div">
+                                <p><span>14:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - quinta</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - sexta</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - sábado</p></span>
+                            <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="horarios" style="display: none;">
+                            <p>HORÁRIOS DISPONÍVEIS</p>
+                            <div class="horario-div">
+                                <p><span>11:00</span><span> AM</span></p>
+                                <button class="selecionar">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dia">
+                        <div class="selecao-horaio">
+                            <span><p>12/09 - domingo</p></span>
+                            <button class="horarios-btn-fechado" onclick="toggleHorarios()">FECHADO  <i class="bi bi-x-square-fill"></i> </button>
+                        </div>
+                    </div>
+                    
+            
                 </div>
             </div>
-        <?php 
-            endforeach;
-        endif; 
-        ?>
-    </div>
-</div>
-</div>
             
         </div>
     </section>
@@ -190,4 +277,3 @@ $portfolio = mostrarImagemPortfolio();
     <script src="../../assets/js/agendar-funcao.js"></script>
 </body>
 </html>
-
