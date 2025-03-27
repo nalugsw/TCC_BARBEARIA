@@ -60,6 +60,46 @@ CREATE TABLE CLIENTE_SERVICO (
     id_cliente int,
     id_servico int
 );
+
+CREATE TABLE INFORMACOES(
+    id_informacoes int AUTO_INCREMENT PRIMARY KEY,
+    informacoes_barbeiro VARCHAR(255) NOT NULL,
+    informacoes_barbearia VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE PORTFOLIO(
+    id_portfolio INT AUTO_INCREMENT PRIMARY KEY,
+    imagem varchar(255) NOT NULL
+);
+
+-- Tabela para configurar dias e horários de funcionamento
+CREATE TABLE CONFIGURACAO_HORARIO (
+    id_configuracao INT AUTO_INCREMENT PRIMARY KEY,
+    dia_semana ENUM('segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo') NOT NULL,
+    aberto BOOLEAN DEFAULT FALSE,
+    hora_abertura TIME,
+    hora_fechamento TIME,
+    intervalo_minutos INT DEFAULT 30,
+    id_funcionario INT,
+    FOREIGN KEY (id_funcionario) REFERENCES FUNCIONARIO(id_funcionario)
+);
+
+-- Tabela para feriados/dias de fechamento
+CREATE TABLE DIAS_FECHADOS (
+    id_dia_fechado INT AUTO_INCREMENT PRIMARY KEY,
+    data DATE NOT NULL,
+    motivo VARCHAR(100),
+    id_funcionario INT,
+    FOREIGN KEY (id_funcionario) REFERENCES FUNCIONARIO(id_funcionario)
+);
+
+-- Tabela para configurações gerais da barbearia
+CREATE TABLE CONFIGURACAO_BARBEARIA (
+    id_configuracao INT AUTO_INCREMENT PRIMARY KEY,
+    dias_antecedencia_agendamento INT DEFAULT 15,
+    tempo_minimo_cancelamento INT DEFAULT 2, -- em horas
+    tempo_entre_agendamentos INT DEFAULT 15 -- em minutos
+);
  
 ALTER TABLE CLIENTE ADD CONSTRAINT fk_id_usuario
     FOREIGN KEY (id_usuario)
@@ -106,4 +146,36 @@ INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES
 ('Hidratação Capilar', 50.00, '00:40:00', 'hidratacao_capilar.png'),
 ('Pigmentação de Barba', 40.00, '00:35:00', 'pigmentacao_barba.png'),
 ('Relaxamento Capilar', 90.00, '01:45:00', 'relaxamento_capilar.png');
+
+INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia)values(
+    'João é barbeiro há 12 anos. Começou em uma barbearia pequena, aprendendo com mestres da área. Ao longo dos anos, se especializou em cortes modernos, barba estilizada e acabamento perfeito. Já atendeu uma grande variedade de clientes, de estilos clássicos a mais ousados. Ele também fez cursos de coloração e penteados, sempre buscando inovar. João se destaca pela atenção aos detalhes e pela forma descontraída de fazer os clientes se sentirem à vontade. Hoje, tem sua própria barbearia, onde é referência na cidade.',
+    'Na Barbearia do João, tradição e estilo se encontram para oferecer a melhor experiência em cortes e barba. Nossa barbearia combina técnicas clássicas com as últimas tendências, garantindo um atendimento personalizado para cada cliente. Com anos de experiência, João e sua equipe são especialistas em cortes modernos, degradês impecáveis e barbas bem definidas.'
+);
+
+-- Configuração padrão de horários (terça a domingo, folga na segunda)
+INSERT INTO CONFIGURACAO_HORARIO (dia_semana, aberto, hora_abertura, hora_fechamento, intervalo_minutos) VALUES
+('segunda', FALSE, NULL, NULL, 30), -- Folga
+('terca', TRUE, '09:00:00', '18:00:00', 30),
+('quarta', TRUE, '09:00:00', '18:00:00', 30),
+('quinta', TRUE, '09:00:00', '18:00:00', 30),
+('sexta', TRUE, '09:00:00', '18:00:00', 30),
+('sabado', TRUE, '08:00:00', '17:00:00', 30),
+('domingo', TRUE, '10:00:00', '15:00:00', 30);
+
+-- Alguns dias de fechamento exemplo
+INSERT INTO DIAS_FECHADOS (data, motivo) VALUES
+('2023-12-25', 'Natal'),
+('2024-01-01', 'Ano Novo'),
+('2024-04-21', 'Tiradentes');
+
+-- Configurações gerais da barbearia
+INSERT INTO CONFIGURACAO_BARBEARIA (dias_antecedencia_agendamento, tempo_minimo_cancelamento, tempo_entre_agendamentos) VALUES
+(15, 2, 15);
+
+-- Inserir um funcionário exemplo
+INSERT INTO USUARIO (email, senha, status, tipo_usuario) VALUES
+('barbeiro@example.com', SHA2('senha123', 256), 'verificado', 'funcionario');
+
+INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
+('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
 
