@@ -2,10 +2,10 @@
 
 include("../../config/conexao.php");
 session_start();
-require("../../functions/helpers.php");
+require_once("../../functions/helpers.php");
 verificaSession("cliente");
-require("../../functions/agendamento.php");
-require("../../functions/perfil.php");
+require_once("../../functions/agendamento.php");
+require_once("../../functions/perfil.php");
 
 ?>
 
