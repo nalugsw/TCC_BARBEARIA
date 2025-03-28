@@ -17,7 +17,7 @@ $res = $verifica_email->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 if($total_reg > 0){
     $_SESSION['erro'] = "Email já cadastrado.";
-    header("Location: ../public/cadastro.php");
+    header("Location: ../public/user/cadastro.php");
     exit();
 }else{
 

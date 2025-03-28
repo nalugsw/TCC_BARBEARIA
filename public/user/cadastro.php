@@ -11,8 +11,8 @@ include("../../config/conexao.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de login</title>
-    <link rel="stylesheet" href="../../assets/css/cadastro.css">
-    <link rel="stylesheet" href="../../assets/css/cadastro-responsividade.css">
+    <link rel="stylesheet" href="../../assets/css/user/cadastro.css">
+    <link rel="stylesheet" href="../../assets/css/user/cadastro-responsividade.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -33,16 +33,16 @@ include("../../config/conexao.php");
                 <div class="form">
                     <form action="../../functions/cadastro.php" method="POST">
                         <label for="nome">Nome</label>
-                        <input type="text" placeholder="NOME" id="nome" name="nome">
+                        <input type="text" placeholder="NOME" id="nome" name="nome" required>
 
                         <label for="numero_telefone">Número de telefone</label>
-                        <input type="text" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone">
+                        <input type="" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone" maxlength="11" required>
 
                         <label for="email">Email</label>
-                        <input type="text" placeholder="EMAIL" id="email" name="email">
+                        <input type="text" placeholder="EMAIL" id="email" name="email" required>
                             
                         <label for="senha">Senha</label>
-                        <input type="password" placeholder="SENHA" id="senha" name="senha" minlength="8">
+                        <input type="password" placeholder="SENHA" id="senha" name="senha" minlength="8" required>
                     
                         </div>
                         <div class="termos">

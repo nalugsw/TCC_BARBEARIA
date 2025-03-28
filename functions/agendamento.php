@@ -1,5 +1,7 @@
 <?php
 
+require_once("helpers.php");
+
 function mostrarAgendamentos($id_usuario, $pdo){
     $sql = "SELECT 
     CLIENTE.nome AS nome,

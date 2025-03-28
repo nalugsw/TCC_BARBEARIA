@@ -11,15 +11,6 @@ body{
     grid-template-columns: 230px 1fr;
 }
 
-/* Menu mobile inferior >desligado< nessa versão desktop(CSS para que ele não apareça) */
-
-nav.menu-inferior-mobile{
-    display: none;
-}
-
-
-/* CSS do Menu Lateral DESKTOP e seus comportamnentos */
-
 nav.menu-lateral-desktop {
     background-color: #313131;
     height: 100vh;
@@ -27,6 +18,8 @@ nav.menu-lateral-desktop {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    width: 230px;
 }
 
 
@@ -82,13 +75,23 @@ nav.menu-lateral-desktop ul li.item-menu a{
     text-decoration: none;
 }
 
-nav.menu-lateral-desktop .btn-sair{
-    text-align: left;
-    margin-bottom: 20px;
-    margin-right: 80px;
+nav.menu-lateral-desktop .itens{
+    display: flex;
+    margin-bottom: 30px;
+    width: 200px;
+    align-items: center;
+    justify-content: space-around;
 }
 
+nav.menu-lateral-desktop .itens span{
+    color: #f4f4f4;
+    transition: 0.2s;
+}
 
+nav.menu-lateral-desktop .itens span:hover{
+    scale: 1.03;
+    color: #e6e0e0;
+}
 nav.menu-lateral-desktop .btn-sair {
     border: none;
     cursor: pointer;
@@ -112,8 +115,88 @@ nav.menu-lateral-desktop .btn-sair img{
     margin-right: 18px;
     vertical-align: middle;
 }
+/* nav engrenagem */
+nav.menu-lateral-settings-desktop{
+    background-color: #313131;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 230px;
+    padding: 50px 0;
+    color: #f4f4f4;
+}
+
+nav.menu-lateral-settings-desktop.hide{
+    display: none;
+}
+
+nav.menu-lateral-settings-desktop img{
+    width: 120px;
+}
+
+nav.menu-lateral-settings-desktop a{
+    text-decoration: none;
+    color: #f4f4f4;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 300;
+}
+
+nav.menu-lateral-settings-desktop ul{
+    height: 500px;
+}
+
+nav.menu-lateral-settings-desktop li{
+    list-style: none;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: #2e2e2e solid 1px;
+    width: 200px;
+}
+
+nav.menu-lateral-settings-desktop li a:hover{
+    justify-content: center;
+    font-weight: 700;
+}
+
+nav.menu-lateral-settings-desktop li span{
+    margin-right: 10px;
+}
+nav.menu-lateral-settings-desktop h2{
+    margin-top: 45px;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1.3px;
+    border-bottom: #2e2e2e solid 1px;
+    padding-bottom: 20px;
+    width: 200px;
+}
+#btn-voltar-config{
+    position: absolute;
+    bottom: 30px;
+
+}
+#btn-voltar-config button{
+    border: none;
+    padding: 5px 20px;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: 5ms;
+    background-color: #f4f4f4;
+}
+#btn-voltar-config button:hover{
+    background-color: #d3d3d3;
+    font-weight: 600;
+    scale: 1.05;
+}
 
 /* CSS da sessão perfil */
+main{
+    grid-column: 2/3;
+}
 section{
     display: flex;
     justify-content: center;
@@ -121,11 +204,14 @@ section{
 .horarios-marcados{
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    height: 500px;
 }
 .servico-marcado{
     display: grid;
     grid-template-columns: 150px  1fr;
     grid-template-rows: 40px 40px 40px 40px;
+    margin: 2px 2px 4px 2px  ;
 }
 .servico-marcado .foto-cliente{
     grid-column: 1/2;
@@ -135,6 +221,7 @@ section{
     align-items: center;
     justify-content: space-evenly;
     background-color: #666;
+    margin-right: 2px;
 }
 .servico-marcado .foto-cliente img{
     object-fit: cover;
@@ -142,35 +229,50 @@ section{
     width: 90px;
 }
 .servico-marcado .foto-cliente button{
-    width: 90%;
+    width: 120px;
     padding: 5px 0 ;
     margin-top: 10px;
     border: none;
     background-color: #0A6A28;
     color: #D3FAE0;
     border-radius: 3px;
-    box-shadow: 1px 1px 2px #4e4e4e;
+    box-shadow: 1px 1px 2px #4e4e4e4b;
+    text-transform:capitalize;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.servico-marcado .foto-cliente button:hover{
+    background-color: #05581f;
+    scale: 1.05;
 }
 .dia-servicos{
     text-align: center;
-    width: 800px;
+    width: 100%;
     background-color: #313131;
     border-radius: 3px 3px 0 0;
+    padding: 6px 0;
+    color: #f4f4f4;
 }
 .nome-cliente{
     grid-column: 2/3;
     grid-row: 1/2;
     display: flex;
+    margin-bottom: 2px;
 }
 .numero-cliente{
     grid-column: 2/3;
     grid-row: 2/3;
     display: flex;
+    margin-bottom: 2px;
 }
 .servico-cliente{
     grid-column: 2/3;
     grid-row: 3/4;
     display: flex;
+    margin-bottom: 2px;
 }
 .horario-cliente{
     grid-column: 2/3;
@@ -183,6 +285,7 @@ section{
     background-color: #666;
     padding: 8px 10px;
     text-align:left;
+    font-weight: 400;
 }
 .servico-marcado input{
    width: 500px;
@@ -190,8 +293,6 @@ section{
    border-radius: 0;
    background-color: #878787;
    padding: 10px 20px;
-   
-   
 }
 .servico-marcado input::placeholder{
     color: #ffffff;
@@ -200,12 +301,65 @@ section{
 .horario-cliente input{
     width: 300px;
 }
-.horario-cliente button{
+
+.cliente-hora a{
+    text-decoration: none;
+}
+.horario-cliente button {
     width: 200px;
     background-color: #b13434;
     color: #FFEAEA;
     border: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    font-weight:500;
+    transition: 0.2s;
+    height: 100%;
 }
+.horario-cliente button:hover{
+    background-color: #ac2d2d;
+}
+.cliente-hora{
+    background-color: #4e4e4e;
+    border-radius: 3px;
+    padding-bottom: 0.1px;
+    margin-bottom: 3px;
+}
+.foto-adm{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+}
+.foto-adm img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.foto-adm span{
+    color: #f4f4f4;
+}
+
+.informacoes-home h1,
+.endereco-info p{
+    color: #f4f4f4;
+    display: flex;
+    align-items: center;
+}
+
+.informacoes-home h1 span,
+.endereco-info p span{
+    margin-left: 10px;
+}
+.perfil-adm{
+    margin: 95px 0 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 /* modal */
 #modal-sair{
     margin: auto;

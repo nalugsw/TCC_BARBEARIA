@@ -2,10 +2,10 @@
 
 include("../../config/conexao.php");
 session_start();
-require("../../functions/helpers.php");
+require_once("../../functions/helpers.php");
 verificaSession("cliente");
-require("../../functions/agendamento.php");
-require("../../functions/perfil.php");
+require_once("../../functions/agendamento.php");
+require_once("../../functions/perfil.php");
 
 ?>
 
@@ -15,8 +15,8 @@ require("../../functions/perfil.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
-    <link rel="stylesheet" href="../../assets/css/perfil.css">
-    <link rel="stylesheet" href="../../assets/css/perfil-responsividade.css">
+    <link rel="stylesheet" href="../../assets/css/user/perfil.css">
+    <link rel="stylesheet" href="../../assets/css/user/perfil-responsividade.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@ require("../../functions/perfil.php");
             <div class="foto-perfil">
             <div class="profile-pic"><img src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
                 <div class="btn-alterar-foto">
-                    <span class="material-symbols-outlined btn-edit">edit</span>
+                    <span class="material-symbols-outlined btn-edit" id="btn-edit-foto">edit</span>
                 </div>
             </div>
             <div class="form-perfil">
@@ -55,8 +55,7 @@ require("../../functions/perfil.php");
                 </div>
             </div>
             
-            <dialog closedir
-            id="modal-edit" >
+            <dialog closed id="modal-edit" >
             <form action="../../functions/editarPerfil.php" method="POST" enctype="multipart/form-data">
                     <p>*Foto do perfil</p>
                     <div class="input-campo">

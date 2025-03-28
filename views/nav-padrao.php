@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
-    <link rel="stylesheet" href="../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../assets/css/user/nav.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,12 +61,12 @@
 
 <dialog close id="modal-sair" >
     <div class="modal-sair">
-        <p>realmente deseja sair?</p>
+        <p>Realmente deseja sair?</p>
         <div class="btns-modal">
             <a href="<?php echo BASE_URL; ?>functions/logout.php">
                 <button class="btn-sair">Sair</button>
             </a>
-            <button id="cancelar-sair">Voltar</button>
+            <button id="cancelar-sair">Cancelar</button>
         </div>
     </div>
 </dialog>

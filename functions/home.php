@@ -9,14 +9,18 @@ function mostrarServicos(){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+//var_dump(mostrarServicos());
+//$servicos = mostrarServicos();
+//var_dump($servicos);
+
+
 function mostrarImagemPortfolio(){
     global $pdo;
-    $sql = "SELECT portfolio FROM funcionario";
+    $sql = "SELECT * FROM portfolio";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 }
 
 ?>

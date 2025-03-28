@@ -16,10 +16,10 @@ $portfolio = mostrarImagemPortfolio();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
-    <link rel="stylesheet" href="../../assets/css/home.css">
-    <link rel="stylesheet" href="../../assets/css/agendar.css">
-    <link rel="stylesheet" href="../../assets/css/home-responsividade.css">
-    <link rel="stylesheet" href="../../assets/css/perfil.css">
+    <link rel="stylesheet" href="../../assets/css/user/home.css">
+    <link rel="stylesheet" href="../../assets/css/user/home-responsividade.css">
+    <link rel="stylesheet" href="../../assets/css/user/agendar.css">
+    <link rel="stylesheet" href="../../assets/css/user/perfil.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,7 @@ $portfolio = mostrarImagemPortfolio();
         <div class="grids-container">
             <div class="grid" id="grid1">
                 <?php foreach ($portfolio as $imagemPortfolio): ?>
-                    <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio; ?> " alt=""></div>
+                    <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio['imagem']; ?> " alt=""></div>
                 <?php endforeach; ?>
             </div>
 
