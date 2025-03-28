@@ -131,9 +131,6 @@ section.home .submenu button:focus {
     outline: none;
 }
 
-section.home .grids-container{
-    
-}
 
 section.home .grids-container .grid.ativo{
     display: grid;

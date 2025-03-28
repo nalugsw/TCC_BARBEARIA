@@ -13,9 +13,9 @@ $informacoes = buscarInformacoes();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
-    <link rel="stylesheet" href="../../assets/css/informacoes.css">
-    <link rel="stylesheet" href="../../assets/css/informacoes-reponsividade.css">
-    <link rel="stylesheet" href="../../assets/css/perfil.css">
+    <link rel="stylesheet" href="../../assets/css/user/informacoes.css">
+    <link rel="stylesheet" href="../../assets/css/user/nformacoes-reponsividade.css">
+    <link rel="stylesheet" href="../../assets/css/user/perfil.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
