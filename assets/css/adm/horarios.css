@@ -75,13 +75,23 @@ nav.menu-lateral-desktop ul li.item-menu a{
     text-decoration: none;
 }
 
-nav.menu-lateral-desktop .btn-sair{
-    text-align: left;
-    margin-bottom: 20px;
-    margin-right: 80px;
+nav.menu-lateral-desktop .itens{
+    display: flex;
+    margin-bottom: 30px;
+    width: 200px;
+    align-items: center;
+    justify-content: space-around;
 }
 
+nav.menu-lateral-desktop .itens span{
+    color: #f4f4f4;
+    transition: 0.2s;
+}
 
+nav.menu-lateral-desktop .itens span:hover{
+    scale: 1.03;
+    color: #e6e0e0;
+}
 nav.menu-lateral-desktop .btn-sair {
     border: none;
     cursor: pointer;
@@ -104,6 +114,83 @@ nav.menu-lateral-desktop .btn-sair:hover{
 nav.menu-lateral-desktop .btn-sair img{
     margin-right: 18px;
     vertical-align: middle;
+}
+/* nav engrenagem */
+nav.menu-lateral-settings-desktop{
+    background-color: #313131;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 230px;
+    padding: 50px 0;
+    color: #f4f4f4;
+}
+
+nav.menu-lateral-settings-desktop.hide{
+    display: none;
+}
+
+nav.menu-lateral-settings-desktop img{
+    width: 120px;
+}
+
+nav.menu-lateral-settings-desktop a{
+    text-decoration: none;
+    color: #f4f4f4;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 300;
+}
+
+nav.menu-lateral-settings-desktop ul{
+    height: 500px;
+}
+
+nav.menu-lateral-settings-desktop li{
+    list-style: none;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: #2e2e2e solid 1px;
+    width: 200px;
+}
+
+nav.menu-lateral-settings-desktop li a:hover{
+    justify-content: center;
+    font-weight: 700;
+}
+
+nav.menu-lateral-settings-desktop li span{
+    margin-right: 10px;
+}
+nav.menu-lateral-settings-desktop h2{
+    margin-top: 45px;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1.3px;
+    border-bottom: #2e2e2e solid 1px;
+    padding-bottom: 20px;
+    width: 200px;
+}
+#btn-voltar-config{
+    position: absolute;
+    bottom: 30px;
+
+}
+#btn-voltar-config button{
+    border: none;
+    padding: 5px 20px;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: 5ms;
+    background-color: #f4f4f4;
+}
+#btn-voltar-config button:hover{
+    background-color: #d3d3d3;
+    font-weight: 600;
+    scale: 1.05;
 }
 
 /* CSS da sessão perfil */

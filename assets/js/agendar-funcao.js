@@ -1,10 +1,4 @@
-
-
-function toggleHorarios(button) {
-  // Encontrar o elemento pai da div 'selecao-horaio'
-  const diaDiv = button.closest('.dia');
-
-  // Encontrar a div 'horarios' dentro deste dia específico
+// Encontrar a div 'horarios' dentro deste dia específico
 
 // agendar-funcao.js
 function toggleHorarios(btn) {
