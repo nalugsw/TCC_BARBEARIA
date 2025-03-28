@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Perfil</title>
+    <link rel="stylesheet" href="../../assets/css/adm/horarios.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- Importando pacote de icones do Google Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
+    <nav class="menu-lateral-desktop">
+        <div class="logo">
+            <img src="../../assets/img/LOGO.png" alt="">
+        </div>
+
+        <ul>
+            <li class="item-menu">
+                <a href="horaios.php">
+                    <img src="../../assets/img/icon-perfil.png" alt="">
+                    <span class="txt-link">Horarios</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="perfil.html">
+                    <img src="../../assets/img/icon-home.png" alt="">
+                    <span class="txt-link">Perfil</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <img src="../../assets/img/icon-informacoes.png" alt="">
+                    <span class="txt-link">Serviços</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <img src="../../assets/img/icon-produtos.png" alt="">
+                    <span class="txt-link">Produtos</span>
+                </a>
+            </li>
+        </ul>
+
+        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
+
+    </nav>
+    
+    
+    <dialog close id="modal-sair" >
+        <div class="modal-sair">
+            <p>realmente deseja sair?</p>
+            <div class="btns-modal">
+                <a href="../../functions/logout.php">
+                    <button class="btn-sair">Sair</button>
+                </a>
+                <button id="cancelar">Voltar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <main>
+        <div class="perfil-adm">
+            <div class="foto-adm">
+                <img src="../../uploads/fotos/3.jpg" alt="foto barbeiro">
+                <span class="material-symbols-outlined">
+                    edit
+                    </span>
+            </div>
+            <div class="informacoes-home">
+                <h1>Luis Pereira <span class="material-symbols-outlined">
+                    edit
+                    </span></h1>
+                <div class="endereco-info">
+                    <p>Rua naoseioque, n°171 -
+                        Jardim setadoido <span class="material-symbols-outlined">
+                            edit
+                            </span></p>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="horaios-marcados">
+                <div class="cliente-hora">
+                    <div class="dia-servicos">
+                        <h2>Segunda-Feira</h2>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cliente-hora">
+                    <div class="dia-servicos">
+                        <h2>Terça-Feira</h2>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cliente-hora">
+                    <div class="dia-servicos">
+                        <h2>Quarta-Feira</h2>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cliente-hora">
+                    <div class="dia-servicos">
+                        <h2>Quinta-Feira</h2>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cliente-hora">
+                    <div class="dia-servicos">
+                        <h2>Sexta-Feira</h2>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button><a href="">Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cliente-hora">
+                    <div class="dia-servicos">
+                        <h2>Sabado</h2>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cliente-hora">
+                    <div class="dia-servicos">
+                        <h2>Domingo</h2>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <div class="servico-marcado">
+                        <div class="foto-cliente">
+                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
+                            <button>finalizar <span class="material-symbols-outlined">
+                                check
+                                </span></button>
+                        </div>
+                        <div class="nome-cliente">
+                            <h3>Nome</h3>
+                            <input type="text" disabled placeholder="kaique dasilva">
+                        </div>
+                        
+                        <div class="numero-cliente">
+                            <h3>Numero</h3>
+                            <input type="text" disabled placeholder="11 999999999">
+                        </div>
+                        
+                        <div class="servico-cliente">
+                            <h3>servico</h3>
+                            <input type="text" disabled placeholder="degrade">
+                        </div>
+                        
+                        <div class="horario-cliente">
+                            <h3>Horario</h3>
+                            <input type="text" disabled placeholder="10:00 - Manhã">
+                            <button>Desmarcar Horario <span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <script src="../../assets/js/modal.js"></script>
+</body>
+</html>

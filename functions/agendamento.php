@@ -125,7 +125,7 @@ function verificarHorariosDisponiveis($conexao, $data, $idFuncionario = 1) {
     );
     
     // 3. Consultar horários já agendados
-    $sql = "SELECT TIME(horario) as horario FROM AGENDA 
+    $sql = "SELECT TIME(horario) as horario FROM AGENDA
             WHERE data = ? AND id_funcionario = ?";
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param("si", $data, $idFuncionario);
@@ -170,6 +170,6 @@ function mostrarDiasHorariosDisponiveis($conexao, $idFuncionario = 1) {
     }
     
     return $diasComHorarios;
-}
+}}
 
 ?>
