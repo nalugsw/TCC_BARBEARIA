@@ -7,6 +7,11 @@ verificaSession("cliente");
 require_once("../../functions/agendamento.php");
 require_once("../../functions/perfil.php");
 
+$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
+unset($_SESSION['sucesso']);
+unset($_SESSION['erro']);
+
 ?>
 
 <!DOCTYPE html>
@@ -64,15 +69,15 @@ require_once("../../functions/perfil.php");
                     </div>
                     <p>*Nome do perfil</p>
                     <div class="input-campo">
-                        <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome">
+                        <input type="text" value="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome">
                     </div>
                     <p>*Numero do perfil</p>
                     <div class="input-campo">
-                        <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
+                        <input type="text" value="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
                     </div>
                     <div class="btns-edit">
                         <button type="submit">Atualizar</button>
-                        <button id="cancelar-edit">Voltar</button>
+                        <button id="cancelar-edit" type="button">Voltar</button>
                     </div>
                 </form>
             </dialog>

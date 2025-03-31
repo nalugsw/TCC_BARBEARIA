@@ -8,6 +8,11 @@ include("../../functions/home.php");
 $produtos = mostrarServicos();
 $portfolio = mostrarImagemPortfolio();
 
+$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
+unset($_SESSION['sucesso']);
+unset($_SESSION['erro']);
+
 ?>
 
 <!DOCTYPE html>

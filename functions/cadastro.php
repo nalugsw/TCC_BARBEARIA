@@ -3,6 +3,8 @@
 session_start();
 include("../config/conexao.php");
 
+
+
 $nome = $_POST['nome'];
 $numero_telefone = $_POST['numero_telefone'];
 $email = $_POST['email'];
@@ -48,7 +50,7 @@ if($total_reg > 0){
 
     if($cadastro){
         $pdo->commit();
-        $_SESSION['cadastro_realizado'] = "Cadastro realizado com sucesso.";
+        $_SESSION['sucesso'] = "Cadastro realizado com sucesso.";
         $_SESSION['id_usuario'] = $id_usuario;
         $_SESSION['tipo_usuario'] = $tipo_usuario;
         header("location: ../public/user/perfil.php");

@@ -54,7 +54,7 @@ $stmt->bindParam(":id_usuario", $id_usuario);
 
 
 if ($stmt->execute()) {
-    $_SESSION['realizado'] = "Perfil atualizado com sucesso";
+    $_SESSION['sucesso'] = "Perfil atualizado com sucesso";
     $pdo->commit();
     header("location: ../public/user/perfil.php");
     exit();
