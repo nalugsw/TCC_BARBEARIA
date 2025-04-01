@@ -36,7 +36,7 @@ unset($_SESSION['erro']);
                     <h1>Cadastre-se</h1>
                 </div>
                 <div class="form">
-                    <form action="../../functions/cadastro.php" method="POST">
+                    <form action="../../functions/user/cadastro.php" method="POST">
                         <label for="nome">Nome</label>
                         <input type="text" placeholder="NOME" id="nome" name="nome" required>
 

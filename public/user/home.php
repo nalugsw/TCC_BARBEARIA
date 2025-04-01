@@ -4,7 +4,7 @@ include("../../config/conexao.php");
 session_start();
 include("../../functions/helpers.php");
 verificaSession("cliente");
-include("../../functions/home.php");
+include("../../functions/user/home.php");
 $produtos = mostrarServicos();
 $portfolio = mostrarImagemPortfolio();
 
@@ -77,7 +77,7 @@ unset($_SESSION['erro']);
             <div class="grid" id="grid2">
                 <?php foreach ($produtos as $produto): ?>
                     <div class="item">
-                        <img src="../../uploads/servicos/<?php echo $produto['foto']; ?>" alt="">
+                        <img src="../../<?php echo $produto['foto']; ?>" alt="">
                         <div class="txt-teste">
                             <h1><?php echo $produto['nome']; ?></h1>
                             <div class="preco">
