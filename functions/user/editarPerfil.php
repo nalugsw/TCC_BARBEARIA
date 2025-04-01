@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include("../config/conexao.php");
-require("helpers.php");
+include("../../config/conexao.php");
+require("../helpers.php");
 
 $id_usuario = $_SESSION['id_usuario'];
 $cliente = dadosCliente($id_usuario);
@@ -10,7 +10,7 @@ $cliente = dadosCliente($id_usuario);
 $nome = $_POST['nome'];
 $telefone = $_POST['telefone'];
 
-$foto = isset($_FILES['foto']) ? $_FILES['foto'] : null;
+$foto = isset($_FILES['foto']) ? $_FILES['foto'] : $cliente['foto'];
 
 $caminho_foto = $cliente['foto'];
 
@@ -23,15 +23,15 @@ if ($foto && $foto['error'] == 0) {
 
     if (!in_array($extensao, $formatos_permitidos)) {
         $_SESSION['erro'] = "Formato de imagem não permitido";
-        header("location: ../public/user/perfil.php");
+        header("location: ../../public/user/perfil.php");
         exit();
     }
 
     $nome_foto = $id_usuario . "." . $extensao;
-    $caminho_foto = "../uploads/fotos/" . $nome_foto;  
+    $caminho_foto = "../../uploads/fotos/" . $nome_foto;  
 
     $origem = $foto['tmp_name'];
-    $destino = __DIR__ . "/../uploads/fotos/" . $nome_foto;
+    $destino = __DIR__ . "/../../uploads/fotos/" . $nome_foto;
 
     if (!is_writable(dirname($destino))) {
         die("Erro: O diretório de destino não tem permissão de escrita.");
@@ -56,12 +56,12 @@ $stmt->bindParam(":id_usuario", $id_usuario);
 if ($stmt->execute()) {
     $_SESSION['sucesso'] = "Perfil atualizado com sucesso";
     $pdo->commit();
-    header("location: ../public/user/perfil.php");
+    header("location: ../../public/user/perfil.php");
     exit();
 } else {
     $_SESSION['erro'] = "Erro ao tentar atualizar o perfil";
     $pdo->rollback();
-    header("location: ../public/user/perfil.php");
+    header("location: ../../public/user/perfil.php");
     exit();
 }
 
