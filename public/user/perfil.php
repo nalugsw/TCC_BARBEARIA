@@ -62,17 +62,21 @@ unset($_SESSION['erro']);
             
             <dialog closed id="modal-edit" >
             <form action="../../functions/editarPerfil.php" method="POST" enctype="multipart/form-data">
-                    <p>*Foto do perfil</p>
+                    
+                    <div id="img-container">
+                        <p>*Foto do perfil</p>
+                        <div class="input-campo">
+                            <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                            <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                        </div>
+                        <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
+                   </div>
                     <div class="input-campo">
-                        <input type="file" id="arquivo" class="input-file" name="foto">
-                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
-                    </div>
-                    <p>*Nome do perfil</p>
-                    <div class="input-campo">
+                        <p>*Nome do perfil</p>
                         <input type="text" value="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome">
                     </div>
-                    <p>*Numero do perfil</p>
                     <div class="input-campo">
+                        <p>*Numero do perfil</p>
                         <input type="text" value="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
                     </div>
                     <div class="btns-edit">
@@ -108,5 +112,6 @@ unset($_SESSION['erro']);
         <script src="../../assets/js/formatar-telefone.js"></script>
         <script src="../../assets/js/modal-deslogar.js"></script>
         <script src="../../assets/js/modal-perfilEdit.js"></script>
-</body>
+        <script src="../../assets/js/preview-img.js"></script>
+    </body>
 </html>
