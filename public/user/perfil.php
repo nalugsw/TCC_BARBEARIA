@@ -5,7 +5,7 @@ session_start();
 require_once("../../functions/helpers.php");
 verificaSession("cliente");
 require_once("../../functions/agendamento.php");
-require_once("../../functions/perfil.php");
+require_once("../../functions/user/perfil.php");
 
 $mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
 $mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
@@ -38,7 +38,7 @@ unset($_SESSION['erro']);
     <section class="perfil">
         <div class="container-perfil">
             <div class="foto-perfil">
-            <div class="profile-pic"><img src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
+            <div class="profile-pic"><img src="<?php echo buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
                 <div class="btn-alterar-foto">
                     <span class="material-symbols-outlined btn-edit" id="btn-edit-foto">edit</span>
                 </div>
