@@ -33,16 +33,10 @@
 }
 
 @media screen and (max-width: 925px){
-    .btn-menu-mob {
-        display: block;
-        position: relative;
-        z-index: 9999;
-    }
 
     section.perfil .container-perfil{
         margin: 0 auto;
         justify-content: center;
-        justify-self: center
         
         
     }
@@ -54,7 +48,6 @@
 @media screen and (max-width: 1016px){
     section.home{
         height: 100%;
-        align-items: center;
     }
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
@@ -135,9 +128,6 @@
         width: 120px;
         margin: 0 auto;
         height: 120px;
-        background-image: url(../img/foto-barbeiro-tela-home.png);
-        background-size: cover;
-        background-position: center;
     }
     
     section.home .container-home .informacoes-home{

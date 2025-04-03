@@ -1,23 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", serif;
-}
-
-
-
-body {
-    background-color: #1e1e1e;
-    color: white;
-    display: flex;
-    height: 100vh;
-}
 
 main{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    grid-column: 2/3;
   }
 
 h1{

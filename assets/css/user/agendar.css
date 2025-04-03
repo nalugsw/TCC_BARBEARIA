@@ -12,7 +12,6 @@ body {
 }
 
 .dia {
-    margin-right: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,9 +54,6 @@ body {
     
 }
 
-
-
-
 .selecao-horaio{
     width: 750px;
     background: #b3b3b3;
@@ -90,20 +86,6 @@ body {
     padding-top: 10px;
     overflow-x: hidden;
 }
-
-.horarios::-webkit-scrollbar{
-    width: 20px;
-    border-radius: 10px;
-}
-
-.horarios::-webkit-scrollbar-thumb{
-    background-color: #4065AB;
-    border-radius: 10px;
-    border: solid #e0e0e0 2px;
-    background-clip: content-box;
-    border: 6px solid transparent;
-}
-
 
 .horario-div{
     display: flex;

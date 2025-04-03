@@ -83,6 +83,10 @@ nav.menu-lateral-desktop .itens{
     justify-content: space-around;
 }
 
+nav.menu-lateral-desktop .itens #btn-setting{
+    background-color: transparent;
+    border: none;
+}
 nav.menu-lateral-desktop .itens span{
     color: #f4f4f4;
     transition: 0.2s;
@@ -126,9 +130,6 @@ nav.menu-lateral-settings-desktop{
     width: 230px;
     padding: 50px 0;
     color: #f4f4f4;
-}
-
-nav.menu-lateral-settings-desktop.hide{
     display: none;
 }
 

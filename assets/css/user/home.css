@@ -3,8 +3,8 @@
 section.home{
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 0 auto;
+    grid-column: 2/3;
 }
 
 section.home .container-home{
@@ -26,9 +26,6 @@ section.home .container-home .foto-home .profile-pic{
     border-radius: 100%;
     width: 160px;
     height: 160px;
-    background-image: url(../img/foto-barbeiro-tela-home.png);
-    background-size: cover;
-    background-position: center;
 }
 
 section.home .container-home .informacoes-home{
@@ -191,8 +188,6 @@ section.home .grids-container #grid2 .item{
 
 
 
-
-
 section.home .grids-container .grid.ativo .item .image-container{
     position: relative;
 }
@@ -210,46 +205,20 @@ section.home .grids-container .grid.ativo .item .image-container .servicos-txt{
     z-index: 9999;
 }
 
-/* section.home .grids-container .grid.ativo .item .image-container .servicos-txt .preco{
-    font-size: 16px;
-}
-
-
-section.home .grids-container .grid.ativo .item .image-container .servicos-txt .preco .duracao{
-    font-size: 14px;
-}
-
-section.home .grids-container .grid.ativo .item .image-container .servicos-txt .nome-servico{
-    font-size: 24px;
-    margin-top: 100px;
-    font-weight: bold;
-} */
-
 section.home .grids-container .grid {
     display: none; /* Oculta todos os grids */
     max-height: 50vh;
 }
 
-
-
-/* section.home .grids-container .grid {
-    display: none; 
-    grid-template-columns: repeat(3, 100px);
-    gap: 10px;
-} */
-
-
-
 section.home .grids-container .grid::-webkit-scrollbar{
-    width: 13px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
+    width: 20px;
+    background-color: #232323;
 }
 
 section.home .grids-container .grid::-webkit-scrollbar-thumb{
     border-radius: 10px;
     background-color: #898989;
-    border: solid  #e0e0e0 2px;
+    border: solid #232323 5px;
 }
 
 
