@@ -5,7 +5,12 @@ session_start();
 require_once("../../functions/helpers.php");
 verificaSession("cliente");
 require_once("../../functions/agendamento.php");
-require_once("../../functions/perfil.php");
+require_once("../../functions/user/perfil.php");
+
+$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
+unset($_SESSION['sucesso']);
+unset($_SESSION['erro']);
 
 ?>
 
@@ -33,7 +38,7 @@ require_once("../../functions/perfil.php");
     <section class="perfil">
         <div class="container-perfil">
             <div class="foto-perfil">
-            <div class="profile-pic"><img src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
+            <div class="profile-pic"><img src="<?php echo buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
                 <div class="btn-alterar-foto">
                     <span class="material-symbols-outlined btn-edit" id="btn-edit-foto">edit</span>
                 </div>
@@ -57,22 +62,26 @@ require_once("../../functions/perfil.php");
             
             <dialog closed id="modal-edit" >
             <form action="../../functions/editarPerfil.php" method="POST" enctype="multipart/form-data">
-                    <p>*Foto do perfil</p>
+                    
+                    <div id="img-container">
+                        <p>*Foto do perfil</p>
+                        <div class="input-campo">
+                            <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                            <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                        </div>
+                        <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
+                   </div>
                     <div class="input-campo">
-                        <input type="file" id="arquivo" class="input-file" name="foto">
-                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                        <p>*Nome do perfil</p>
+                        <input type="text" value="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome">
                     </div>
-                    <p>*Nome do perfil</p>
                     <div class="input-campo">
-                        <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome">
-                    </div>
-                    <p>*Numero do perfil</p>
-                    <div class="input-campo">
-                        <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
+                        <p>*Numero do perfil</p>
+                        <input type="text" value="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
                     </div>
                     <div class="btns-edit">
                         <button type="submit">Atualizar</button>
-                        <button id="cancelar-edit">Voltar</button>
+                        <button id="cancelar-edit" type="button">Voltar</button>
                     </div>
                 </form>
             </dialog>
@@ -103,5 +112,6 @@ require_once("../../functions/perfil.php");
         <script src="../../assets/js/formatar-telefone.js"></script>
         <script src="../../assets/js/modal-deslogar.js"></script>
         <script src="../../assets/js/modal-perfilEdit.js"></script>
-</body>
+        <script src="../../assets/js/preview-img.js"></script>
+    </body>
 </html>

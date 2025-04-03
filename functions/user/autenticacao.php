@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-include("../config/conexao.php");
+include("../../config/conexao.php");
 
 if(!isset($_POST['email']) || !isset($_POST['senha'])){
     $_SESSION['erro'] = "Preencha todos os campos";
-    header("location: ../index.php");
+    header("location: ../../index.php");
     exit();
 }
 
@@ -24,16 +24,16 @@ if($res){
         if(password_verify($senha, $senha_hash)){
             $_SESSION['id_usuario'] = $res['id_usuario'];
             $_SESSION['tipo_usuario'] = $res['tipo_usuario'];
-            header("location: ../public/user/perfil.php");
+            header("location: ../../public/user/perfil.php");
             exit();
         }else{
             $_SESSION['erro'] = "Email ou senha incorretos.";
-            header("Location: ../index.php");
+            header("Location: ../../index.php");
             exit();
         }
 }else{
     $_SESSION['erro'] = "Email ou senha incorretos.";
-    header("Location: ../index.php");
+    header("Location: ../../index.php");
     exit();
     }
 

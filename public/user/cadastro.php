@@ -3,6 +3,11 @@
 session_start();
 include("../../config/conexao.php");
 
+$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
+unset($_SESSION['sucesso']);
+unset($_SESSION['erro']);
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +36,7 @@ include("../../config/conexao.php");
                     <h1>Cadastre-se</h1>
                 </div>
                 <div class="form">
-                    <form action="../../functions/cadastro.php" method="POST">
+                    <form action="../../functions/user/cadastro.php" method="POST">
                         <label for="nome">Nome</label>
                         <input type="text" placeholder="NOME" id="nome" name="nome" required>
 

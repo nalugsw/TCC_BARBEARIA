@@ -214,19 +214,32 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
 }
 
 #modal-edit{
-    height: 300px;
-    margin: auto;
+    align-content: center;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: transparent;
+    height: 100vh;
+    width: 100vw;
+}
+#modal-edit form{
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 0 auto;
     padding: 10px;
     border-radius: 3px;
     width: 500px;
-    border: none;
 }
 #modal-edit::backdrop{
     background-color: #23232383;
 }
 #modal-edit p{
     font-size: 15px;
-    color: #313131;
+    color: #232323;
     font-weight: bold;
     margin-top: 8px;
     margin-bottom: 5px;
@@ -237,7 +250,7 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     margin-top: 5px;
 }
 #modal-edit .input-campo input{
-    padding: 5px 20px 5px 20px
+    padding: 3px 20px 3px 20px
 }
 .input-file {
     display: none; /* Esconde o input padrão */
@@ -245,27 +258,49 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
 
 .custom-file-button {
     display: inline-block;
-    background-color: #898989;
-    color: #232323;
+    background-color: #4065AB;
+    color: #dbe6f9;
     padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 13px;
+    border-radius: 3px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s;
     box-shadow: 1px 1px 1px #23232348;
 }
 
 .custom-file-button:hover,
 #modal-edit button:hover{
-    background-color: #646464;
+    background-color: #2f5396;
 }
 
 #modal-edit button{
     padding: 5px 10px;
-    background-color: #898989;
+    background-color: #4065AB;
+    color: #dbe6f9;
     border: none;
     border-radius: 3px;
-    color: #232323;
     box-shadow: 1px 1px 1px #23232348;
 
+}
+#img-container{
+    display: grid;
+    grid-column: repeat(2, 100px);
+    grid-row: 20px 1fr;
+}
+#img-container .input-campo{
+    grid-row: 2/3;
+}
+
+#img-container p
+{
+    grid-row: 1/2;
+    align-items: center;
+}
+
+#preview{
+    grid-row: 2/3;
+    border: solid 1px rgb(136, 136, 136);
+    height: 99px;
+    width: 99px;
+    object-fit: cover;
 }

@@ -1,0 +1,600 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+}
+
+body{
+    background-color: #232323;
+    display: flex;
+    grid-template-columns: 230px 1fr;
+    margin-left: 230px;
+}
+
+main{
+    margin-left: 15%;
+    align-items: center;
+    justify-items: center;
+    margin-top: 95px;
+}
+
+
+.main-content {
+    margin-left: 230px; 
+    width: calc(100% - 230px); 
+    padding: 20px; 
+    
+}
+
+/* Menu mobile inferior >desligado< nessa versão desktop(CSS para que ele não apareça) */
+
+nav.menu-inferior-mobile{
+    display: none;
+}
+
+
+/* CSS do Menu Lateral DESKTOP e seus comportamnentos */
+
+nav.menu-lateral-desktop {
+    background-color: #313131;
+    width: 230px;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+nav.menu-lateral-desktop .logo img{
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+nav.menu-lateral-desktop ul{
+    width: 100%;
+    height: 60%;
+
+}
+
+nav.menu-lateral-desktop ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding-left: 21px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    transition: 0.5s;
+
+}
+nav.menu-lateral-desktop ul li.item-menu:hover{
+    background-color: #232323;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 31px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link:hover{
+    font-weight: bold;
+}
+
+
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-lateral-desktop ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-lateral-desktop .btn-sair{
+    text-align: left;
+    margin-bottom: 20px;
+    margin-right: 80px;
+}
+
+
+nav.menu-lateral-desktop .btn-sair {
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+nav.menu-lateral-desktop .btn-sair:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+
+}
+
+nav.menu-lateral-desktop .btn-sair img{
+    margin-right: 18px;
+    vertical-align: middle;
+}
+
+
+/* CSS menu mobile */
+
+nav.menu-inferior-mobile {
+    margin-top: 20%;
+    position: fixed;
+    bottom: 0;
+    background-color: #898989;
+    padding-top: 7px; 
+    width: 100%;
+    height: 70px;
+    text-align: center;
+
+}
+
+nav.menu-inferior-mobile .logo {
+    width: 100%;
+}
+
+nav.menu-inferior-mobile .logo img{
+    margin-bottom: 40px;
+
+}
+
+nav.menu-inferior-mobile ul{
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+nav.menu-inferior-mobile ul li.item-menu{
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+
+}
+nav.menu-inferior-mobile ul li.item-menu:hover{
+    background-color: #d4d4d4;
+
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    /* padding-left: 31px; */
+    border-radius: 100%;
+    transform: translateY(-15px);
+
+}
+
+
+nav.menu-inferior-mobile ul li.item-menu a span.txt-link{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
+    color: #d4d4d4;
+    /* text-decoration: none; */
+}
+
+nav.menu-inferior-mobile ul li.item-menu a img{
+    vertical-align: middle;
+}
+
+nav.menu-inferior-mobile ul li.item-menu a{
+    text-decoration: none;
+}
+
+nav.menu-inferior-mobile .btn-sair{
+    padding-left: 21px;
+    text-align: left;
+}
+
+
+nav.menu-inferior-mobile .btn-sair a button{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    margin-top: 20vh;
+    transition: 0.5s;
+
+
+} 
+
+/* perfil adm */
+.perfil-container{
+    background-color: #313131;
+
+}
+
+.info{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center; 
+    gap: 50px;
+    color: #ffffff;
+}
+
+.perfil-container{
+    border-radius: 3px;
+    display: flex;
+    /*align-items: space-between;
+    justify-content: center; */
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+}
+.foto-perfil {
+    position: relative;
+}
+
+.foto-perfil img {
+    width: 150px; 
+    height: 150px;
+    margin-left: 30px;
+    border-radius: 50%;
+}
+
+
+.editar-icon:hover {
+    color: #666768; 
+}
+
+.dados-perfil {
+    width: 191px;
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center; 
+    color: #ffffff;
+}
+.dados-perfil h1 {
+   
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: right;
+    gap: 10px;
+}
+
+.dados-perfil:first-child p{
+    justify-content: center; 
+}
+
+.dados-perfil:last-child input{
+    margin-bottom: 8px;
+}
+
+.dados-perfil input{
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+.dados-perfil button{
+    width: 120px;
+    padding: 5px 0 ;
+    margin-top: 10px;
+    border: none;
+    background-color: #0A6A28;
+    color: #D3FAE0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #4e4e4e4b;
+    text-transform:capitalize;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.dados-perfil  button:hover{
+    background-color: #05581f;
+    scale: 1.05;
+}
+
+.dados-perfil p {
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 10px;
+    display: inline;
+    align-items: center;
+    gap: 1px;
+}
+
+/* Esconde o input file original */
+.dados-perfil .input-file {
+    display: none;
+}
+
+/* Estilização da label personalizada */
+
+.dados-perfil .custom-file-upload:hover {
+    background-color: #e0e0e0;
+}
+
+.dados-perfil .icone-upload {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+.custom-file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #232323;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 120px;
+    height: 80px;
+}
+
+.custom-file-upload:hover {
+    background-color: #e0e0e0;
+}
+
+.custom-file-upload i {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.nome-arquivo {
+    font-size: 10px;
+    color: #D3FAE0;
+    text-align: center;
+    max-width: 120px;
+    word-break: break-all;
+}
+
+/* imagens */
+.galeria {
+   display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 5px; 
+}
+
+.galeria-item {
+    position: relative;
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    display: inline;
+    border-radius: 6px;
+}
+
+/* Ícone de três pontinhos*/
+.galeria {
+    display: flex;
+    gap: 12px;
+}
+
+.imagem-item {
+    position: relative; 
+    display: inline-block;
+}
+
+.imagem-item img {
+    display: block;
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.material-symbols-outlined {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+    background: #4065AB;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Estilo para os ícones dentro da galeria */
+.galeria .material-symbols-outlined {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #4065AB;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.galeria .material-symbols-outlined:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+.dados-perfil h1, 
+.dados-perfil p {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
+.dados-perfil .editar-icon  {
+    background: #4065AB;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.editar-icon {
+    position: static; 
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 20px; 
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.dados-perfil .editar-icon:hover {
+    background: #4065AB;
+}
+
+.editar-icon:hover {
+    color: #666768;
+}
+
+/* Estilo para o ícone ao lado da foto de perfil */
+.foto-perfil .editar-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #4065AB;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.foto-perfil .editar-icon:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+   /* CSS do grid que será implementado */
+   .grids-container {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+#grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    width: 100%;
+    height: 407px;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#grid2 .item {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+
+#grid2 .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+#grid2 .item img:hover {
+    opacity: 0.5;
+}
+
+#grid2 .item .txt-teste {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#grid2 .item .txt-teste h1 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+}
+
+#grid2 .item .txt-teste .preco {
+    text-align: right;
+    transform: translateY(-80px);
+}
+
+#grid2 .item .txt-teste .preco p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#grid2 .item .txt-teste .duracao {
+    font-size: 12px;
+    margin-top: 5px;
+}
