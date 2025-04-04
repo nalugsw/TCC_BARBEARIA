@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
-    <nav class="menu-lateral-desktop">
+    <nav id="menu-padrao" class="menu-lateral-desktop">
         <div class="logo">
             <img src="../../assets/img/LOGO.png" alt="">
         </div>
@@ -48,7 +48,7 @@
 
         <div class="itens">
             <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
-            <a href=""><span class="material-symbols-outlined">settings</span></a>
+            <a href="" ><button id="btn-setting"><span class="material-symbols-outlined">settings</span></button></a>
         </div>
     </nav>
     <dialog close id="modal-sair" >
@@ -63,7 +63,7 @@
         </div>
     </dialog>
 
-    <nav class="menu-lateral-settings-desktop hide">
+    <nav id="menu-settings" class="menu-lateral-settings-desktop  hide">
         <div class="logo">
             <img src="../../assets/img/LOGO.png" alt="">
         </div>
@@ -82,7 +82,7 @@
                 </a>
             </li>
         </ul>
-        <a href="" id="btn-voltar-config"><button>Voltar</button></a>
+        <a href="" ><button id="btn-voltar-config" ">Voltar</button></a>
     </nav>
 
     <main>
@@ -777,5 +777,6 @@
     </main>
 
         <script src="../../assets/js/modal.js"></script>
+        <script src="../../assets/js/abrir-nav-config.js"></script>
 </body>
 </html>

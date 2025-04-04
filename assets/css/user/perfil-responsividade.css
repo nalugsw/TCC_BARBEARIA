@@ -28,10 +28,6 @@
     section.perfil .container-perfil .input-campo input{
         font-size: 10px;
     }
-    section.perfil .container-perfil .input-campo{
-        width: 270px;
-        margin-right: 0;
-    }
 
     section.perfil .container-perfil.form form {
         max-width: 120px;
@@ -78,9 +74,6 @@
         transition: 0.1s;
     }
 
-    section.perfil .container-perfil .horarios-marcados{
-        width: 350px;
-    }
     section.perfil .container-perfil .horarios-marcados p{
         font-size: 10px;
         color: #d4d4d4;
@@ -92,8 +85,6 @@
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios{
         background-color: #FDFDFD;
-        height: 107px;
-        width: 350px;
         border-radius: 3px;
     }
 
@@ -110,6 +101,9 @@
         margin: 0 auto;
         justify-content: center;
         justify-self: center
+    }
+    section.perfil .container-perfil .input-campo{
+        margin-right: 0;
     }
 
     body{

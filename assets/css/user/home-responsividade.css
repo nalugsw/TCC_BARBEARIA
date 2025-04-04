@@ -1,7 +1,6 @@
 @media screen and (max-width: 1129px){
 
     section.home{
-        width: 100%;
         justify-content: center;
     }
 
@@ -32,36 +31,10 @@
 
 }
 
-@media screen and (max-width: 925px){
-    .btn-menu-mob {
-        display: block;
-        position: relative;
-        z-index: 9999;
-    }
-
-    section.perfil .container-perfil{
-        margin: 0 auto;
-        justify-content: center;
-        justify-self: center
-        
-        
-    }
-}
-
 /* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
 
 
 @media screen and (max-width: 1016px){
-    section.home{
-        height: 100%;
-        align-items: center;
-    }
-
-    section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
-        color: #232323;
-        font-size: 8.5px;
-    }
-
     /* Responsividade menu mobile */
 
     html{
@@ -71,46 +44,15 @@
     body{
         height: 100%;
     }
-
-    section.home .submenu{
-        width: 386px;
-        height: 44px;
-        margin: 0 auto;
-        display: flex;
-        padding-left: 0px;
+    section.home{
+        padding-top: 80px;
+        height: 100%;
+        justify-content: flex-start;
     }
 
-    section.home .submenu button {
-        width: 257px;
-        background-color: transparent;
-        border: none;
-        font-size: 17px;
-        color: #F6F7F9;
-        position: relative;
-        margin-left: 3px;
-    }
-
-    section.home .grids-container .grid .item{
-        max-width: 127px;
-        height: 132px;
-    }
-
-    section.home .grids-container .grid .item img{
-        max-width: 127px;
-        height: 132px;
-    }
-    
-
-    section.home .grids-container .grid.ativo{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0px;
-        width: 386px;
-        height: 460px;
-        margin: 0 auto;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        
+    section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
+        color: #232323;
+        font-size: 8.5px;
     }
 
     section.home .container-home{
@@ -135,9 +77,6 @@
         width: 120px;
         margin: 0 auto;
         height: 120px;
-        background-image: url(../img/foto-barbeiro-tela-home.png);
-        background-size: cover;
-        background-position: center;
     }
     
     section.home .container-home .informacoes-home{
@@ -196,22 +135,93 @@
         
     }
 
+    section.home .submenu{
+        width: 450px;
+        height: 44px;
+        margin: 0 auto;
+        display: flex;
+        padding-left: 0px;
+    }
+
+    section.home .submenu button {
+        width: 257px;
+        background-color: transparent;
+        border: none;
+        font-size: 17px;
+        color: #F6F7F9;
+        position: relative;
+        margin-left: 3px;
+    }
+    
+    section.home .grids-container .grid::-webkit-scrollbar{
+        width: 20px;
+        background-color: #232323;
+    }
+
+    section.home .grids-container .grid::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #898989;
+        border: solid #232323 5px;
+    }
+    section.home .grids-container .grid {
+        display: none;
+        height: 100%;
+        row-gap: 2px;
+        column-gap: 2px;
+    }
+
+    section.home .grids-container #grid1 .item-portifolio{
+        width: 150px;
+        height: 150px;
+    }
+
+    section.home .grids-container #grid1 .item-portifolio img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+
+    section.home .grids-container .grid.ativo{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 470px;
+        height: 450px;
+        margin: 0 auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    
+    
+    #grid2 .item{
+        height: 150px;
+        width: 450px;
+    }
+    
+    #grid2 .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+    }
     #grid2{
         grid-template-columns: 1fr ;
         gap: 0px;
         row-gap: 2px;
         column-gap: 2px;
-        width: 386px;
-        background-color: #d4d4d4;
+        width: 470px;
+        border: none;
     }
     
     #grid2 .item{
         height: 150px;
+        width: 450px;
     }
     
     #grid2 .item img{
-        max-width: 389px;
-        height: 150px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         transition: 0.5s;
     }
     
@@ -228,20 +238,23 @@
         padding: 10px;
         color: white;
         font-size: 14px;
+        justify-content: space-between;
+        padding-right: 20px;
         text-align: left;
-        display: flex;
-        flex-direction: row;
-        gap: 97px;
     }
-    
+        
     #grid2 .item .txt-teste .preco{
-        transform: translateY(-70px);
+        transform: translateY(-80px);
         font-size: 20px;
-        font-weight: 100;
+        font-weight: 600;
+        justify-content: left;
     }
-
+    #grid2 .item .txt-teste .preco .duracao{
+        font-weight: 200;
+        font-size: 18px;
+    }
     .selecao-horaio{
-        width: 370px;
+        width: 100%;
         background: #b3b3b3;
         color: #232323;
         padding: 15px;
@@ -251,12 +264,13 @@
         align-items: baseline;
         max-height: 55px;
     }
-
+    
+    
     .horarios {
         background: #f9f9f9;
-        width: 340px;
+        width: 420px;
         min-height: none;
-        max-height: 250px;
+        max-height: 300px;
         border-radius: 0 0 5px 5px;
         color: #232323;
         display: flex;
@@ -265,7 +279,162 @@
         padding-top: 10px;
         overflow-x: hidden;
     }
+        
+    .horario-div{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        width: 370px;
+        margin: 15px 25px;
+        border-bottom: #d9d9d9 solid 2px;
+        padding-bottom: 5px;
+        
+        
+    }
+}
 
+@media screen and (max-width: 768px){
+    .home{
+        align-items: center;
+    }
+    
+    section.home .grids-container .grid.ativo{
+        margin: 0 auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-width: 350px;
+    }
+    
+        
+    section.home .submenu button::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background-color: #F6F7F9;
+        position: absolute;
+        bottom: 0;
+        left: 44%;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+        margin-left: 4px;
+    }
+    section.home .submenu{
+        max-width: 350px;
+        height: 35px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    section.home .submenu button {
+        width: 110px;
+        background-color: transparent;
+        border: none;
+        font-size: 17px;
+        color: #F6F7F9;
+        position: relative;
+    }
+    
+    section.home .grids-container .grid::-webkit-scrollbar{
+        width: 20px;
+        background-color: #232323;
+        border-radius: 10px;
+    }
+
+    section.home .grids-container .grid::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #898989;
+        border: solid #232323 5px;
+    }
+    #grid2 .item .txt-teste {
+        position: absolute;
+        bottom: 0; /* Alinha no rodapé da imagem */
+        left: 0;
+        width: 100%; /* Faz o texto ocupar toda a largura da imagem */
+        padding: 5px 15px;
+        color: white;
+        font-size: 12px;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+        
+    #grid2 .item .txt-teste .preco{
+        transform: translateY(-50px);
+        font-size: 18px;
+        font-weight: 600;
+        justify-content: left;
+    }
+    #grid2 .item .txt-teste .preco .duracao{
+        font-weight: 200;
+        font-size: 16px;
+    }
+
+    section.home .grids-container .grid {
+        display: none;
+        height: 100%;
+        row-gap: 2px;
+        column-gap: 2px;
+    }
+
+    section.home .grids-container #grid1 .item-portifolio{
+        width: 110px;
+        height: 110px;
+    }
+
+    section.home .grids-container #grid1 .item-portifolio img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+
+    section.home .grids-container .grid.ativo{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 350px;
+        height: 450px;
+        margin: 0 auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    
+    
+    #grid2 .item{
+        height: 110px;
+        width: 330px;
+    }
+    
+    #grid2 .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+    #grid2{
+        grid-template-columns: 1fr ;
+        gap: 0px;
+        row-gap: 2px;
+        column-gap: 2px;
+        width: 350px;
+        border: none;
+    }
+    
+    
+    .horarios {
+        background: #f9f9f9;
+        width: 300px;
+        min-height: none;
+        max-height: 300px;
+        border-radius: 0 0 5px 5px;
+        color: #232323;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        overflow-x: hidden;
+    }
+        
     .horario-div{
         display: flex;
         justify-content: space-between;
@@ -280,4 +449,3 @@
     }
     
 }
-
