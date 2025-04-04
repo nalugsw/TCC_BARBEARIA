@@ -61,7 +61,7 @@ unset($_SESSION['erro']);
             </div>
             
             <dialog closed id="modal-edit" >
-            <form action="../../functions/editarPerfil.php" method="POST" enctype="multipart/form-data">
+            <form action="../../functions/user/editarPerfil.php" method="POST" enctype="multipart/form-data">
                     
                     <div id="img-container">
                         <p>*Foto do perfil</p>
@@ -70,14 +70,15 @@ unset($_SESSION['erro']);
                             <label for="arquivo" class="custom-file-button">Escolha a foto</label>
                         </div>
                         <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
-                   </div>
+                    </div>
+                    <?php $dados = dadosCliente($_SESSION['id_usuario']);?>
                     <div class="input-campo">
                         <p>*Nome do perfil</p>
-                        <input type="text" value="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['nome']; ?>" name="nome">
+                        <input type="text" value="<?php echo $dados['nome']; ?>" name="nome">
                     </div>
                     <div class="input-campo">
                         <p>*Numero do perfil</p>
-                        <input type="text" value="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
+                        <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
                     </div>
                     <div class="btns-edit">
                         <button type="submit">Atualizar</button>

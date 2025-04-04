@@ -23,7 +23,6 @@ unset($_SESSION['erro']);
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/user/home.css">
     <link rel="stylesheet" href="../../assets/css/user/home-responsividade.css">
-    <link rel="stylesheet" href="../../assets/css/user/agendar.css">
     <link rel="stylesheet" href="../../assets/css/user/perfil.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +69,9 @@ unset($_SESSION['erro']);
         <div class="grids-container">
             <div class="grid" id="grid1">
                 <?php foreach ($portfolio as $imagemPortfolio): ?>
-                    <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio['imagem']; ?> " alt=""></div>
+                    <div class="item-portifolio">
+                        <img src="../../uploads/portfolio/<?php echo $imagemPortfolio['imagem']; ?> " alt="">
+                    </div>
                 <?php endforeach; ?>
             </div>
 
@@ -81,9 +82,9 @@ unset($_SESSION['erro']);
                         <div class="txt-teste">
                             <h1><?php echo $produto['nome']; ?></h1>
                             <div class="preco">
-                                <p><?php echo $produto['valor']; ?></p>
-                                <div class="duracao"><?php $duracaoEmMinutos = (int)date('i', strtotime($produto['duracao'])) . " min";
-                                echo $duracaoEmMinutos; ?></div>
+                                <p><?php echo $produto['valor']; ?> R$</p>
+                                <div class="duracao"><p><?php $duracaoEmMinutos = (int)date('i', strtotime($produto['duracao'])) . " min";
+                                echo $duracaoEmMinutos; ?></p></div>
                             </div>
                         </div>
                     </div>

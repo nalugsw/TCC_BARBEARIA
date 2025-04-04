@@ -188,7 +188,12 @@ INSERT INTO PORTFOLIO (imagem) VALUES
 ('macaquinho6.jpg'),
 ('macaquinho7.jpg'),
 ('macaquinho8.jpg'),
-('macaquinho9.jpg');
+('macaquinho9.jpg'),
+('macaquinho10.jpg'),
+('macaquinho11.jpg'),
+('macaquinho12.jpg'),
+('macaquinho13.jpg'),
+('macaquinho14.jpg');
 
 INSERT INTO servico (foto) VALUES
 ('uploads/servicos/corte-masculino.png'),
