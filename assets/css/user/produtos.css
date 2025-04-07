@@ -1,7 +1,11 @@
 /* CSS da sessão produtos */
-
-section.produtos{
+body{
     align-items: center;
+}
+section.produtos{
+    margin-top: 80px;
+    align-items: center;
+    height: 600px;
     margin: 0 auto;
     padding: 0 30px;
     grid-column: 2/3;
@@ -17,9 +21,11 @@ section.produtos .titulo-produtos{
 
 section.produtos .grid-catalogo-produtos{
     display: grid;
-    row-gap: 75px;
+    row-gap: 40px;
+    column-gap: 15px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    height: 453px;
+    flex-wrap: wrap;
+    height: 500px;
     margin-top: 55px;
     overflow-y: scroll;
     overflow-x: hidden;

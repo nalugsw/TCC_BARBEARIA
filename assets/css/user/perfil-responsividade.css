@@ -115,7 +115,9 @@
 
     section.perfil{
         height: 100%;
-        padding: 36px 0px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     section.perfil .container-perfil{
@@ -182,11 +184,12 @@
         border: none;
         transition: 0.1s;
         margin-right: 0;
+        width: 260px;
     }
 
     section.perfil .container-perfil .horarios-marcados{
         display: block;
-        width: 270px;
+        width: 260px;
         margin: 0;
     }
 
@@ -202,7 +205,7 @@
     section.perfil .container-perfil .horarios-marcados .caixa-horarios{
         background-color: #FDFDFD;
         height: 107px;
-        width: 270px;
+        width: 260px;
         border-radius: 3px;
 
 
@@ -235,5 +238,10 @@
 
     body{
         height: 100vh;
+    }
+
+    #modal-edit form{
+        max-width: 300px;
+        margin: 0 auto;
     }
 } 
