@@ -1,7 +1,7 @@
 @media screen and (max-width: 1090px){
 
     section.produtos .titulo-produtos{
-        width: 596px;
+        width: 600px;
         color: #FFFFFF;
         font-weight: bold;
         text-align: left;
@@ -11,8 +11,7 @@
     section.produtos .grid-catalogo-produtos{
         display: grid;
         row-gap: 75px;
-        column-gap: 10px;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         height: 453px;
         margin-top: 55px;
         overflow-y: scroll;
@@ -27,14 +26,28 @@
 
 /* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
 
-@media screen and (max-width: 950px){
-
+@media screen and (max-width: 890px){
+    
+    section.produtos{
+        width: 500px;
+        padding: 0;
+    }
+        
+    section.produtos .grid-catalogo-produtos .item-produto{
+        width: 150px;
+        height: 200px;
+        transition: 0.5s;
+        align-items: center;
+        margin: 0 auto;
+        
+    }
     section.produtos .grid-catalogo-produtos{
         display: grid;
         row-gap: 75px;
         column-gap: 10px;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        height: 453px;
+        grid-template-columns: 1fr 1fr 1fr ;
+        height: 450px;
+        width: 550px;
         margin-top: 55px;
         overflow-y: scroll;
         overflow-x: hidden;
