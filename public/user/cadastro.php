@@ -41,10 +41,10 @@ unset($_SESSION['erro']);
                         <input type="text" placeholder="NOME" id="nome" name="nome" required>
 
                         <label for="numero_telefone">Número de telefone</label>
-                        <input type="" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone" maxlength="11" required>
+                        <input type="" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone" required>
 
                         <label for="email">Email</label>
-                        <input type="text" placeholder="EMAIL" id="email" name="email" required>
+                        <input type="email" placeholder="EMAIL" id="email" name="email" required>
                             
                         <label for="senha">Senha</label>
                         <input type="password" placeholder="SENHA" id="senha" name="senha" minlength="8" required>
@@ -72,6 +72,8 @@ unset($_SESSION['erro']);
     </main>
 </body>
 </html>
+<script src="../../assets/js/formatar-telefone-cadastro.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1/dist/cleave.min.js"></script>
 
 <!-- teste branch DevNalu -->
  <!-- teste branch DevMarcus -->
