@@ -9,8 +9,8 @@ body{
   background-color: #232323;
   display: grid;
   grid-template-columns: 230px 1fr;
-  overflow: hidden;
-  height: 100vh;
+  overflow-y: auto;
+  min-height: 100vh;
 }
 
 /* CSS do Menu Lateral DESKTOP e seus comportamnentos */
