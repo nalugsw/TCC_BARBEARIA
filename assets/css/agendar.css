@@ -1,0 +1,141 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100vh;
+}
+
+.agenda{
+    grid-column:1/4;
+}
+
+.dia {
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.dia p{
+    font-weight: bold;
+}
+.horarios-btn {
+    background-color: #4065AB;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bolder;
+}
+
+.horarios-btn:hover {
+    background-color: #2d4777;
+    
+}
+
+.horarios-btn i:before {
+        transition: transform 0.2s linear; /* Agora a transição funciona nos dois sentidos */
+}
+    
+.horarios-btn.ativo i:before {
+        transform: rotate(180deg); /* Mantém a rotação quando o botão está ativo */
+}
+
+.horarios-btn.ativo{
+    color: #1e1e1e;
+    padding: 5px 10px 20px 10px;
+    border: none;
+    background-color: #f9f9f9;
+    border-radius: 3px 3px 0 0 ;
+    font-weight: bolder;
+    
+    
+}
+
+
+
+
+.selecao-horaio{
+    width: 750px;
+    background: #b3b3b3;
+    color: #232323;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    max-height: 55px;
+}
+
+.horarios p{
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+}
+
+.horarios {
+   
+    background: #f9f9f9;
+    max-width: 720px;
+    min-height: none;
+    max-height: 300px;
+    border-radius: 0 0 5px 5px;
+    color: #232323;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    overflow-x: hidden;
+}
+
+.horarios::-webkit-scrollbar{
+    width: 20px;
+    border-radius: 10px;
+}
+
+.horarios::-webkit-scrollbar-thumb{
+    background-color: #4065AB;
+    border-radius: 10px;
+    border: solid #e0e0e0 2px;
+    background-clip: content-box;
+    border: 6px solid transparent;
+}
+
+
+.horario-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 670px;
+    margin: 15px 25px;
+    border-bottom: #d9d9d9 solid 2px;
+    padding-bottom: 5px;
+    
+    
+}
+
+.selecionar {
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+    padding:  3px 20px;
+    background: #4065AB;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.horarios-btn-fechado {
+    background: #f3d90e;
+    color: #232323;
+    border: none;
+    padding: 5px 10px;
+    font-weight: bolder;
+    border-radius: 3px;
+}
+
