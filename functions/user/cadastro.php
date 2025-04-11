@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-include("../config/conexao.php");
+include("../../config/conexao.php");
+
+
 
 $nome = $_POST['nome'];
 $numero_telefone = $_POST['numero_telefone'];
@@ -17,7 +19,7 @@ $res = $verifica_email->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 if($total_reg > 0){
     $_SESSION['erro'] = "Email já cadastrado.";
-    header("Location: ../public/user/cadastro.php");
+    header("Location: ../../public/user/cadastro.php");
     exit();
 }else{
 
@@ -35,7 +37,7 @@ if($total_reg > 0){
     if(!$id_usuario){
         $pdo->rollBack();
         $_SESSION['erro'] = "Erro ao cadastrar usuário";
-        header("location: ../public/user/cadastro.php");
+        header("location: ../../public/user/cadastro.php");
         exit();
     }
     
@@ -48,15 +50,15 @@ if($total_reg > 0){
 
     if($cadastro){
         $pdo->commit();
-        $_SESSION['cadastro_realizado'] = "Cadastro realizado com sucesso.";
+        $_SESSION['sucesso'] = "Cadastro realizado com sucesso.";
         $_SESSION['id_usuario'] = $id_usuario;
         $_SESSION['tipo_usuario'] = $tipo_usuario;
-        header("location: ../public/user/perfil.php");
+        header("location: ../../public/user/perfil.php");
         exit();
     }else{
         $pdo->rollBack();
         $_SESSION['erro'] = "Erro ao cadastrar o usuário. Tente novamente";
-        header("location: ../public/user/cadastro.php");
+        header("location: ../../public/user/cadastro.php");
         exit();
     }
 

@@ -2,7 +2,12 @@
 
 session_start();
 include('config/conexao.php');
-// oii
+
+$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
+unset($_SESSION['sucesso']);
+unset($_SESSION['erro']);
+
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +53,7 @@ include('config/conexao.php');
                         </div>
                     </div>
                     <div class="form">
-                        <form action="functions/autenticacao.php" method="POST">
+                        <form action="functions/user/autenticacao.php" method="POST">
                             <div class="input-container">
                                 <label for="email">Email/Telefone</label>
                                 <input type="text" id="email" name="email" placeholder="Digite seu email ou telefone" required>

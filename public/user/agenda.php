@@ -3,6 +3,11 @@ include("../../config/conexao.php");
 session_start();
 require("../../functions/helpers.php");
 verificaSession("cliente");
+
+$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
+unset($_SESSION['sucesso']);
+unset($_SESSION['erro']);
 ?>
 
 

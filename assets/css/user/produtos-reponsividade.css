@@ -1,59 +1,57 @@
 @media screen and (max-width: 1090px){
-
-    section.produtos .titulo-produtos{
-        width: 596px;
-        color: #FFFFFF;
-        font-weight: bold;
-        text-align: left;
-        font-size: large;
-    }
-
     section.produtos .grid-catalogo-produtos{
         display: grid;
-        row-gap: 75px;
-        column-gap: 10px;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
         height: 453px;
-        margin-top: 55px;
+        margin-top: 30px;
         overflow-y: scroll;
         overflow-x: hidden;
-    
     }
-    
-
-
-
 }
 
 /* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
 
-@media screen and (max-width: 950px){
-
+@media screen and (max-width: 890px){
     section.produtos .grid-catalogo-produtos{
         display: grid;
-        row-gap: 75px;
+        row-gap: 20px;
         column-gap: 10px;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        height: 453px;
-        margin-top: 55px;
+        grid-template-columns: 1fr 1fr 1fr ;
+        height: 450px;
+        width: 500px;
+        margin-top: 30px;
         overflow-y: scroll;
         overflow-x: hidden;
-    
     }
 
-    section.perfil .container-perfil{
+    section.produtos .grid-catalogo-produtos .item-produto{
+        width: 150px;
+        height: 180px;
+        transition: 0.5s;
+        align-items: center;
         margin: 0 auto;
-        justify-content: center;
-        justify-self: center
-
-
     }
-
-    /* Ligando o Menu mobile e fazendo com que ele apareça apenas aqui na versão para celulares e etc */
-    nav.menu-inferior-mobile{
-        display: block;
+    
+    section.produtos .grid-catalogo-produtos .item-produto:hover{
+        width: 150px;
+        height: 180px;
+        opacity: 0.5;
+        cursor: pointer;
+        scale: 1.01;
     }
-    /* Desligando o Menu Desktop */
+    
+    section.produtos .grid-catalogo-produtos .item-produto .img-produto{
+        width: 170px;
+        height: 130px;
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto .img-produto img{
+        width: 150px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 3px;
+    }
 
     body{
         background-color: #232323;
@@ -61,203 +59,66 @@
         flex-direction: column;
     }
 
-    nav.menu-lateral-desktop{
-        display: none;
-    }
-
 }
-@media screen and (max-width: 657px){
-    section.perfil{
-        height: 100%;
-        padding: 36px 0px;
-    }
 
-    section.perfil .container-perfil{
+@media screen and (max-width: 768px){
+    section.produtos{
         display: flex;
         flex-direction: column;
-
-
-    }
-
-    section.perfil .container-perfil .foto-perfil{
-        padding-top: 0px;
-        width: 160px;
-        height: 160px;
-        margin: 0 auto;
-    }
-
-    section.perfil .container-perfil .foto-perfil .profile-pic{
-        border-radius: 100%;
-        width: 160px;
-        height: 160px;
-        background-image: url(../img/homem-sorrindo-teste.avif);
-        background-size: cover;
-        background-position: center;
-    }
-
-    section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
-        transform: translateY(-20px);
-    }
-
-    section.perfil .container-perfil .foto-perfil .btn-alterar-foto img{
-        margin-left: 88%;
-        width: 15px;
-
-    }
-
-    section.perfil .container-perfil .form {
-        max-width: 200px;
-        margin: 0 auto;
-    }
-
-    section.perfil .container-perfil.form form {
-        max-width: 0px;
-        height: 100px;
-        padding: 0px 0px 0px 0px;
-    }
-
-    section.perfil .container-perfil .form form ::placeholder{
-        font-weight: 500;
-        font-size: 15px;
-        padding: 8px;
-        color: #898989;
-    }
-
-    section.perfil .container-perfil .form form p{
-        font-size: 10px;
-        color: #d4d4d4;
-        font-weight: bold;
-        margin-top: 10px;
-        margin-bottom: 5px;
-
-    }
-
-    section.perfil .container-perfil .form form label{
-            pointer-events: none;
-            position: relative;
-            top: 5px;
-            left: 14.5px;
-            font-size: 10px;
-            color: #3F4346;
-            font-weight: bold;
-            transition: all .1s linear;
-            -webkit-transition: all .1s linear;
-            -moz-transition: all .1s linear;
-            background-color: #FDFDFD;
-            padding: 1px 5.5px;
-            box-sizing: border-box;
-    }
-
-    section.perfil .container-perfil .form form input{
-        border-radius: 3px;
-        border: none;
-        width: 200px;
-        height: 40px;
-        display: block;
-        transition: 0.1s;
-    }
-
-    section.perfil .container-perfil .form form input:focus{
-        outline: 2px solid #4891E6;
-        width: 290px;
-        height: 40px;
-        display: block;
-
-    }
-    section.perfil .container-perfil .horarios-marcados{
-        margin: 0 auto;
-
-    }
-
-    section.perfil .container-perfil .horarios-marcados p{
-        font-size: 10px;
-        color: #d4d4d4;
-        font-weight: bold;
-        margin-top: 8px;
-        margin-bottom: 5px;
-
-    }
-
-    section.perfil .container-perfil .horarios-marcados .caixa-horarios{
-        background-color: #FDFDFD;
-        height: 107px;
-        width: 200px;
-        border-radius: 3px;
-
-
-    }
-
-    section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
-        font-size: 8.5px;
-        color: #898989;
-        font-weight: 500;
-        /* padding: 18%; */
-        text-align: center;
-    }
-    section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa{
-        height: 32px;
-        max-width: 98%;
-        background-color: #898989;
-        border-radius: 3px;
-        margin-left: 3px;
-        display: flex;
-        gap: 10px;
-
-
-
-    }
-
-
-    section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
-        color: #232323;
-        font-size: 8.5px;
-    }
-
-    /* Responsividade menu mobile */
-
-    html{
-        height: 100vh;
-    }
-
-    body{
-        height: 100%;
-    }
-/* 
-    nav.menu-inferior-mobile{
-
-    } */
-
-    nav.menu-inferior-mobile ul{
-        width: 100%;
-        display: flex;
-        gap: 5px;
-        margin: 0 auto;
         justify-content: center;
-        align-items: center;
+        width: 400px;
+        height: 100vh;
+        overflow-y: hidden;
+        overflow-x: hidden;
     }
-}
-
-@media screen and (max-width: 728px){
-
     section.produtos .titulo-produtos{
-        width: 350px;
+        align-items: flex-start;
+        display: flex;
         color:#FFFFFF;
         font-weight: bold;
         text-align: right;
         font-size: 16px;
     }
-
     section.produtos .grid-catalogo-produtos{
         display: grid;
-        row-gap: 10px;
+        row-gap: 20px;
         column-gap: 10px;
         grid-template-columns: 1fr 1fr;
-        height: 453px;
+        height: 450px;
+        width: 350px;
         margin-top: 30px;
         overflow-y: scroll;
         overflow-x: hidden;
-    
     }
+    section.produtos .grid-catalogo-produtos .item-produto{
+        width: 150px;
+        height: 180px;
+        transition: 0.5s;
+        align-items: center;
+        margin: 0 auto;
+        
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto:hover{
+        width: 150px;
+        height: 180px;
+        opacity: 0.5;
+        cursor: pointer;
+        scale: 1.01;
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto .img-produto{
+        width: 170px;
+        height: 130px;
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto .img-produto img{
+        width: 150px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 3px;
+    }
+
 
     .popup {
         display: none;
@@ -287,9 +148,8 @@
     }
     
     .popup-container img {
-        width: 350px;
-        height: 250px;
-        
+        width: 320px;
+        height: 320px;
         border-radius: 10px;
     }
     
@@ -314,7 +174,7 @@
         border-radius: 100%;
         width: 20px;
         height: 20px;
-        color: #c16161;
+        color: #6b8fdb;
         font-size: 20px;
     }
 

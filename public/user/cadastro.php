@@ -3,6 +3,11 @@
 session_start();
 include("../../config/conexao.php");
 
+$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
+unset($_SESSION['sucesso']);
+unset($_SESSION['erro']);
+
 ?>
 
 <!DOCTYPE html>
@@ -31,15 +36,15 @@ include("../../config/conexao.php");
                     <h1>Cadastre-se</h1>
                 </div>
                 <div class="form">
-                    <form action="../../functions/cadastro.php" method="POST">
+                    <form action="../../functions/user/cadastro.php" method="POST">
                         <label for="nome">Nome</label>
                         <input type="text" placeholder="NOME" id="nome" name="nome" required>
 
                         <label for="numero_telefone">Número de telefone</label>
-                        <input type="" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone" maxlength="11" required>
+                        <input type="" placeholder="NUMERO DE TELEFONE" id="numero_telefone" name="numero_telefone" required>
 
                         <label for="email">Email</label>
-                        <input type="text" placeholder="EMAIL" id="email" name="email" required>
+                        <input type="email" placeholder="EMAIL" id="email" name="email" required>
                             
                         <label for="senha">Senha</label>
                         <input type="password" placeholder="SENHA" id="senha" name="senha" minlength="8" required>
@@ -67,6 +72,8 @@ include("../../config/conexao.php");
     </main>
 </body>
 </html>
+<script src="../../assets/js/formatar-telefone-cadastro.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1/dist/cleave.min.js"></script>
 
 <!-- teste branch DevNalu -->
  <!-- teste branch DevMarcus -->

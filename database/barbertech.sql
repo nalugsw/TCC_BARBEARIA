@@ -136,16 +136,16 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
 ('Perfume Feminino', 89.90, 'perfume_feminino.png', 30, 'Perfume floral suave para o dia a dia');
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
-('Corte Masculino', 35.00, '00:30:00', 'corte_masculino.png'),
-('Corte Infantil', 25.00, '00:30:00', 'corte_infantil.png'),
-('Barba Completa', 30.00, '00:25:00', 'barba_completa.png'),
-('Corte e Barba', 60.00, '01:00:00', 'corte_e_barba.png'),
-('Sobrancelha', 15.00, '00:15:00', 'sobrancelha.png'),
-('Luzes Masculinas', 80.00, '01:30:00', 'luzes_masculinas.png'),
-('Progressiva', 120.00, '02:00:00', 'progressiva.png'),
-('Hidratação Capilar', 50.00, '00:40:00', 'hidratacao_capilar.png'),
-('Pigmentação de Barba', 40.00, '00:35:00', 'pigmentacao_barba.png'),
-('Relaxamento Capilar', 90.00, '01:45:00', 'relaxamento_capilar.png');
+('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte-masculino.png'),
+('Corte Infantil', 25.00, '00:30:00', 'uploads/servicos/corte_infantil.jpg'),
+('Barba Completa', 30.00, '00:25:00', 'uploads/servicos/barba_completa.jpg'),
+('Corte e Barba', 60.00, '01:00:00', 'uploads/servicos/corte_e_barba.jpg'),
+('Sobrancelha', 15.00, '00:15:00', 'uploads/servicos/sobrancelha.jpg'),
+('Luzes Masculinas', 80.00, '01:30:00', 'uploads/servicos/luzes_masculinas.jpg'),
+('Progressiva', 120.00, '02:00:00', 'uploads/servicos/progressiva.png'),
+('Hidratação Capilar', 50.00, '00:40:00', 'uploads/servicos/hidratacao_capilar.png'),
+('Pigmentação de Barba', 40.00, '00:35:00', 'uploads/servicos/pigmentacao_barba.jpg'),
+('Relaxamento Capilar', 90.00, '01:45:00', 'uploads/servicos/relaxamento_capilar.jpg');
 
 INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia)values(
     'João é barbeiro há 12 anos. Começou em uma barbearia pequena, aprendendo com mestres da área. Ao longo dos anos, se especializou em cortes modernos, barba estilizada e acabamento perfeito. Já atendeu uma grande variedade de clientes, de estilos clássicos a mais ousados. Ele também fez cursos de coloração e penteados, sempre buscando inovar. João se destaca pela atenção aos detalhes e pela forma descontraída de fazer os clientes se sentirem à vontade. Hoje, tem sua própria barbearia, onde é referência na cidade.',
@@ -188,4 +188,21 @@ INSERT INTO PORTFOLIO (imagem) VALUES
 ('macaquinho6.jpg'),
 ('macaquinho7.jpg'),
 ('macaquinho8.jpg'),
-('macaquinho9.jpg');
+('macaquinho9.jpg'),
+('macaquinho10.jpg'),
+('macaquinho11.jpg'),
+('macaquinho12.jpg'),
+('macaquinho13.jpg'),
+('macaquinho14.jpg');
+
+INSERT INTO servico (foto) VALUES
+('uploads/servicos/corte-masculino.png'),
+('uploads/servicos/corte_infantil.png'),
+('uploads/servicos/barba_completa.png'),
+('uploads/servicos/corte_e_barba.png'),
+('uploads/servicos/sobrancelha.png'),
+('uploads/servicos/luzes_masculinas.png'),
+('uploads/servicos/progressiva.png'),
+('uploads/servicos/hidratacao_capilar.png'),
+('uploads/servicos/pigmentacao_barba.png'),
+('uploads/servicos/relaxamento_capilar.png');

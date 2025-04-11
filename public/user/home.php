@@ -4,9 +4,14 @@ include("../../config/conexao.php");
 session_start();
 include("../../functions/helpers.php");
 verificaSession("cliente");
-include("../../functions/home.php");
+include("../../functions/user/home.php");
 $produtos = mostrarServicos();
 $portfolio = mostrarImagemPortfolio();
+
+$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
+unset($_SESSION['sucesso']);
+unset($_SESSION['erro']);
 
 ?>
 
@@ -18,7 +23,6 @@ $portfolio = mostrarImagemPortfolio();
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/user/home.css">
     <link rel="stylesheet" href="../../assets/css/user/home-responsividade.css">
-    <link rel="stylesheet" href="../../assets/css/user/agendar.css">
     <link rel="stylesheet" href="../../assets/css/user/perfil.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,20 +69,22 @@ $portfolio = mostrarImagemPortfolio();
         <div class="grids-container">
             <div class="grid" id="grid1">
                 <?php foreach ($portfolio as $imagemPortfolio): ?>
-                    <div class="item"><img src="../../uploads/portfolio/<?php echo $imagemPortfolio['imagem']; ?> " alt=""></div>
+                    <div class="item-portifolio">
+                        <img src="../../uploads/portfolio/<?php echo $imagemPortfolio['imagem']; ?> " alt="">
+                    </div>
                 <?php endforeach; ?>
             </div>
 
             <div class="grid" id="grid2">
                 <?php foreach ($produtos as $produto): ?>
                     <div class="item">
-                        <img src="../../uploads/servicos/<?php echo $produto['foto']; ?>" alt="">
+                        <img src="../../<?php echo $produto['foto']; ?>" alt="">
                         <div class="txt-teste">
                             <h1><?php echo $produto['nome']; ?></h1>
                             <div class="preco">
-                                <p><?php echo $produto['valor']; ?></p>
-                                <div class="duracao"><?php $duracaoEmMinutos = (int)date('i', strtotime($produto['duracao'])) . " min";
-                                echo $duracaoEmMinutos; ?></div>
+                                <p><?php echo $produto['valor']; ?> R$</p>
+                                <div class="duracao"><p><?php $duracaoEmMinutos = (int)date('i', strtotime($produto['duracao'])) . " min";
+                                echo $duracaoEmMinutos; ?></p></div>
                             </div>
                         </div>
                     </div>
@@ -222,55 +228,6 @@ $portfolio = mostrarImagemPortfolio();
         </div>
     </section>
 
-    <!-- Menu Mobile para dispositivos de telas pequenas -->
-
-<!--     
-        <nav class="menu-inferior-mobile">
-
-            <ul>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-perfil.png" alt="">
-                        
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-home.png" alt="">
-                        
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-produtos.png" alt="">
-                        
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-informacoes.png" alt="">
-                 
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-agendar.png" alt="">
-                      
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="#">
-                        <img src="../assets/img/mobile-icon-sair.png" alt="">
-                      
-                    </a>
-                </li>
-            </ul>
-          
-        </nav>
-
-    -->
-
-    
     <script src="../../assets/js/modal.js"></script>
     <script src="../../assets/js/modal-deslogar.js"></script>
     <script src="../../assets/js/submenu-funcao.js"></script>

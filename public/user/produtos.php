@@ -43,7 +43,7 @@ $produtos = mostrarProdutos();
             <?php foreach($produtos as $produto): ?>
                 <div class="item-produto" data-titulo="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" data-descricao="<?php echo $produto['descricao']; ?>">
                     <div class="img-produto">
-                        <img src="<?php echo BASE_URL; ?>uploads/produtos/<?php echo $produto['foto']; ?>" alt="Kit Barba Balm">
+                        <img src="../../assets/img/produto-teste.webp" alt="Kit Barba Balm">
                     </div>
                     <div class="txt-produto">
                         <h2><?php echo $produto['nome']; ?></h2>
