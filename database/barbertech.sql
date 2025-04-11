@@ -72,35 +72,6 @@ CREATE TABLE PORTFOLIO(
     imagem varchar(255) NOT NULL
 );
 
--- Tabela para configurar dias e horários de funcionamento
-CREATE TABLE CONFIGURACAO_HORARIO (
-    id_configuracao INT AUTO_INCREMENT PRIMARY KEY,
-    dia_semana ENUM('segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo') NOT NULL,
-    aberto BOOLEAN DEFAULT FALSE,
-    hora_abertura TIME,
-    hora_fechamento TIME,
-    intervalo_minutos INT DEFAULT 30,
-    id_funcionario INT,
-    FOREIGN KEY (id_funcionario) REFERENCES FUNCIONARIO(id_funcionario)
-);
-
--- Tabela para feriados/dias de fechamento
-CREATE TABLE DIAS_FECHADOS (
-    id_dia_fechado INT AUTO_INCREMENT PRIMARY KEY,
-    data DATE NOT NULL,
-    motivo VARCHAR(100),
-    id_funcionario INT,
-    FOREIGN KEY (id_funcionario) REFERENCES FUNCIONARIO(id_funcionario)
-);
-
--- Tabela para configurações gerais da barbearia
-CREATE TABLE CONFIGURACAO_BARBEARIA (
-    id_configuracao INT AUTO_INCREMENT PRIMARY KEY,
-    dias_antecedencia_agendamento INT DEFAULT 15,
-    tempo_minimo_cancelamento INT DEFAULT 2, -- em horas
-    tempo_entre_agendamentos INT DEFAULT 15 -- em minutos
-);
- 
 ALTER TABLE CLIENTE ADD CONSTRAINT fk_id_usuario
     FOREIGN KEY (id_usuario)
     REFERENCES USUARIO (id_usuario);
@@ -152,25 +123,9 @@ INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia)values(
     'Na Barbearia do João, tradição e estilo se encontram para oferecer a melhor experiência em cortes e barba. Nossa barbearia combina técnicas clássicas com as últimas tendências, garantindo um atendimento personalizado para cada cliente. Com anos de experiência, João e sua equipe são especialistas em cortes modernos, degradês impecáveis e barbas bem definidas.'
 );
 
--- Configuração padrão de horários (terça a domingo, folga na segunda)
-INSERT INTO CONFIGURACAO_HORARIO (dia_semana, aberto, hora_abertura, hora_fechamento, intervalo_minutos) VALUES
-('segunda', FALSE, NULL, NULL, 30), -- Folga
-('terca', TRUE, '09:00:00', '18:00:00', 30),
-('quarta', TRUE, '09:00:00', '18:00:00', 30),
-('quinta', TRUE, '09:00:00', '18:00:00', 30),
-('sexta', TRUE, '09:00:00', '18:00:00', 30),
-('sabado', TRUE, '08:00:00', '17:00:00', 30),
-('domingo', TRUE, '10:00:00', '15:00:00', 30);
 
--- Alguns dias de fechamento exemplo
-INSERT INTO DIAS_FECHADOS (data, motivo) VALUES
-('2023-12-25', 'Natal'),
-('2024-01-01', 'Ano Novo'),
-('2024-04-21', 'Tiradentes');
 
--- Configurações gerais da barbearia
-INSERT INTO CONFIGURACAO_BARBEARIA (dias_antecedencia_agendamento, tempo_minimo_cancelamento, tempo_entre_agendamentos) VALUES
-(15, 2, 15);
+
 
 -- Inserir um funcionário exemplo
 INSERT INTO USUARIO (email, senha, status, tipo_usuario) VALUES

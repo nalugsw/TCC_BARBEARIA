@@ -1,8 +1,11 @@
 <?php
 
 session_start();
+
 include("../../config/conexao.php");
+
 require("perfil.php");
+
 require("../helpers.php");
 
 $id_usuario = $_SESSION['id_usuario'];
@@ -23,7 +26,7 @@ if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
     $formatos_permitidos = array('jpg', 'jpeg', 'png');
 
     if (!in_array($extensao, $formatos_permitidos)) {
-        $_SESSION['erro'] = "Formato de imagem não permitido";
+        $_SESSION['erro'] = "Formato de imagem não permitido"; //UM ERRO DOS BRABO AI
         header("location: ../../public/user/perfil.php");
         exit();
     }
@@ -43,12 +46,12 @@ if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
     if (!is_writable(dirname($destino))) {
         die("Erro: O diretório de destino não tem permissão de escrita.");
     }
-
     if (move_uploaded_file($origem, $destino)) {
         $caminho_foto = $novo_caminho_foto;
     } else {
         die("Erro ao mover o arquivo.");
     }
+
 }
 
 $pdo->beginTransaction();
@@ -70,9 +73,12 @@ if ($stmt->execute()) {
     $pdo->rollback();
     header("location: ../../public/user/perfil.php");
     exit();
+
 }
+
 
 $stmt = null;
 $conn = null;
+
 
 ?>
