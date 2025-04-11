@@ -63,6 +63,10 @@
     cursor: pointer;
     font-weight: bold;
   }
+
+  .btn:hover{
+    background-color: #2c4375;
+  }
   
   .login-link {
     margin-top: 45px;
