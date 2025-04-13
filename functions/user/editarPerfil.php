@@ -23,13 +23,13 @@ if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
     $extensao = pathinfo($foto['name'], PATHINFO_EXTENSION);
     $extensao = strtolower($extensao);
 
-    $formatos_permitidos = array('jpg', 'jpeg', 'png');
+    // $formatos_permitidos = array('jpg', 'jpeg', 'png');
 
-    if (!in_array($extensao, $formatos_permitidos)) {
-        $_SESSION['erro'] = "Formato de imagem não permitido"; //UM ERRO DOS BRABO AI
-        header("location: ../../public/user/perfil.php");
-        exit();
-    }
+    // if (!in_array($extensao, $formatos_permitidos)) {
+    //     $_SESSION['erro'] = "Formato de imagem não permitido"; //UM ERRO DOS BRABO AI
+    //     header("location: ../../public/user/perfil.php");
+    //     exit();
+    // }
 
     $nome_foto = $id_usuario . "." . $extensao;
     $novo_caminho_foto = "../../uploads/fotos/" . $nome_foto;
