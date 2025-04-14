@@ -22,7 +22,7 @@
         <input type="text" maxlength="1" />
       </div>
 
-      <button>Continuar</button>
+      <button type="submit">Continuar</button>
 
       <p class="login-link">Já possui cadastro? <a href="#">FAÇA SEU LOGIN</a></p> 
     </div>
