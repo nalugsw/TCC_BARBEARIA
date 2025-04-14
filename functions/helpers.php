@@ -52,4 +52,8 @@ function verificaSession($permissao){
     }
 }
 
+function enviarEmail($email, $assunto, $mensagem, $cabecalho){
+    return mail($email, $assunto, $mensagem, $cabecalho);
+}
+
 ?>
