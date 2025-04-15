@@ -46,6 +46,6 @@ if (!enviarEmail($email, $assunto, $mensagem, $cabecalho)) {
 
 $pdo->commit();
 
-header("location: verficaCodigo.php");
+header("location: ../../public/user/recuperacaoSenha.php");
 exit();
 ?>
