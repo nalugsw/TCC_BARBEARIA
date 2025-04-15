@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -24,7 +30,7 @@
 
       <button type="submit">Continuar</button>
 
-      <p class="login-link">Já possui cadastro? <a href="#">FAÇA SEU LOGIN</a></p> 
+      <p class="login-link">Já possui cadastro? <a href="../../index.php">FAÇA SEU LOGIN</a></p> 
     </div>
   </div>
 
