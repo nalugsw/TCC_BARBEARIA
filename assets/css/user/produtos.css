@@ -9,6 +9,7 @@ section.produtos{
     margin: 0 auto;
     padding: 0 30px;
     grid-column: 2/3;
+    grid-row: 1/3;
 }
 
 section.produtos .titulo-produtos{
