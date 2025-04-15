@@ -45,7 +45,6 @@
         height: 100%;
     }
     section.home{
-        padding-top: 80px;
         height: 100%;
         justify-content: flex-start;
     }
@@ -296,8 +295,11 @@
 }
 
 @media screen and (max-width: 768px){
-    .home{
+    
+    section.home{
         align-items: center;
+        grid-column: 1/3;
+        grid-row: 2/3;
     }
     
     section.home .grids-container .grid.ativo{

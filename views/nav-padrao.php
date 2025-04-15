@@ -71,4 +71,52 @@
     </div>
 </dialog>
 
+<nav class="menu-mobile">
+    <div class="logo-mobile">
+    <img src="<?php echo BASE_URL; ?>assets/img/LOGO.png" alt="">
+    </div>
+    <input type="checkbox" name="" id="abrir-mobile">
+    <label for="abrir-mobile" class="menu-linhas">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <ul class="menu-itens">
+        <li class="item-menu-mobile">
+            <a href="<?php echo BASE_URL ?>public/user/perfil.php">
+                <img src="<?php echo BASE_URL; ?>assets/img/icon-perfil.png" alt="">
+                <span class="txt-link">Perfil</span>
+            </a>
+        </li>
+        <li class="item-menu-mobile">
+            <a href="<?php echo BASE_URL; ?>public/user/home.php">
+            <img src="<?php echo BASE_URL; ?>assets/img/icon-home.png" alt="">
+            <span class="txt-link">Home</span>
+            </a>
+        </li>
+        <li class="item-menu-mobile">
+            <a href="<?php echo BASE_URL; ?>public/user/produtos.php">
+            <img src="<?php echo BASE_URL; ?>assets/img/icon-produtos.png" alt="">
+            <span class="txt-link">Produtos</span>
+            </a>
+        </li>
+        <li class="item-menu-mobile">
+            <a href="<?php echo BASE_URL; ?>public/user/informacoes.php">
+            <img src="<?php echo BASE_URL; ?>assets/img/icon-informacoes.png" alt="">
+            <span class="txt-link">Informações</span>
+            </a>
+        </li>
+        <li class="item-menu-mobile">
+            <a href="<?php echo BASE_URL; ?>public/user/agenda.php">
+            <img src="<?php echo BASE_URL; ?>assets/img/icon-agendar.png" alt="">
+            <span class="txt-link">Agendar</span>
+            </a>
+        </li>
+        
+
+    <button id="btn-sair" class="btn-sair"><img src="<?php echo BASE_URL; ?>assets/img/icon-sair.png" alt="">SAIR</button>
+    </ul>
+</nav>
+
 </html>
