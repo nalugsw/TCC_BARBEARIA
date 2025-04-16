@@ -98,10 +98,14 @@
 }
 
 @media screen and (max-width: 768px){
+    section.perfil{
+        padding: 0;
+        width: 1;
+    }
     section.perfil .container-perfil{
         margin: 0 auto;
         justify-content: center;
-        justify-self: center
+        justify-self: center;
     }
     section.perfil .container-perfil .input-campo{
         margin-right: 0;
@@ -109,6 +113,8 @@
 
     body{
         background-color: #232323;
+        margin: 0 auto;
+        padding: 0;
     }
 
 
