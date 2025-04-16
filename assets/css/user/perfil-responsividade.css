@@ -2,6 +2,7 @@
     section.perfil{
         height: 100%;
         margin: 0 51px;
+        grid-row: 1/3;
     }
 
     section.perfil .container-perfil{
@@ -97,10 +98,14 @@
 }
 
 @media screen and (max-width: 768px){
+    section.perfil{
+        padding: 0;
+        width: 1;
+    }
     section.perfil .container-perfil{
         margin: 0 auto;
         justify-content: center;
-        justify-self: center
+        justify-self: center;
     }
     section.perfil .container-perfil .input-campo{
         margin-right: 0;
@@ -108,16 +113,14 @@
 
     body{
         background-color: #232323;
-        display: flex;
-        flex-direction: column;
+        margin: 0 auto;
+        padding: 0;
     }
 
 
     section.perfil{
-        height: 100%;
-        width: 100%;
-        padding: 0;
-        margin: 0;
+        grid-row: 2/3;
+        grid-column: 1/3;
     }
 
     section.perfil .container-perfil{

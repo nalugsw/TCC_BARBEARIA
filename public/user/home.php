@@ -38,8 +38,8 @@ unset($_SESSION['erro']);
 
     <section class="home">
         <div class="container-home">
-            <div class="foto-home">
-                <div class="profile-pic"></div>
+            <div class="profile-pic">
+                <img src="../../assets/img/foto-barbeiro-tela-home.png" alt="">
             </div>
             <div class="informacoes-home">
                 <h1>Luis Pereira</h1>
@@ -57,7 +57,7 @@ unset($_SESSION['erro']);
             </div>
             <div class="marcar-horario">
                 <div class="btn-marcar-horario">
-                    <a href="#"><button>MARCAR HORARIO</button></a>
+                    <a href="./agenda.php"><button>MARCAR HORARIO</button></a>
                 </div>
             </div>
         </div>
