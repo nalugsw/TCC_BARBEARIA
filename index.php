@@ -64,7 +64,7 @@ unset($_SESSION['erro']);
                                 <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                             </div>
                             <div class="esqueceusenha">
-                                <a href="#"><p>ESQUECEU SUA SENHA?</p></a>
+                                <a href="public/user/redefinicaoSenha.html"><p>ESQUECEU SUA SENHA?</p></a>
                             </div>
                             <div class="btn-login">
                                 <button type="submit">LOGIN</button>

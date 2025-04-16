@@ -2,19 +2,20 @@
 
 session_start();
 
-include("../config/conexao.php");
+include("../../config/conexao.php");
 require("../helpers.php");
 
-$email = $_SESSION['email'];
+$codigoRecuperacao = rand(10000, 99999);
+if(!isset($_POST['email'])){
+    $_SESSION['erro'] = "Por favor preencha todos os campos corretamente.";
+    header("location: ../../public/user/redefinicaoSenha.html");
+    exit();
+}
+$email = $_POST['email'];
 $assunto = "Código de recuperação";
 $mensagem = "Seu código de recuperação é: $codigoRecuperacao";
 $cabecalho = "From: no-reply@barbertech.com";
-$codigoRecuperacao = rand(100000, 999999);
 
-if(!isset($email)){
-    $_SESSION['erro'] = "Por favor preencha todos os campos corretamente.";
-    header("location: ../public/user/");
-}
 
 $sql = "SELECT email FROM usuario WHERE email = :email";
 $stmt = $pdo->prepare($sql);
@@ -22,15 +23,32 @@ $stmt->bindParam(":email", $email);
 $stmt->execute();
 $resultadoEmail = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if($email != $resultadoEmail['erro']){
-    $_SESSION['erro'] = "E-mail informado não cadastrado. Por favor informar um E-mail válido.";
-    header("location: ../public/user/");
+if (!$resultadoEmail) {
+    $_SESSION['erro'] = "E-mail informado não cadastrado.";
+    echo "erro de email";
+    header("location: ../../public/user/redefinicaoSenha.html");
+    exit();
 }
+
+$pdo->beginTransaction();
 
 $sql = "UPDATE usuario SET token = :token WHERE email = :email";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(":token", $codigoRecuperacao);
 $stmt->bindParam(":email", $email);
+$stmt->execute();
 
-enviarEmail($email, $assunto, $mensagem, $cabecalho);
+if (!enviarEmail($email, $assunto, $mensagem, $cabecalho)) {
+    $_SESSION['erro'] = "Erro ao enviar o e-mail. Tente novamente.";
+    $pdo->rollBack();
+    echo "envio de email";
+    header("location: ../../public/user/redefinicaoSenha.html");
+    exit();
+}
+
+$pdo->commit();
+
+echo "Email enviado";
+header("location: ../../public/user/recuperacaoSenha.php");
+exit();
 ?>
