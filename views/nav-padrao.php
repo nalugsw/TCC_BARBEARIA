@@ -53,7 +53,7 @@
             </a>
         </li>
     </ul>
-
+    
     <button id="btn-sair" class="btn-sair"><img src="<?php echo BASE_URL; ?>assets/img/icon-sair.png" alt="">SAIR</button>
 
 </nav>
@@ -114,8 +114,12 @@
             </a>
         </li>
         
-
-    <button id="btn-sair" class="btn-sair"><img src="<?php echo BASE_URL; ?>assets/img/icon-sair.png" alt="">SAIR</button>
+        <div class="div-btn">
+            <button id="btn-sair-mobile" class="btn-sair">
+                <img src="<?php echo BASE_URL; ?>assets/img/icon-sair.png" alt="">
+                <span>SAIR</span>
+            </button>
+        </div>
     </ul>
 </nav>
 
