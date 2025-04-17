@@ -2,11 +2,13 @@
 
 session_start();
 include('config/conexao.php');
+// oii
 
 $mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
 $mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
 unset($_SESSION['sucesso']);
 unset($_SESSION['erro']);
+
 
 ?>
 
@@ -36,14 +38,21 @@ unset($_SESSION['erro']);
                     <div class="titulo">
                         <h1>Seja bem vindo!</h1>
                     </div>
+                    <?php if (!empty($mensagemErro)): ?>
                     <div class="error-box">
                         <div class="icon">
                             <i class="bi bi-exclamation-circle"></i>
                         </div>
                         <div class="txt-error">
-                            <p>Usuário ou senha não conferem! Tente novamente!</p>
+                        
+                            <p><?php 
+                            echo htmlspecialchars($mensagemErro);
+                            unset($mensagemErro);
+                            ?></p>
+        
                         </div>
                     </div>
+                    <?php endif; ?>
                     <div class="correct-box">
                         <div class="icon">
                             <i class="bi bi-check2-circle"></i>
@@ -56,15 +65,15 @@ unset($_SESSION['erro']);
                         <form action="functions/user/autenticacao.php" method="POST">
                             <div class="input-container">
                                 <label for="email">Email/Telefone</label>
-                                <input type="text" id="email" name="email" placeholder="Digite seu email ou telefone" required>
+                                <input type="text" id="email" name="email" placeholder="Digite seu email ou telefone" >
                             </div>
 
                             <div class="input-container">
                                 <label for="senha">Senha</label>
-                                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" >
                             </div>
                             <div class="esqueceusenha">
-                                <a href="public/user/redefinicaoSenha.html"><p>ESQUECEU SUA SENHA?</p></a>
+                                <a href="#"><p>ESQUECEU SUA SENHA?</p></a>
                             </div>
                             <div class="btn-login">
                                 <button type="submit">LOGIN</button>
@@ -84,4 +93,5 @@ unset($_SESSION['erro']);
             </section>
     </main>
 </body>
+<script src="assets/js/caixa-erros.js"></script>
 </html>
