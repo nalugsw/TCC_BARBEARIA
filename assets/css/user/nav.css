@@ -170,6 +170,8 @@ nav.menu-lateral-desktop .btn-sair img{
 nav.menu-mobile ul{
   display: none;
   transform: translateX(100%);
+  transition: 0.5s;
+  transition-timing-function: ease;
 }
 
 
@@ -196,8 +198,10 @@ nav.menu-mobile ul{
     width: 30px;
     height: 30px;
     right: 20px;
-    top: 20px;
+    top: 25px;
     z-index:98 ;
+    transition: 0.35s;
+    transition-timing-function: ease;
   }
   .menu-linhas span{
     width: 30px;
@@ -255,8 +259,13 @@ nav.menu-mobile ul{
   #abrir-mobile:checked{
     position: fixed;
   }
+  
+  #abrir-mobile:checked~ .menu-linhas{
+    transform: translateX(-185px);
+    top: 35px;
+  }
   #abrir-mobile:checked~ .menu-linhas span:nth-child(1){
-    transform: rotate(-45deg);
+    transform: rotate(-45deg) scale(1.2);
     position: fixed;
   }
   #abrir-mobile:checked~ .menu-linhas span:nth-child(2){
@@ -264,7 +273,7 @@ nav.menu-mobile ul{
     position: fixed;
   }
   #abrir-mobile:checked~ .menu-linhas span:nth-child(3){
-    transform: rotate(45deg);
+    transform: rotate(45deg) scale(1.2);
     position: fixed;
   }
 
@@ -273,5 +282,38 @@ nav.menu-mobile ul{
     position: fixed;
     transform: translateX(0);
     display: flex;
+  }
+  .div-btn .btn-sair{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    transition: 0.5s;
+    box-shadow: 1px 1px 2px rgba(55, 55, 55, 0.34);
+  }
+  .div-btn .btn-sair{
+    scale: 1.02;
+    background-color: #31579c;
+    width: 100px;
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+  }
+  
+  .div-btn .btn-sair img{
+    margin-right: 20px;
+  }
+  
+  .div-btn{
+    width: 100%;
+    height: 100%;
+    margin: 0 0 25px 15px;
+    display: flex;
+    align-items: flex-end;
   }
 }
