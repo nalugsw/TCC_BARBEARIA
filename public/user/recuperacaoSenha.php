@@ -20,20 +20,24 @@ session_start();
       <h2>Recuperação de senha</h2>
       <p>Agora, insira o código que te enviamos por e-mail para criar uma nova senha.</p>
 
-      <div class="code-inputs">
-        <input type="text" maxlength="1" />
-        <input type="text" maxlength="1" />
-        <input type="text" maxlength="1" />
-        <input type="text" maxlength="1" />
-        <input type="text" maxlength="1" />
-      </div>
+      <form action="../../functions/recuperacao_senha/verificaCodigo.php" method="POST">
 
-      <button type="submit">Continuar</button>
+        <div class="code-inputs">
+          <input type="text" maxlength="1" name="letra1"/>
+          <input type="text" maxlength="1" name="letra2"/>
+          <input type="text" maxlength="1" name="letra3"/>
+          <input type="text" maxlength="1" name="letra4"/>
+          <input type="text" maxlength="1" name="letra5"/>
+        </div>
+
+        <button type="submit">Continuar</button>
+
+      </form>
 
       <p class="login-link">Já possui cadastro? <a href="../../index.php">FAÇA SEU LOGIN</a></p> 
     </div>
   </div>
 
-  <script src="/assets/js/recuperacaoSenha.js"></script>
+  <script src="../../assets/js/recuperacaoSenha.js"></script>
 </body>
 </html>

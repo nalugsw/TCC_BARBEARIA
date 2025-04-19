@@ -10,12 +10,14 @@
   <div class="container">
     <img src="../../assets/img/LOGO.png" alt="Logo BarberTech" class="logo" />
     <div class="card">
-      <h2> Alterar senha</h2>
-      <p>Sua senha deve ter pelo menos 6 caracteres e uma combinação de numeros.</p>
-      <input type="password" placeholder="Senha" class="input" />
-      <input type="password" placeholder="Digite novamente" class="input" />
-      <button class="btn">LOGIN</button>
-      <p class="login-link">Já possui cadastro? <a href="#">FAÇA SEU LOGIN</a></p>
+      <h2> Alteração de senha</h2>
+      <p>Sua senha deve ter pelo menos 8 caracteres.</p>
+      <form action="../../functions/recuperacao_senha/trocaSenha.php" method="POST">
+        <input type="password" placeholder="Senha" class="input" name="senha" />
+        <input type="password" placeholder="Digite novamente" class="input" name="mesmaSenha"/>
+        <button class="btn" type="submit">ALTERAR</button>
+      </form>
+      <p class="login-link">Já possui cadastro? <a href="../../index.php">FAÇA SEU LOGIN</a></p>
     </div>
   </div>
 </body>
