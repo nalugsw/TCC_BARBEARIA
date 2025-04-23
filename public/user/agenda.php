@@ -29,7 +29,7 @@ unset($_SESSION['erro']);
     <?php include("../../views/nav-padrao.php"); ?>
 
     <main>
-    <h1>Agendar</h1>
+    <!-- <h1>Agendar</h1>
     <div class="info-barbeiro">
         <p>Você pode agendar um horário por aqui ou pela seção home>submenu do perfil do barbeiro caso desejar!</p>
     </div>
@@ -188,7 +188,13 @@ unset($_SESSION['erro']);
             </div>
 
         </div>
-    </div>
+    </div> -->
+
+    <?php 
+
+    include("../calendario/index.php");
+
+    ?>
 
     </main>
 
