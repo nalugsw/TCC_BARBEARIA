@@ -3,21 +3,18 @@
 section.home{
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
     grid-column: 2/3;
-    justify-content: center;
     grid-row: 1/3;
     height: 100vh;
+    margin: 0 auto;
+    width: 750px;
     margin-top: 100px;
 }
 
 section.home .container-home{
     display: flex;
-    gap: 87px;
-    margin: 0 auto;
-    justify-content: center;
-    justify-self: center;
-    
+    align-items: center;
+    justify-content: space-between;
 }
 
 section.home .container-home .profile-pic img{
@@ -89,18 +86,13 @@ section.home .container-home  .marcar-horario .btn-marcar-horario a button:hover
 /* CSS do Submenu do home */
 
 section.home .submenu{
-    width: 750px;
-    height: 44px;
-    margin: 0 auto;
     display: flex;
-    padding-left: 0px;
-    margin-left: 10px;
-   
+    margin-top: 10px;
 }
 
 section.home .submenu button {
-    /* padding: 6px 85px; */
     width: 250px;
+    height: 40px;
     background-color: transparent;
     border: none;
     font-size: 24px;
@@ -115,18 +107,15 @@ section.home .submenu button::after {
     height: 3px;
     background-color: #F6F7F9;
     position: absolute;
-    bottom: 0;
-    left: 44%;
-    transform: translateX(-50%);
+    left: 0;
     transition: width 0.3s ease;
+    bottom: 0;
+    /*transform: translateX(-69%); */
 }
-
 section.home .submenu button:hover::after,
 section.home .submenu button:focus::after {
     width: 100%;
 }
-
-
 section.home .submenu button:focus {
     outline: none;
 }
@@ -134,8 +123,8 @@ section.home .submenu button:focus {
 
 section.home .grids-container{
     margin-top: 5px;
-    height: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    height: 80vh;
 }
 section.home .grids-container .grid {
     display: none;
@@ -146,9 +135,6 @@ section.home .grids-container .grid.ativo{
     row-gap: 2px;
     column-gap: 2px;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 750;
-    height: 80%;
-    margin: 0 auto;
     overflow-y: scroll;
     overflow-x: hidden;
 }

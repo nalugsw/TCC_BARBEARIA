@@ -11,7 +11,8 @@ body{
   grid-template-columns: 230px 1fr;
   grid-template-rows: 70px 1fr;
   overflow-y: hidden;
-  min-height: 100vh;
+  overflow-x: hidden;
+  height: 100vh;
 }
 
 /* CSS do Menu Lateral DESKTOP e seus comportamnentos */
