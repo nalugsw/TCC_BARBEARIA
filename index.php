@@ -10,6 +10,7 @@ unset($_SESSION['sucesso']);
 unset($_SESSION['erro']);
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +93,7 @@ unset($_SESSION['erro']);
                 </div>
             </section>
     </main>
+    <script src="assets/js/caixa-erros.js"></script>
 </body>
-<script src="assets/js/caixa-erros.js"></script>
+
 </html>

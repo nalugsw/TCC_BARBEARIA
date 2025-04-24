@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Agendamento</title>
-    <link rel="stylesheet" href="../../css/estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <div class="container">
@@ -22,7 +22,7 @@
         
         <div id="formularioAgendamento" style="display:none;">
             <h2>Preencha seus dados</h2>
-            <form action="../../processa_agenda.php" method="post">
+            <form action="processa_agenda.php" method="post">
                 <input type="hidden" id="dataAgendamento" name="dataAgendamento">
                 <input type="hidden" id="horaAgendamento" name="horaAgendamento">
                 
@@ -66,7 +66,7 @@
             }
             
             // Buscar dias inativos e agendamentos via AJAX
-            fetch(`../../includes/funcoes.php?acao=carregaCalendario&ano=${ano}&mes=${mes}`)
+            fetch(`includes/funcoes.php?acao=carregaCalendario&ano=${ano}&mes=${mes}`)
                 .then(response => response.json())
                 .then(data => {
                     const diasCalendario = document.getElementById('diasCalendario');
@@ -137,7 +137,7 @@
                 `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
             
             // Busca horários disponíveis via AJAX
-            fetch(`../../includes/funcoes.php?acao=buscaHorarios&data=${ano}-${mes}-${dia}`)
+            fetch(`includes/funcoes.php?acao=buscaHorarios&data=${ano}-${mes}-${dia}`)
                 .then(response => response.json())
                 .then(horarios => {
                     const container = document.getElementById('horariosDisponiveis');
