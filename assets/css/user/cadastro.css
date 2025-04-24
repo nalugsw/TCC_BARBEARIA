@@ -126,7 +126,6 @@ section.login .container .voltar a{
     font-weight: bold;
     text-align: center;
     transition: 0.3s;
-    
 }
 
 section.login .container .voltar a:hover{
@@ -134,14 +133,12 @@ section.login .container .voltar a:hover{
     color: #22355a;
     font-weight: bold;
     text-align: center;
-    
-
 }
 
 section.login .container .btn-login{
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 
@@ -166,11 +163,10 @@ section.login .container .btn-login a button:hover{
 }
 
 section.login .container .termos{
-    margin-top: 0px;
-    font-size: 8px;
+    margin-top: 20px;
+    font-size: 11px;
     font-weight: bold;
     text-align: center;
-    display: none;
 }
 
 section.login .container .termos a{

@@ -7,6 +7,8 @@ section.home{
     grid-column: 2/3;
     justify-content: center;
     grid-row: 1/3;
+    height: 100vh;
+    margin-top: 100px;
 }
 
 section.home .container-home{
@@ -129,20 +131,26 @@ section.home .submenu button:focus {
     outline: none;
 }
 
+
+section.home .grids-container{
+    margin-top: 5px;
+    height: 100%;
+    margin-bottom: 50px;
+}
+section.home .grids-container .grid {
+    display: none;
+}
+
 section.home .grids-container .grid.ativo{
     display: grid;
+    row-gap: 2px;
+    column-gap: 2px;
     grid-template-columns: 1fr 1fr 1fr;
     width: 750;
-    height: 450px;
+    height: 80%;
     margin: 0 auto;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-section.home .grids-container .grid {
-    display: none;
-    row-gap: 2px;
-    column-gap: 2px;
 }
 
 section.home .grids-container .grid::-webkit-scrollbar{
@@ -155,9 +163,6 @@ section.home .grids-container .grid::-webkit-scrollbar-thumb{
     background-color: #898989;
     border: solid #232323 5px;
 }
-.grids-container{
-    margin-top: 5px;
-} 
 
 #grid1{
     grid-template-columns: repeat(3,1fr);

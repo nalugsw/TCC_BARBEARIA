@@ -82,7 +82,7 @@ unset($_SESSION['erro']);
                                     <a href="public/user/cadastro.php"><p>CADASTRAR CONTA</p></a>
                             </div>
                             <div class="termos">
-                                    <a href="#">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>
+                                    <a href="./public/user/politicasPrivacidade.html">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>
                             </div>
                         </form>
                     </div>
