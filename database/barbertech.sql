@@ -150,4 +150,10 @@ INSERT INTO PORTFOLIO (imagem) VALUES
 ('macaquinho13.jpg'),
 ('macaquinho14.jpg');
 
+CREATE TABLE dias_inativos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_inativa DATE NOT NULL UNIQUE,
+    motivo VARCHAR(255)
+);
+
 

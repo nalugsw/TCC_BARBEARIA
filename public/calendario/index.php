@@ -26,21 +26,6 @@
                 <input type="hidden" id="dataAgendamento" name="dataAgendamento">
                 <input type="hidden" id="horaAgendamento" name="horaAgendamento">
                 
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" required>
-                </div>
-                
                 <button type="submit">Confirmar Agendamento</button>
             </form>
         </div>
