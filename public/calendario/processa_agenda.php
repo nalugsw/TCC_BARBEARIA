@@ -8,9 +8,6 @@ require("../../functions/helpers.php");
 $dadosUsuario = dadosCliente($id_usuario);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['nome'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $telefone = $_POST['telefone'] ?? '';
     $data = $_POST['dataAgendamento'] ?? '';
     $hora = $_POST['horaAgendamento'] ?? '';
     
@@ -26,10 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         // Insere o agendamento
-        $stmt = $pdo->prepare("INSERT INTO agendamentos 
-                              (nome_cliente, email_cliente, telefone_cliente, data_agendamento, hora_agendamento) 
+        $stmt = $pdo->prepare("INSERT INTO agenda 
+                              (data, horario, id_cliente_servico) 
                               VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$nome, $email, $telefone, $data, $hora]);
+        $stmt->execute([$data, $hora]);
         
         header('Location: index.php?sucesso=1');
         exit();
