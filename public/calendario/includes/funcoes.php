@@ -1,5 +1,5 @@
             <?php
-require_once 'config.php';
+require_once '../../../config/conexao.php';
 
 header('Content-Type: application/json');
 
@@ -18,9 +18,9 @@ try {
             $inativos = $stmt->fetchAll(PDO::FETCH_COLUMN);
             
             // Busca agendamentos
-            $stmt = $pdo->prepare("SELECT DATE(data_agendamento) as data, TIME(hora_agendamento) as hora 
-                                   FROM agendamentos 
-                                   WHERE YEAR(data_agendamento) = ? AND MONTH(data_agendamento) = ?");
+            $stmt = $pdo->prepare("SELECT DATE(data) as data, TIME(horario) as hora 
+                                   FROM agenda 
+                                   WHERE YEAR(data) = ? AND MONTH(data) = ?");
             $stmt->execute([$ano, $mes]);
             $agendamentos = [];
             
@@ -44,8 +44,8 @@ try {
             }
             
             // Remove horários já agendados
-            $stmt = $pdo->prepare("SELECT hora_agendamento FROM agendamentos 
-                                  WHERE data_agendamento = ?");
+            $stmt = $pdo->prepare("SELECT horario FROM agenda
+                                  WHERE data = ?");
             $stmt->execute([$data]);
             $horariosOcupados = $stmt->fetchAll(PDO::FETCH_COLUMN);
             

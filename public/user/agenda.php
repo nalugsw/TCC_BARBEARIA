@@ -3,6 +3,8 @@ include("../../config/conexao.php");
 session_start();
 require("../../functions/helpers.php");
 verificaSession("cliente");
+require_once("../../functions/user/home.php");
+$servicos = mostrarServicos();
 
 $mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
 $mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
@@ -219,18 +221,11 @@ unset($_SESSION['erro']);
                 <input type="hidden" id="horaAgendamento" name="horaAgendamento">
                 
                 <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" required>
+                    <select name="veiculo" id="veiculo" required>
+                        <?php foreach($servicos as $servico): ?>
+                            <option value="<?php echo $servico['id_servico']; ?>"><?php echo $servico['nome']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 
                 <button type="submit">Confirmar Agendamento</button>

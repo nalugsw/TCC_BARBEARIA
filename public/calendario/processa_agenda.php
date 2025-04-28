@@ -1,5 +1,11 @@
 <?php
-require_once 'includes/config.php';
+
+session_start();
+
+require("../../config/conexao.php");
+require("../../functions/helpers.php");
+
+$dadosUsuario = dadosCliente($id_usuario);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'] ?? '';
@@ -10,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     try {
         // Verifica se o horário ainda está disponível
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM agendamentos 
-                              WHERE data_agendamento = ? AND hora_agendamento = ?");
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM agenda 
+                              WHERE data = ? AND hora = ?");
         $stmt->execute([$data, $hora]);
         $existe = $stmt->fetchColumn();
         
