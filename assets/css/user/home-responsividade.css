@@ -1,7 +1,6 @@
 @media screen and (max-width: 1129px){
-
     section.home{
-        justify-content: center;
+        width: 680px;
     }
 
     section.home .container-home{
@@ -11,6 +10,7 @@
         justify-content: center;
         justify-self: center;
     }
+
 
     section.home .container-home  .marcar-horario .btn-marcar-horario a button{
         border: none;
@@ -35,6 +35,33 @@
         font-size: 30px;
         font-weight: bold;
     }
+        
+    section.home .submenu{
+        display: flex;
+    }
+
+    #grid1 .item-portifolio{
+        object-fit: cover;
+        height: 220px;
+        width: 220px;
+    }
+    #grid1 .item-portifolio img{
+        height: 220px;
+        width: 220px;
+    }
+    
+        
+    section.home .submenu button {
+        width: 220px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        color: #F6F7F9;
+        position: relative;
+        margin-left: 3px;
+    }
+
 }
 
 /* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
@@ -42,11 +69,8 @@
 
 @media screen and (max-width: 1016px){
     /* Responsividade menu mobile */
-    body{
-        height: 100%;
-    }
+    
     section.home{
-        height: 100%;
         justify-content: flex-start;
         margin-top: 80px;
     }
@@ -163,9 +187,6 @@
     
     section.home .grids-container .grid {
         display: none;
-        height: 100%;
-        row-gap: 2px;
-        column-gap: 2px;
     }
 
     section.home .grids-container #grid1 .item-portifolio{
@@ -184,7 +205,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         width: 470px;
-        height: 450px;
         margin: 0 auto;
         overflow-y: scroll;
         overflow-x: hidden;
@@ -374,14 +394,10 @@
 
     section.home .grids-container .grid {
         display: none;
-        height: 100%;
-        row-gap: 2px;
-        column-gap: 2px;
     }
     
     section.home .grids-container{
         overflow: hidden;
-        height: 500px;
     }
 
     section.home .grids-container #grid1 .item-portifolio{
@@ -400,7 +416,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         width: 350px;
-        height: 100%;
         margin: 0 auto;
         overflow-y: scroll;
         overflow-x: hidden;
