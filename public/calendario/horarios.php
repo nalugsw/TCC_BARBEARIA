@@ -30,7 +30,7 @@ if (!DateTime::createFromFormat('Y-m-d', $date)) {
 $availableHours = ['08:00','08:30', '09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'];
 
 // Consultar horários já reservados
-$stmt = $pdo->prepare("SELECT TIME_FORMAT(horario, '%H:%i') as hora FROM agenda WHERE data = ? AND status = 'reservado'");
+$stmt = $pdo->prepare("SELECT TIME_FORMAT(horario, '%H:%i') as hora FROM agenda WHERE data = ?");
 $stmt->execute([$date]);
 $bookedHours = $stmt->fetchAll(PDO::FETCH_COLUMN); 
 
