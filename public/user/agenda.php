@@ -221,7 +221,7 @@ unset($_SESSION['erro']);
                 <input type="hidden" id="horaAgendamento" name="horaAgendamento">
                 
                 <div class="form-group">
-                    <select name="veiculo" id="veiculo" required>
+                    <select name="servico" id="servico" required>
                         <?php foreach($servicos as $servico): ?>
                             <option value="<?php echo $servico['id_servico']; ?>"><?php echo $servico['nome']; ?></option>
                         <?php endforeach; ?>
