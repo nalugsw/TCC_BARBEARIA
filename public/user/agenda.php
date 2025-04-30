@@ -359,4 +359,3 @@ unset($_SESSION['erro']);
 <script src="../../assets/js/modal-selecionar.js"></script>
 <script src="../../assets/js/submenu-funcao.js"></script>
 <script src="../../assets/js/agendar-funcao.js"></script>
-</html>

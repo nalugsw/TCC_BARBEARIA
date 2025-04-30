@@ -157,3 +157,15 @@ CREATE TABLE dias_inativos (
 );
 
 
+
+-- COMANDO PARA AGRUPAR OS AGENDAMENTOS POR MêS (IMPORTANTE TESTAR APÓS NALU FAZER O GRÁFICO EM JS)
+
+-- SELECT
+-- 	MONTH(data) AS mes, 
+-- 	COUNT(id_agenda) AS total_agendamentos
+-- FROM agenda
+-- 	WHERE YEAR(data) = ?
+-- 	GROUP BY MONTH(data)
+-- 	ORDER BY mes;
+
+

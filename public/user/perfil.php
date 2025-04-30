@@ -29,6 +29,9 @@ unset($_SESSION['erro']);
     <!-- Importando pacote de icones do Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
+
+    
+    <script src="../../assets/js/formatar-telefone.js"></script>
 </head>
 <body>
     <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
@@ -110,7 +113,6 @@ unset($_SESSION['erro']);
 
     <!-- Menu Mobile para dispositivos de telas pequenas -->
 
-        <script src="../../assets/js/formatar-telefone.js"></script>
         <script src="../../assets/js/modal-deslogar.js"></script>
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>
