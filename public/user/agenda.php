@@ -38,29 +38,29 @@ unset($_SESSION['erro']);
             <div id="diasCalendario"></div>
         </div>
         
+        <h2 id="dataSelecionadaTitulo" style="display: none;"></h2>
         <div id="horariosContainer" style="display:none;">
-            <h2 id="dataSelecionadaTitulo"></h2>
-            <h3>horarios selecionados</h3>
-            <div id="horariosDisponiveis"></div>
+            <h3 id="TituloDia">horarios selecionados</h3>
+            <div id="horariosDisponiveis" class="horariosDisponiveis" ></div>
+            <div id="formularioAgendamento" style="display:none;">
+                <h2>Selecione o Serviço</h2>
+                <form action="../calendario/processa_agenda.php" method="post">
+                    <input type="hidden" id="dataAgendamento" name="dataAgendamento">
+                    <input type="hidden" id="horaAgendamento" name="horaAgendamento">
+                    
+                    <div class="form-group">
+                        <select name="servico" id="servico" required>
+                            <?php foreach($servicos as $servico): ?>
+                                <option value="<?php echo $servico['id_servico']; ?>"><?php echo $servico['nome']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    
+                    <button type="submit">Confirmar Agendamento</button>
+                </form>
+            </div>
         </div>
         
-        <div id="formularioAgendamento" style="display:none;">
-            <h2>Preencha seus dados</h2>
-            <form action="../calendario/processa_agenda.php" method="post">
-                <input type="hidden" id="dataAgendamento" name="dataAgendamento">
-                <input type="hidden" id="horaAgendamento" name="horaAgendamento">
-                
-                <div class="form-group">
-                    <select name="servico" id="servico" required>
-                        <?php foreach($servicos as $servico): ?>
-                            <option value="<?php echo $servico['id_servico']; ?>"><?php echo $servico['nome']; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                
-                <button type="submit">Confirmar Agendamento</button>
-            </form>
-        </div>
     </div>
 
        <!-- <h1>Agendar</h1>
@@ -326,13 +326,22 @@ unset($_SESSION['erro']);
                         botaoHorario.className = 'botao-horario';
                         botaoHorario.textContent = horario;
                         botaoHorario.onclick = function() {
+                            document.querySelectorAll('.botao-horario').forEach(btn => {
+                                btn.classList.remove('botao-horario-select');
+                            });
                             selecionaHorario(horario);
+                            botaoHorario.classList.add('botao-horario-select');
+                            const formAgend = document.getElementById('formularioAgendamento');
+                            const divHorarios = document.getElementById('horariosDisponiveis');
+                            formAgend.classList.add('formularioAgendamento-select');
+                            divHorarios.classList.add('horariosDisponiveis-select')
                         };
                         container.appendChild(botaoHorario);
                     });
                     
                     // Mostra o container de horários
-                    document.getElementById('horariosContainer').style.display = 'block';
+                    document.getElementById('horariosContainer').style.display = 'grid';
+                    document.getElementById('dataSelecionadaTitulo').style.display = 'block';
                     document.getElementById('formularioAgendamento').style.display = 'none';
                 });
         }
@@ -340,7 +349,6 @@ unset($_SESSION['erro']);
         function selecionaHorario(horario) {
             document.getElementById('horaAgendamento').value = horario;
             document.getElementById('formularioAgendamento').style.display = 'block';
-
         }
     </script>
 </body>
