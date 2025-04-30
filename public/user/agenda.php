@@ -21,6 +21,7 @@ unset($_SESSION['erro']);
     <title>Tela de Agendar</title>
     <link rel="stylesheet" href="../../assets/css/user/tela-agendar.css">
     <link rel="stylesheet" href="../../assets/css/user/tela-agendar-responsividade.css">
+    <link rel="stylesheet" href="../calendario/css/estilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,9 +30,40 @@ unset($_SESSION['erro']);
 </head>
 <body>
     <?php include("../../views/nav-padrao.php"); ?>
+    <div class="container">
+        <h1>Agende seu horário</h1>
+        
+        <div id="calendario">
+            <input type="month" id="mesSelecionado" onchange="carregaCalendario()">
+            <div id="diasCalendario"></div>
+        </div>
+        
+        <div id="horariosContainer" style="display:none;">
+            <h2 id="dataSelecionadaTitulo"></h2>
+            <h3>horarios selecionados</h3>
+            <div id="horariosDisponiveis"></div>
+        </div>
+        
+        <div id="formularioAgendamento" style="display:none;">
+            <h2>Preencha seus dados</h2>
+            <form action="../calendario/processa_agenda.php" method="post">
+                <input type="hidden" id="dataAgendamento" name="dataAgendamento">
+                <input type="hidden" id="horaAgendamento" name="horaAgendamento">
+                
+                <div class="form-group">
+                    <select name="servico" id="servico" required>
+                        <?php foreach($servicos as $servico): ?>
+                            <option value="<?php echo $servico['id_servico']; ?>"><?php echo $servico['nome']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                
+                <button type="submit">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </div>
 
-    <main>
-    <!-- <h1>Agendar</h1>
+       <!-- <h1>Agendar</h1>
     <div class="info-barbeiro">
         <p>Você pode agendar um horário por aqui ou pela seção home>submenu do perfil do barbeiro caso desejar!</p>
     </div>
@@ -192,47 +224,6 @@ unset($_SESSION['erro']);
         </div>
     </div> -->
 
-    <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Agendamento</title>
-    <link rel="stylesheet" href="../calendario/css/estilo.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Agende seu horário</h1>
-        
-        <div id="calendario">
-            <input type="month" id="mesSelecionado" onchange="carregaCalendario()">
-            <div id="diasCalendario"></div>
-        </div>
-        
-        <div id="horariosContainer" style="display:none;">
-            <h2 id="dataSelecionadaTitulo"></h2>
-            <div id="horariosDisponiveis"></div>
-        </div>
-        
-        <div id="formularioAgendamento" style="display:none;">
-            <h2>Preencha seus dados</h2>
-            <form action="../calendario/processa_agenda.php" method="post">
-                <input type="hidden" id="dataAgendamento" name="dataAgendamento">
-                <input type="hidden" id="horaAgendamento" name="horaAgendamento">
-                
-                <div class="form-group">
-                    <select name="servico" id="servico" required>
-                        <?php foreach($servicos as $servico): ?>
-                            <option value="<?php echo $servico['id_servico']; ?>"><?php echo $servico['nome']; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                
-                <button type="submit">Confirmar Agendamento</button>
-            </form>
-        </div>
-    </div>
-
     <script>
         // Carrega o calendário ao abrir a página
         window.onload = function() {
@@ -349,15 +340,11 @@ unset($_SESSION['erro']);
         function selecionaHorario(horario) {
             document.getElementById('horaAgendamento').value = horario;
             document.getElementById('formularioAgendamento').style.display = 'block';
+
         }
     </script>
 </body>
 </html>
-
-    </main>
-
-    
-</body>
 
 <script src="../../assets/js/modal.js"></script>
 <script src="../../assets/js/modal-deslogar.js"></script>

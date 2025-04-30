@@ -65,7 +65,7 @@ unset($_SESSION['erro']);
                     <div class="form">
                         <form action="functions/user/autenticacao.php" method="POST">
                             <div class="input-container">
-                                <label for="email">Email/Telefone</label>
+                                <label for="email">Email</label>
                                 <input type="text" id="email" name="email" placeholder="Digite seu email ou telefone" >
                             </div>
 

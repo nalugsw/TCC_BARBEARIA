@@ -40,7 +40,7 @@ try {
             // Horários disponíveis (exemplo: das 8h às 18h, de hora em hora)
             $horariosDisponiveis = [];
             for ($hora = 8; $hora < 18; $hora++) {
-                $horariosDisponiveis[] = sprintf("%02d:00:00", $hora);
+                $horariosDisponiveis[] = sprintf("%02d:00", $hora);
             }
             
             // Remove horários já agendados
