@@ -65,11 +65,11 @@ unset($_SESSION['erro']);
                     
                     <div id="img-container">
                         <p>*Foto do perfil</p>
+                        <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
                         <div class="input-campo">
                             <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
                             <label for="arquivo" class="custom-file-button">Escolha a foto</label>
                         </div>
-                        <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
                     </div>
                     <?php $dados = dadosCliente($_SESSION['id_usuario']);?>
                     <div class="input-campo">

@@ -150,14 +150,10 @@ INSERT INTO PORTFOLIO (imagem) VALUES
 ('macaquinho13.jpg'),
 ('macaquinho14.jpg');
 
-INSERT INTO servico (foto) VALUES
-('uploads/servicos/corte-masculino.png'),
-('uploads/servicos/corte_infantil.png'),
-('uploads/servicos/barba_completa.png'),
-('uploads/servicos/corte_e_barba.png'),
-('uploads/servicos/sobrancelha.png'),
-('uploads/servicos/luzes_masculinas.png'),
-('uploads/servicos/progressiva.png'),
-('uploads/servicos/hidratacao_capilar.png'),
-('uploads/servicos/pigmentacao_barba.png'),
-('uploads/servicos/relaxamento_capilar.png');
+CREATE TABLE dias_inativos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_inativa DATE NOT NULL UNIQUE,
+    motivo VARCHAR(255)
+);
+
+

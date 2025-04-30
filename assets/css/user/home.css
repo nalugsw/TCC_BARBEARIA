@@ -1,0 +1,333 @@
+section.home{
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+    grid-row: 1/3;
+    height: 100%;
+    margin: 0 auto;
+    width: 770px;
+    height: 100%;
+    margin-top: 50px;
+}
+
+section.home .container-home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.home .container-home .profile-pic img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+section.home .container-home .profile-pic{
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    transition: 0.5s;
+}
+
+section.home .container-home .informacoes-home{
+   padding: 26px 0px;
+    height: 160px;
+    width: 214px;
+    color: #F9F9F9;
+}
+
+section.home .container-home .informacoes-home h1{
+    font-size: 36px;
+    font-weight: bold;
+    
+}
+
+section.home .container-home .informacoes-home .estrelas-icons i{
+    color: #FFD25E;
+    font-size: 28px;
+}
+
+section.home .container-home .informacoes-home .endereco-info p{
+    font-weight: 100;
+    font-size: 14px;
+   
+}
+
+section.home .container-home  .marcar-horario {
+    vertical-align: middle;
+    padding: 65px 0px;
+}
+
+section.home .container-home  .marcar-horario .btn-marcar-horario{
+    height: 40px;
+
+}
+
+section.home .container-home  .marcar-horario .btn-marcar-horario a button{
+    border: none;
+    cursor: pointer;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px  50px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+section.home .container-home  .marcar-horario .btn-marcar-horario a button:hover{
+    scale: 0.9;
+    background-color: #2d4777;
+    
+}
+
+/* CSS do Submenu do home */
+
+section.home .submenu{
+    display: flex;
+}
+
+section.home .submenu button {
+    width: 250px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #F6F7F9;
+    position: relative;
+    margin-left: 3px;
+}
+
+section.home .submenu button::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #F6F7F9;
+    position: absolute;
+    left: 0;
+    transition: width 0.3s ease;
+    bottom: 0;
+    transform: translateX(-0.5%); 
+}
+section.home .submenu button:hover::after,
+section.home .submenu button:focus::after {
+    width: 100%;
+}
+section.home .submenu button:focus {
+    outline: none;
+}
+
+
+section.home .grids-container{
+    margin-top: 5px;
+    height: 100%;
+    margin-bottom: 50px;
+}
+section.home .grids-container .grid {
+    display: none;
+}
+
+section.home .grids-container .grid.ativo{
+    display: grid;
+    row-gap: 2px;
+    column-gap: 2px;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 50%;
+    min-height: 250px;
+}
+
+section.home .grids-container .grid::-webkit-scrollbar{
+    width: 20px;
+    background-color: #232323;
+}
+
+section.home .grids-container .grid::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #898989;
+    border: solid #232323 5px;
+}
+
+#grid1{
+    grid-template-columns: repeat(3,1fr);
+ 
+}
+#grid1 .item-portifolio{
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+}
+#grid1 .item-portifolio img{
+    height: 250px;
+    width: 250px;
+}
+
+section.home .grids-container #grid2 .item{
+    position: relative; /* Define um contexto para a .txt-teste */
+     /* Evita que o texto saia da imagem */
+
+}
+#grid2{
+    grid-template-columns: 1fr 1fr;
+}
+#grid2 .item{
+    width: 375px;
+    height: 180px;
+}
+
+#grid2 .item img{
+    transition: 0.5s;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+#grid2 .item img:hover{
+    opacity: 0.5;
+}
+
+
+#grid2 .item .txt-teste {
+    position: absolute;
+    bottom: 0; /* Alinha no rodapé da imagem */
+    left: 0;
+    width: 100%; /* Faz o texto ocupar toda a largura da imagem */
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+    text-align: left;
+}
+#grid2 .item .txt-teste .preco{
+    transform: translateY(-100px);
+    font-size: 20px;
+    font-weight: 600;
+    justify-content: left;
+}
+#grid2 .item .txt-teste .preco .duracao{
+    font-weight: 200;
+    font-size: 18px;
+    
+
+}
+
+/* parte agendar */
+
+.agenda{
+    grid-column:1/4;
+}
+
+.dia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.dia p{
+    font-weight: bold;
+}
+.horarios-btn {
+    background-color: #4065AB;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bolder;
+}
+
+.horarios-btn:hover {
+    background-color: #2d4777;
+    
+}
+
+.horarios-btn i:before {
+        transition: transform 0.2s linear; /* Agora a transição funciona nos dois sentidos */
+}
+    
+.horarios-btn.ativo i:before {
+        transform: rotate(180deg); /* Mantém a rotação quando o botão está ativo */
+}
+
+.horarios-btn.ativo{
+    color: #1e1e1e;
+    padding: 5px 10px 20px 10px;
+    border: none;
+    background-color: #f9f9f9;
+    border-radius: 3px 3px 0 0 ;
+    font-weight: bolder;
+    
+    
+}
+
+.selecao-horaio{
+    width: 750px;
+    background: #b3b3b3;
+    color: #232323;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    max-height: 55px;
+}
+
+.horarios p{
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+}
+
+.horarios {
+    background: #f9f9f9;
+    max-width: 720px;
+    min-height: none;
+    max-height: 300px;
+    border-radius: 0 0 5px 5px;
+    color: #232323;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    overflow-x: hidden;
+}
+
+.horario-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 670px;
+    margin: 15px 25px;
+    border-bottom: #d9d9d9 solid 2px;
+    padding-bottom: 5px;
+    
+    
+}
+
+.selecionar {
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+    padding:  3px 20px;
+    background: #4065AB;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.horarios-btn-fechado {
+    background: #f3d90e;
+    color: #232323;
+    border: none;
+    padding: 5px 10px;
+    font-weight: bolder;
+    border-radius: 3px;
+}

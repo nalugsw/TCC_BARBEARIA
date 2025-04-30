@@ -1,0 +1,217 @@
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    grid-row: 2/3;
+    grid-column: 2/3;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+    border-top: solid 15px #fafafa;
+    border-bottom: solid 15px #fafafa;
+}
+
+.container::-webkit-scrollbar{
+    width: 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #898989;
+    border: solid #fafafa 5px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#calendario {
+    margin-bottom: 20px;
+}
+
+#diasCalendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.dia-semana {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background: #eee;
+}
+
+.dia {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dia:hover {
+    background: #f0f0f0;
+}
+
+.dia.inativo {
+    background: #f9f9f9;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.dia.com-agendamento {
+    background: #ffe6e6;
+}
+
+.dia.outro-mes {
+    visibility: hidden;
+}
+
+#horariosDisponiveis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.botao-horario {
+    background: transparent ;
+    color: #1d1d1d;
+    padding: 15px 10px 10px 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    border-bottom: #b3b3b3 solid 2px;
+    cursor: pointer;
+    width: 90%;
+    display: flex;
+    
+}
+.botao-horario-select{
+    background: #bebebe5c;
+}
+
+.botao-horario:hover {
+    background: #bebebe5c;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.mensagem {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.sucesso {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.erro {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+#horariosContainer h3{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1d1d1d;
+}
+
+#dataSelecionadaTitulo{
+    width: 100%;
+    background: #b3b3b3;
+    color: #232323;
+    padding: 15px;
+    border-radius: 3px 3px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    max-height: 55px;
+    font-weight: 600;
+}
+
+#horariosDisponiveis{
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    height: 300px;
+    overflow-y: scroll;
+    border-bottom: solid 10px #e0e0e0;
+    border-radius: 0 0 3px 3px;
+}
+
+#horariosDisponiveis::-webkit-scrollbar{
+    width: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+#horariosDisponiveis::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #898989;
+    border: solid #e0e0e0 5px;
+}
+
+#formularioAgendamento{
+    margin-top: 20px;
+}

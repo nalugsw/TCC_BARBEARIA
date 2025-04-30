@@ -73,7 +73,7 @@
 
 <nav class="menu-mobile">
     <div class="logo-mobile">
-    <img src="<?php echo BASE_URL; ?>assets/img/LOGO.png" alt="">
+    <a href="./perfil.php"><img src="<?php echo BASE_URL; ?>assets/img/LOGO.png" alt=""></a>
     </div>
     <input type="checkbox" name="" id="abrir-mobile">
     <label for="abrir-mobile" class="menu-linhas">

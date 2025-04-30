@@ -10,6 +10,7 @@ unset($_SESSION['sucesso']);
 unset($_SESSION['erro']);
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +65,7 @@ unset($_SESSION['erro']);
                     <div class="form">
                         <form action="functions/user/autenticacao.php" method="POST">
                             <div class="input-container">
-                                <label for="email">Email/Telefone</label>
+                                <label for="email">Email</label>
                                 <input type="text" id="email" name="email" placeholder="Digite seu email ou telefone" >
                             </div>
 
@@ -73,7 +74,7 @@ unset($_SESSION['erro']);
                                 <input type="password" id="senha" name="senha" placeholder="Digite sua senha" >
                             </div>
                             <div class="esqueceusenha">
-                                <a href="#"><p>ESQUECEU SUA SENHA?</p></a>
+                                <a href="public/user/redefinicaoSenha.html"><p>ESQUECEU SUA SENHA?</p></a>
                             </div>
                             <div class="btn-login">
                                 <button type="submit">LOGIN</button>
@@ -82,7 +83,7 @@ unset($_SESSION['erro']);
                                     <a href="public/user/cadastro.php"><p>CADASTRAR CONTA</p></a>
                             </div>
                             <div class="termos">
-                                    <a href="#">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>
+                                    <a href="./public/user/politicasPrivacidade.html">TERMOS DE USO | POLÍTICA DE PRIVACIDADE</a>
                             </div>
                         </form>
                     </div>
@@ -92,6 +93,7 @@ unset($_SESSION['erro']);
                 </div>
             </section>
     </main>
+    <script src="assets/js/caixa-erros.js"></script>
 </body>
-<script src="assets/js/caixa-erros.js"></script>
+
 </html>
