@@ -1,10 +1,10 @@
 <?php
 
-session_start();
-
-require("../../config/conexao.php");
+include("../../config/conexao.php");
 require("../../functions/helpers.php");
 
+session_start();
+$id_usuario = $_SESSION['id_usuario']; 
 $dadosUsuario = dadosCliente($id_usuario);
 $id_cliente = $dadosUsuario['id_cliente'];
 
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Verifica se o horário ainda está disponível
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM agenda 
-                              WHERE data = ? AND hora = ?");
+                              WHERE data = ? AND horario = ?");
         $stmt->execute([$data, $hora]);
         $existe = $stmt->fetchColumn();
         
@@ -24,15 +24,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             throw new Exception("Este horário já foi reservado por outra pessoa.");
         }
 
-        $sql = "INSERT INTO cliente_servico (id_cliente, id_servico) VALUES($id_cliente, $servico);
-        $stmt = $pdo->prepare($sql);
-
-        
         // Insere o agendamento
         $stmt = $pdo->prepare("INSERT INTO cliente_servico (id_cliente, id_servico) VALUES (?, ?)");
         $stmt->execute([$id_cliente, $servico]);
 
-        
+        $id_cliente_servico = $pdo->lastInsertId();
+
+        $stmt = $pdo->prepare("INSERT INTO agenda (data, horario, id_cliente_servico) VALUES(?, ?, ?)");
+        $stmt->execute([$data, $hora, $id_cliente_servico]);
+
         header('Location: ../user/agenda.php?sucesso=1');
         exit();
     } catch (Exception $e) {

@@ -10,7 +10,7 @@ define("BASE_URL", "http://localhost/TCC_BARBEARIA/");
 
 function dadosCliente($id_usuario){
     global $pdo;
-    $sql = "SELECT CLIENTE.nome, CLIENTE.numero_telefone, USUARIO.email
+    $sql = "SELECT CLIENTE.id_cliente, CLIENTE.nome, CLIENTE.numero_telefone, USUARIO.email
             FROM CLIENTE
             JOIN USUARIO ON CLIENTE.id_usuario = USUARIO.id_usuario
             WHERE USUARIO.id_usuario = :id_usuario";
