@@ -18,7 +18,7 @@
 <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
 <nav class="menu-lateral-desktop">
     <div class="logo">
-        <img src="<?php echo BASE_URL; ?>assets/img/LOGO.png" alt="">
+        <a href="./perfil.php"><img src="<?php echo BASE_URL; ?>assets/img/LOGO.png" alt=""></a>
     </div>
 
     <ul>
