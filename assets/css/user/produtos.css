@@ -5,7 +5,7 @@ body{
 section.produtos{
     margin-top: 80px;
     align-items: center;
-    height: 600px;
+    height: 80%;
     margin: 0 auto;
     padding: 0 30px;
     grid-column: 2/3;
@@ -27,7 +27,7 @@ section.produtos .grid-catalogo-produtos{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     flex-wrap: wrap;
     margin-top: 30px;
-    height: 500px;
+    height: 90%;
     overflow-y: scroll;
     overflow-x: hidden;
 
