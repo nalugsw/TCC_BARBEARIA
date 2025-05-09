@@ -1,22 +1,36 @@
 /* CSS da sessão perfil */
 main{
     grid-column: 2/3;
+    grid-row: 2/3;
 }
+
+body::-webkit-scrollbar{
+    width: 20px;
+    background-color: #232323;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #797979;
+    border: solid #232323 5px;
+}
+
 section{
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
 .horarios-marcados{
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    height: 500px;
 }
 .servico-marcado{
     display: grid;
     grid-template-columns: 150px  1fr;
     grid-template-rows: 40px 40px 40px 40px;
     margin: 2px 2px 4px 2px  ;
+    border-radius: 6px;
 }
 .servico-marcado .foto-cliente{
     grid-column: 1/2;
@@ -27,6 +41,7 @@ section{
     justify-content: space-evenly;
     background-color: #666;
     margin-right: 2px;
+    border-radius: 6px;
 }
 .servico-marcado .foto-cliente img{
     object-fit: cover;
@@ -48,6 +63,7 @@ section{
     align-items: center;
     font-weight: 600;
     transition: 0.2s;
+    border-radius: 3px;
 }
 .servico-marcado .foto-cliente button:hover{
     background-color: #05581f;
@@ -66,53 +82,59 @@ section{
     grid-row: 1/2;
     display: flex;
     margin-bottom: 2px;
+    border-radius: 6px;
 }
 .numero-cliente{
     grid-column: 2/3;
     grid-row: 2/3;
     display: flex;
     margin-bottom: 2px;
+    border-radius: 6px;
 }
 .servico-cliente{
     grid-column: 2/3;
     grid-row: 3/4;
     display: flex;
     margin-bottom: 2px;
+    border-radius: 6px;
 }
 .horario-cliente{
     grid-column: 2/3;
     grid-row: 4/5;
     display: flex;
+    border-radius: 6px;
 }
 .servico-marcado h3{
-    width: 150px;
+    width: 25%;
     padding-left: 10px;
     background-color: #666;
     padding: 8px 10px;
     text-align:left;
     font-weight: 400;
+    border-radius: 6px 0 0 6px;
 }
 .servico-marcado input{
-   width: 500px;
+   width: 75%;
    border: none;
    border-radius: 0;
    background-color: #878787;
    padding: 10px 20px;
    font-size: 20px;
+   border-radius: 0 6px 6px 0;
 }
 .servico-marcado input::placeholder{
     color: #ffffff;
     font-weight: bold;
 }
 .horario-cliente input{
-    width: 300px;
+    width: 45%;
 }
 
 .cliente-hora a{
     text-decoration: none;
 }
 .horario-cliente button {
-    width: 200px;
+    width: 29%;
     background-color: #b13434;
     color: #FFEAEA;
     border: none;
@@ -122,13 +144,15 @@ section{
     font-weight:500;
     transition: 0.2s;
     height: 100%;
+    border-radius: 6px;
+    margin: 0 auto;
 }
 .horario-cliente button:hover{
-    background-color: #ac2d2d;
+    background-color: #861616;
 }
 .cliente-hora{
     background-color: #4e4e4e;
-    border-radius: 3px;
+    border-radius: 6px;
     padding-bottom: 0.1px;
     margin-bottom: 3px;
 }
@@ -166,7 +190,9 @@ section{
     margin: 95px 0 50px 0;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 700px;
+    margin: 0 auto;
 }
 
 /* modal */
