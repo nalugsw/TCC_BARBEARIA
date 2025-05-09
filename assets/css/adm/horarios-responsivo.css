@@ -1,0 +1,153 @@
+@media screen and (max-width: 1075px){
+  .perfil-adm,
+  .servico-marcado{
+    width: 500px;
+  }
+    
+  .foto-adm{
+    width: 130px;
+    height: 130px;
+  }
+
+  .informacoes-home h1{
+    font-size: 22px;
+  }
+  .endereco-info p{
+    font-size: 15px;
+  }
+
+  .informacoes-home h1 span,
+  .endereco-info p span{
+    margin-left: 10px;
+    color: #f4f4f4;
+    text-decoration: none;
+  }
+  .perfil-adm{
+    margin: 95px 0 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .servico-marcado{
+    grid-template-rows: 35px 35px 35px 35px;
+  }
+  .servico-marcado .foto-cliente img{
+    width: 75px;
+  }
+  .servico-marcado .foto-cliente button{
+    width: 100px;
+    font-size: 13px;
+    padding:  4px 7px;
+  }
+  .dia-servicos{
+    font-size: 14px;
+  }
+  .servico-marcado h3{
+    font-size: 14px;
+  }
+  .servico-marcado input{
+  font-size: 16px;
+  }
+    
+  .horario-cliente input{
+    width: 45%;
+  }
+
+  .horario-cliente button {
+    font-size: 12px;
+    padding: 3px ;
+  }
+  .material-symbols-outlined{
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 768px){
+  main{
+    grid-column: 1/3;
+    
+  }
+  body{
+    overflow-x: hidden;
+  }
+  .perfil-adm{
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width:530px) {
+  .perfil-adm,
+  .servico-marcado{
+    width: 320px;
+  }
+  
+  .foto-adm{
+    width: 90px;
+    height: 90px;
+  }
+
+  .informacoes-home h1{
+    font-size: 19px;
+  }
+  .endereco-info p{
+    font-size: 12px;
+    width: 180px;
+  }
+
+  .informacoes-home h1 span,
+  .endereco-info p span{
+    margin-left: 10px;
+    color: #f4f4f4;
+    text-decoration: none;
+  }
+  .perfil-adm{
+    margin: 95px 0 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top:20px;
+  }
+
+  .servico-marcado{
+    grid-template-columns: 110px 1fr;
+    grid-template-rows: 33px 33px 33px 33px;
+  }
+  .servico-marcado .foto-cliente img{
+    width: 70px;
+  }
+  .servico-marcado .foto-cliente button{
+    width: 80px;
+    font-size: 12px;
+    padding:  4px 7px;
+  }
+  .dia-servicos{
+    font-size: 13px;
+  }
+  .servico-marcado h3{
+    font-size: 12px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+  }
+  .servico-marcado input{
+    font-size: 13px;
+  }
+    
+  .horario-cliente input{
+    width: 50%;
+  }
+
+  .horario-cliente button {
+    font-size: 12px;
+    padding: 3px ;
+    width: 23%;
+  }
+  .horario-cliente button p{
+    display: none;
+  }
+    
+  .servico-marcado input{
+    padding: 10px 10px;
+  }
+}
