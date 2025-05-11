@@ -3,6 +3,7 @@ include("../../config/conexao.php");
 session_start();
 require("../../functions/helpers.php");
 verificaSession("cliente");
+$funcionarios = dadosFuncionario();
 require_once("../../functions/user/home.php");
 $servicos = mostrarServicos();
 
@@ -48,9 +49,10 @@ unset($_SESSION['erro']);
                     <input type="hidden" id="horaAgendamento" name="horaAgendamento">
                     
                     <div class="form-group">
+                        <h2>Selecione o Serviço</h2>
                         <select name="servico" id="servico" required>
                             <?php foreach($servicos as $servico): ?>
-                                <option value="<?php echo $servico['id_servico']; ?>"><?php echo $servico['nome']; ?></option>
+                                <option value="<?= $servico['id_servico'] ?>"><?= $servico['nome'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

@@ -1,4 +1,4 @@
-            <?php
+<?php
 include('../../../config/conexao.php');
 
 header('Content-Type: application/json');
