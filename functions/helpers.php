@@ -21,6 +21,17 @@ function dadosCliente($id_usuario){
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+//RECUPERA OS DADOS DO FUNCIONARIO
+
+function dadosFuncionario(){
+    global $pdo;
+    $sql = "SELECT * FROM funcionario";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 //PEGA O DIA DA SEMANA
 
 function DiaDaSemana($data) {

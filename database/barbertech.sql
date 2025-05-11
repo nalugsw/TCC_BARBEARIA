@@ -42,7 +42,8 @@ CREATE TABLE AGENDA (
     data date not null,
     horario time not null,
     id_funcionario int,
-    id_cliente_servico int
+    id_cliente_servico int,
+    status VARCHAR not null
 );
 
 CREATE TABLE USUARIO (
