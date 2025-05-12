@@ -1,0 +1,43 @@
+@media screen and (max-width: 1120px) {
+  body{
+    overflow: hidden;
+  }
+  main{
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr;
+    grid-auto-flow: row dense;
+    margin: 0 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 900px) {
+
+  main{
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  main{
+    display: flex;
+    flex-direction: column;
+    grid-row: 2/3;
+    grid-column: 1/3;
+    margin-top: 25px;
+  }
+  .info-barbearia{
+    display: flex;
+    flex-direction: column;
+  }
+}

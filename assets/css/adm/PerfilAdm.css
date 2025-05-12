@@ -1,0 +1,223 @@
+
+main {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+body::-webkit-scrollbar{
+    width: 20px;
+    background-color: #232323;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #797979;
+    border: solid #232323 5px;
+}
+
+/* perfil adm */
+.info{
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+    color: #ffffff;
+}
+
+.perfil-container{
+    background-color: #313131;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+}
+.foto-perfil {
+    position: relative;
+}
+
+.foto-perfil img {
+    width: 150px; 
+    height: 150px;
+    margin-left: 30px;
+    border-radius: 50%;
+}
+
+
+.editar-icon:hover {
+    color: #666768; 
+}
+
+.dados-perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    text-align: center; 
+    color: #ffffff;
+}
+.dados-perfil h1 {
+   
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: right;
+    gap: 10px;
+}
+
+.dados-perfil p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    display: inline;
+    align-items: center;
+    gap: 1px;
+}
+
+
+/* imagens */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin: 30px;
+    justify-content: center;
+    height: 90%;
+}
+
+.galeria-item {
+    position: relative;
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    display: inline;
+    border-radius: 6px;
+}
+
+/* Ícone de três pontinhos*/
+.imagem-item span{
+    position: relative;
+}
+
+.imagem-item {
+    position: relative; 
+    display: inline-block;
+}
+
+.imagem-item img {
+    display: block;
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.material-symbols-outlined {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Estilo para os ícones dentro da galeria */
+.galeria .material-symbols-outlined {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.galeria .material-symbols-outlined:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+.dados-perfil h1, 
+.dados-perfil p {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
+.dados-perfil .editar-icon  {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.editar-icon {
+    position: static; 
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 20px; 
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.dados-perfil .editar-icon:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.editar-icon:hover {
+    color: #666768;
+}
+
+/* Estilo para o ícone ao lado da foto de perfil */
+.foto-perfil .editar-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.foto-perfil .editar-icon:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsividade */
+
+

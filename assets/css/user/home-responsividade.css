@@ -1,0 +1,570 @@
+@media screen and (max-width: 1129px){
+    section.home{
+        width: 680px;
+    }
+
+    section.home .container-home{
+        display: flex;
+        gap: 47px;
+        margin: 0 auto;
+        justify-content: center;
+        justify-self: center;
+    }
+
+
+    section.home .container-home  .marcar-horario .btn-marcar-horario a button{
+        border: none;
+        cursor: pointer;
+        height: 35px;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 7px  45px;
+        color: #d4d4d4;
+        background-color: #4065AB;
+        border-radius: 3px;
+        transition: 0.5s;
+    }
+        
+    section.home .container-home .profile-pic{
+        border-radius: 100%;
+        width: 145px;
+        height: 145px;
+    }
+        
+    section.home .container-home .informacoes-home h1{
+        font-size: 30px;
+        font-weight: bold;
+    }
+        
+    section.home .submenu{
+        display: flex;
+    }
+
+    #grid1 .item-portifolio{
+        object-fit: cover;
+        height: 220px;
+        width: 220px;
+    }
+    #grid1 .item-portifolio img{
+        height: 220px;
+        width: 220px;
+    }
+    
+        
+    section.home .submenu button {
+        width: 220px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        color: #F6F7F9;
+        position: relative;
+        margin-left: 3px;
+    }
+    
+    
+    #grid2 .item{
+        height: 150px;
+        width: 100%;
+    }
+    
+    #grid2 .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+    #grid2{
+        grid-template-columns: 1fr ;
+        gap: 0px;
+        row-gap: 2px;
+        column-gap: 2px;
+        width: 100%;
+        border: none;
+    }
+    
+    #grid2 .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+    
+}
+/* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
+
+
+@media screen and (max-width: 1016px){
+    /* Responsividade menu mobile */
+    
+    section.home{
+        justify-content: flex-start;
+        margin-top: 80px;
+        width: 550px;
+    }
+
+    section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
+        color: #232323;
+        font-size: 8.5px;
+    }
+
+    section.home .container-home{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 30px;
+        gap: 0px;
+        margin: 0 auto;
+        justify-content: center;
+        justify-self: center;
+    }
+    
+    section.home .container-home .profile-pic{
+        border-radius: 100%;
+        width: 130px;
+        height: 130px;
+        margin-right: 15px;
+    }
+    section.home .container-home .informacoes-home{
+        padding: 26px 0px;
+        height: 120px;
+        width: 214px;
+        color: #F9F9F9;
+        margin: 0 auto;
+    }
+    
+    section.home .container-home .informacoes-home h1{
+        font-size: 26px;
+        font-weight: bold;
+    }
+    
+    section.home .container-home .informacoes-home .estrelas-icons i{
+        color: #FFD25E;
+        font-size: 18px;
+    }
+    
+    section.home .container-home .informacoes-home .endereco-info p{
+        font-weight: 100;
+        font-size: 14px;
+    }
+    
+    section.home .container-home  .marcar-horario {
+        vertical-align: middle;
+        padding: 15px 0px;
+        grid-column: 2/3;
+        margin: 0 auto;
+    }
+    
+    section.home .container-home  .marcar-horario .btn-marcar-horario{
+        margin: 0;
+        height: 30px;
+    }
+    
+    section.home .container-home  .marcar-horario {
+        padding: 0;
+    }
+    
+    section.home .container-home  .marcar-horario .btn-marcar-horario a button{
+        border: none;
+        cursor: pointer;
+        height: 30px;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 7px  21px;
+        color: #d4d4d4;
+        background-color: #4065AB;
+        border-radius: 3px;
+        transition: 0.5s;
+        margin: 0;
+    }
+        
+    
+    section.home .container-home  .marcar-horario .btn-marcar-horario a button:hover{
+        scale: 0.9;
+        background-color: #2d4777;
+        
+    }
+
+    section.home .submenu{
+        width: 550px;
+        height: 44px;
+        margin: 0 auto;
+        display: flex;
+        padding-left: 0px;
+    }
+    section.home .submenu button {
+        width: 175px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        font-size: 19px;
+        color: #F6F7F9;
+        position: relative;
+    }
+    
+    section.home .submenu button::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background-color: #F6F7F9;
+        position: absolute;
+        left: 0;
+        transition: width 0.3s ease;
+        bottom: 0;
+        transform: translateX(-0.5%);
+    }
+    section.home .submenu button:hover::after,
+    section.home .submenu button:focus::after {
+        width: 100%;
+    }
+    section.home .submenu button:focus {
+        outline: none;
+    }
+    section.home .grids-container .grid::-webkit-scrollbar{
+        width: 20px;
+        background-color: #232323;
+    }
+
+    section.home .grids-container .grid::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #898989;
+        border: solid #232323 5px;
+    }
+    
+    section.home .grids-container .grid {
+        display: none;
+    }
+
+    section.home .grids-container #grid1 .item-portifolio{
+        width: 100%;
+        height: 175px;
+    }
+
+    section.home .grids-container #grid1 .item-portifolio img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+
+    section.home .grids-container .grid.ativo{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 550px;
+        margin: 0 auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    
+    
+    #grid2 .item{
+        height: 150px;
+        width: 450px;
+    }
+    
+    #grid2 .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+    #grid2{
+        grid-template-columns: 1fr ;
+        gap: 0px;
+        row-gap: 2px;
+        column-gap: 2px;
+        width: 470px;
+        border: none;
+    }
+    
+    #grid2 .item{
+        height: 150px;
+        width: 450px;
+    }
+    
+    #grid2 .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+    
+    #grid2 .item img:hover{
+        opacity: 0.5;
+    }
+    
+    
+    #grid2 .item .txt-teste {
+        position: absolute;
+        bottom: 0; /* Alinha no rodapé da imagem */
+        left: 0;
+        width: 100%; /* Faz o texto ocupar toda a largura da imagem */
+        padding: 10px;
+        color: white;
+        font-size: 14px;
+        justify-content: space-between;
+        padding-right: 20px;
+        text-align: left;
+    }
+        
+    #grid2 .item .txt-teste .preco{
+        transform: translateY(-80px);
+        font-size: 20px;
+        font-weight: 600;
+        justify-content: left;
+    }
+    #grid2 .item .txt-teste .preco .duracao{
+        font-weight: 200;
+        font-size: 18px;
+    }
+    .selecao-horaio{
+        width: 100%;
+        background: #b3b3b3;
+        color: #232323;
+        padding: 15px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        max-height: 55px;
+    }
+    
+    
+    .horarios {
+        background: #f9f9f9;
+        width: 420px;
+        min-height: none;
+        max-height: 300px;
+        border-radius: 0 0 5px 5px;
+        color: #232323;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        overflow-x: hidden;
+    }
+        
+    .horario-div{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        width: 370px;
+        margin: 15px 25px;
+        border-bottom: #d9d9d9 solid 2px;
+        padding-bottom: 5px;
+        
+        
+    }
+}
+
+@media screen and (max-width: 768px){
+    
+    section.home{
+        margin-top: 20px;
+        align-items: center;
+        grid-column: 1/3;
+        grid-row: 2/3;
+        width: 350px;
+        height: 80%;
+    }
+    
+    section.home .container-home{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 30px;
+        gap: 0px;
+        margin: 0 auto;
+        justify-content: center;
+        justify-self: center;
+    }
+    
+    section.home .container-home .profile-pic{
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    section.home .container-home .informacoes-home{
+        padding: 26px 0px;
+        height: 120px;
+        width: 214px;
+        color: #F9F9F9;
+        margin: 0 auto;
+    }
+    
+    section.home .container-home .informacoes-home h1{
+        font-size: 22px;
+        font-weight: bold;
+    }
+    
+    section.home .container-home .informacoes-home .estrelas-icons i{
+        color: #FFD25E;
+        font-size: 18px;
+    }
+    
+    section.home .container-home .informacoes-home .endereco-info p{
+        font-weight: 100;
+        font-size: 14px;
+    }
+    
+    section.home .container-home  .marcar-horario .btn-marcar-horario a button{
+        border: none;
+        cursor: pointer;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 3px 20px;
+        color: #d4d4d4;
+        background-color: #4065AB;
+        border-radius: 3px;
+        transition: 0.5s;
+    }
+    section.home .grids-container .grid.ativo{
+        margin: 0 auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-width: 350px;
+        height: 90%;
+    }
+    
+        
+    section.home .submenu button::after {
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: #F6F7F9;
+        position: absolute;
+        bottom: 0;
+        left: 44%;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+        margin-left: 4px;
+    }
+    section.home .submenu{
+        max-width: 350px;
+        height: 35px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    section.home .submenu button {
+        width: 110px;
+        background-color: transparent;
+        border: none;
+        font-size: 15px;
+        color: #F6F7F9;
+        position: relative;
+        height: auto;
+    }
+    
+    section.home .grids-container .grid::-webkit-scrollbar{
+        width: 20px;
+        background-color: #232323;
+        border-radius: 10px;
+    }
+
+    section.home .grids-container .grid::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #898989;
+        border: solid #232323 5px;
+    }
+    #grid2 .item .txt-teste {
+        position: absolute;
+        bottom: 0; /* Alinha no rodapé da imagem */
+        left: 0;
+        width: 100%; /* Faz o texto ocupar toda a largura da imagem */
+        padding: 5px 15px;
+        color: white;
+        font-size: 12px;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+        
+    #grid2 .item .txt-teste .preco{
+        transform: translateY(-50px);
+        font-size: 18px;
+        font-weight: 600;
+        justify-content: left;
+    }
+    #grid2 .item .txt-teste .preco .duracao{
+        font-weight: 200;
+        font-size: 16px;
+    }
+
+    section.home .grids-container .grid {
+        display: none;
+    }
+    
+    section.home .grids-container{
+        overflow: hidden;
+        height: 70%;
+    }
+
+    section.home .grids-container #grid1 .item-portifolio{
+        width: 110px;
+        height: 110px;
+    }
+
+    section.home .grids-container #grid1 .item-portifolio img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+
+    section.home .grids-container .grid.ativo{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 350px;
+        margin: 0 auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 99%;
+    }
+    
+    #grid2 .item{
+        height: 110px;
+        width: 330px;
+    }
+    
+    #grid2 .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+    #grid2{
+        grid-template-columns: 1fr ;
+        gap: 0px;
+        row-gap: 2px;
+        column-gap: 2px;
+        width: 350px;
+        border: none;
+    }
+    
+    .horarios {
+        background: #f9f9f9;
+        width: 300px;
+        min-height: none;
+        max-height: 300px;
+        border-radius: 0 0 5px 5px;
+        color: #232323;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        overflow-x: hidden;
+    }
+        
+    .horario-div{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        width: 250px;
+        margin: 15px 25px;
+        border-bottom: #d9d9d9 solid 2px;
+        padding-bottom: 5px;
+    }
+    
+}

@@ -1,0 +1,323 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+body{
+  background-color: #232323;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  grid-template-rows: 70px 1fr;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* CSS do Menu Lateral DESKTOP e seus comportamnentos */
+
+nav.menu-lateral-desktop {
+  background-color: #313131;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 230px;
+  grid-column: 1/2;
+}
+
+
+nav.menu-lateral-desktop .logo img{
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+nav.menu-lateral-desktop ul{
+  width: 100%;
+  height: 60%;
+}
+
+nav.menu-lateral-desktop ul li.item-menu{
+  list-style: none;
+  display: flex;
+  margin-bottom: 12px;
+  padding-left: 21px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: left;
+  transition: 0.5s;
+  
+}
+nav.menu-lateral-desktop ul li.item-menu:hover{
+  background-color: #232323;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 31px;
+  border-radius: 3px;
+}
+
+  
+nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
+  font-size: 15px;
+  margin-left: 15px;
+  font-weight: 300;
+  color: #d4d4d4;
+  /* text-decoration: none; */
+}
+
+nav.menu-lateral-desktop ul li.item-menu a img{
+  vertical-align: middle;
+}
+
+nav.menu-lateral-desktop ul li.item-menu a{
+  text-decoration: none;
+}
+
+nav.menu-lateral-desktop .btn-sair{
+  text-align: left;
+  margin-bottom: 20px;
+  margin-right: 80px;
+}
+
+
+nav.menu-lateral-desktop .btn-sair {
+  border: none;
+  cursor: pointer;
+  height: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px  10px;
+  color: #d4d4d4;
+  background-color: #4065AB;
+  border-radius: 3px;
+  transition: 0.5s;
+  box-shadow: 1px 1px 2px rgba(55, 55, 55, 0.34);
+}
+
+nav.menu-lateral-desktop .btn-sair:hover{
+  scale: 1.02;
+  background-color: #31579c;
+  
+}
+
+nav.menu-lateral-desktop .btn-sair img{
+  margin-right: 18px;
+  vertical-align: middle;
+}
+
+#modal-sair{
+  margin: auto;
+  margin-top: 150px;
+  padding: 10px;
+  border-radius: 3px;
+  width: 300px;
+  border: none;
+}
+.modal-sair{
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btns-modal{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.btns-modal a{
+  text-decoration: none;
+}
+.btns-modal button{
+  padding: 5px;
+  width: 70px;
+}
+#modal-sair::backdrop{
+  background-color: #23232383;
+}
+
+.btn-sair{
+  background-color: #a23333;
+  color: #ffeaea;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(119, 119, 119, 0.333);
+  transition: 0.5s;
+}
+
+.btn-sair:hover{
+  cursor: pointer;
+  background-color: #8b2323;
+  scale: 1.01;
+}
+#cancelar-sair{
+  background-color: #ababab;
+  border: none;
+  border-radius: 3px;
+  transition: 0.5s;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.342);
+} 
+#cancelar-sair:hover{
+  scale: 1.01;
+  cursor: pointer;
+  
+  background-color: #949494;
+}
+
+nav.menu-mobile ul{
+  display: none;
+  transform: translateX(100%);
+  transition: 0.5s;
+  transition-timing-function: ease;
+}
+
+
+@media screen and (max-width: 768px){
+  body{
+    height: 100vh;
+  }
+  nav.menu-lateral-desktop{
+      display: none;
+  }
+  nav.menu-mobile{
+    display: flex;
+    width: 100vw;
+    height: 80px;
+    align-items: center;
+    padding: 20px 20px;
+    margin-top: 20PX;
+  }
+  nav.menu-mobile .logo-mobile{
+    width: 100px;
+    grid-row: 1/2;
+  }
+  .menu-linhas{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    top: 25px;
+    z-index:98 ;
+    transition: 0.35s;
+    transition-timing-function: ease;
+    margin-top: 20PX;
+  }
+  .menu-linhas span{
+    width: 30px;
+    height: 5px;
+    display: block;
+    background-color: #d4d4d4;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition:0.4s;
+    z-index: 99;
+  }
+
+  nav.menu-mobile ul{
+    z-index: 80;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #313131;
+    display: none;
+    flex-direction: column;
+    align-items:first baseline;
+    padding: 110px 10px 0 1px;
+    transition: 0.2s;
+  }
+  
+  nav.menu-mobile ul li{
+    width: 100%;
+    list-style: none;
+    padding-bottom: 8px;
+    border-bottom: #2c2c2c solid 1px;
+    margin-bottom: 15px;
+    
+  }
+  
+  nav.menu-mobile ul li a{
+    text-decoration: none;
+    color: #d4d4d4 ;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+  }
+  
+  nav.menu-mobile ul li a img{
+    padding-right: 15px;
+  }
+  #abrir-mobile{
+    position: absolute;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    z-index: 100;
+  }
+  #abrir-mobile:checked{
+    position: fixed;
+  }
+  
+  #abrir-mobile:checked~ .menu-linhas{
+    transform: translateX(-185px);
+    top: 35px;
+  }
+  #abrir-mobile:checked~ .menu-linhas span:nth-child(1){
+    transform: rotate(-45deg) scale(1.2);
+    position: fixed;
+  }
+  #abrir-mobile:checked~ .menu-linhas span:nth-child(2){
+    opacity: 0;
+    position: fixed;
+  }
+  #abrir-mobile:checked~ .menu-linhas span:nth-child(3){
+    transform: rotate(45deg) scale(1.2);
+    position: fixed;
+  }
+
+  /* Abrir menu quando o checkbox for checado */
+  #abrir-mobile:checked ~ .menu-itens {
+    position: fixed;
+    transform: translateX(0);
+    display: flex;
+  }
+  .div-btn .btn-sair{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    transition: 0.5s;
+    box-shadow: 1px 1px 2px rgba(55, 55, 55, 0.34);
+  }
+  .div-btn .btn-sair{
+    scale: 1.02;
+    background-color: #31579c;
+    width: 100px;
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+  }
+  
+  .div-btn .btn-sair img{
+    margin-right: 20px;
+  }
+  
+  .div-btn{
+    width: 100%;
+    height: 100%;
+    margin: 0 0 25px 15px;
+    display: flex;
+    align-items: flex-end;
+  }
+}

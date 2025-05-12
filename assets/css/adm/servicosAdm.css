@@ -1,0 +1,384 @@
+
+main{
+    align-items: center;
+    justify-items: center;
+    margin-top: 95px;
+    grid-column: 2/3;
+    padding: 0 30px;
+}
+
+
+.main-content {
+    margin-left: 230px; 
+    width: calc(100% - 230px); 
+    padding: 20px; 
+    
+}
+
+/* perfil adm */
+.perfil-container{
+    background-color: #313131;
+
+}
+
+.info{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center; 
+    gap: 50px;
+    color: #ffffff;
+}
+
+.perfil-container{
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+}
+.foto-perfil {
+    position: relative;
+}
+
+.foto-perfil img {
+    width: 150px; 
+    height: 150px;
+    margin-left: 30px;
+    border-radius: 50%;
+}
+
+
+.editar-icon:hover {
+    color: #666768; 
+}
+
+.dados-perfil {
+    width: 191px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+}
+.dados-perfil h1 {
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: right;
+    gap: 10px;
+}
+
+.dados-perfil:first-child p{
+    justify-content: center;
+}
+
+.dados-perfil:last-child input{
+    margin-bottom: 8px;
+}
+
+.dados-perfil input{
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+.dados-perfil button{
+    width: 120px;
+    padding: 5px 0 ;
+    margin-top: 10px;
+    border: none;
+    background-color: #0A6A28;
+    color: #D3FAE0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #4e4e4e4b;
+    text-transform:capitalize;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.dados-perfil  button:hover{
+    background-color: #05581f;
+    scale: 1.05;
+}
+
+.dados-perfil p {
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 10px;
+    display: inline;
+    align-items: center;
+    gap: 1px;
+}
+
+/* Esconde o input file original */
+.dados-perfil .input-file {
+    display: none;
+}
+
+/* Estilização da label personalizada */
+
+.dados-perfil .custom-file-upload:hover {
+    background-color: #e0e0e0;
+}
+
+.dados-perfil .icone-upload {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+.custom-file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #232323;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 120px;
+    height: 80px;
+}
+
+.custom-file-upload:hover {
+    background-color: #e0e0e0;
+}
+
+.custom-file-upload i {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.nome-arquivo {
+    font-size: 10px;
+    color: #D3FAE0;
+    text-align: center;
+    max-width: 120px;
+    word-break: break-all;
+}
+
+/* imagens */
+.galeria {
+   display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 5px; 
+}
+
+.galeria-item {
+    position: relative;
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    display: inline;
+    border-radius: 6px;
+}
+
+/* Ícone de três pontinhos*/
+.galeria {
+    display: flex;
+    gap: 12px;
+}
+
+.imagem-item {
+    position: relative; 
+    display: inline-block;
+}
+
+.imagem-item img {
+    display: block;
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.material-symbols-outlined {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+    background: #4065AB;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Estilo para os ícones dentro da galeria */
+.galeria .material-symbols-outlined {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #4065AB;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.galeria .material-symbols-outlined:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+.dados-perfil h1, 
+.dados-perfil p {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
+.dados-perfil .editar-icon  {
+    background: #4065AB;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.editar-icon {
+    position: static; 
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 20px; 
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.dados-perfil .editar-icon:hover {
+    background: #4065AB;
+}
+
+.editar-icon:hover {
+    color: #666768;
+}
+
+/* Estilo para o ícone ao lado da foto de perfil */
+.foto-perfil .editar-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #4065AB;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.foto-perfil .editar-icon:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+   /* CSS do grid que será implementado */
+.grids-container {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+#grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    width: 100%;
+    height: 407px;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#grid2 .item {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+
+#grid2 .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+#grid2 .item img:hover {
+    opacity: 0.8;
+}
+
+#grid2 .item .txt-teste {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#grid2 .item .txt-teste h1 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+}
+
+#grid2 .item .txt-teste .preco {
+    text-align: right;
+    transform: translateY(-80px);
+}
+
+#grid2 .item .txt-teste .preco p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#grid2 .item .txt-teste .duracao {
+    font-size: 12px;
+    margin-top: 5px;
+}
