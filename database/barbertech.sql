@@ -43,7 +43,7 @@ CREATE TABLE AGENDA (
     horario time not null,
     id_funcionario int,
     id_cliente_servico int,
-    status VARCHAR not null
+    status_agenda VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE USUARIO (
