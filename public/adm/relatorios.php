@@ -1,3 +1,12 @@
+<?php
+
+include("../../config/conexao.php");
+session_start();
+require_once("../../functions/helpers.php");
+verificaSession("funcionario");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

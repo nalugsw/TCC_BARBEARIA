@@ -1,3 +1,11 @@
+<?php
+
+include("../../config/conexao.php");
+session_start();
+require_once("../../functions/helpers.php");
+verificaSession("funcionario");
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -82,19 +90,19 @@
 
         <ul class="menu-itens">
             <li class="item-menu-mobile">
-                <a href="../../public/adm/horarios.html">
+                <a href="../../public/adm/horarios.php">
                 <img src="../../assets/img/iconeRelogio.png" alt="">
                     <span class="txt-link">Horarios</span>
                 </a>
             </li>
             <li class="item-menu-mobile">
-                <a href="../../public/adm/perfil.html">
+                <a href="../../public/adm/perfil.php">
                 <img src="../../assets/img/icon-perfil.png" alt="">
                 <span class="txt-link">Perfil</span>
                 </a>
             </li>
             <li class="item-menu-mobile">
-                <a href="../../public/adm/servicos.html">
+                <a href="../../public/adm/servicos.php">
                 <img src="../../assets/img/icon-produtos.png" alt="">
                 <span class="txt-link">Serviços</span>
                 </a>
