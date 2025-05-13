@@ -42,7 +42,7 @@ unset($_SESSION['erro']);
                 <img src="../../assets/img/foto-barbeiro-tela-home.png" alt="">
             </div>
             <div class="informacoes-home">
-                <h1>Luis Pereira</h1>
+                <h1>João Pereira</h1>
                 <div class="estrelas-icons">
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
@@ -51,8 +51,8 @@ unset($_SESSION['erro']);
                     <i class="bi bi-star"></i>
                 </div>
                 <div class="endereco-info">
-                    <p>Rua naoseioque, n°171 -
-                        Jardim setadoido</p>
+                    <p>Estrada Plinio Dias, n°171 -
+                        Itapecerica da Serra</p>
                 </div>
             </div>
             <div class="marcar-horario">
@@ -64,7 +64,6 @@ unset($_SESSION['erro']);
         <div class="submenu">
             <button class="btn" data-target="grid1" >Portfolio</button>
             <button class="btn" data-target="grid2" >Serviços</button>
-            <button class="btn" data-target="grid3" onclick="showHorarios()">Agenda</button>
         </div>
         <div class="grids-container">
             <div class="grid" id="grid1">
