@@ -70,9 +70,15 @@ if(!password_verify($senha, $usuario['senha'])) {
 }
 
 // Login bem-sucedido
-unset($_SESSION['tentativas_login']); // Reseta tentativas
+unset($_SESSION['tentativas_login']); 
 $_SESSION['id_usuario'] = $usuario['id_usuario'];
 $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
-header("Location: ../../public/user/perfil.php");
-exit();
+if($_SESSION['tipo_usuario'] == 'cliente'){
+    header("Location: ../../public/user/perfil.php");
+    exit();
+}else{
+    header("Location: ../../public/adm/horarios.php");
+    exit();
+}
+
 ?>

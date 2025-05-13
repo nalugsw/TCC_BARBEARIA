@@ -85,6 +85,7 @@ section.home .container-home  .marcar-horario .btn-marcar-horario a button:hover
 
 section.home .submenu{
     display: flex;
+    justify-content: center;
 }
 
 section.home .submenu button {

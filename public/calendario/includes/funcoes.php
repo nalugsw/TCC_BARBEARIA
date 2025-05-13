@@ -1,5 +1,5 @@
-            <?php
-require_once '../../../config/conexao.php';
+<?php
+include('../../../config/conexao.php');
 
 header('Content-Type: application/json');
 
@@ -39,13 +39,12 @@ try {
             
             // Horários disponíveis (exemplo: das 8h às 18h, de hora em hora)
             $horariosDisponiveis = [];
-            for ($hora = 8; $hora < 18; $hora++) {
-                $horariosDisponiveis[] = sprintf("%02d:00", $hora);
-            }
+            // Horários disponíveis (use os mesmos do horarios.php)
+            $horariosDisponiveis = ['08:00','08:30', '09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'];
+
             
             // Remove horários já agendados
-            $stmt = $pdo->prepare("SELECT horario FROM agenda
-                                  WHERE data = ?");
+            $stmt = $pdo->prepare("SELECT DATE_FORMAT(horario, '%H:%i') as horario FROM agenda WHERE data = ?");
             $stmt->execute([$data]);
             $horariosOcupados = $stmt->fetchAll(PDO::FETCH_COLUMN);
             

@@ -1,3 +1,13 @@
+
+<?php
+
+include("../../config/conexao.php");
+session_start();
+require_once("../../functions/helpers.php");
+verificaSession("funcionario");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,6 +16,8 @@
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/adm/servicosAdm.css">
     <link rel="stylesheet" href="../../assets/css/adm/servicosAdm-responsividade.css">
+    <link rel="stylesheet" href="../../assets/css/adm/nav.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +28,31 @@
 <body>
     
     <?php include("../../views/nav-padrao-adm.php"); ?>
+
+    <nav class="menu-lateral-desktop">
+        <div class="logo">
+            <img src="../../assets/img/LOGO.png" alt="Logo">
+        </div>
+        <ul>
+            <li class="item-menu"><a href="horarios.html"><img src="../../assets/img/icon-perfil.png" alt=""><span class="txt-link">Horários</span></a></li>
+            <li class="item-menu"><a href="perfil.html"><img src="../../assets/img/icon-home.png" alt=""><span class="txt-link">Home</span></a></li>
+            <li class="item-menu"><a href="servicos.html"><img src="../../assets/img/icon-produtos.png" alt=""><span class="txt-link">Serviços</span></a></li>
+            <li class="item-menu"><a href="#"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Informações</span></a></li>
+            <li class="item-menu"><a href="relatorios.html"><img src="../../assets/img/monitoring_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""><span class="txt-link">Relatórios</span></a></li>
+        </ul>
+        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
+    </nav>
+
+    <dialog close id="modal-sair">
+        <div class="modal-sair">
+            <p>Realmente deseja sair?</p>
+            <div class="btns-modal">
+                <a href="../../functions/logout.php"><button class="btn-sair">Sair</button></a>
+                <button id="cancelar">Voltar</button>
+            </div>
+        </div>
+    </dialog>
+
 
     <main>
         <div class="perfil-container">
@@ -48,6 +85,25 @@
                         <p>Preço do serviço</p>
                         <input type="number" placeholder="R$00,00">
                     </div>
+                    <p>Coloque a imagem do serviço</p>
+                    <div class="upload-container">
+                        <label for="selecao-arquivo" class="custom-file-upload">
+                            <i class="bi bi-file-earmark-image"></i>
+                            <span>Selecionar Arquivo</span>
+                        </label>
+                        <div id="nome-arquivo" class="nome-arquivo"></div>
+                    </div>
+                    <input id="selecao-arquivo" type="file" class="input-file">
+                </div>
+                <div class="dados-perfil">
+                    <p>Nome do serviço</p>
+                    <input type="text">
+                    <p>Tempo do serviço</p>
+                    <input type="time">
+                </div>
+                <div class="dados-perfil">
+                    <p>Preço do serviço</p>
+                    <input type="number" placeholder="R$00,00">
                     <button>Cadastrar</button>
                 </div>
             </div>

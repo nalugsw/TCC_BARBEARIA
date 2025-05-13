@@ -42,7 +42,7 @@ $informacoes = buscarInformacoes();
         </div>
         <div class="info-projeto">
             <h2>Projeto Berbertech</h2>
-            <p>Um projeto todo fudido que uns ze-manguaça acha que da o cu é como fumar baseado usa 5 maços de pica por dia</p>
+            <p>teste</p>
         </div>
     </main>
 
