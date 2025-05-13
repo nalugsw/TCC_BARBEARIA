@@ -123,4 +123,5 @@
     </ul>
 </nav>
 
+<script src="../../assets/js/modal-deslogar.js"></script>
 </html>

@@ -2,17 +2,16 @@
 main{
     align-items: center;
     justify-items: center;
-    margin-top: 95px;
+    grid-row: 2/3;
     grid-column: 2/3;
-    padding: 0 30px;
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
 }
 
 
 .main-content {
-    margin-left: 230px; 
-    width: calc(100% - 230px); 
     padding: 20px; 
-    
 }
 
 /* perfil adm */
@@ -23,11 +22,11 @@ main{
 
 .info{
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center; 
-    gap: 50px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
     color: #ffffff;
+    width: 100%;
 }
 
 .perfil-container{
@@ -35,7 +34,6 @@ main{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 20px;
     padding: 20px;
 }
 .foto-perfil {
@@ -53,40 +51,32 @@ main{
 .editar-icon:hover {
     color: #666768; 
 }
-
+.info-dados-perfil{
+    width: 100%;
+}
 .dados-perfil {
-    width: 191px;
     display: flex;
     flex-direction: column;
     text-align: center;
     color: #ffffff;
-}
-.dados-perfil h1 {
-    font-size: 30px;
-    font-weight: 600;
-    display: flex;
-    align-items: right;
-    gap: 10px;
+    margin: 0 10px;
+    height: 100%;
+    justify-content: space-between;
 }
 
-.dados-perfil:first-child p{
-    justify-content: center;
-}
-
-.dados-perfil:last-child input{
-    margin-bottom: 8px;
-}
 
 .dados-perfil input{
     border-radius: 3px;
     border: none;
     outline: none;
+    height: 25px;
+    width: 100%;
+    padding: 3px 10px;
 }
 
 .dados-perfil button{
-    width: 120px;
+    width: 100%;
     padding: 5px 0 ;
-    margin-top: 10px;
     border: none;
     background-color: #0A6A28;
     color: #D3FAE0;
@@ -111,7 +101,7 @@ main{
     font-size: 10px;
     display: inline;
     align-items: center;
-    gap: 1px;
+    margin-bottom: 5px;
 }
 
 /* Esconde o input file original */
@@ -120,7 +110,11 @@ main{
 }
 
 /* Estilização da label personalizada */
-
+.upload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .dados-perfil .custom-file-upload:hover {
     background-color: #e0e0e0;
 }
@@ -137,8 +131,6 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
-    
 }
 
 .custom-file-upload {
@@ -152,7 +144,6 @@ main{
     padding: 15px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 120px;
     height: 80px;
 }
 
@@ -166,7 +157,7 @@ main{
 }
 
 .nome-arquivo {
-    font-size: 10px;
+    font-size: 11px;
     color: #D3FAE0;
     text-align: center;
     max-width: 120px;
@@ -216,7 +207,7 @@ main{
     border-radius: 10px;
 }
 
-.material-symbols-outlined {
+main .material-symbols-outlined {
     position: absolute;
     bottom: 10px; 
     right: 10px; 
@@ -313,10 +304,24 @@ main{
 
 
    /* CSS do grid que será implementado */
+
+   
+#grid2::-webkit-scrollbar{
+    width: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+#grid2::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #797979;
+    border: solid #f4f4f4 5px;
+}
+
 .grids-container {
     margin-top: 20px;
-    background-color: #ffffff;
-    padding: 5px;
+    background-color: #f4f4f4;
+    padding: 5px 0 5px 5px;
 }
 
 #grid2 {
@@ -324,11 +329,10 @@ main{
     grid-template-columns: 1fr 1fr;
     gap: 2px;
     width: 100%;
-    height: 407px;
-    max-width: 800px;
     margin: 0 auto;
     overflow-y: scroll;
     overflow-x: hidden;
+    height: 450px;
 }
 
 #grid2 .item {

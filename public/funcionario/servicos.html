@@ -1,13 +1,3 @@
-
-<?php
-
-include("../../config/conexao.php");
-session_start();
-require_once("../../functions/helpers.php");
-verificaSession("funcionario");
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,9 +5,7 @@ verificaSession("funcionario");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/adm/servicosAdm.css">
-    <link rel="stylesheet" href="../../assets/css/adm/servicosAdm-responsividade.css">
     <link rel="stylesheet" href="../../assets/css/adm/nav.css">
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,9 +14,6 @@ verificaSession("funcionario");
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    
-    <?php include("../../views/nav-padrao-adm.php"); ?>
-
     <nav class="menu-lateral-desktop">
         <div class="logo">
             <img src="../../assets/img/LOGO.png" alt="Logo">
@@ -38,7 +23,6 @@ verificaSession("funcionario");
             <li class="item-menu"><a href="perfil.html"><img src="../../assets/img/icon-home.png" alt=""><span class="txt-link">Home</span></a></li>
             <li class="item-menu"><a href="servicos.html"><img src="../../assets/img/icon-produtos.png" alt=""><span class="txt-link">Serviços</span></a></li>
             <li class="item-menu"><a href="#"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Informações</span></a></li>
-            <li class="item-menu"><a href="relatorios.html"><img src="../../assets/img/monitoring_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""><span class="txt-link">Relatórios</span></a></li>
         </ul>
         <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
     </nav>
@@ -53,38 +37,10 @@ verificaSession("funcionario");
         </div>
     </dialog>
 
-
     <main>
         <div class="perfil-container">
             <div class="info">
                 <div class="dados-perfil">
-                    <div class="upload">
-                        <p>Coloque a imagem do serviço</p>
-                        <div class="upload-container">
-                            <label for="selecao-arquivo" class="custom-file-upload">
-                                <i class="bi bi-file-earmark-image"></i>
-                                <span>Selecionar Arquivo</span>
-                            </label>
-                            <div id="nome-arquivo" class="nome-arquivo"></div>
-                        </div>
-                        <input id="selecao-arquivo" type="file" class="input-file">
-                    </div>
-                </div>
-                <div class="dados-perfil">
-                    <div class="info-dados-perfil">
-                        <p>Nome do serviço</p>
-                        <input type="text">
-                    </div>
-                    <div class="info-dados-perfil">
-                        <p>Tempo do serviço</p>
-                        <input type="time">
-                    </div>
-                </div>
-                <div class="dados-perfil">
-                    <div class="info-dados-perfil">
-                        <p>Preço do serviço</p>
-                        <input type="number" placeholder="R$00,00">
-                    </div>
                     <p>Coloque a imagem do serviço</p>
                     <div class="upload-container">
                         <label for="selecao-arquivo" class="custom-file-upload">

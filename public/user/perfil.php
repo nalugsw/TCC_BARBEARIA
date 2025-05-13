@@ -113,7 +113,6 @@ unset($_SESSION['erro']);
 
     <!-- Menu Mobile para dispositivos de telas pequenas -->
 
-        <script src="../../assets/js/modal-deslogar.js"></script>
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>
     </body>

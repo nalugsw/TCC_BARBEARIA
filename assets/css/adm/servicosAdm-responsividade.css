@@ -1,0 +1,30 @@
+@media screen and (max-width:768px){
+    main{
+        grid-column: 1/3;
+        margin-top: 20px;
+    }
+    #grid2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2px;
+        width: 100%;
+        margin: 0 auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 450px;
+    }
+}
+@media screen and (max-width:450px){
+    main{
+        width: 95%;
+    }
+    .perfil-container{
+        padding: 10px;
+    }
+    .info{
+        gap: 10px;
+    }
+    .dados-perfil{
+        margin: 0;
+    }
+}
