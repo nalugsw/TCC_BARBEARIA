@@ -125,7 +125,7 @@ nav.menu-lateral-desktop .itens #btn-setting{
   background-color: transparent;
   border: none;
 }
-nav.menu-lateral-desktop .itens span{
+nav.menu-lateral-desktop #btn-setting span{
   color: #f4f4f4;
   transition: 0.2s;
 }
