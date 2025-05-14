@@ -72,3 +72,4 @@ verificaSession("administrador");
         <script src="../../assets/js/relatorios.js"></script>
         
     </main>
+    <!-- iopioi -->
