@@ -1,3 +1,12 @@
+<?php
+
+include("../../config/conexao.php");
+session_start();
+require_once("../../functions/helpers.php");
+verificaSession("funcionario");
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +26,8 @@
 </head>
 <body>
     <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
-    include
+     
+    <?php include("../../views/nav-padrao-funcionario.php"); ?>
 
     <main>
         <div class="perfil-adm">

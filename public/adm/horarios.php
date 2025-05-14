@@ -4,7 +4,7 @@
 include("../../config/conexao.php");
 session_start();
 require_once("../../functions/helpers.php");
-verificaSession("funcionario");
+verificaSession("administrador");
 
 ?>
 <!DOCTYPE html>
@@ -27,18 +27,6 @@ verificaSession("funcionario");
     <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
 
     <?php include("../../views/nav-padrao-adm.php"); ?>
-    <nav id="menu-padrao" class="menu-lateral-desktop">
-        <div class="logo">
-            <img src="../../assets/img/LOGO.png" alt="">
-        </div>
-
-        <ul>
-            <li class="item-menu"><a href="horarios.html"><img src="../../assets/img/iconeRelogio.png" alt=""><span class="txt-link">Horários</span></a></li>
-            <li class="item-menu"><a href="perfil.html"><img src="../../assets/img/icon-home.png" alt=""><span class="txt-link">Perfil</span></a></li>
-            <li class="item-menu"><a href="servicos.html"><img src="../../assets/img/icon-produtos.png" alt=""><span class="txt-link">Serviços</span></a></li>
-            <li class="item-menu"><a href="#"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Informações</span></a></li>
-            <li class="item-menu"><a href="relatorios.html"><img src="../../assets/img/monitoring_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""><span class="txt-link">Relatórios</span></a></li>
-        </ul>
 
         <div class="itens">
             <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>

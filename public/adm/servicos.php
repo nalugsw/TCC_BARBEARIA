@@ -4,7 +4,7 @@
 include("../../config/conexao.php");
 session_start();
 require_once("../../functions/helpers.php");
-verificaSession("funcionario");
+verificaSession("administrador");
 
 ?>
 
@@ -28,20 +28,6 @@ verificaSession("funcionario");
 <body>
     
     <?php include("../../views/nav-padrao-adm.php"); ?>
-
-    <nav class="menu-lateral-desktop">
-        <div class="logo">
-            <img src="../../assets/img/LOGO.png" alt="Logo">
-        </div>
-        <ul>
-            <li class="item-menu"><a href="horarios.html"><img src="../../assets/img/icon-perfil.png" alt=""><span class="txt-link">Horários</span></a></li>
-            <li class="item-menu"><a href="perfil.html"><img src="../../assets/img/icon-home.png" alt=""><span class="txt-link">Home</span></a></li>
-            <li class="item-menu"><a href="servicos.html"><img src="../../assets/img/icon-produtos.png" alt=""><span class="txt-link">Serviços</span></a></li>
-            <li class="item-menu"><a href="#"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Informações</span></a></li>
-            <li class="item-menu"><a href="relatorios.html"><img src="../../assets/img/monitoring_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""><span class="txt-link">Relatórios</span></a></li>
-        </ul>
-        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
-    </nav>
 
     <dialog close id="modal-sair">
         <div class="modal-sair">
