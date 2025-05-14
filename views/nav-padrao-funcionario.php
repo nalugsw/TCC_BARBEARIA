@@ -18,19 +18,16 @@
 
         <ul>
             <li class="item-menu">
-                <a href="../../public/adm/horarios.php"><img src="../../assets/img/iconeRelogio.png" alt=""><span class="txt-link">Horários</span></a>
+                <a href="horarios.php"><img src="../../assets/img/iconeRelogio.png" alt=""><span class="txt-link">Horários</span></a>
             </li>
             <li class="item-menu">
-                <a href="../../public/adm/perfil.php"><img src="../../assets/img/icon-home.png" alt=""><span class="txt-link">Perfil</span></a>
+                <a href="perfil.php"><img src="../../assets/img/icon-home.png" alt=""><span class="txt-link">Perfil</span></a>
             </li>
             <li class="item-menu">
-                <a href="../../public/adm/servicos.php"><img src="../../assets/img/icon-produtos.png" alt=""><span class="txt-link">Serviços</span></a>
+                <a href="servicos.php"><img src="../../assets/img/icon-produtos.png" alt=""><span class="txt-link">Serviços</span></a>
             </li>
             <li class="item-menu">
                 <a href="#"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Informações</span></a>
-            </li>
-            <li class="item-menu">
-                <a href="../../public/adm/relatorios.php"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Relatórios</span></a>
             </li>
         </ul>
 
@@ -86,27 +83,21 @@
 
         <ul class="menu-itens">
             <li class="item-menu-mobile">
-                <a href="../../public/adm/horarios.php">
+                <a href="../../public/adm/horarios.html">
                 <img src="../../assets/img/iconeRelogio.png" alt="">
                     <span class="txt-link">Horarios</span>
                 </a>
             </li>
             <li class="item-menu-mobile">
-                <a href="../../public/adm/perfil.php">
+                <a href="../../public/funcionario/perfil.php">
                 <img src="../../assets/img/icon-perfil.png" alt="">
                 <span class="txt-link">Perfil</span>
                 </a>
             </li>
             <li class="item-menu-mobile">
-                <a href="../../public/adm/servicos.php">
+                <a href="../../public/funcionario/servicos.php">
                 <img src="../../assets/img/icon-produtos.png" alt="">
                 <span class="txt-link">Serviços</span>
-                </a>
-            </li>
-            <li class="item-menu-mobile">
-                <a href="../../public/adm/relatorios.php">
-                <img src="../../assets/img/icon-produtos.png" alt="">
-                <span class="txt-link">Relatórios</span>
                 </a>
             </li>
             

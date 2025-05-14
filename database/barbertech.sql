@@ -157,6 +157,16 @@ CREATE TABLE dias_inativos (
     motivo VARCHAR(255)
 );
 
+--INSERT DE USUARIO ADMIN PARA TESTE
+INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
+('admin@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'administrador');
+--SENHA: 123456789
+
+
+--INSERT DE USUARIO FUNCIONARIO PARA TESTE
+INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
+('barbeiro@gmail.com', '$2y$10$y6Dmzy51zweP4GuOb66T1eaoNNDJp3ixw81iLbzRwfZGbcKw0Rs7i', 'verificado', 'funcionario');
+--SENHA: barbeiro123
 
 
 -- COMANDO PARA AGRUPAR OS AGENDAMENTOS POR MêS (IMPORTANTE TESTAR APÓS NALU FAZER O GRÁFICO EM JS)
