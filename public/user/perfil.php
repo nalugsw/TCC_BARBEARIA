@@ -93,9 +93,9 @@ unset($_SESSION['erro']);
             <div class="horarios-marcados">
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
-                    <!-- <div class="txt-sem-horarios"><p>SEM HORARIO MARCADO</p></div> -->
-                    <?php $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
-                                foreach($dados as $agenda): ?>
+                    <div class="txt-sem-horarios"><p>SEM HORARIO MARCADO</p></div>
+                    <?php   $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
+                            foreach($dados as $agenda): ?>
                             <div class="horario-caixa">
                                 <div class="nome-barbeiro"><p><?php echo $agenda['funcionario']; ?> </p></div>
                                 <p> - </p>
@@ -110,8 +110,6 @@ unset($_SESSION['erro']);
             
         </div>
     </section>
-
-    <!-- Menu Mobile para dispositivos de telas pequenas -->
 
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>

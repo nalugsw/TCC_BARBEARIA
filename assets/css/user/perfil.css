@@ -153,9 +153,9 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios{
     height: 120px;
     border-radius: 3px;
     display: flex;
-    flex-direction: column;
-    overflow: auto;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 

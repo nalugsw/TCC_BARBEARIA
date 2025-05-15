@@ -42,19 +42,16 @@ verificaSession("administrador");
             <div class="info">
                 <div class="foto-perfil">
                     <img src="../../assets/img/foto-barbeiro-tela-home.png" alt="foto de perfil adm">
-                    <span class="material-symbols-outlined editar-icon">edit</span> 
-
+                    <a href="" class="btn-edit"><span class="material-symbols-outlined editar-icon">edit</span> </a>
                 </div>
                 <div class="dados-perfil">
                     <h1>Luis Pereira</h1>
                     <p>Rua Naoseioque, n°171 - Jardim Setadoido</p>
-                    <h1>Luis Pereira <span class="material-symbols-outlined editar-icon">edit</span></h1> 
-                    <p>Rua Naoseioque, n°171 - Jardim Setadoido <!-- <span class="material-symbols-outlined editar-icon">edit</span>--></p> 
-
                 </div>
             </div>
         </div>
         
+
         <div class="galeria">
             <div class="imagem-item">
                 <img src="../../assets/img/foto-grid2.png" alt="Imagem 1">
@@ -114,4 +111,34 @@ verificaSession("administrador");
             </div>
         </div>
     </main>
+    
+    <dialog closed id="modal-edit" >
+            <form action="../../functions/user/editarPerfil.php" method="POST" enctype="multipart/form-data">
+                    
+                    <div id="img-container">
+                        <p>*Foto do perfil</p>
+                        <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
+                        <div class="input-campo">
+                            <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                            <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                        </div>
+                    </div>
+                    <?php $dados = dadosCliente($_SESSION['id_usuario']);?>
+                    <div class="input-campo">
+                        <p>*Nome do perfil</p>
+                        <input type="text" value="<?php echo $dados['nome']; ?>" name="nome">
+                    </div>
+                    <div class="input-campo">
+                        <p>*Numero do perfil</p>
+                        <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
+                    </div>
+                    <div class="btns-edit">
+                        <button type="submit">Atualizar</button>
+                        <button id="cancelar-edit" type="button">Voltar</button>
+                    </div>
+                </form>
+            </dialog>
+    
+        <script src="../../assets/js/modal-perfilEdit.js"></script>
+        <script src="../../assets/js/preview-img.js"></script>
 </body>
