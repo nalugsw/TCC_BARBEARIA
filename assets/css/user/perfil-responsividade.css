@@ -235,16 +235,21 @@
         font-size: 8.5px;
     }
 
-    html{
-        height: 100vh;
-    }
-
     body{
         height: 100vh;
     }
 
+    #modal-edit{
+        width: 100%;
+    }
     #modal-edit form{
         max-width: 300px;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
     }
+    #modal-edit .input-campo{
+        margin: 15px 0 ;
+    }
+
 } 

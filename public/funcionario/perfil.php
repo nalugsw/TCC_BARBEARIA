@@ -1,3 +1,12 @@
+<?php
+
+include("../../config/conexao.php");
+session_start();
+require_once("../../functions/helpers.php");
+verificaSession("funcionario");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,6 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/adm/PerfilAdm.css">
+    <link rel="stylesheet" href="../../assets/css/adm/nav.css">
+    <link rel="stylesheet" href="../../assets/css/adm/PerfilAdm-responsivo.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,18 +23,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
 </head>
 <body>
-    <nav class="menu-lateral-desktop">
-        <div class="logo">
-            <img src="../../assets/img/LOGO.png" alt="Logo">
-        </div>
-        <ul>
-            <li class="item-menu"><a href="perfil.php"><img src="../../assets/img/icon-perfil.png" alt=""><span class="txt-link">Horários</span></a></li>
-            <li class="item-menu"><a href="home.html"><img src="../../assets/img/icon-home.png" alt=""><span class="txt-link">Home</span></a></li>
-            <li class="item-menu"><a href="#"><img src="../../assets/img/icon-produtos.png" alt=""><span class="txt-link">Produtos</span></a></li>
-            <li class="item-menu"><a href="#"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Informações</span></a></li>
-        </ul>
-        <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
-    </nav>
+    
+    <?php include("../../views/nav-padrao-funcionario.php"); ?>
 
     <dialog close id="modal-sair">
         <div class="modal-sair">
@@ -64,12 +65,33 @@
                 <span class="material-symbols-outlined">more_vert</span>
             </div>
             <div class="imagem-item">
+                <img src="../../assets/img/foto-grid2.png" alt="Imagem 1">
+                <span class="material-symbols-outlined">more_vert</span>
+            </div>
+            <div class="imagem-item">
+                <img src="../../assets/img/foto-grid3.png" alt="Imagem 2">
+                <span class="material-symbols-outlined">more_vert</span>
+            </div>
+            <div class="imagem-item">
+                <img src="../../assets/img/foto-grid1.png" alt="Imagem 3">
+                <span class="material-symbols-outlined">more_vert</span>
+            </div>
+            <div class="imagem-item">
+                <img src="../../assets/img/foto-grid2.png" alt="Imagem 1">
+                <span class="material-symbols-outlined">more_vert</span>
+            </div>
+            <div class="imagem-item">
+                <img src="../../assets/img/foto-grid3.png" alt="Imagem 2">
+                <span class="material-symbols-outlined">more_vert</span>
+            </div>
+            <div class="imagem-item">
+                <img src="../../assets/img/foto-grid1.png" alt="Imagem 3">
+                <span class="material-symbols-outlined">more_vert</span>
+            </div>
+            <div class="imagem-item">
                 <img src="../../assets/img/foto-grid5.png" alt="Imagem 4">
                 <span class="material-symbols-outlined">more_vert</span>
             </div>
-        </div>
-
-        <div class="galeria">
             <div class="imagem-item">
                 <img src="../../assets/img/foto-grid2.png" alt="Imagem 1">
                 <span class="material-symbols-outlined">more_vert</span>
@@ -88,4 +110,7 @@
             </div>
         </div>
     </main>
+    
+    <script src="../../assets/js/modal-perfilEdit.js"></script>
+    <script src="../../assets/js/preview-img.js"></script>
 </body>

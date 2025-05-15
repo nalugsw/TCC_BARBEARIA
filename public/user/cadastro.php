@@ -51,13 +51,13 @@ unset($_SESSION['erro']);
                     
                         </div>
                         <div class="termos">
-                            <a href="#">POLITICAS DE PRIVACIDADE</a>
+                            <a href="./politicasPrivacidade.html">POLITICAS DE PRIVACIDADE</a>
                         </div>
                         <div class="btn-login">
                             <a ><button type="submit">CADASTRAR</button></a>
                         </div>
                         <div class="esqueceusenha">
-                            <a href="../../index.php"><p>JÁ TEM UMA CONTA? FAÇA SEU LOGIN AQUI!</p></a>
+                            <a href="../../index.php"><p>FAÇA SEU LOGIN</p></a>
                         </div>
                         <div class="voltar">
                             <a href="../../index.php"><p>VOLTAR</p></a>

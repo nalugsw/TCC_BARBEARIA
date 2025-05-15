@@ -1,230 +1,18 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", serif;
-}
-
-body{
-    background-color: #232323;
-    display: flex;
-    grid-template-columns: 230px 1fr;
-    margin-left: 230px;
-}
 
 main{
-    margin-left: 15%;
     align-items: center;
     justify-items: center;
-    margin-top: 95px;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
 }
 
 
 .main-content {
-    margin-left: 230px; 
-    width: calc(100% - 230px); 
     padding: 20px; 
-    
 }
-
-/* Menu mobile inferior >desligado< nessa versão desktop(CSS para que ele não apareça) */
-
-nav.menu-inferior-mobile{
-    display: none;
-}
-
-
-/* CSS do Menu Lateral DESKTOP e seus comportamnentos */
-
-nav.menu-lateral-desktop {
-    background-color: #313131;
-    width: 230px;
-    position: fixed;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-nav.menu-lateral-desktop .logo img{
-    margin-bottom: 40px;
-    margin-top: 40px;
-}
-
-nav.menu-lateral-desktop ul{
-    width: 100%;
-    height: 60%;
-
-}
-
-nav.menu-lateral-desktop ul li.item-menu{
-    list-style: none;
-    display: flex;
-    margin-bottom: 12px;
-    padding-left: 21px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    text-align: left;
-    transition: 0.5s;
-
-}
-nav.menu-lateral-desktop ul li.item-menu:hover{
-    background-color: #232323;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-left: 31px;
-    border-radius: 3px;
-    font-weight: bold;
-}
-
-nav.menu-lateral-desktop ul li.item-menu a span.txt-link:hover{
-    font-weight: bold;
-}
-
-
-nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
-    font-size: 15px;
-    margin-left: 15px;
-    font-weight: 300;
-    color: #d4d4d4;
-    /* text-decoration: none; */
-}
-
-nav.menu-lateral-desktop ul li.item-menu a img{
-    vertical-align: middle;
-}
-
-nav.menu-lateral-desktop ul li.item-menu a{
-    text-decoration: none;
-}
-
-nav.menu-lateral-desktop .btn-sair{
-    text-align: left;
-    margin-bottom: 20px;
-    margin-right: 80px;
-}
-
-
-nav.menu-lateral-desktop .btn-sair {
-    border: none;
-    cursor: pointer;
-    height: 25px;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 3px  10px;
-    color: #d4d4d4;
-    background-color: #4065AB;
-    border-radius: 3px;
-    transition: 0.5s;
-}
-
-nav.menu-lateral-desktop .btn-sair:hover{
-    scale: 0.9;
-    background-color: #2d4777;
-
-}
-
-nav.menu-lateral-desktop .btn-sair img{
-    margin-right: 18px;
-    vertical-align: middle;
-}
-
-
-/* CSS menu mobile */
-
-nav.menu-inferior-mobile {
-    margin-top: 20%;
-    position: fixed;
-    bottom: 0;
-    background-color: #898989;
-    padding-top: 7px; 
-    width: 100%;
-    height: 70px;
-    text-align: center;
-
-}
-
-nav.menu-inferior-mobile .logo {
-    width: 100%;
-}
-
-nav.menu-inferior-mobile .logo img{
-    margin-bottom: 40px;
-
-}
-
-nav.menu-inferior-mobile ul{
-    width: 100%;
-    display: flex;
-    gap: 25px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-
-}
-
-nav.menu-inferior-mobile ul li.item-menu{
-    list-style: none;
-    display: flex;
-    margin-bottom: 12px;
-    padding: 10px;
-    text-align: center;
-    transition: 0.5s;
-
-}
-nav.menu-inferior-mobile ul li.item-menu:hover{
-    background-color: #d4d4d4;
-
-    /* margin-left: 5px;
-    margin-right: 5px; */
-    /* padding-left: 31px; */
-    border-radius: 100%;
-    transform: translateY(-15px);
-
-}
-
-
-nav.menu-inferior-mobile ul li.item-menu a span.txt-link{
-    font-size: 15px;
-    margin-left: 15px;
-    font-weight: 300;
-    color: #d4d4d4;
-    /* text-decoration: none; */
-}
-
-nav.menu-inferior-mobile ul li.item-menu a img{
-    vertical-align: middle;
-}
-
-nav.menu-inferior-mobile ul li.item-menu a{
-    text-decoration: none;
-}
-
-nav.menu-inferior-mobile .btn-sair{
-    padding-left: 21px;
-    text-align: left;
-}
-
-
-nav.menu-inferior-mobile .btn-sair a button{
-    border: none;
-    cursor: pointer;
-    height: 25px;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 3px  10px;
-    color: #d4d4d4;
-    background-color: #4065AB;
-    border-radius: 3px;
-    margin-top: 20vh;
-    transition: 0.5s;
-
-
-} 
 
 /* perfil adm */
 .perfil-container{
@@ -234,21 +22,18 @@ nav.menu-inferior-mobile .btn-sair a button{
 
 .info{
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center; 
-    gap: 50px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
     color: #ffffff;
+    width: 100%;
 }
 
 .perfil-container{
     border-radius: 3px;
     display: flex;
-    /*align-items: space-between;
-    justify-content: center; */
     justify-content: space-between;
     width: 100%;
-    gap: 20px;
     padding: 20px;
 }
 .foto-perfil {
@@ -266,42 +51,32 @@ nav.menu-inferior-mobile .btn-sair a button{
 .editar-icon:hover {
     color: #666768; 
 }
-
+.info-dados-perfil{
+    width: 100%;
+}
 .dados-perfil {
-    width: 191px;
     display: flex;
     flex-direction: column;
-    
-    text-align: center; 
+    text-align: center;
     color: #ffffff;
-}
-.dados-perfil h1 {
-   
-    font-size: 30px;
-    font-weight: 600;
-    display: flex;
-    align-items: right;
-    gap: 10px;
+    margin: 0 10px;
+    height: 100%;
+    justify-content: space-between;
 }
 
-.dados-perfil:first-child p{
-    justify-content: center; 
-}
-
-.dados-perfil:last-child input{
-    margin-bottom: 8px;
-}
 
 .dados-perfil input{
     border-radius: 3px;
     border: none;
     outline: none;
+    height: 25px;
+    width: 100%;
+    padding: 3px 10px;
 }
 
 .dados-perfil button{
-    width: 120px;
+    width: 100%;
     padding: 5px 0 ;
-    margin-top: 10px;
     border: none;
     background-color: #0A6A28;
     color: #D3FAE0;
@@ -326,7 +101,7 @@ nav.menu-inferior-mobile .btn-sair a button{
     font-size: 10px;
     display: inline;
     align-items: center;
-    gap: 1px;
+    margin-bottom: 5px;
 }
 
 /* Esconde o input file original */
@@ -335,7 +110,11 @@ nav.menu-inferior-mobile .btn-sair a button{
 }
 
 /* Estilização da label personalizada */
-
+.upload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .dados-perfil .custom-file-upload:hover {
     background-color: #e0e0e0;
 }
@@ -352,8 +131,6 @@ nav.menu-inferior-mobile .btn-sair a button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
-    
 }
 
 .custom-file-upload {
@@ -367,7 +144,6 @@ nav.menu-inferior-mobile .btn-sair a button{
     padding: 15px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 120px;
     height: 80px;
 }
 
@@ -381,7 +157,7 @@ nav.menu-inferior-mobile .btn-sair a button{
 }
 
 .nome-arquivo {
-    font-size: 10px;
+    font-size: 11px;
     color: #D3FAE0;
     text-align: center;
     max-width: 120px;
@@ -431,7 +207,7 @@ nav.menu-inferior-mobile .btn-sair a button{
     border-radius: 10px;
 }
 
-.material-symbols-outlined {
+main .material-symbols-outlined {
     position: absolute;
     bottom: 10px; 
     right: 10px; 
@@ -528,11 +304,24 @@ nav.menu-inferior-mobile .btn-sair a button{
 
 
    /* CSS do grid que será implementado */
-   .grids-container {
+
+   
+#grid2::-webkit-scrollbar{
+    width: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+#grid2::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #797979;
+    border: solid #f4f4f4 5px;
+}
+
+.grids-container {
     margin-top: 20px;
-    width: 100%;
-    background-color: #ffffff;
-    padding: 5px;
+    background-color: #f4f4f4;
+    padding: 5px 0 5px 5px;
 }
 
 #grid2 {
@@ -540,11 +329,10 @@ nav.menu-inferior-mobile .btn-sair a button{
     grid-template-columns: 1fr 1fr;
     gap: 2px;
     width: 100%;
-    height: 407px;
-    max-width: 800px;
     margin: 0 auto;
     overflow-y: scroll;
     overflow-x: hidden;
+    height: 450px;
 }
 
 #grid2 .item {
@@ -561,7 +349,7 @@ nav.menu-inferior-mobile .btn-sair a button{
 }
 
 #grid2 .item img:hover {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 #grid2 .item .txt-teste {

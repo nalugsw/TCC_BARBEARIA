@@ -1,218 +1,36 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", serif;
-}
-
-body{
-    background-color: #232323;
-    display: grid;
-    grid-template-columns: 230px 1fr;
-}
-
-nav.menu-lateral-desktop {
-    background-color: #313131;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    width: 230px;
-}
-
-
-nav.menu-lateral-desktop .logo img{
-    margin-bottom: 40px;
-    margin-top: 40px;
-}
-
-nav.menu-lateral-desktop ul{
-    width: 100%;
-    height: 60%;
-
-}
-
-nav.menu-lateral-desktop ul li.item-menu{
-    list-style: none;
-    display: flex;
-    margin-bottom: 12px;
-    padding-left: 21px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    text-align: left;
-    transition: 0.5s;
-
-}
-nav.menu-lateral-desktop ul li.item-menu:hover{
-    background-color: #232323;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-left: 31px;
-    border-radius: 3px;
-    font-weight: bold;
-}
-
-nav.menu-lateral-desktop ul li.item-menu a span.txt-link:hover{
-    font-weight: bold;
-}
-
-
-nav.menu-lateral-desktop ul li.item-menu a span.txt-link{
-    font-size: 15px;
-    margin-left: 15px;
-    font-weight: 300;
-    color: #d4d4d4;
-    /* text-decoration: none; */
-}
-
-nav.menu-lateral-desktop ul li.item-menu a img{
-    vertical-align: middle;
-}
-
-nav.menu-lateral-desktop ul li.item-menu a{
-    text-decoration: none;
-}
-
-nav.menu-lateral-desktop .itens{
-    display: flex;
-    margin-bottom: 30px;
-    width: 200px;
-    align-items: center;
-    justify-content: space-around;
-}
-
-nav.menu-lateral-desktop .itens #btn-setting{
-    background-color: transparent;
-    border: none;
-}
-nav.menu-lateral-desktop .itens span{
-    color: #f4f4f4;
-    transition: 0.2s;
-}
-
-nav.menu-lateral-desktop .itens span:hover{
-    scale: 1.03;
-    color: #e6e0e0;
-}
-nav.menu-lateral-desktop .btn-sair {
-    border: none;
-    cursor: pointer;
-    height: 25px;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 3px  10px;
-    color: #d4d4d4;
-    background-color: #4065AB;
-    border-radius: 3px;
-    transition: 0.5s;
-}
-
-nav.menu-lateral-desktop .btn-sair:hover{
-    scale: 0.9;
-    background-color: #2d4777;
-
-}
-
-nav.menu-lateral-desktop .btn-sair img{
-    margin-right: 18px;
-    vertical-align: middle;
-}
-/* nav engrenagem */
-nav.menu-lateral-settings-desktop{
-    background-color: #313131;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    width: 230px;
-    padding: 50px 0;
-    color: #f4f4f4;
-    display: none;
-}
-
-nav.menu-lateral-settings-desktop img{
-    width: 120px;
-}
-
-nav.menu-lateral-settings-desktop a{
-    text-decoration: none;
-    color: #f4f4f4;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    font-weight: 300;
-}
-
-nav.menu-lateral-settings-desktop ul{
-    height: 500px;
-}
-
-nav.menu-lateral-settings-desktop li{
-    list-style: none;
-    margin-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: #2e2e2e solid 1px;
-    width: 200px;
-}
-
-nav.menu-lateral-settings-desktop li a:hover{
-    justify-content: center;
-    font-weight: 700;
-}
-
-nav.menu-lateral-settings-desktop li span{
-    margin-right: 10px;
-}
-nav.menu-lateral-settings-desktop h2{
-    margin-top: 45px;
-    text-transform: uppercase;
-    font-size: 20px;
-    letter-spacing: 1.3px;
-    border-bottom: #2e2e2e solid 1px;
-    padding-bottom: 20px;
-    width: 200px;
-}
-#btn-voltar-config{
-    position: absolute;
-    bottom: 30px;
-
-}
-#btn-voltar-config button{
-    border: none;
-    padding: 5px 20px;
-    font-weight: 500;
-    border-radius: 3px;
-    transition: 5ms;
-    background-color: #f4f4f4;
-}
-#btn-voltar-config button:hover{
-    background-color: #d3d3d3;
-    font-weight: 600;
-    scale: 1.05;
-}
-
 /* CSS da sessão perfil */
 main{
     grid-column: 2/3;
+    grid-row: 2/3;
 }
+
+body::-webkit-scrollbar{
+    width: 20px;
+    background-color: #232323;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #797979;
+    border: solid #232323 5px;
+}
+
 section{
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
 .horarios-marcados{
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    height: 500px;
 }
 .servico-marcado{
     display: grid;
     grid-template-columns: 150px  1fr;
     grid-template-rows: 40px 40px 40px 40px;
     margin: 2px 2px 4px 2px  ;
+    border-radius: 6px;
 }
 .servico-marcado .foto-cliente{
     grid-column: 1/2;
@@ -223,6 +41,7 @@ section{
     justify-content: space-evenly;
     background-color: #666;
     margin-right: 2px;
+    border-radius: 6px;
 }
 .servico-marcado .foto-cliente img{
     object-fit: cover;
@@ -244,6 +63,7 @@ section{
     align-items: center;
     font-weight: 600;
     transition: 0.2s;
+    border-radius: 3px;
 }
 .servico-marcado .foto-cliente button:hover{
     background-color: #05581f;
@@ -262,52 +82,59 @@ section{
     grid-row: 1/2;
     display: flex;
     margin-bottom: 2px;
+    border-radius: 6px;
 }
 .numero-cliente{
     grid-column: 2/3;
     grid-row: 2/3;
     display: flex;
     margin-bottom: 2px;
+    border-radius: 6px;
 }
 .servico-cliente{
     grid-column: 2/3;
     grid-row: 3/4;
     display: flex;
     margin-bottom: 2px;
+    border-radius: 6px;
 }
 .horario-cliente{
     grid-column: 2/3;
     grid-row: 4/5;
     display: flex;
+    border-radius: 6px;
 }
 .servico-marcado h3{
-    width: 150px;
+    width: 25%;
     padding-left: 10px;
     background-color: #666;
     padding: 8px 10px;
     text-align:left;
     font-weight: 400;
+    border-radius: 6px 0 0 6px;
 }
 .servico-marcado input{
-   width: 500px;
+   width: 75%;
    border: none;
    border-radius: 0;
    background-color: #878787;
    padding: 10px 20px;
+   font-size: 20px;
+   border-radius: 0 6px 6px 0;
 }
 .servico-marcado input::placeholder{
     color: #ffffff;
     font-weight: bold;
 }
 .horario-cliente input{
-    width: 300px;
+    width: 45%;
 }
 
 .cliente-hora a{
     text-decoration: none;
 }
 .horario-cliente button {
-    width: 200px;
+    width: 29%;
     background-color: #b13434;
     color: #FFEAEA;
     border: none;
@@ -317,13 +144,15 @@ section{
     font-weight:500;
     transition: 0.2s;
     height: 100%;
+    border-radius: 6px;
+    margin: 0 auto;
 }
 .horario-cliente button:hover{
-    background-color: #ac2d2d;
+    background-color: #861616;
 }
 .cliente-hora{
     background-color: #4e4e4e;
-    border-radius: 3px;
+    border-radius: 6px;
     padding-bottom: 0.1px;
     margin-bottom: 3px;
 }
@@ -341,6 +170,7 @@ section{
 }
 .foto-adm span{
     color: #f4f4f4;
+    text-decoration: none;
 }
 
 .informacoes-home h1,
@@ -353,147 +183,143 @@ section{
 .informacoes-home h1 span,
 .endereco-info p span{
     margin-left: 10px;
+    color: #f4f4f4;
+    text-decoration: none;
 }
 .perfil-adm{
     margin: 95px 0 50px 0;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 700px;
+    margin: 0 auto;
 }
 
 /* modal */
-#modal-sair{
-    margin: auto;
-    margin-top: 150px;
-    padding: 10px;
-    border-radius: 3px;
-    width: 300px;
+
+#modal-edit{
+    align-content: center;
     border: none;
-}
-.modal-sair{
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.btns-modal{
-    margin-top: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: transparent;
+    height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
 }
-.btns-modal a{
-    text-decoration: none;
+#modal-edit form{
+    background-color: #f9f9f9;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 3px;
+    width: 500px;
 }
-.btns-modal button{
-    padding: 5px;
-    width: 70px;
-}
-#modal-sair::backdrop{
+#modal-edit::backdrop{
     background-color: #23232383;
 }
-/* CSS menu mobile */
-
-nav.menu-inferior-mobile {
-    margin-top: 20%;
-    position: fixed;
-    bottom: 0;
-    background-color: #898989;
-    /* padding-top: 7px; */
-    width: 100%;
-    height: 70px;
-    text-align: center;
-
+#modal-edit p{
+    font-size: 15px;
+    color: #232323;
+    font-weight: bold;
+    
+}
+#modal-edit .input-campo input{
+    padding: 3px 20px 3px 20px
+}
+.input-file {
+    display: none; /* Esconde o input padrão */
 }
 
-nav.menu-inferior-mobile .logo {
-    width: 100%;
+.custom-file-button {
+    display: inline-block;
+    background-color: #4065AB;
+    color: #dbe6f9;
+    padding: 5px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 1px 1px 1px #23232348;
 }
 
-nav.menu-inferior-mobile .logo img{
-    margin-bottom: 40px;
+.custom-file-button:hover,
+#modal-edit button:hover{
+    background-color: #2f5396;
+}
+#modal-edit .btns-modal{
+    height: 100%;
+}
+#modal-edit button{
+    padding: 5px 15px;
+    background-color: #4065AB;
+    color: #dbe6f9;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #23232348;
 
 
 }
-
-nav.menu-inferior-mobile ul{
-    width: 100%;
+#img-container{
+    grid-row: 1/4;
     display: flex;
-    gap: 25px;
-    margin: 0 auto;
+    flex-direction: column;
+}
+#preview{
+    border: solid 1px rgb(136, 136, 136);
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+#cancelar-horario{
+    align-content: center;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: transparent;
+    height: 100vh;
+    width: 100vw;
+}
+
+#cancelar-horario::backdrop{
+    background-color: #22222283;
+}
+#cancelar-horario form{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
-}
-
-nav.menu-inferior-mobile ul li.item-menu{
-    list-style: none;
-    display: flex;
-    margin-bottom: 12px;
+    margin: 0 auto;
     padding: 10px;
-    text-align: center;
-    transition: 0.5s;
-
-}
-nav.menu-inferior-mobile ul li.item-menu:hover{
-    background-color: #d4d4d4;
-
-    /* margin-left: 5px;
-    margin-right: 5px; */
-    /* padding-left: 31px; */
-    border-radius: 100%;
-    transform: translateY(-15px);
-
-}
-
-
-nav.menu-inferior-mobile ul li.item-menu a span.txt-link{
-    font-size: 15px;
-    margin-left: 15px;
-    font-weight: 300;
-    color: #d4d4d4;
-    /* text-decoration: none; */
-}
-
-nav.menu-inferior-mobile ul li.item-menu a img{
-    vertical-align: middle;
-}
-
-nav.menu-inferior-mobile ul li.item-menu a{
-    text-decoration: none;
-}
-
-nav.menu-inferior-mobile .btn-sair{
-    padding-left: 21px;
-    text-align: left;
-}
-
-
-nav.menu-inferior-mobile .btn-sair a button{
-    border: none;
-    cursor: pointer;
-    height: 25px;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 3px  10px;
-    color: #d4d4d4;
-    background-color: #4065AB;
     border-radius: 3px;
-    margin-top: 20vh;
-    transition: 0.5s;
-
-
+    width: 500px;
+    padding: 20px 30px;
 }
 
-nav.menu-inferior-mobile .btn-sair a button:hover{
-    scale: 0.9;
-    background-color: #2d4777;
-
+.btn-cancel-horario #btn-voltar{
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 25px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 15px;
+    border: #707070a1 solid 1px;
 }
-
-nav.menu-inferior-mobile .btn-sair a button img{
-    margin-right: 18px;
-    vertical-align: middle;
+.btn-cancel-horario #btn-cancelar{
+    background-color: #872121;
+    color: #fad6d6;
+    border: none;
+    padding: 5px 25px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 15px;
+}
+#cancelar-horario form h2{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
 }

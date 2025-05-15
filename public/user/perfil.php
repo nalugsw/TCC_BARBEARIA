@@ -29,6 +29,9 @@ unset($_SESSION['erro']);
     <!-- Importando pacote de icones do Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
+
+    
+    <script src="../../assets/js/formatar-telefone.js"></script>
 </head>
 <body>
     <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
@@ -65,11 +68,11 @@ unset($_SESSION['erro']);
                     
                     <div id="img-container">
                         <p>*Foto do perfil</p>
+                        <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
                         <div class="input-campo">
                             <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
                             <label for="arquivo" class="custom-file-button">Escolha a foto</label>
                         </div>
-                        <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
                     </div>
                     <?php $dados = dadosCliente($_SESSION['id_usuario']);?>
                     <div class="input-campo">
@@ -90,9 +93,9 @@ unset($_SESSION['erro']);
             <div class="horarios-marcados">
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
-                    <!-- <div class="txt-sem-horarios"><p>SEM HORARIO MARCADO</p></div> -->
-                    <?php $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
-                                foreach($dados as $agenda): ?>
+                    <div class="txt-sem-horarios"><p>SEM HORARIO MARCADO</p></div>
+                    <?php   $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
+                            foreach($dados as $agenda): ?>
                             <div class="horario-caixa">
                                 <div class="nome-barbeiro"><p><?php echo $agenda['funcionario']; ?> </p></div>
                                 <p> - </p>
@@ -108,10 +111,6 @@ unset($_SESSION['erro']);
         </div>
     </section>
 
-    <!-- Menu Mobile para dispositivos de telas pequenas -->
-
-        <script src="../../assets/js/formatar-telefone.js"></script>
-        <script src="../../assets/js/modal-deslogar.js"></script>
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>
     </body>

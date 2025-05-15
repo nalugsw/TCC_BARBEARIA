@@ -42,7 +42,8 @@ CREATE TABLE AGENDA (
     data date not null,
     horario time not null,
     id_funcionario int,
-    id_cliente_servico int
+    id_cliente_servico int,
+    status_agenda VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE USUARIO (
@@ -150,14 +151,32 @@ INSERT INTO PORTFOLIO (imagem) VALUES
 ('macaquinho13.jpg'),
 ('macaquinho14.jpg');
 
-INSERT INTO servico (foto) VALUES
-('uploads/servicos/corte-masculino.png'),
-('uploads/servicos/corte_infantil.png'),
-('uploads/servicos/barba_completa.png'),
-('uploads/servicos/corte_e_barba.png'),
-('uploads/servicos/sobrancelha.png'),
-('uploads/servicos/luzes_masculinas.png'),
-('uploads/servicos/progressiva.png'),
-('uploads/servicos/hidratacao_capilar.png'),
-('uploads/servicos/pigmentacao_barba.png'),
-('uploads/servicos/relaxamento_capilar.png');
+CREATE TABLE dias_inativos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_inativa DATE NOT NULL UNIQUE,
+    motivo VARCHAR(255)
+);
+
+--INSERT DE USUARIO ADMIN PARA TESTE
+INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
+('admin@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'administrador');
+--SENHA: 123456789
+
+
+--INSERT DE USUARIO FUNCIONARIO PARA TESTE
+INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
+('barbeiro@gmail.com', '$2y$10$y6Dmzy51zweP4GuOb66T1eaoNNDJp3ixw81iLbzRwfZGbcKw0Rs7i', 'verificado', 'funcionario');
+--SENHA: barbeiro123
+
+
+-- COMANDO PARA AGRUPAR OS AGENDAMENTOS POR MêS (IMPORTANTE TESTAR APÓS NALU FAZER O GRÁFICO EM JS)
+
+-- SELECT
+-- 	MONTH(data) AS mes, 
+-- 	COUNT(id_agenda) AS total_agendamentos
+-- FROM agenda
+-- 	WHERE YEAR(data) = ?
+-- 	GROUP BY MONTH(data)
+-- 	ORDER BY mes;
+
+

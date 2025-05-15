@@ -18,7 +18,7 @@
 <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
 <nav class="menu-lateral-desktop">
     <div class="logo">
-        <img src="<?php echo BASE_URL; ?>assets/img/LOGO.png" alt="">
+        <a href="./perfil.php"><img src="<?php echo BASE_URL; ?>assets/img/LOGO.png" alt=""></a>
     </div>
 
     <ul>
@@ -53,7 +53,7 @@
             </a>
         </li>
     </ul>
-
+    
     <button id="btn-sair" class="btn-sair"><img src="<?php echo BASE_URL; ?>assets/img/icon-sair.png" alt="">SAIR</button>
 
 </nav>
@@ -73,7 +73,7 @@
 
 <nav class="menu-mobile">
     <div class="logo-mobile">
-    <img src="<?php echo BASE_URL; ?>assets/img/LOGO.png" alt="">
+    <a href="./perfil.php"><img src="<?php echo BASE_URL; ?>assets/img/LOGO.png" alt=""></a>
     </div>
     <input type="checkbox" name="" id="abrir-mobile">
     <label for="abrir-mobile" class="menu-linhas">
@@ -114,9 +114,14 @@
             </a>
         </li>
         
-
-    <button id="btn-sair" class="btn-sair"><img src="<?php echo BASE_URL; ?>assets/img/icon-sair.png" alt="">SAIR</button>
+        <div class="div-btn">
+            <button id="btn-sair-mobile" class="btn-sair">
+                <img src="<?php echo BASE_URL; ?>assets/img/icon-sair.png" alt="">
+                <span>SAIR</span>
+            </button>
+        </div>
     </ul>
 </nav>
 
+<script src="../../assets/js/modal-deslogar.js"></script>
 </html>

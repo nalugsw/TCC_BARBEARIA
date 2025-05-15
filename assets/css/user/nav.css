@@ -11,7 +11,8 @@ body{
   grid-template-columns: 230px 1fr;
   grid-template-rows: 70px 1fr;
   overflow-y: hidden;
-  min-height: 100vh;
+  overflow-x: hidden;
+  height: 100vh;
 }
 
 /* CSS do Menu Lateral DESKTOP e seus comportamnentos */
@@ -170,6 +171,8 @@ nav.menu-lateral-desktop .btn-sair img{
 nav.menu-mobile ul{
   display: none;
   transform: translateX(100%);
+  transition: 0.5s;
+  transition-timing-function: ease;
 }
 
 
@@ -186,6 +189,7 @@ nav.menu-mobile ul{
     height: 80px;
     align-items: center;
     padding: 20px 20px;
+    margin-top: 20PX;
   }
   nav.menu-mobile .logo-mobile{
     width: 100px;
@@ -196,8 +200,11 @@ nav.menu-mobile ul{
     width: 30px;
     height: 30px;
     right: 20px;
-    top: 20px;
+    top: 25px;
     z-index:98 ;
+    transition: 0.35s;
+    transition-timing-function: ease;
+    margin-top: 20PX;
   }
   .menu-linhas span{
     width: 30px;
@@ -221,16 +228,17 @@ nav.menu-mobile ul{
     display: none;
     flex-direction: column;
     align-items:first baseline;
-    padding: 80px 15px 0 15px;
+    padding: 110px 10px 0 1px;
     transition: 0.2s;
   }
   
   nav.menu-mobile ul li{
     width: 100%;
     list-style: none;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
     border-bottom: #2c2c2c solid 1px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    
   }
   
   nav.menu-mobile ul li a{
@@ -242,7 +250,7 @@ nav.menu-mobile ul{
   }
   
   nav.menu-mobile ul li a img{
-    padding-right: 10px;
+    padding-right: 15px;
   }
   #abrir-mobile{
     position: absolute;
@@ -255,8 +263,13 @@ nav.menu-mobile ul{
   #abrir-mobile:checked{
     position: fixed;
   }
+  
+  #abrir-mobile:checked~ .menu-linhas{
+    transform: translateX(-185px);
+    top: 35px;
+  }
   #abrir-mobile:checked~ .menu-linhas span:nth-child(1){
-    transform: rotate(-45deg);
+    transform: rotate(-45deg) scale(1.2);
     position: fixed;
   }
   #abrir-mobile:checked~ .menu-linhas span:nth-child(2){
@@ -264,7 +277,7 @@ nav.menu-mobile ul{
     position: fixed;
   }
   #abrir-mobile:checked~ .menu-linhas span:nth-child(3){
-    transform: rotate(45deg);
+    transform: rotate(45deg) scale(1.2);
     position: fixed;
   }
 
@@ -273,5 +286,38 @@ nav.menu-mobile ul{
     position: fixed;
     transform: translateX(0);
     display: flex;
+  }
+  .div-btn .btn-sair{
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px  10px;
+    color: #d4d4d4;
+    background-color: #4065AB;
+    border-radius: 3px;
+    transition: 0.5s;
+    box-shadow: 1px 1px 2px rgba(55, 55, 55, 0.34);
+  }
+  .div-btn .btn-sair{
+    scale: 1.02;
+    background-color: #31579c;
+    width: 100px;
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+  }
+  
+  .div-btn .btn-sair img{
+    margin-right: 20px;
+  }
+  
+  .div-btn{
+    width: 100%;
+    height: 100%;
+    margin: 0 0 25px 15px;
+    display: flex;
+    align-items: flex-end;
   }
 }

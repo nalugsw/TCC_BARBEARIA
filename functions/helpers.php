@@ -10,12 +10,23 @@ define("BASE_URL", "http://localhost/TCC_BARBEARIA/");
 
 function dadosCliente($id_usuario){
     global $pdo;
-    $sql = "SELECT CLIENTE.nome, CLIENTE.numero_telefone, USUARIO.email
+    $sql = "SELECT CLIENTE.id_cliente, CLIENTE.nome, CLIENTE.numero_telefone, USUARIO.email
             FROM CLIENTE
             JOIN USUARIO ON CLIENTE.id_usuario = USUARIO.id_usuario
             WHERE USUARIO.id_usuario = :id_usuario";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":id_usuario", $id_usuario, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+//RECUPERA OS DADOS DO FUNCIONARIO
+
+function dadosFuncionario(){
+    global $pdo;
+    $sql = "SELECT * FROM funcionario";
+    $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
     return $stmt->fetch(PDO::FETCH_ASSOC);

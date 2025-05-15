@@ -11,6 +11,7 @@ if(!isset($_POST['email'])){
     header("location: ../../public/user/redefinicaoSenha.html");
     exit();
 }
+$_SESSION['email'] = $_POST['email'];
 $email = $_POST['email'];
 $assunto = "Código de recuperação";
 $mensagem = "Seu código de recuperação é: $codigoRecuperacao";
@@ -25,7 +26,6 @@ $resultadoEmail = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$resultadoEmail) {
     $_SESSION['erro'] = "E-mail informado não cadastrado.";
-    echo "erro de email";
     header("location: ../../public/user/redefinicaoSenha.html");
     exit();
 }
@@ -41,14 +41,18 @@ $stmt->execute();
 if (!enviarEmail($email, $assunto, $mensagem, $cabecalho)) {
     $_SESSION['erro'] = "Erro ao enviar o e-mail. Tente novamente.";
     $pdo->rollBack();
-    echo "envio de email";
     header("location: ../../public/user/redefinicaoSenha.html");
     exit();
 }
 
+$sql = "UPDATE USUARIO SET validade_token = DATE_ADD(NOW(), INTERVAL 5 MINUTE) WHERE email = :email";
+
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(":email", $email);
+$stmt->execute();
+
 $pdo->commit();
 
-echo "Email enviado";
 header("location: ../../public/user/recuperacaoSenha.php");
 exit();
 ?>

@@ -153,9 +153,9 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios{
     height: 120px;
     border-radius: 3px;
     display: flex;
-    flex-direction: column;
-    overflow: auto;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -210,18 +210,17 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: transparent;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 #modal-edit form{
     background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
-    height: 400px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 25px;
     border-radius: 3px;
     width: 500px;
 }
@@ -232,13 +231,7 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     font-size: 15px;
     color: #232323;
     font-weight: bold;
-    margin-top: 8px;
-    margin-bottom: 5px;
     
-}
-#modal-edit .input-campo{
-    margin-bottom: 15px;
-    margin-top: 5px;
 }
 #modal-edit .input-campo input{
     padding: 3px 20px 3px 20px
@@ -251,7 +244,7 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     display: inline-block;
     background-color: #4065AB;
     color: #dbe6f9;
-    padding: 10px 15px;
+    padding: 5px 15px;
     font-size: 13px;
     border-radius: 3px;
     cursor: pointer;
@@ -263,35 +256,28 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
 #modal-edit button:hover{
     background-color: #2f5396;
 }
-
+#modal-edit .btns-modal{
+    height: 100%;
+}
 #modal-edit button{
-    padding: 5px 10px;
+    padding: 5px 15px;
     background-color: #4065AB;
     color: #dbe6f9;
     border: none;
     border-radius: 3px;
     box-shadow: 1px 1px 1px #23232348;
 
+
 }
 #img-container{
-    display: grid;
-    grid-column: repeat(2, 100px);
-    grid-row: 20px 1fr;
+    grid-row: 1/4;
+    display: flex;
+    flex-direction: column;
 }
-#img-container .input-campo{
-    grid-row: 2/3;
-}
-
-#img-container p
-{
-    grid-row: 1/2;
-    align-items: center;
-}
-
 #preview{
-    grid-row: 2/3;
     border: solid 1px rgb(136, 136, 136);
-    height: 99px;
-    width: 99px;
+    height: 120px;
+    width: 120px;
     object-fit: cover;
+    margin-bottom: 15px;
 }
