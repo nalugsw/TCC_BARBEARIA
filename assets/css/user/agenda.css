@@ -226,29 +226,34 @@ th {
 .formularioAgendamento-select{
     grid-column: 2/3;
     grid-row: 2/3;
-    height: 100px;
     margin: 0 auto;
     background-color: #f4f4f4;
     padding: 10px;
     border-radius: 3px;
     align-items: center;
+    height: 100%;
+    padding-bottom: 10px;
 }
 .horariosDisponiveis-select{
     grid-column: 1/2;
     grid-row: 2/3;
 }
 .formularioAgendamento-select h2{
-    font-size: 18px;
+    font-size: 16px;
     text-transform: lowercase;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+.formularioAgendamento-select form select{
+    margin-bottom: 20px;
 }
 
 .formularioAgendamento-select form{
-    height: 230px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 .formularioAgendamento-select form button{
     background-color: #3c763d;
@@ -257,4 +262,5 @@ th {
     padding: 10px;
     color: #f4f4f4;
     font-weight: 500;
+    width: 100%;
 }

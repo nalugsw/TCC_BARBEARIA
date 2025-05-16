@@ -29,7 +29,7 @@ function dadosFuncionario(){
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 //PEGA O DIA DA SEMANA

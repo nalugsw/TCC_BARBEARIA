@@ -43,20 +43,28 @@ unset($_SESSION['erro']);
             <h3 id="TituloDia">horarios selecionados</h3>
             <div id="horariosDisponiveis" class="horariosDisponiveis" ></div>
             <div id="formularioAgendamento" style="display:none;">
-                <h2>Selecione o Serviço</h2>
+                
                 <form action="../calendario/processa_agenda.php" method="post">
                     <input type="hidden" id="dataAgendamento" name="dataAgendamento">
                     <input type="hidden" id="horaAgendamento" name="horaAgendamento">
                     
                     <div class="form-group">
+                        <h2>Selecione o Serviço</h2>
                         <select name="servico" id="servico" required>
                             <?php foreach($servicos as $servico): ?>
                                 <option value="<?= $servico['id_servico'] ?>"><?= $servico['nome'] ?></option>
                             <?php endforeach; ?>
                         </select>
+                        <h2>Selecione o funcionario</h2>
+                        <select name="id_funcionario" id="id_funcionario" required>
+
+                            <?php foreach($funcionarios as $funcionario): ?>
+                                <option value="<?= $funcionario['id_funcionario'] ?>"><?= $funcionario['nome'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     
-                    <button type="submit">Confirmar Agendamento</button>
+                    <button type="submit">Agendar</button>
                 </form>
             </div>
         </div>
@@ -351,6 +359,7 @@ unset($_SESSION['erro']);
             document.getElementById('formularioAgendamento').style.display = 'block';
         }
     </script>
+    
 </body>
 </html>
 

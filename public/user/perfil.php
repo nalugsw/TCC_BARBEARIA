@@ -93,18 +93,29 @@ unset($_SESSION['erro']);
             <div class="horarios-marcados">
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
-                    <div class="txt-sem-horarios"><p>SEM HORARIO MARCADO</p></div>
-                    <?php   $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo); 
-                            foreach($dados as $agenda): ?>
+
+                    <?php
+                    
+                    $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo);
+                    if (empty($dados)) {
+                        echo '<div class="txt-sem-horarios"><p>SEM HORÁRIO MARCADO</p></div>';
+                    } else {
+                        
+                        foreach($dados as $agenda): ?>
                             <div class="horario-caixa">
-                                <div class="nome-barbeiro"><p><?php echo $agenda['funcionario']; ?> </p></div>
+                                <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?> </p></div>
                                 <p> - </p>
                                 <div class="data-barbeiro"><p><?php echo $agenda['data']; ?> </p></div>
                                 <p> | </p>
                                 <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?> </p></div>
                                 <div class="horario-barbeiro"><p><?php echo $agenda['horario']; ?></p> </div>
                             </div>
-                                <?php endforeach; ?>
+                    <?php
+                        endforeach;
+                    }
+                    ?>
+                    
+
                 </div>
             </div>
             

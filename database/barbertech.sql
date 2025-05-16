@@ -178,5 +178,3 @@ INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 -- 	WHERE YEAR(data) = ?
 -- 	GROUP BY MONTH(data)
 -- 	ORDER BY mes;
-
-

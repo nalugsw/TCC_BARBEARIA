@@ -18,9 +18,9 @@ function mostrarAgendamentos($id_usuario, $pdo){
     JOIN 
         SERVICO ON CLIENTE_SERVICO.id_servico = SERVICO.id_servico
     JOIN 
-        FUNCIONARIO ON AGENDA.id_funcionario = FUNCIONARIO.id_funcionario
-    JOIN 
         USUARIO ON CLIENTE.id_usuario = USUARIO.id_usuario
+    LEFT JOIN    -- ALTERADO AQUI
+    FUNCIONARIO ON AGENDA.id_funcionario = FUNCIONARIO.id_funcionario
     WHERE 
         USUARIO.id_usuario = :id_usuario";
 
