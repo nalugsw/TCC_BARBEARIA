@@ -2,13 +2,14 @@
 
 session_start();
 
+include("../../config/conexao.php");
 include("../../functions/helpers.php");
 $dadosCliente = dadosCliente($id_usuario);
+$funcionario = $_POST['id_funcionario'] ?? '';
 
 header('Content-Type: application/json');
 
 // Configurações do banco de dados
-include("../../config/conexao.php");
 
 // Receber dados do formulário
 $data = $_POST['selected_date'] ?? '';
@@ -27,9 +28,20 @@ if ($stmt->fetch()) {
     die(json_encode(['success' => false, 'message' => 'Este horário já foi reservado por outra pessoa']));
 }
 
+// Insere o serviço do cliente
+        $stmt = $pdo->prepare("INSERT INTO cliente_servico (id_cliente, id_servico) VALUES (?, ?)");
+        $stmt->execute([$id_cliente, $servico]);
+
+        $id_cliente_servico = $pdo->lastInsertId();
+
 // Inserir agendamento
 try {
-    $stmt = $pdo->prepare("INSERT INTO agenda (data, horario, id_cliente_servico) VALUES (?, ?, ?)");
+
+    // Insere o serviço do cliente
+    $stmt = $pdo->prepare("INSERT INTO cliente_servico (id_cliente, id_servico) VALUES (?, ?)");
+    $stmt->execute([$id_cliente, $servico]);
+
+    $stmt = $pdo->prepare("INSERT INTO agenda (data, horario, id_cliente_servico, id_funcionario) VALUES (?, ?, ?)");
     $stmt->execute([$data, $time]);
     
     echo json_encode([

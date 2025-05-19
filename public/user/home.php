@@ -62,7 +62,7 @@ unset($_SESSION['erro']);
             </div>
         </div>
         <div class="submenu">
-            <button class="btn" data-target="grid1" >Portfolio</button>
+            <button class="btn" data-target="grid1" >Destaques</button>
             <button class="btn" data-target="grid2" >Serviços</button>
         </div>
         <div class="grids-container">

@@ -4,7 +4,8 @@ include("../../config/conexao.php");
 session_start();
 require_once("../../functions/helpers.php");
 verificaSession("funcionario");
-
+require_once("../../functions/agendamento.php");
+$agenda = mostrarAgendamentos($id_usuario, $pdo);
 ?>
 
 

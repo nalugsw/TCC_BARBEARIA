@@ -44,7 +44,7 @@ unset($_SESSION['erro']);
             <div id="horariosDisponiveis" class="horariosDisponiveis" ></div>
             <div id="formularioAgendamento" style="display:none;">
                 
-                <form action="../calendario/processa_agenda.php" method="post">
+                <form action="../calendario/processa_agenda.php" method="POST">
                     <input type="hidden" id="dataAgendamento" name="dataAgendamento">
                     <input type="hidden" id="horaAgendamento" name="horaAgendamento">
                     
