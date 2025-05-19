@@ -23,6 +23,10 @@ body {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 20px;
+    column-gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
   
   .filtros label {
@@ -30,12 +34,28 @@ body {
   }
   
   .filtros select {
-    padding: 8px;
+    padding: 5px 15px;
     font-size: 14px;
     border-radius: 4px;
     border: 1px solid #ccc;
   }
-  
+  .filtros form{
+    grid-column: 1/5;
+  }
+  .filtros form button{
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #4065AB;
+    color: #fafafa;
+    border-radius: 3px;
+    border: none;
+  }
+  .filtros .estatisticas-item::before{
+    height: 100%;
+    width: 3px;
+    background-color: #5a5a5a;
+  }
   .relatorio-resultados {
     overflow-x: auto;
   }
@@ -57,4 +77,28 @@ body {
   thead {
     background-color: #e4e3e3;
   }
-  
+
+  .estatisticas {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    gap: 15px;
+}
+
+.estatisticas p {
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.estatisticas p strong {
+    color: #2c3e50;
+    font-size: 1.2em;
+    margin-top: 5px;
+}
