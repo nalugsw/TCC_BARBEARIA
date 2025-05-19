@@ -30,7 +30,7 @@
                 <a href="#"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Informações</span></a>
             </li>
             <li class="item-menu">
-                <a href="../../public/adm/relatorios.php"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Relatórios</span></a>
+                <a href="../../public/adm/relatorios.php"><img src="../../assets/img/icon-relatorios.png" alt=""><span class="txt-link">Relatórios</span></a>
             </li>
         </ul>
 

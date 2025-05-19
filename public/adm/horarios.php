@@ -132,7 +132,7 @@ verificaSession("administrador");
     </nav>
 
     <main>
-        <div class="perfil-adm">
+        <!-- <div class="perfil-adm">
             <div class="foto-adm">
                 <img src="../../assets/img/homem-sorrindo-teste.avif" alt="foto barbeiro">
                 <a href="" class="btn-edit">
@@ -156,7 +156,7 @@ verificaSession("administrador");
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
         
         <dialog closed id="modal-edit" >
             <form action="" method="POST" enctype="multipart/form-data">
