@@ -163,15 +163,44 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios{
 
 section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa{
     width: 100%;
-    background-color: #898989;
+    background-color: #aaa;
     border-radius: 3px;
-    display: flex;
     margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: 1fr 5px 50px 5px 70px 45px;
+    padding: 0 5px;
+    column-gap: 5px;
+    position: relative;
+}
+.desmarcar{
+    background-color: #bb3838;
+    padding: 0 5px;
+    border-radius: 0 3px 3px 0;
+    transition: 1s;
+}
+.desmarcar button{
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa:hover{
+    background-color: #696969;
+}
+
+section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa:hover .desmarcar{
+    position:absolute;
+    right: 0;
+    float: right;
+    display: block;
+    height: 100%;
 }
 
 section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
     color: #232323;
     font-size: 15px;
+    font-weight: 600;
 }
 
 section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa .nome-barbeiro{
@@ -184,8 +213,8 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     font-size: 15px;
     color: #898989;
     font-weight: 500;
-    /* padding: ; */
 }
+
 
 .btns-modal{
     margin-top: 20px;
@@ -281,3 +310,4 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     object-fit: cover;
     margin-bottom: 15px;
 }
+

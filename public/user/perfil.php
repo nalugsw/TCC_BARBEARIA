@@ -29,13 +29,9 @@ unset($_SESSION['erro']);
     <!-- Importando pacote de icones do Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
-
-    
     <script src="../../assets/js/formatar-telefone.js"></script>
 </head>
 <body>
-    <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
-    <!-- Fim do menu Desktop e inicio da sessão perfil -->
     <?php include("../../views/nav-padrao.php"); ?>
 
     <section class="perfil">
@@ -93,7 +89,6 @@ unset($_SESSION['erro']);
             <div class="horarios-marcados">
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
-
                     <?php
                     
                     $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo);
@@ -103,12 +98,26 @@ unset($_SESSION['erro']);
                         
                         foreach($dados as $agenda): ?>
                             <div class="horario-caixa">
+                                <div class="desmarcar hide">
+                                    <button onclick="return confirm('Deseja mesmo cancelar este agendamento?');"><img src="../../assets/img/delete.png" alt=""></button>
+                                </div>
                                 <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?> </p></div>
                                 <p> - </p>
-                                <div class="data-barbeiro"><p><?php echo $agenda['data']; ?> </p></div>
+                                <div class="data-barbeiro"><p>
+                                    <?php   $dataNova = new DateTime($agenda['data']);
+                                            echo $dataNova->format('d/m');?> 
+                                </p></div>
                                 <p> | </p>
                                 <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?> </p></div>
-                                <div class="horario-barbeiro"><p><?php echo $agenda['horario']; ?></p> </div>
+                                <div class="horario-barbeiro">
+                                    <p>
+                                        <?php 
+                                        $data_hora_atual = new DateTime($agenda['horario']);
+                                        $hora_formatada = $data_hora_atual->format('H:i');
+                                        echo $hora_formatada;
+                                        ?>
+                                    </p>
+                                </div>
                             </div>
                     <?php
                         endforeach;
