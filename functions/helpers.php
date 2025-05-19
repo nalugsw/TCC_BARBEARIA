@@ -29,7 +29,17 @@ function dadosFuncionario(){
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetchALL(PDO::FETCH_ASSOC);
+}
+
+function dadosFuncionarioAgenda($id_usuario){
+    global $pdo;
+    $sql = "SELECT * FROM funcionario WHERE id_usuario = :id_usuario";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(":id_usuario", $id_usuario, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 //PEGA O DIA DA SEMANA

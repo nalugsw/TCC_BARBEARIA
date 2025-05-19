@@ -1,6 +1,7 @@
 <?php
 
 require_once("helpers.php");
+global $pdo;
 
 function mostrarAgendamentos($id_usuario, $pdo){
     $sql = "SELECT 
@@ -31,4 +32,27 @@ function mostrarAgendamentos($id_usuario, $pdo){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+//MOSTRAR AGENDA DO FUNCIONÁRIO
+
+function buscarAgendamentosPorFuncionario(PDO $pdo, int $id_funcionario): array {
+    $sql = "
+        SELECT 
+            c.nome AS nome_cliente,
+            c.numero_telefone,
+            s.nome AS nome_servico,
+            a.horario,
+            c.foto AS foto_cliente
+        FROM AGENDA a
+        JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
+        JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
+        JOIN SERVICO s ON cs.id_servico = s.id_servico
+        WHERE a.id_funcionario = :id_funcionario
+    ";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':id_funcionario', $id_funcionario, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
