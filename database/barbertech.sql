@@ -109,7 +109,7 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
 ('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte-masculino.png'),
-('Corte Infantil', 25.00, '00:30:00', 'uploads/servicos/corte_infantil.jpg'),
+('Corte Infantil', 25.00, '00:30:00', 'uploads/servicos/corte-infantil.jpg'),
 ('Barba Completa', 30.00, '00:25:00', 'uploads/servicos/barba_completa.jpg'),
 ('Corte e Barba', 60.00, '01:00:00', 'uploads/servicos/corte_e_barba.jpg'),
 ('Sobrancelha', 15.00, '00:15:00', 'uploads/servicos/sobrancelha.jpg'),
@@ -169,12 +169,23 @@ INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 --SENHA: barbeiro123
 
 
--- COMANDO PARA AGRUPAR OS AGENDAMENTOS POR MêS (IMPORTANTE TESTAR APÓS NALU FAZER O GRÁFICO EM JS)
 
--- SELECT
--- 	MONTH(data) AS mes, 
--- 	COUNT(id_agenda) AS total_agendamentos
--- FROM agenda
--- 	WHERE YEAR(data) = ?
--- 	GROUP BY MONTH(data)
--- 	ORDER BY mes;
+-- COMANDO PARA TRAZER OS DADOS PARA A PAGINA DE FUNCIONARIO/ADMIN
+-- SELECT 
+--     c.nome AS nome_cliente,
+--     c.numero_telefone AS telefone_cliente,
+--     s.nome AS servico_agendado,
+--     a.data AS data_agendamento,
+--     a.horario AS horario_agendamento,
+--     c.foto AS foto_cliente
+-- FROM 
+--     AGENDA a
+-- JOIN 
+--     CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
+-- JOIN 
+--     CLIENTE c ON cs.id_cliente = c.id_cliente
+-- JOIN 
+--     SERVICO s ON cs.id_servico = s.id_servico
+-- ORDER BY 
+--     a.data, 
+--     a.horario;

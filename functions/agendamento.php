@@ -34,7 +34,7 @@ function mostrarAgendamentos($id_usuario, $pdo){
 
 //MOSTRAR AGENDA DO FUNCIONÁRIO
 
-function buscarAgendamentosPorFuncionario(PDO $pdo, int $id_funcionario): array {
+function buscarAgendamentosPorFuncionario($id_funcionario, $pdo){
     $sql = "
         SELECT 
             c.nome AS nome_cliente,
