@@ -34,23 +34,25 @@ function mostrarAgendamentos($id_usuario, $pdo){
 
 //MOSTRAR AGENDA DO FUNCIONÁRIO
 
-function buscarAgendamentosPorFuncionario($id_funcionario, $pdo){
+function buscarAgendamentosPorFuncionario($id_funcionario, $pdo) {
     $sql = "
         SELECT 
             c.nome AS nome_cliente,
             c.numero_telefone,
-            s.nome AS nome_servico,
+            s.nome AS servico,
             a.horario,
+            a.data,
             c.foto AS foto_cliente
         FROM AGENDA a
         JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
         JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
         JOIN SERVICO s ON cs.id_servico = s.id_servico
         WHERE a.id_funcionario = :id_funcionario
+        ORDER BY a.data, a.horario
     ";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':id_funcionario', $id_funcionario, PDO::PARAM_INT);
+    $stmt->bindParam(':id_funcionario', $id_funcionario, PDO::PARAM_INT);
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -133,21 +133,33 @@ unset($_SESSION['erro']);
                         hoje.setHours(0, 0, 0, 0);
                         
                         // Verifica se é um dia passado ou inativo
-                        if (dataAtual < hoje || data.inativos.includes(`${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`)) {
-                            diaElement.classList.add('inativo');
-                        } else {
-                            diaElement.onclick = function() { selecionaDia(this, ano, mes, dia); };
-                        }
+                        const doisSemanasDepois = new Date();
+        doisSemanasDepois.setDate(doisSemanasDepois.getDate() + 13); // hoje + 13 dias
+
+        // Verifica se é domingo
+        const ehDomingo = dataAtual.getDay() === 0;
+
+        if (
+            dataAtual < hoje || 
+            dataAtual > doisSemanasDepois || 
+            ehDomingo || 
+            data.inativos.includes(`${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`)
+        ) {
+            diaElement.classList.add('inativo');
+        } else {
+            diaElement.onclick = function() { selecionaDia(this, ano, mes, dia); };
+        }
+
                         
-                        // Marca dias com agendamentos
-                        const dataStr = `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
-                        if (data.agendamentos[dataStr] && data.agendamentos[dataStr].length > 0) {
-                            diaElement.classList.add('com-agendamento');
-                        }
-                        
-                        diasCalendario.appendChild(diaElement);
-                    }
-                });
+        // Marca dias com agendamentos
+        const dataStr = `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
+        if (data.agendamentos[dataStr] && data.agendamentos[dataStr].length > 0) {
+            diaElement.classList.add('com-agendamento');
+        }
+        
+        diasCalendario.appendChild(diaElement);
+            }
+        });
         }
 
         function selecionaDia(elemento, ano, mes, dia) {
