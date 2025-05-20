@@ -28,108 +28,6 @@ verificaSession("administrador");
 
     <?php include("../../views/nav-padrao-adm.php"); ?>
 
-        <div class="itens">
-            <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
-            <a href="" ><button id="btn-setting"><span class="material-symbols-outlined">settings</span></button></a>
-        </div>
-    </nav>
-    <dialog close id="modal-sair" >
-        <div class="modal-sair">
-            <p>realmente deseja sair?</p>
-            <div class="btns-modal">
-                <a href="../../functions/logout.php">
-                    <button class="btn-sair">Sair</button>
-                </a>
-                <button id="cancelar-sair">Voltar</button>
-            </div>
-        </div>
-    </dialog>
-
-    <nav id="menu-settings" class="menu-lateral-settings-desktop  hide">
-        <div class="logo">
-            <img src="../../assets/img/LOGO.png" alt="">
-        </div>
-        <h2>configurações</h2>
-        <ul>
-            <li class="item-menu">
-                <a href="horaios.php">
-                    <span class="txt-link">Informações</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="perfil.html">
-                    <span class="txt-link">Dias e Horaios</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
-                </a>
-            </li>
-        </ul>
-        <a href=""><button id="btn-voltar-config">Voltar</button></a>
-    </nav>
-        
-    <nav id="menu-padrao-mobile" class="menu-mobile">
-        <div class="logo-mobile">
-        <a href="./horarios.html"><img src="../../assets/img/LOGO.png" alt=""></a>
-        </div>
-        <input type="checkbox" name="" id="abrir-mobile">
-        <label for="abrir-mobile" class="menu-linhas">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-
-        <ul class="menu-itens">
-            <li class="item-menu-mobile">
-                <a href="../../public/adm/horarios.php">
-                <img src="../../assets/img/iconeRelogio.png" alt="">
-                    <span class="txt-link">Horarios</span>
-                </a>
-            </li>
-            <li class="item-menu-mobile">
-                <a href="../../public/adm/perfil.php">
-                <img src="../../assets/img/icon-perfil.png" alt="">
-                <span class="txt-link">Perfil</span>
-                </a>
-            </li>
-            <li class="item-menu-mobile">
-                <a href="../../public/adm/servicos.php">
-                <img src="../../assets/img/icon-produtos.png" alt="">
-                <span class="txt-link">Serviços</span>
-                </a>
-            </li>
-            
-            <div class="div-btn">
-                <button id="btn-sair-mobile" class="btn-sair">
-                    <img src="../../assets/img/icon-sair.png" alt="">
-                    <span>SAIR</span>
-                </button>
-                <a href="" ><button id="btn-setting-mobile"><span class="material-symbols-outlined">settings</span></button></a>
-            </div>
-        </ul>
-    </nav>
-
-    <nav id="menu-settings-mobile" class="menu-settings-mobile hide">
-        
-        <div class="logo-mobile">
-            <a href="./horarios.html"><img src="../../assets/img/LOGO.png" alt=""></a>
-            </div>
-        <h2>configurações</h2>
-        <ul>
-            <li class="item-menu">
-                <a href="horaios.php">
-                    <span class="txt-link">Informações</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="perfil.html">
-                    <span class="txt-link">Dias e Horaios</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
-                </a>
-            </li>
-        </ul>
-        <a href=""><button id="btn-voltar-config-mobile">Voltar</button></a>
-    </nav>
 
     <main>
         <div class="perfil-adm">
@@ -141,6 +39,31 @@ verificaSession("administrador");
             </div>
         </div>
         
+        <dialog closed id="modal-edit" >
+            <form action="" method="POST" enctype="multipart/form-data">
+                    <div id="img-container">
+                        <p>*Foto do perfil</p>
+                        <img id="preview" src="">
+                        <div class="input-campo">
+                            <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                            <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                        </div>
+                    </div>
+                    <div class="input-campo">
+                        <p>*Nome do perfil</p>
+                        <input type="text" value="" name="nome">
+                    </div>
+                    <div class="input-campo">
+                        <p>*Endereço</p>
+                        <input type="text" value="" name="telefone" id="telefone" >
+                    </div>
+                    <div class="btns-edit">
+                        <button type="submit">Atualizar</button>
+                        <button id="cancelar-edit" type="button">Voltar</button>
+                    </div>
+            </form>
+        </dialog>
+
         <dialog closed id="cancelar-horario">
             <form action="">
                 <h2>

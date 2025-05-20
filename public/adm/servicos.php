@@ -1,10 +1,11 @@
-
 <?php
 
 include("../../config/conexao.php");
 session_start();
 require_once("../../functions/helpers.php");
 verificaSession("administrador");
+require("../../functions/user/home.php");
+$servicos = mostrarServicos();
 
 ?>
 
@@ -15,9 +16,7 @@ verificaSession("administrador");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/adm/servicosAdm.css">
-    <link rel="stylesheet" href="../../assets/css/adm/servicosAdm-responsividade.css">
     <link rel="stylesheet" href="../../assets/css/adm/nav.css">
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,38 +38,10 @@ verificaSession("administrador");
         </div>
     </dialog>
 
-
     <main>
         <div class="perfil-container">
             <div class="info">
                 <div class="dados-perfil">
-                    <div class="upload">
-                        <p>Coloque a imagem do serviço</p>
-                        <div class="upload-container">
-                            <label for="selecao-arquivo" class="custom-file-upload">
-                                <i class="bi bi-file-earmark-image"></i>
-                                <span>Selecionar Arquivo</span>
-                            </label>
-                            <div id="nome-arquivo" class="nome-arquivo"></div>
-                        </div>
-                        <input id="selecao-arquivo" type="file" class="input-file">
-                    </div>
-                </div>
-                <div class="dados-perfil">
-                    <div class="info-dados-perfil">
-                        <p>Nome do serviço</p>
-                        <input type="text">
-                    </div>
-                    <div class="info-dados-perfil">
-                        <p>Tempo do serviço</p>
-                        <input type="time">
-                    </div>
-                </div>
-                <div class="dados-perfil">
-                    <div class="info-dados-perfil">
-                        <p>Preço do serviço</p>
-                        <input type="number" placeholder="R$00,00">
-                    </div>
                     <p>Coloque a imagem do serviço</p>
                     <div class="upload-container">
                         <label for="selecao-arquivo" class="custom-file-upload">
@@ -99,98 +70,22 @@ verificaSession("administrador");
         <div class="grids-container">
             <div class="grid" id="grid2">
                 <!-- Exemplo de itens do grid (substitua pelo seu PHP real) -->
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="Serviço 1">
-                    <div class="txt-teste">
-                        <h1>Corte de Cabelo</h1>
-                        <div class="preco">
-                            <p>R$ 50,00</p>
-                            <div class="duracao">30 min</div>
+                 <?php foreach($servicos as $servico): ?>
+                    <div class="item">
+                        <img src="../../<?php echo $servico['foto']; ?>" alt="Serviço 1">
+                        <div class="txt-teste">
+                            <h1><?php echo $servico['nome']; ?></h1>
+                            <div class="preco">
+                                <p><?php echo $servico['valor']; ?></p>
+                                <div class="duracao"><?php $duracaoEmMinutos = (int)date('i', strtotime($servico['duracao'])) . " min";
+                                echo $duracaoEmMinutos; ?></div>
+                            </div>
+                        </div>
+                        <div class="icone-editar">
+                            <span class="material-symbols-outlined">edit</span>
                         </div>
                     </div>
-                    <div class="icone-editar">
-                        <span class="material-symbols-outlined">edit</span>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="Serviço 1">
-                    <div class="txt-teste">
-                        <h1>Corte de Cabelo</h1>
-                        <div class="preco">
-                            <p>R$ 50,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                    <div class="icone-editar">
-                        <span class="material-symbols-outlined">edit</span>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="Serviço 1">
-                    <div class="txt-teste">
-                        <h1>Corte de Cabelo</h1>
-                        <div class="preco">
-                            <p>R$ 50,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                    <div class="icone-editar">
-                        <span class="material-symbols-outlined">edit</span>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="Serviço 1">
-                    <div class="txt-teste">
-                        <h1>Corte de Cabelo</h1>
-                        <div class="preco">
-                            <p>R$ 50,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                    <div class="icone-editar">
-                        <span class="material-symbols-outlined">edit</span>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="Serviço 1">
-                    <div class="txt-teste">
-                        <h1>Corte de Cabelo</h1>
-                        <div class="preco">
-                            <p>R$ 50,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                    <div class="icone-editar">
-                        <span class="material-symbols-outlined">edit</span>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="Serviço 1">
-                    <div class="txt-teste">
-                        <h1>Corte de Cabelo</h1>
-                        <div class="preco">
-                            <p>R$ 50,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                    <div class="icone-editar">
-                        <span class="material-symbols-outlined">edit</span>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/servicos-2.png" alt="Serviço 1">
-                    <div class="txt-teste">
-                        <h1>Corte de Cabelo</h1>
-                        <div class="preco">
-                            <p>R$ 50,00</p>
-                            <div class="duracao">30 min</div>
-                        </div>
-                    </div>
-                    <div class="icone-editar">
-                        <span class="material-symbols-outlined">edit</span>
-                    </div>
-                </div>
-               
+                <?php endforeach; ?>
             </div>
         </div>
         

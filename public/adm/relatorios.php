@@ -173,25 +173,36 @@ $dadosGraficos = [
     <main>
         <div class="relatorio-container">
             <h1>Relatórios de Atendimentos</h1>
-            
-            <div class="filtros">
-                <form method="get" action="">
-                    <label for="filtroPeriodo">Período:</label>
-                    <select id="filtroPeriodo" name="periodo">
-                        <option value="semana" <?= $periodo == 'semana' ? 'selected' : '' ?>>Última Semana</option>
-                        <option value="mes" <?= $periodo == 'mes' ? 'selected' : '' ?>>Último Mês</option>
-                        <option value="semestre" <?= $periodo == 'semestre' ? 'selected' : '' ?>>Último Semestre</option>
-                        <option value="ano" <?= $periodo == 'ano' ? 'selected' : '' ?>>Último Ano</option>
-                    </select>
-                    <button type="submit">Filtrar</button>
-                </form>
-                
                 <div class="estatisticas">
-                    <p>Período: <strong><?= $label ?></strong></p>
-                    <p>Total de Atendimentos: <strong><?= $stats['total_atendimentos'] ?? 0 ?></strong></p>
-                    <p>Serviço Mais Popular: <strong><?= $stats['servico_mais_popular'] ?? 'Nenhum' ?></strong></p>
-                    <p>Lucro Total: <strong>R$ <?= number_format($stats['lucro_total'] ?? 0, 2, ',', '.') ?></strong></p>
-                </div>
+                    <div class="filtros">
+                        <form method="get" action="">
+                            <label for="filtroPeriodo">Período:</label>
+                            <select id="filtroPeriodo" name="periodo">
+                                <option value="semana" <?= $periodo == 'semana' ? 'selected' : '' ?>>Última Semana</option>
+                                <option value="mes" <?= $periodo == 'mes' ? 'selected' : '' ?>>Último Mês</option>
+                                <option value="semestre" <?= $periodo == 'semestre' ? 'selected' : '' ?>>Último Semestre</option>
+                                <option value="ano" <?= $periodo == 'ano' ? 'selected' : '' ?>>Último Ano</option>
+                            </select>
+                            <button type="submit">Filtrar</button>
+                    </form>
+
+                    <div class="estatistica-item">
+                        <span>Período:</span>
+                        <strong><?= $label ?></strong>
+                    </div>
+                    <div class="estatistica-item">
+                        <span>Total de Atendimentos:</span>
+                        <strong><?= $stats['total_atendimentos'] ?? 0 ?></strong>
+                    </div>
+                    <div class="estatistica-item">
+                        <span>Serviço Mais Popular:</span>
+                        <strong><?= $stats['servico_mais_popular'] ?? 'Nenhum' ?></strong>
+                    </div>
+                    <div class="estatistica-item">
+                        <span>Lucro Total:</span>
+                        <strong>R$ <?= number_format($stats['lucro_total'] ?? 0, 2, ',', '.') ?></strong>
+                    </div>
+            </div>
             </div>
             
             <div class="graficos-container">
@@ -348,7 +359,7 @@ $dadosGraficos = [
 </body>
 </html>
             <!-- Filtros -->
-            <div class="filtros">
+            <!-- <div class="filtros">
               <label for="filtroPeriodo">Período:</label>
               <select id="filtroPeriodo" onchange="atualizarRelatorio()">
                 <option value="ultimaSemana">Última Semana</option>
@@ -356,10 +367,10 @@ $dadosGraficos = [
                 <option value="ultimoSemestre">Último Semestre</option>
                 <option value="ultimoAno">Último Ano</option>
               </select>
-            </div>
+            </div> -->
           
             <!-- Tabela de Relatório -->
-            <div class="relatorio-resultados">
+            <!-- <div class="relatorio-resultados">
               <table id="tabelaRelatorio">
                 <thead>
                   <tr>
@@ -369,12 +380,12 @@ $dadosGraficos = [
                     <th>Cliente</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody> -->
                   <!-- Dados serão preenchidos dinamicamente com JS -->
-                </tbody>
+                <!-- </tbody>
               </table>
             </div>
-        </div>
+        </div> -->
         <script src="../../assets/js/relatorios.js"></script>
         
     </main>
