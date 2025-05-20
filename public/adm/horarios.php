@@ -30,7 +30,7 @@ verificaSession("administrador");
 
 
     <main>
-        <div class="perfil-adm">
+        <!-- <div class="perfil-adm">
             <div class="foto-adm">
                 <img src="../../assets/img/homem-sorrindo-teste.avif" alt="foto barbeiro">
                 <a href="" class="btn-edit">
@@ -54,7 +54,36 @@ verificaSession("administrador");
                     </a>
                 </div>
             </div>
+ DevMurilo
         </div>
+=======
+        </div> -->
+        
+        <dialog closed id="modal-edit" >
+            <form action="" method="POST" enctype="multipart/form-data">
+                    <div id="img-container">
+                        <p>*Foto do perfil</p>
+                        <img id="preview" src="">
+                        <div class="input-campo">
+                            <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                            <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                        </div>
+                    </div>
+                    <div class="input-campo">
+                        <p>*Nome do perfil</p>
+                        <input type="text" value="" name="nome">
+                    </div>
+                    <div class="input-campo">
+                        <p>*Endereço</p>
+                        <input type="text" value="" name="telefone" id="telefone" >
+                    </div>
+                    <div class="btns-edit">
+                        <button type="submit">Atualizar</button>
+                        <button id="cancelar-edit" type="button">Voltar</button>
+                    </div>
+            </form>
+        </dialog>
+      main
 
         <dialog closed id="cancelar-horario">
             <form action="">
