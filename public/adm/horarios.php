@@ -5,6 +5,7 @@ include("../../config/conexao.php");
 session_start();
 require_once("../../functions/helpers.php");
 verificaSession("administrador");
+$agenda
 
 ?>
 <!DOCTYPE html>
@@ -30,6 +31,8 @@ verificaSession("administrador");
 
 
     <main>
+DevMurilo
+=======
         <div class="perfil-adm">
             <div class="foto-adm">
                 <img src="../../assets/img/homem-sorrindo-teste.avif" alt="foto barbeiro">
@@ -38,7 +41,7 @@ verificaSession("administrador");
                 <h1>Luis Pereira</h1>
             </div>
         </div>
-        
+        main
         <dialog closed id="modal-edit" >
             <form action="" method="POST" enctype="multipart/form-data">
                     <div id="img-container">
@@ -65,7 +68,7 @@ verificaSession("administrador");
         </dialog>
 
         <dialog closed id="cancelar-horario">
-            <form action="">
+            <form action="../../functions/adm/validaAgendamento.php" method="POST">
                 <h2>
                     realmente deseja cancelar esse horaio?
                 </h2>

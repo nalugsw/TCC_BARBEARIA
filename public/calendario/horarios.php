@@ -24,6 +24,13 @@ $bookedHours = $stmt->fetchAll(PDO::FETCH_COLUMN);
 $response = [];
 
 foreach ($availableHours as $hour) {
+    $isToday = $date === date('Y-m-d');
+    $horaAtual = date('H:i');
+
+    if ($isToday && $hour < $horaAtual) {
+        continue; // pula horários que já passaram se for hoje
+    }
+
     $response[] = [
         'hora' => $hour,
         'status' => in_array($hour, $bookedHours) ? 'reservado' : 'disponivel'

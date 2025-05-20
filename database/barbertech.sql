@@ -68,9 +68,14 @@ CREATE TABLE INFORMACOES(
     informacoes_barbearia TEXT NOT NULL
 );
 
-CREATE TABLE PORTFOLIO(
-    id_portfolio INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE DESTAQUE(
+    id_destaque INT AUTO_INCREMENT PRIMARY KEY,
     imagem varchar(255) NOT NULL
+);
+
+CREATE TABLE horarios_disponiveis (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  horario TIME NOT NULL
 );
 
 ALTER TABLE CLIENTE ADD CONSTRAINT fk_id_usuario
@@ -167,6 +172,13 @@ INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 ('barbeiro@gmail.com', '$2y$10$y6Dmzy51zweP4GuOb66T1eaoNNDJp3ixw81iLbzRwfZGbcKw0Rs7i', 'verificado', 'funcionario');
 --SENHA: barbeiro123
+
+
+--INSERT DOS HORÁRIOS DISPONÍVEIS DA AGENDA
+INSERT INTO horarios_disponiveis (horario) VALUES
+('08:00:00'), ('08:30:00'), ('09:00:00'), ('10:00:00'), ('11:00:00'),
+('14:00:00'), ('15:00:00'), ('16:00:00'), ('17:00:00'), ('18:00:00');
+
 
 
 
