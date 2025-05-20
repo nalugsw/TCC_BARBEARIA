@@ -86,6 +86,18 @@ unset($_SESSION['erro']);
                 </form>
             </dialog>
 
+            <dialog closed id="cancelar-horario">
+                <form action="">
+                    <h2>
+                        realmente deseja cancelar esse horaio?
+                    </h2>
+                    <div class="btn-cancel-horario">
+                        <button type="submit" id="btn-cancelar">Desamarcar
+                        </button>
+                        <button id="btn-voltar" type="button">Voltar</button>
+                    </div>
+                </form>
+            </dialog>
             <div class="horarios-marcados">
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
@@ -99,7 +111,7 @@ unset($_SESSION['erro']);
                         foreach($dados as $agenda): ?>
                             <div class="horario-caixa">
                                 <div class="desmarcar hide">
-                                    <button onclick="return confirm('Deseja mesmo cancelar este agendamento?');"><img src="../../assets/img/delete.png" alt=""></button>
+                                    <button class="btn-cancelar-horario"><img src="../../assets/img/delete.png" alt=""></button>
                                 </div>
                                 <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?> </p></div>
                                 <p> - </p>
@@ -133,5 +145,6 @@ unset($_SESSION['erro']);
 
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>
+        <script src="../../assets/js/modal-cancelar-horario.js"></script>
     </body>
 </html>

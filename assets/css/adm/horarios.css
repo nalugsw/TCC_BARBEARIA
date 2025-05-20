@@ -90,6 +90,32 @@ section{
     display: flex;
     margin-bottom: 2px;
     border-radius: 6px;
+    position: relative;
+}
+.numero-cliente input{
+    color: #f4f4f4;
+    font-weight:700;
+}
+.copyButton{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    width: 40px;
+    left: 310px;
+    cursor: pointer;
+}
+.whatsBtn{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 350px;
+    height: 100%;
+    width: 40px;
+    cursor: pointer;
+}
+.whatsBtn img{
+    width: 24px;
 }
 .servico-cliente{
     grid-column: 2/3;
@@ -190,11 +216,10 @@ section{
     margin: 95px 0 50px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 700px;
     margin: 0 auto;
+    gap: 60px;
 }
-
 /* modal */
 
 #modal-edit{

@@ -207,3 +207,99 @@ body{
 .foto-perfil .editar-icon:hover {
     background: rgba(0, 0, 0, 0.8);
 }
+
+
+.btns-modal{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.btns-modal a{
+    text-decoration: none;
+}
+.btns-modal button{
+    padding: 5px;
+    width: 70px;
+}
+#modal-sair::backdrop{
+    background-color: #23232383;
+}
+
+#modal-edit{
+    align-content: center;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+#modal-edit form{
+    background-color: #f9f9f9;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 3px;
+    width: 500px;
+}
+#modal-edit::backdrop{
+    background-color: #23232383;
+}
+#modal-edit p{
+    font-size: 15px;
+    color: #232323;
+    font-weight: bold;
+    
+}
+#modal-edit .input-campo input{
+    padding: 3px 20px 3px 20px
+}
+.input-file {
+    display: none; /* Esconde o input padrão */
+}
+
+.custom-file-button {
+    display: inline-block;
+    background-color: #4065AB;
+    color: #dbe6f9;
+    padding: 5px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 1px 1px 1px #23232348;
+}
+
+.custom-file-button:hover,
+#modal-edit button:hover{
+    background-color: #2f5396;
+}
+#modal-edit .btns-modal{
+    height: 100%;
+}
+#modal-edit button{
+    padding: 5px 15px;
+    background-color: #4065AB;
+    color: #dbe6f9;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #23232348;
+
+
+}
+#img-container{
+    grid-row: 1/4;
+    display: flex;
+    flex-direction: column;
+}
+#preview{
+    border: solid 1px rgb(136, 136, 136);
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
