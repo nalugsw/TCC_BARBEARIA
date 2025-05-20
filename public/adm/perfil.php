@@ -38,6 +38,7 @@ verificaSession("administrador");
     </dialog>
 
     <main>
+        
         <div class="perfil-container">
             <div class="info">
                 <div class="foto-perfil">
@@ -50,7 +51,7 @@ verificaSession("administrador");
                 </div>
             </div>
         </div>
-        
+    
 
         <div class="galeria">
             <div class="imagem-item">
@@ -137,8 +138,8 @@ verificaSession("administrador");
                         <button id="cancelar-edit" type="button">Voltar</button>
                     </div>
                 </form>
-            </dialog>
-    
+    </dialog>
+            
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>
 </body>

@@ -62,6 +62,10 @@
   .material-symbols-outlined{
     font-size: 10px;
   }
+  
+  .copyButton{
+    left: 230px
+  }
 }
 @media screen and (max-width: 768px){
   main{
@@ -74,6 +78,7 @@
   .perfil-adm{
     margin-top: 20px;
   }
+    
 }
 @media screen and (max-width:530px) {
   .perfil-adm,
@@ -149,5 +154,13 @@
     
   .servico-marcado input{
     padding: 10px 10px;
+  }
+  
+  .copyButton{
+    left: 155px;
+  }
+  
+  .copyButton img{
+    width: 15px;
   }
 }
