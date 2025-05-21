@@ -28,11 +28,7 @@ $agenda
     <!-- Estrutura do Menu Para Desktop(computadores e laptops) -->
 
     <?php include("../../views/nav-padrao-adm.php"); ?>
-
-
     <main>
-DevMurilo
-=======
         <div class="perfil-adm">
             <div class="foto-adm">
                 <img src="../../assets/img/homem-sorrindo-teste.avif" alt="foto barbeiro">
@@ -41,7 +37,6 @@ DevMurilo
                 <h1>Luis Pereira</h1>
             </div>
         </div>
-        main
         <dialog closed id="modal-edit" >
             <form action="" method="POST" enctype="multipart/form-data">
                     <div id="img-container">
@@ -99,7 +94,7 @@ DevMurilo
                         
                         <div class="numero-cliente">
                             <h3>Numero</h3>
-                            <input type="text" value="11 0550099999" class="numero-telefone" readonly>
+                            <input type="text" value="11 933681225" class="numero-telefone" readonly>
                             <button class="copyButton"><img src="../../assets/img/icone-copy.png" alt="Copiar"></button>
                             <button class="whatsBtn"><img src="../../assets/img/icone-whatsapp.png" alt="WhatsApp"></button>
                         </div>

@@ -27,18 +27,7 @@ verificaSession("administrador");
     
     <?php include("../../views/nav-padrao-adm.php"); ?>
 
-    <dialog close id="modal-sair">
-        <div class="modal-sair">
-            <p>Realmente deseja sair?</p>
-            <div class="btns-modal">
-                <a href="../../functions/logout.php"><button class="btn-sair">Sair</button></a>
-                <button id="cancelar">Voltar</button>
-            </div>
-        </div>
-    </dialog>
-
     <main>
-        
         <div class="perfil-container">
             <div class="info">
                 <div class="foto-perfil">
@@ -52,7 +41,32 @@ verificaSession("administrador");
             </div>
         </div>
     
-
+    <dialog closed id="modal-edit" >
+        <form action="" method="POST" enctype="multipart/form-data">
+            
+            <div id="img-container">
+                <p>*Foto do perfil</p>
+                <img id="preview" src="" >
+                <div class="input-campo">
+                    <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                    <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                </div>
+            </div>
+            <div class="input-campo">
+                <p>*Nome do perfil</p>
+                <input type="text" value="" name="nome">
+            </div>
+            <div class="input-campo">
+                <p>*Numero do perfil</p>
+                <input type="text" value="" name="telefone" id="telefone" >
+            </div>
+            <div class="btns-edit">
+                <button type="submit">Atualizar</button>
+                <button id="cancelar-edit" type="button">Voltar</button>
+            </div>
+        </form>
+    </dialog>
+    
         <div class="galeria">
             <div class="imagem-item">
                 <img src="../../assets/img/foto-grid2.png" alt="Imagem 1">
@@ -113,32 +127,7 @@ verificaSession("administrador");
         </div>
     </main>
     
-    <dialog closed id="modal-edit" >
-            <form action="../../functions/user/editarPerfil.php" method="POST" enctype="multipart/form-data">
-                    
-                    <div id="img-container">
-                        <p>*Foto do perfil</p>
-                        <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
-                        <div class="input-campo">
-                            <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
-                            <label for="arquivo" class="custom-file-button">Escolha a foto</label>
-                        </div>
-                    </div>
-                    <?php $dados = dadosCliente($_SESSION['id_usuario']);?>
-                    <div class="input-campo">
-                        <p>*Nome do perfil</p>
-                        <input type="text" value="<?php echo $dados['nome']; ?>" name="nome">
-                    </div>
-                    <div class="input-campo">
-                        <p>*Numero do perfil</p>
-                        <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
-                    </div>
-                    <div class="btns-edit">
-                        <button type="submit">Atualizar</button>
-                        <button id="cancelar-edit" type="button">Voltar</button>
-                    </div>
-                </form>
-    </dialog>
+    
             
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>

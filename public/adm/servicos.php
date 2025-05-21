@@ -40,31 +40,34 @@ $servicos = mostrarServicos();
 
     <main>
         <div class="perfil-container">
-            <div class="info">
-                <div class="dados-perfil">
-                    <p>Coloque a imagem do serviço</p>
-                    <div class="upload-container">
-                        <label for="selecao-arquivo" class="custom-file-upload">
-                            <i class="bi bi-file-earmark-image"></i>
-                            <span>Selecionar Arquivo</span>
-                        </label>
-                        <div id="nome-arquivo" class="nome-arquivo"></div>
-                    </div>
-                    <input id="selecao-arquivo" type="file" class="input-file">
+            <form action="">
+                <div class="info">
+                        <div class="dados-perfil">
+                            <p>Coloque a imagem do serviço</p>
+                            <div class="upload-container">
+                                <label for="selecao-arquivo" class="custom-file-upload">
+                                    <i class="bi bi-file-earmark-image"></i>
+                                    <span>Selecionar Arquivo</span>
+                                    <img id="preview-imagem" />
+                                </label>
+                                <div id="nome-arquivo" class="nome-arquivo"></div>
+                            </div>
+                            <input id="selecao-arquivo" type="file" class="input-file" accept="image/*">
+                        </div>
+
+                        <div class="dados-perfil">
+                            <p>Nome do serviço</p>
+                            <input type="text">
+                            <p>Tempo do serviço</p>
+                            <input type="time">
+                        </div>
+                        <div class="dados-perfil">
+                            <p>Preço do serviço</p>
+                            <input type="number" placeholder="R$00,00">
+                            <button type="submit">Cadastrar</button>
+                        </div>
                 </div>
-                <div class="dados-perfil">
-                    <p>Nome do serviço</p>
-                    <input type="text">
-                    <p>Tempo do serviço</p>
-                    <input type="time">
-                </div>
-                <div class="dados-perfil">
-                    <p>Preço do serviço</p>
-                    <input type="number" placeholder="R$00,00">
-                    <button>Cadastrar</button>
-                </div>
-            </div>
-            
+            </form>
         </div>
         
         <div class="grids-container">
