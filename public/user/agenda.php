@@ -7,12 +7,11 @@ $funcionarios = dadosFuncionario();
 require_once("../../functions/user/home.php");
 $servicos = mostrarServicos();
 
-$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
-$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
+$mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso'] : "";
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro'] : "";
 unset($_SESSION['sucesso']);
 unset($_SESSION['erro']);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,9 +23,8 @@ unset($_SESSION['erro']);
     <link rel="stylesheet" href="../../assets/css/user/agenda-responsividade.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <?php include("../../views/nav-padrao.php"); ?>
@@ -41,9 +39,8 @@ unset($_SESSION['erro']);
         <h2 id="dataSelecionadaTitulo" style="display: none;"></h2>
         <div id="horariosContainer" style="display:none;">
             <h3 id="TituloDia">horarios selecionados</h3>
-            <div id="horariosDisponiveis" class="horariosDisponiveis" ></div>
+            <div id="horariosDisponiveis" class="horariosDisponiveis"></div>
             <div id="formularioAgendamento" style="display:none;">
-                
                 <form action="../calendario/processa_agenda.php" method="POST">
                     <input type="hidden" id="dataAgendamento" name="dataAgendamento">
                     <input type="hidden" id="horaAgendamento" name="horaAgendamento">
@@ -57,7 +54,6 @@ unset($_SESSION['erro']);
                         </select>
                         <h2>Selecione o funcionario</h2>
                         <select name="id_funcionario" id="id_funcionario" required>
-
                             <?php foreach($funcionarios as $funcionario): ?>
                                 <option value="<?= $funcionario['id_funcionario'] ?>"><?= $funcionario['nome'] ?></option>
                             <?php endforeach; ?>
@@ -68,7 +64,6 @@ unset($_SESSION['erro']);
                 </form>
             </div>
         </div>
-        
     </div>
 
     <script>
@@ -128,254 +123,107 @@ unset($_SESSION['erro']);
                         diaElement.className = 'dia';
                         diaElement.textContent = dia;
                         
-                        const dataAtual = new Date(ano, mes - 1, dia);
+                        const dataDia = new Date(ano, mes - 1, dia);
                         const hoje = new Date();
                         hoje.setHours(0, 0, 0, 0);
                         
                         // Verifica se é um dia passado ou inativo
                         const doisSemanasDepois = new Date();
-        doisSemanasDepois.setDate(doisSemanasDepois.getDate() + 13); // hoje + 13 dias
+                        doisSemanasDepois.setDate(doisSemanasDepois.getDate() + 13); // hoje + 13 dias
 
-        // Verifica se é domingo
-        const ehDomingo = dataAtual.getDay() === 0;
+                        // Verifica se é domingo
+                        const ehDomingo = dataDia.getDay() === 0;
+                        const dataStr = `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
 
-        if (
-            dataAtual < hoje || 
-            dataAtual > doisSemanasDepois || 
-            ehDomingo || 
-            data.inativos.includes(`${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`)
-        ) {
-            diaElement.classList.add('inativo');
-        } else {
-            diaElement.onclick = function() { selecionaDia(this, ano, mes, dia); };
-        }
+                        if (dataDia < hoje || 
+                            dataDia > doisSemanasDepois || 
+                            ehDomingo || 
+                            (data.inativos && data.inativos.includes(dataStr))) {
+                            diaElement.classList.add('inativo');
+                        } else {
+                            diaElement.onclick = function() { selecionaDia(this, ano, mes, dia); };
+                        }
 
-                        
-        // Marca dias com agendamentos
-        const dataStr = `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
-        if (data.agendamentos[dataStr] && data.agendamentos[dataStr].length > 0) {
-            diaElement.classList.add('com-agendamento');
-        }
-        
-        diasCalendario.appendChild(diaElement);
-            }
-        });
+                        // Marca dias completamente ocupados (todos horários marcados)
+                        if (data.agendamentos && data.agendamentos[dataStr] && 
+                            data.totalHorariosPorDia && data.totalHorariosPorDia[dataStr] &&
+                            data.agendamentos[dataStr].length >= data.totalHorariosPorDia[dataStr]) {
+                            diaElement.classList.add('com-agendamento');
+                        }
+
+                        diasCalendario.appendChild(diaElement);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar calendário:', error);
+                    document.getElementById('diasCalendario').innerHTML = '<p>Erro ao carregar o calendário. Tente recarregar a página.</p>';
+                });
         }
 
         function selecionaDia(elemento, ano, mes, dia) {
-            // Formata a data selecionada
-            const dataSelecionada = new Date(ano, mes - 1, dia);
-            const options = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' };
-            document.getElementById('dataSelecionadaTitulo').textContent = 
-                dataSelecionada.toLocaleDateString('pt-BR', options);
+    // Formata a data selecionada
+    const dataSelecionada = new Date(ano, mes - 1, dia);
+    const options = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' };
+    document.getElementById('dataSelecionadaTitulo').textContent = 
+        dataSelecionada.toLocaleDateString('pt-BR', options);
+    
+    // Armazena a data selecionada no formulário
+    document.getElementById('dataAgendamento').value = 
+        `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
+    
+    // Busca horários disponíveis via AJAX
+    fetch(`../calendario/includes/funcoes.php?acao=buscaHorarios&data=${ano}-${mes}-${dia}`)
+        .then(response => response.json())
+        .then(horarios => {
+            const container = document.getElementById('horariosDisponiveis');
+            const tituloDia = document.getElementById('TituloDia');
+            container.innerHTML = '';
             
-            // Armazena a data selecionada no formulário
-            document.getElementById('dataAgendamento').value = 
-                `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
-            
-            // Busca horários disponíveis via AJAX
-            fetch(`../calendario/includes/funcoes.php?acao=buscaHorarios&data=${ano}-${mes}-${dia}`)
-                .then(response => response.json())
-                .then(horarios => {
-                    const container = document.getElementById('horariosDisponiveis');
-                    container.innerHTML = '';
-                    
-                    horarios.forEach(horario => {
-                        const botaoHorario = document.createElement('button');
-                        botaoHorario.className = 'botao-horario';
-                        botaoHorario.textContent = horario;
-                        botaoHorario.onclick = function() {
-                            document.querySelectorAll('.botao-horario').forEach(btn => {
-                                btn.classList.remove('botao-horario-select');
-                            });
-                            selecionaHorario(horario);
-                            botaoHorario.classList.add('botao-horario-select');
-                            const formAgend = document.getElementById('formularioAgendamento');
-                            const divHorarios = document.getElementById('horariosDisponiveis');
-                            formAgend.classList.add('formularioAgendamento-select');
-                            divHorarios.classList.add('horariosDisponiveis-select')
-                        };
-                        container.appendChild(botaoHorario);
-                    });
-                    
-                    // Mostra o container de horários
-                    document.getElementById('horariosContainer').style.display = 'grid';
-                    document.getElementById('dataSelecionadaTitulo').style.display = 'block';
-                    document.getElementById('formularioAgendamento').style.display = 'none';
+            if (horarios.length === 0) {
+                tituloDia.style.display = 'none'; // Esconde o título quando não há horários
+                container.innerHTML = '<p>Não há horários disponíveis para este dia</p>';
+            } else {
+                tituloDia.style.display = 'block'; // Mostra o título quando há horários
+                horarios.forEach(horario => {
+                    const botaoHorario = document.createElement('button');
+                    botaoHorario.className = 'botao-horario';
+                    botaoHorario.textContent = horario;
+                    botaoHorario.onclick = function() {
+                        document.querySelectorAll('.botao-horario').forEach(btn => {
+                            btn.classList.remove('botao-horario-select');
+                        });
+                        selecionaHorario(horario);
+                        botaoHorario.classList.add('botao-horario-select');
+                        const formAgend = document.getElementById('formularioAgendamento');
+                        const divHorarios = document.getElementById('horariosDisponiveis');
+                        formAgend.classList.add('formularioAgendamento-select');
+                        divHorarios.classList.add('horariosDisponiveis-select');
+                    };
+                    container.appendChild(botaoHorario);
                 });
-        }
+            }
+            
+            // Mostra o container de horários
+            document.getElementById('horariosContainer').style.display = 'grid';
+            document.getElementById('dataSelecionadaTitulo').style.display = 'block';
+            document.getElementById('formularioAgendamento').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Erro ao buscar horários:', error);
+            document.getElementById('horariosDisponiveis').innerHTML = '<p>Erro ao carregar horários. Tente novamente.</p>';
+            document.getElementById('TituloDia').style.display = 'none'; // Esconde o título em caso de erro
+        });
+}
 
         function selecionaHorario(horario) {
             document.getElementById('horaAgendamento').value = horario;
             document.getElementById('formularioAgendamento').style.display = 'block';
         }
     </script>
-    
-       <!-- <h1>Agendar</h1>
-    <div class="info-barbeiro">
-        <p>Você pode agendar um horário por aqui ou pela seção home>submenu do perfil do barbeiro caso desejar!</p>
-    </div>
-    <div class="agenda">
-        <div class="dia">
-            <div class="selecao-horaio">
-                <span><p>12/09 - segunda</p></span>
-                <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
-            </div>
-            <div class="horarios" style="display: none;">
-                <p>HORÁRIOS DISPONÍVEIS</p>
-                <div class="horario-div">
-                    <p><span>11:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>14:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>14:30</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>15:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>15:30</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>16:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>16:30</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>17:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-            </div>
-        </div>
-        <div class="dia">
-            <div class="selecao-horaio">
-                <span><p>12/09 - terça</p></span>
-                <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
-            </div>
-            <div class="horarios" style="display: none;">
-                <p>HORÁRIOS DISPONÍVEIS</p>
-                <div class="horario-div">
-                    <p><span>11:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>14:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-            </div>
-        </div>
-        <div class="dia">
-            <div class="selecao-horaio">
-                <span><p>12/09 - quarta</p></span>
-                <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
-            </div>
-            <div class="horarios" style="display: none;">
-                <p>HORÁRIOS DISPONÍVEIS</p>
-                <div class="horario-div">
-                    <p><span>11:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>14:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div> <div class="horario-div">
-                    <p><span>11:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-                <div class="horario-div">
-                    <p><span>14:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-            </div>
-        </div>
-        <div class="dia">
-            <div class="selecao-horaio">
-                <span><p>12/09 - quinta</p></span>
-                <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
-            </div>
-            <div class="horarios" style="display: none;">
-                <p>HORÁRIOS DISPONÍVEIS</p>
-                <div class="horario-div">
-                    <p><span>11:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-            </div>
-        </div>
-        <div class="dia">
-            <div class="selecao-horaio">
-                <span><p>12/09 - sexta</p></span>
-                <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
-            </div>
-            <div class="horarios" style="display: none;">
-                <p>HORÁRIOS DISPONÍVEIS</p>
-                <div class="horario-div">
-                    <p><span>11:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-            </div>
-        </div>
-        <div class="dia">
-            <div class="selecao-horaio">
-                <span><p>12/09 - sábado</p></span>
-                <button class="horarios-btn" onclick="toggleHorarios(this)">HORÁRIOS  <i class="bi bi-caret-down-fill"></i></button>
-            </div>
-            <div class="horarios" style="display: none;">
-                <p>HORÁRIOS DISPONÍVEIS</p>
-                <div class="horario-div">
-                    <p><span>11:00</span><span> AM</span></p>
-                    <button class="selecionar">Selecionar</button>
-                </div>
-            </div>
-        </div>
-        <div class="dia">
-            <div class="selecao-horaio">
-                <span><p>12/09 - domingo</p></span>
-                <button class="horarios-btn-fechado" onclick="toggleHorarios()">FECHADO  <i class="bi bi-x-square-fill"></i> </button>
-            </div>
-        </div>
-    </div>
 
-    <div id="popup" class="popup">
-        <div class="popup-container">
-            <div class="popup-form">
-                <form action="">
-                <span class="btn-fechar"><i class="bi bi-x-circle-fill"></i></span>
-                <label for="nome">DIA</label>
-                <input type="date" placeholder="00/00/0000" id="dia" name="dia">
-                <label for="nome">HORARIO</label>
-                <input type="time" placeholder="00/00/0000" id="dia" name="dia">
-                <label for="nome">SERVIÇOS</label>
-                <select name="servicos" id="servicos">
-                    <option value="servico0">NENHUM HORÁRIO SELECIONADO</option>
-                    <option value="servico1">Corte + Barba</option>
-                    <option value="servico1">Sombracelha</option>
-                    <option value="servico1">Corte</option>
-                    <option value="servico1">Pézinho</option>
-                </select>
-
-                <div class="btn-login">
-                    <a ><button type="submit">MARCAR HORÁRIO</button></a>
-                </div>
-                </form>
-            </div>
-
-        </div>
-    </div> -->
-
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/modal-deslogar.js"></script>
+    <script src="../../assets/js/modal-selecionar.js"></script>
+    <script src="../../assets/js/agendar-funcao.js"></script>
 </body>
 </html>
-
-<script src="../../assets/js/modal.js"></script>
-<script src="../../assets/js/modal-deslogar.js"></script>
-<script src="../../assets/js/modal-selecionar.js"></script>
-<script src="../../assets/js/agendar-funcao.js"></script>

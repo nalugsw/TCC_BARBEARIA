@@ -68,8 +68,8 @@ CREATE TABLE INFORMACOES(
     informacoes_barbearia TEXT NOT NULL
 );
 
-CREATE TABLE DESTAQUE(
-    id_destaque INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE portfolio(
+    id_portfolio INT AUTO_INCREMENT PRIMARY KEY,
     imagem varchar(255) NOT NULL
 );
 

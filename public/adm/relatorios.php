@@ -215,33 +215,33 @@ $dadosGraficos = [
             </div>
             
             <div class="relatorio-resultados">
-                <table id="tabelaRelatorio">
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Serviço</th>
-                            <th>Valor</th>
-                            <th>Cliente</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if(empty($atendimentos)): ?>
-                            <tr>
-                                <td colspan="4" style="text-align: center;">Nenhum atendimento encontrado neste período</td>
-                            </tr>
-                        <?php else: ?>
-                            <?php foreach($atendimentos as $atendimento): ?>
-                            <tr>
-                                <td><?= date('d/m/Y', strtotime($atendimento['data'])) ?></td>
-                                <td><?= htmlspecialchars($atendimento['servico']) ?></td>
-                                <td>R$ <?= number_format($atendimento['valor'], 2, ',', '.') ?></td>
-                                <td><?= htmlspecialchars($atendimento['cliente']) ?></td>
-                            </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
-            </div>
+    <table id="tabelaRelatorio">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Serviço</th>
+                <th>Valor</th>
+                <th>Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if(!empty($atendimentos)): ?>
+                <?php foreach($atendimentos as $atendimento): ?>
+                <tr>
+                    <td><?= date('d/m/Y H:i', strtotime($atendimento['data'])) ?></td>
+                    <td><?= htmlspecialchars($atendimento['servico']) ?></td>
+                    <td>R$ <?= number_format($atendimento['valor'], 2, ',', '.') ?></td>
+                    <td><?= htmlspecialchars($atendimento['cliente']) ?></td>
+                </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="4" class="sem-registros">Nenhum atendimento encontrado neste período</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</div>
         </div>
     </main>
 

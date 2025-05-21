@@ -264,3 +264,22 @@ th {
     font-weight: 500;
     width: 100%;
 }
+
+/* Estilo para a mensagem de nenhum horário disponível */
+#horariosDisponiveis > p {
+    font-size: 1.2rem; /* Tamanho maior da fonte */
+    text-align: center; /* Centraliza o texto */
+    margin: 20px auto; /* Margem superior/inferior e centraliza */
+    padding: 15px; /* Espaçamento interno */
+    width: 80%; /* Largura controlada */
+    max-width: 400px; /* Largura máxima */
+    color: #555; /* Cor do texto mais suave */
+    font-weight: 500; /* Peso da fonte */
+    display: flex; /* Para ajudar no alinhamento */
+    align-items: center; /* Alinhamento vertical */
+    justify-content: center; /* Alinhamento horizontal */
+    min-height: 100px; /* Altura mínima */
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: #f8f9fa; /* Fundo levemente colorido */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+}

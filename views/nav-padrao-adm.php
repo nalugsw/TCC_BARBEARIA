@@ -105,7 +105,7 @@
             </li>
             <li class="item-menu-mobile">
                 <a href="../../public/adm/relatorios.php">
-                <img src="../../assets/img/icon-produtos.png" alt="">
+                <img src="../../assets/img/graficoIcone.png" alt="">
                 <span class="txt-link">Relatórios</span>
                 </a>
             </li>
