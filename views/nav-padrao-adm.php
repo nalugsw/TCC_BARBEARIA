@@ -64,7 +64,7 @@
                 </a>
             </li>
             <li class="item-menu">
-                <a href="perfil.html">
+                <a href="editarHorarios.php">
                     <span class="txt-link">Dias e Horaios</span>
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </a>
