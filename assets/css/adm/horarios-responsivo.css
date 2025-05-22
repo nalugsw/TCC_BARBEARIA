@@ -66,6 +66,10 @@
   .copyButton{
     left: 230px
   }
+    
+  .whatsBtn{
+    left:260px
+  }
 }
 @media screen and (max-width: 768px){
   main{
@@ -161,6 +165,14 @@
   }
   
   .copyButton img{
+    width: 15px;
+  }
+  
+  .whatsBtn{
+    left:165px
+  }
+  
+  .whatsBtn img{
     width: 15px;
   }
 }
