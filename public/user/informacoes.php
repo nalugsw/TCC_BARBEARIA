@@ -46,7 +46,6 @@ $informacoes = buscarInformacoes();
         </div>
     </main>
 
-    <script src="../../assets/js/modal.js"></script>
     <script src="../../assets/js/modal-deslogar.js"></script>
     <script src="../../assets/js/submenu-funcao.js"></script>
 </body>

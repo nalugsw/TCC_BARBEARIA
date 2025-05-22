@@ -44,15 +44,11 @@ $servicos = mostrarServicos();
                 <div class="info">
                         <div class="dados-perfil">
                             <p>Coloque a imagem do serviço</p>
-                            <div class="upload-container">
-                                <label for="selecao-arquivo" class="custom-file-upload">
-                                    <i class="bi bi-file-earmark-image"></i>
-                                    <span>Selecionar Arquivo</span>
-                                    <img id="preview-imagem" />
-                                </label>
-                                <div id="nome-arquivo" class="nome-arquivo"></div>
-                            </div>
-                            <input id="selecao-arquivo" type="file" class="input-file" accept="image/*">
+                                <img id="preview" src="" >
+                                <div class="input-campo">
+                                    <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                                    <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                                </div>
                         </div>
 
                         <div class="dados-perfil">
@@ -96,4 +92,5 @@ $servicos = mostrarServicos();
     </main>
 </body>
 
+<script src="../../assets/js/preview-img.js"></script>
 <script src="../../assets/js/input-file-admservicos.js"></script>

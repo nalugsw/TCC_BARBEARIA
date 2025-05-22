@@ -380,9 +380,9 @@ main .material-symbols-outlined {
     font-size: 12px;
     margin-top: 5px;
 }
-#preview-imagem{
-    border-radius: 5px;
-    height: 80px;
-    display: none;
-    position: absolute;
-} 
+
+#preview{
+    border: solid 1px rgb(136, 136, 136);
+    width: 100%;
+    object-fit: cover;
+}
