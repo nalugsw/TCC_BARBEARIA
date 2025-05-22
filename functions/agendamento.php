@@ -47,7 +47,7 @@ function buscarAgendamentosPorFuncionario($id_funcionario, $pdo) {
         JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
         JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
         JOIN SERVICO s ON cs.id_servico = s.id_servico
-        WHERE a.id_funcionario = :id_funcionario
+        WHERE a.id_funcionario = :id_funcionario AND status_agenda = 'pendente'
         ORDER BY a.data, a.horario
     ";
 

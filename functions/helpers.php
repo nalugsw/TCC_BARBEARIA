@@ -32,6 +32,16 @@ function dadosFuncionario(){
     return $stmt->fetchALL(PDO::FETCH_ASSOC);
 }
 
+function dadosFuncionarioAdm($id_usuario){
+    global $pdo;
+    $sql = "SELECT * FROM funcionario WHERE id_usuario = :id_usuario";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(":id_usuario", $id_usuario);
+    $stmt->execute();
+
+    return $stmt->fetchALL(PDO::FETCH_ASSOC);
+}
+
 function dadosFuncionarioAgenda($id_usuario){
     global $pdo;
     $sql = "SELECT * FROM funcionario WHERE id_usuario = :id_usuario";

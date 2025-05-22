@@ -4,8 +4,10 @@
 include("../../config/conexao.php");
 session_start();
 require_once("../../functions/helpers.php");
+require_once("../../functions/agendamento.php");
 verificaSession("administrador");
-$agenda
+$id_funcionario = dadosFuncionario("id_funcionario");
+$agendamento = buscarAgendamentosPorFuncionario($id_funcionario, $pdo);
 
 ?>
 <!DOCTYPE html>
@@ -80,72 +82,40 @@ $agenda
                     <div class="dia-servicos">
                         <h2>Segunda-Feira</h2>
                     </div>
-                    <div class="servico-marcado">
-                        <div class="foto-cliente">
-                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
-                            <button>finalizar <span class="material-symbols-outlined">
-                                check
-                                </span></button>
+                    <?php foreach($agendamento as $agenda): ?>
+                        <div class="servico-marcado">
+                            <div class="foto-cliente">
+                                <img src="<?php echo $agenda['foto_cliente']; ?>" alt="foto cliente">
+                                <button>finalizar <span class="material-symbols-outlined">
+                                    check
+                                    </span></button>
+                            </div>
+                            <div class="nome-cliente">
+                                <h3>Nome</h3>
+                                <input type="text" disabled placeholder="<?php echo $agenda['nome_cliente']; ?>">
+                            </div>
+                            
+                            <div class="numero-cliente">
+                                <h3>Número de telefone</h3>
+                                <input type="text" value="<?php echo $agenda['numero_telefone']; ?>" class="numero-telefone" readonly>
+                                <button class="copyButton"><img src="../../assets/img/icone-copy.png" alt="Copiar"></button>
+                                <button class="whatsBtn"><img src="../../assets/img/icone-whatsapp.png" alt="WhatsApp"></button>
+                            </div>
+                            
+                            <div class="servico-cliente">
+                                <h3>serviço</h3>
+                                <input type="text" disabled placeholder="<?php echo $agenda['servico']; ?>">
+                            </div>
+                            
+                            <div class="horario-cliente">
+                                <h3>Horario</h3>
+                                <input type="text" disabled placeholder="<?php echo $agenda['horario']; ?>">
+                                <button class="btn-cancelar-horario"><p>Desmarcar Horario</p> <span class="material-symbols-outlined">
+                                    delete
+                                    </span></button>
+                            </div>
                         </div>
-                        <div class="nome-cliente">
-                            <h3>Nome</h3>
-                            <input type="text" disabled placeholder="kaique dasilva">
-                        </div>
-                        
-                        <div class="numero-cliente">
-                            <h3>Numero</h3>
-                            <input type="text" value="11 933681225" class="numero-telefone" readonly>
-                            <button class="copyButton"><img src="../../assets/img/icone-copy.png" alt="Copiar"></button>
-                            <button class="whatsBtn"><img src="../../assets/img/icone-whatsapp.png" alt="WhatsApp"></button>
-                        </div>
-                        
-                        <div class="servico-cliente">
-                            <h3>serviço</h3>
-                            <input type="text" disabled placeholder="degrade">
-                        </div>
-                        
-                        <div class="horario-cliente">
-                            <h3>Horario</h3>
-                            <input type="text" disabled placeholder="10:00 - AM">
-                            <button class="btn-cancelar-horario"><p>Desmarcar Horario</p> <span class="material-symbols-outlined">
-                                delete
-                                </span></button>
-                        </div>
-                    </div>
-                    
-                    <div class="servico-marcado">
-                        <div class="foto-cliente">
-                            <img src="../../assets/img/avatar-padrao.jpg" alt="foto cliente">
-                            <button>finalizar <span class="material-symbols-outlined">
-                                check
-                                </span></button>
-                        </div>
-                        <div class="nome-cliente">
-                            <h3>Nome</h3>
-                            <input type="text" disabled placeholder="kaique dasilva">
-                        </div>
-                        <div class="numero-cliente">
-                            <h3>Numero</h3>
-                            <input type="text" value="11 0000099999" class="numero-telefone" readonly>
-                            <button class="copyButton"><img src="../../assets/img/icone-copy.png" alt="Copiar"></button>
-                            <button class="whatsBtn"><img src="../../assets/img/icone-whatsapp.png" alt="WhatsApp"></button>
-                        </div>
-                        
-                        <div class="servico-cliente">
-                            <h3>serviço</h3>
-                            <input type="text" disabled placeholder="degrade">
-                        </div>
-                        
-                        <div class="horario-cliente">
-                            <h3>Horario</h3>
-                            <input type="text" disabled placeholder="10:00 - AM">
-                            <button class="btn-cancelar-horario"><p>Desmarcar Horario</p> <span class="material-symbols-outlined">
-                                delete
-                                </span></button>
-                        </div>
-                    </div>
-                    
-
+                      <?php endforeach ?>  
                 </div>
             </div>
         </section>
