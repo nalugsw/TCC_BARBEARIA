@@ -14,27 +14,20 @@ main{
     padding: 20px; 
 }
 
-/* perfil adm */
-.perfil-container{
-    background-color: #313131;
-
-}
 
 .info{
-    margin: 0 auto;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-evenly;
-    color: #ffffff;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
 }
 
 .perfil-container{
+    background-color: #313131;
     border-radius: 3px;
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     padding: 20px;
+    height: 160px;
 }
 .foto-perfil {
     position: relative;
@@ -59,9 +52,10 @@ main{
     flex-direction: column;
     text-align: center;
     color: #ffffff;
-    margin: 0 10px;
     height: 100%;
     justify-content: space-between;
+    width: 100%;
+    gap: 8px;
 }
 
 
@@ -88,6 +82,7 @@ main{
     align-items: center;
     font-weight: 600;
     transition: 0.2s;
+    margin-top: 20px;
 }
 
 .dados-perfil  button:hover{
@@ -101,7 +96,6 @@ main{
     font-size: 10px;
     display: inline;
     align-items: center;
-    margin-bottom: 5px;
 }
 
 /* Esconde o input file original */
@@ -145,6 +139,7 @@ main{
     cursor: pointer;
     transition: background-color 0.3s;
     height: 80px;
+    width: 100%;
 }
 
 .custom-file-upload:hover {
@@ -276,7 +271,6 @@ main .material-symbols-outlined {
 .dados-perfil .editar-icon:hover {
     background: #4065AB;
 }
-
 .editar-icon:hover {
     color: #666768;
 }
@@ -386,3 +380,9 @@ main .material-symbols-outlined {
     font-size: 12px;
     margin-top: 5px;
 }
+#preview-imagem{
+    border-radius: 5px;
+    height: 80px;
+    display: none;
+    position: absolute;
+} 
