@@ -96,7 +96,7 @@ $agendamento = buscarAgendamentosPorFuncionario($id_funcionario, $pdo);
                             </div>
                             
                             <div class="numero-cliente">
-                                <h3>Número de telefone</h3>
+                                <h3>Telefone</h3>
                                 <input type="text" value="<?php echo $agenda['numero_telefone']; ?>" class="numero-telefone" readonly>
                                 <button class="copyButton"><img src="../../assets/img/icone-copy.png" alt="Copiar"></button>
                                 <button class="whatsBtn"><img src="../../assets/img/icone-whatsapp.png" alt="WhatsApp"></button>

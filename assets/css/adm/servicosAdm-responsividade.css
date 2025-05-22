@@ -11,16 +11,17 @@
         margin: 0 auto;
         overflow-y: scroll;
         overflow-x: hidden;
-        height: 450px;
-    }
-}
-@media screen and (max-width:450px){
-    main{
-        width: 95%;
     }
     .perfil-container{
         padding: 10px;
     }
+    
+    #preview{
+        height: 120px;
+    }
+}
+@media screen and (max-width:450px){
+
     .info{
         gap: 10px;
     }

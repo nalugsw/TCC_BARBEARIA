@@ -47,6 +47,7 @@ section{
     object-fit: cover;
     border-radius: 100%;
     width: 90px;
+    height: 90px;
 }
 .servico-marcado .foto-cliente button{
     width: 120px;

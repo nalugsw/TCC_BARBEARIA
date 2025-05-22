@@ -77,10 +77,10 @@ if($_SESSION['tipo_usuario'] == 'cliente'){
     header("Location: ../public/user/perfil.php");
     exit();
 }else if($_SESSION['tipo_usuario'] == 'funcionario'){
-    header("Location: ../public/funcionario/perfil.php");
+    header("Location: ../public/funcionario/horarios.php");
     exit();
 }else if($_SESSION['tipo_usuario'] == 'administrador'){
-    header("Location: ../public/adm/perfil.php");
+    header("Location: ../public/adm/horarios.php");
     exit();
 }else{
     $_SESSION['erro'] = "Tipo de usuário inválido.";
