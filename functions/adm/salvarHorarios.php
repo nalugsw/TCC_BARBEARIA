@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach ($horarios as $hora) {
             $stmt->execute([$hora]);
         }
-        echo "Horários atualizados com sucesso!";
+        header("location: ../../public/adm/editarHorarios.php");
+        exit();
     } catch (PDOException $e) {
         echo "Erro ao atualizar horários: " . $e->getMessage();
     }
