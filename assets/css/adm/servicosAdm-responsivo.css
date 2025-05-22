@@ -1,3 +1,10 @@
+@media screen and (max-width:830px){
+    .perfil-container{
+        padding: 10px;
+    }
+    
+}
+
 @media screen and (max-width:768px){
     main{
         grid-column: 1/3;
@@ -12,16 +19,14 @@
         overflow-y: scroll;
         overflow-x: hidden;
     }
-    .perfil-container{
-        padding: 10px;
-    }
-    
     #preview{
         height: 120px;
     }
 }
 @media screen and (max-width:450px){
-
+    main{
+        width: 95%;
+    }
     .info{
         gap: 10px;
     }

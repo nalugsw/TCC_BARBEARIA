@@ -86,7 +86,6 @@ main{
     align-items: center;
     font-weight: 600;
     transition: 0.2s;
-    margin-top: 20px;
 }
 
 .dados-perfil  button:hover{
@@ -95,11 +94,11 @@ main{
 }
 
 .dados-perfil p {
-    margin-bottom: 15px;
     font-weight: bold;
     font-size: 10px;
     display: inline;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 /* Esconde o input file original */
@@ -402,11 +401,10 @@ main .material-symbols-outlined {
   
 .input-campo{
     background-color: #f4f4f42d;
-    position: absolute;
-    top:25px;
     width: 100%;
-    height: 100px;
+    height: 100%;
     border-radius: 3px;
+    position: relative;
 }
 .input-campo label{
     font-size: 15px;
@@ -415,7 +413,10 @@ main .material-symbols-outlined {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    z-index: 2;
 }
+
 /* Adicione ao seu arquivo CSS */
 .perfil-container, .perfil-container-atualizar {
     transition: all 0.3s ease;
@@ -435,14 +436,32 @@ main .material-symbols-outlined {
     cursor: pointer;
 }
 
+
 #cancelar-edicao:hover {
     background-color: #d32f2f;
 }
 #preview-edicao{
     border: solid 1px rgb(136, 136, 136);
     object-fit: cover;
-    height: 100px;
+    height: 100%;
     width: 100%;
     background-color: #f4f4f4;
     border-radius: 3px;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+.botoes-edicao{
+    display: grid;
+}
+#excluir-btn{
+    background-color: #a23333;
+    color: white;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#excluir-btn:hover {
+    background-color: #d32f2f;
 }

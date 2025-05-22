@@ -1,0 +1,13 @@
+@media screen and (max-width:768px){
+  main{
+    width: 95%;
+    grid-column: 1/3;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width:600px){
+  main{
+    display: flex;
+    flex-direction: column;
+  }
+}

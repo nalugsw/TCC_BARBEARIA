@@ -13,7 +13,7 @@
 </head>
 <nav id="menu-padrao" class="menu-lateral-desktop">
         <div class="logo">
-            <a href="horarios.php"><img src="../../assets/img/LOGO.png" alt=""></a>
+            <a href="./horarios.php"><img src="../../assets/img/LOGO.png" alt=""></a>
         </div>
 
         <ul>
@@ -53,7 +53,7 @@
 
     <nav id="menu-settings" class="menu-lateral-settings-desktop  hide">
         <div class="logo">
-            <img src="../../assets/img/LOGO.png" alt="">
+            <a href="./horarios.php"><img src="../../assets/img/LOGO.png" alt=""></a>
         </div>
         <h2>configurações</h2>
         <ul>
@@ -75,7 +75,7 @@
         
     <nav id="menu-padrao-mobile" class="menu-mobile">
         <div class="logo-mobile">
-        <a href="./horarios.html"><img src="../../assets/img/LOGO.png" alt=""></a>
+        <a href="./horarios.php"><img src="../../assets/img/LOGO.png" alt=""></a>
         </div>
         <input type="checkbox" name="" id="abrir-mobile">
         <label for="abrir-mobile" class="menu-linhas">
@@ -123,7 +123,7 @@
     <nav id="menu-settings-mobile" class="menu-settings-mobile hide">
         
         <div class="logo-mobile">
-            <a href="./horarios.html"><img src="../../assets/img/LOGO.png" alt=""></a>
+            <a href="./horarios.php"><img src="../../assets/img/LOGO.png" alt=""></a>
             </div>
         <h2>configurações</h2>
         <ul>
