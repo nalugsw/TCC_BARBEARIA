@@ -47,10 +47,11 @@ $servicos = mostrarServicos();
             <div class="info">
                 <div class="dados-perfil">
                     <p>Coloque a imagem do serviço</p>
-                    <img id="preview" src="">
                     <div class="input-campo">
+                       
                         <input type="file" id="arquivo" class="input-file" name="foto" accept="image/*" onchange="loadFile(event)">
                         <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                        <img id="preview" src="">
                     </div>
                 </div>
                 <div class="dados-perfil">
@@ -81,10 +82,11 @@ $servicos = mostrarServicos();
                 <div class="dados-perfil">
                     <p>Coloque a imagem do serviço</p>
                     
-                    <img id="preview-edicao" src="">
+                    
                     <div class="input-campo">
                         <input type="file" id="arquivo-edicao" class="input-file" name="foto" accept="image/*" onchange="loadFileEdicao(event)">
                         <label for="arquivo-edicao" class="custom-file-button">Escolha a foto</label>
+                        <img id="preview-edicao" src="">
                     </div>
                 </div>
                 <div class="dados-perfil">
