@@ -152,13 +152,14 @@ section.home .grids-container .grid::-webkit-scrollbar-thumb{
  
 }
 #grid1 .item-portifolio{
-    object-fit: cover;
     height: 250px;
     width: 250px;
 }
 #grid1 .item-portifolio img{
     height: 250px;
     width: 250px;
+    object-fit: cover;
+
 }
 
 section.home .grids-container #grid2 .item{

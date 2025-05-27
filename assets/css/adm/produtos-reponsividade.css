@@ -1,0 +1,174 @@
+@media screen and (max-width: 1090px){
+    section.produtos .grid-catalogo-produtos{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Responsivo para MOBILE(celulares, aparelhos pequenos e desse tipo, é aqui onde vai atuar o menu mobile) */
+
+@media screen and (max-width: 890px){
+    section.produtos .grid-catalogo-produtos{
+        display: grid;
+        row-gap: 20px;
+        column-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr ;
+        width: 500px;
+        margin-top: 30px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    section.produtos .grid-catalogo-produtos .item-produto{
+        width: 150px;
+        height: 180px;
+        transition: 0.5s;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto:hover{
+        width: 150px;
+        height: 180px;
+        opacity: 0.5;
+        cursor: pointer;
+        scale: 1.01;
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto .img-produto{
+        width: 170px;
+        height: 130px;
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto .img-produto img{
+        width: 150px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 3px;
+    }
+
+    body{
+        background-color: #232323;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    main{
+        
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+    section.produtos .titulo-produtos{
+        align-items: flex-start;
+        display: flex;
+        color:#FFFFFF;
+        font-weight: bold;
+        text-align: right;
+        font-size: 16px;
+    }
+    section.produtos .grid-catalogo-produtos{
+        display: grid;
+        row-gap: 20px;
+        column-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        width: 350px;
+        margin-top: 30px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    section.produtos .grid-catalogo-produtos .item-produto{
+        width: 150px;
+        height: 180px;
+        transition: 0.5s;
+        align-items: center;
+        margin: 0 auto;
+        
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto:hover{
+        width: 150px;
+        height: 180px;
+        opacity: 0.5;
+        cursor: pointer;
+        scale: 1.01;
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto .img-produto{
+        width: 170px;
+        height: 130px;
+    }
+    
+    section.produtos .grid-catalogo-produtos .item-produto .img-produto img{
+        width: 150px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 3px;
+    }
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000a3;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .popup-container #popup-descricao{
+        width: 308px;
+        font-size: 11px;
+        text-align: left;
+        font-weight: 800;
+        color: #3d3d3d;
+    }
+    
+    .popup-container {
+        background: white;
+        padding:  40px 10px;
+        border-radius: 3px;
+        position: relative;
+    }
+    
+    .popup-container img {
+        width: 320px;
+        height: 320px;
+        border-radius: 10px;
+    }
+    
+    .btn-fechar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+        color: #B3B6BC;
+        font-size: 20px;
+        transition: 0.5s;
+    }
+    
+    .btn-fechar:hover {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+        color: #6b8fdb;
+        font-size: 20px;
+    }
+
+    .btn-addProduto{
+        position: absolute;
+        right: 25px;
+        bottom: -10px;
+    }
+}

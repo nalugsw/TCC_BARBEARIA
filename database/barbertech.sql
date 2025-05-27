@@ -145,20 +145,16 @@ INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
 ('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
 
 INSERT INTO PORTFOLIO (imagem) VALUES
-('macaquinho.jpg'),
-('macaquinho2.jpg'),
-('macaquinho3.jpg'),
-('macaquinho4.jpg'),
-('macaquinho5.jpg'),
-('macaquinho6.jpg'),
-('macaquinho7.jpg'),
-('macaquinho8.jpg'),
-('macaquinho9.jpg'),
-('macaquinho10.jpg'),
-('macaquinho11.jpg'),
-('macaquinho12.jpg'),
-('macaquinho13.jpg'),
-('macaquinho14.jpg');
+('fotocabelo.jpg'),
+('fotocabelo2.jpg'),
+('fotocabelo3.jpg'),
+('fotocabelo4.jpg'),
+('fotocabelo5.jpg'),
+('fotocabelo6.jpg'),
+('fotocabelo7.jpg'),
+('fotocabelo8.jpg'),
+('fotocabelo9.jpg'),
+('fotocabelo10.jpg');
 
 CREATE TABLE dias_inativos (
     id INT AUTO_INCREMENT PRIMARY KEY,
