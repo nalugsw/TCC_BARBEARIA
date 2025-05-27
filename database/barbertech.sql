@@ -110,6 +110,10 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
 ('Creme para Mãos', 12.80, 'creme_para_maos.png', 75, 'Creme hidratante para as mãos'),
 ('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 120, 'Condicionador para cabelos macios e brilhantes'),
 ('Escova de Dente', 4.50, 'escova_de_dente.png', 180, 'Escova de dente com cerdas macias'),
+('Perfume Feminino', 89.90, 'perfume_feminino.png', 30, 'Perfume floral suave para o dia a dia')
+('Creme para Mãos', 12.80, 'creme_para_maos.png', 75, 'Creme hidratante para as mãos'),
+('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 120, 'Condicionador para cabelos macios e brilhantes'),
+('Escova de Dente', 4.50, 'escova_de_dente.png', 180, 'Escova de dente com cerdas macias'),
 ('Perfume Feminino', 89.90, 'perfume_feminino.png', 30, 'Perfume floral suave para o dia a dia');
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
