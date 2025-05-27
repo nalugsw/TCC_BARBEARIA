@@ -30,7 +30,7 @@ $produtos = mostrarProdutos();
 
 <?php include("../../views/nav-padrao-adm.php"); ?>
     
-    <!-- Fim do menu Desktop e inicio da sessão perfil -->
+    <main>
     <section class="produtos">
         <div class="titulo-produtos">
             <h1>PRODUTOS</h1>
@@ -109,11 +109,11 @@ $produtos = mostrarProdutos();
                 </div>
             </form>
         </dialog>
-        <div class="btn-addProduto">
+        <div class="btn-addProduto btn-edit">
             <button><img src="../../assets/img/icone-add.png" alt=""></button>
         </div>
     </section>
-        
+</main>
         <script src="../../assets/js/modal-deslogar.js"></script>
         
         <script src="../../assets/js/modal-perfilEdit.js"></script>

@@ -2,15 +2,21 @@
 body{
     overflow-y: hidden;
 }
-section.produtos{
-    margin-top: 80px;
-    align-items: center;
-    height: 80%;
-    margin: 0 auto;
-    padding: 0 30px;
+main{
     grid-column: 2/3;
     grid-row: 2/3;
+
 }
+section.produtos{
+    height: 700px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
 
 section.produtos .titulo-produtos{
     width: 100%;
@@ -18,6 +24,7 @@ section.produtos .titulo-produtos{
     font-weight: bold;
     text-align: left;
     font-size: large;
+    margin: 0 auto;
 }
 
 section.produtos .grid-catalogo-produtos{
@@ -246,6 +253,7 @@ section.produtos .modal{
 .btn-addProduto{
     position: absolute;
     right: 50px;
+    bottom: -10px;
 }
 .btn-addProduto button{
     border-radius: 100%;
@@ -254,7 +262,7 @@ section.produtos .modal{
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: ,;
+    cursor: pointer;
 }
 .btn-addProduto button img{
     width: 50px;
