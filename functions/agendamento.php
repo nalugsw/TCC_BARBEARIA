@@ -5,6 +5,7 @@ global $pdo;
 
 function mostrarAgendamentos($id_usuario, $pdo){
     $sql = "SELECT 
+    AGENDA.id_agenda,
     CLIENTE.nome AS nome,
     SERVICO.nome AS servico,
     AGENDA.data AS data,

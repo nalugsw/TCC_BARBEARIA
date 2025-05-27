@@ -52,12 +52,12 @@ unset($_SESSION['erro']);
                                 <option value="<?= $servico['id_servico'] ?>"><?= $servico['nome'] ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <h2>Selecione o funcionario</h2>
+                        <!-- <h2>Selecione o funcionario</h2>
                         <select name="id_funcionario" id="id_funcionario" required>
                             <?php foreach($funcionarios as $funcionario): ?>
                                 <option value="<?= $funcionario['id_funcionario'] ?>"><?= $funcionario['nome'] ?></option>
                             <?php endforeach; ?>
-                        </select>
+                        </select> -->
                     </div>
                     
                     <button type="submit">Agendar</button>
