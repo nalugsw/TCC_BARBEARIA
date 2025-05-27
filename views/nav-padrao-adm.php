@@ -26,6 +26,10 @@
             <li class="item-menu">
                 <a href="../../public/adm/servicos.php"><img src="../../assets/img/icon-produtos.png" alt=""><span class="txt-link">Serviços</span></a>
             </li>
+            
+            <li class="item-menu">
+                <a href="../../public/adm/produtos.php"><img src="../../assets/img/icon-produtos.png" alt=""><span class="txt-link">Produtos</span></a>
+            </li>
             <li class="item-menu">
                 <a href="../../public/adm/informacoes.php"><img src="../../assets/img/icon-informacoes.png" alt=""><span class="txt-link">Informações</span></a>
             </li>
@@ -109,7 +113,7 @@
                 <span class="txt-link">Relatórios</span>
                 </a>
             </li>
-            
+
             
             <div class="div-btn">
                 <button id="btn-sair-mobile" class="btn-sair">

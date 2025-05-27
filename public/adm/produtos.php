@@ -3,7 +3,7 @@
 include("../../config/conexao.php");
 session_start();
 require("../../functions/helpers.php");
-verificaSession("cliente");
+verificaSession("administrador");
 require("../../functions/produtos.php");
 $produtos = mostrarProdutos();
 
@@ -16,8 +16,8 @@ $produtos = mostrarProdutos();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
-    <link rel="stylesheet" href="../../assets/css/user/produtos.css">
-    <link rel="stylesheet" href="../../assets/css/user/produtos-reponsividade.css">
+    <link rel="stylesheet" href="../../assets/css/adm/produtos.css">
+    <link rel="stylesheet" href="../../assets/css/adm/produtos-reponsividade.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +28,9 @@ $produtos = mostrarProdutos();
 </head>
 <body>
 
-<?php include("../../views/nav-padrao.php"); ?>
+<?php include("../../views/nav-padrao-adm.php"); ?>
     
     <!-- Fim do menu Desktop e inicio da sessão perfil -->
-
     <section class="produtos">
         <div class="titulo-produtos">
             <h1>PRODUTOS</h1>
@@ -47,27 +46,44 @@ $produtos = mostrarProdutos();
                         <h2><?php echo $produto['nome']; ?></h2>
                         <p><?php echo $produto['preco']; ?></p>
                     </div>
+                    
+                    <div class="btn-edit">
+                            <span class="material-symbols-outlined">edit</span>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
 
-        <div id="popup" class="popup">
-            <div class="popup-container">
-                <span class="btn-fechar"><i class="bi bi-x-circle-fill"></i></span>
-                <img id="popup-img" src="" alt="Imagem do Produto">
-                <h2 id="popup-titulo"></h2>
-                <p id="popup-preco"></p>
-                <br>
-                <p>Descrição</p>
-                <br>
-                <p id="popup-descricao"></p>
-            </div>
-        </div>
+        <dialog closed id="modal-edit" >
+            <form action="" method="POST" enctype="multipart/form-data">
+                
+                <div id="img-container">
+                    <p>*Foto do perfil</p>
+                    <div class="input-campo">
+                        <img id="preview" src="" >
+                        <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                    </div>
+                </div>
+                <div class="input-campo">
+                    <p>*Nome do prodto</p>
+                    <input type="text" value="" name="nome">
+                </div>
+                <div class="input-campo">
+                    <p>*descrição</p>
+                    <input type="text" value="" name="telefone" id="telefone" >
+                </div>
+                <div class="btns-edit">
+                    <button type="submit">Atualizar</button>
+                    <button id="cancelar-edit" type="button">Voltar</button>
+                </div>
+            </form>
+        </dialog>
     </section>
         
-        <script src="../../assets/js/modal.js"></script>
         <script src="../../assets/js/modal-deslogar.js"></script>
-        <script src="../../assets/js/submenu-funcao.js"></script>
-        <script src="../../assets/js/popup-produtos.js"></script>
+        
+        <script src="../../assets/js/modal-perfilEdit.js"></script>
+        <script src="../../assets/js/preview-img.js"></script>
 </body>
 </html>

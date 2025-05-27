@@ -59,6 +59,7 @@ nav.menu-lateral-desktop {
   justify-content: space-between;
   position: fixed;
   width: 230px;
+  grid-row: 1/3;
 }
 
 

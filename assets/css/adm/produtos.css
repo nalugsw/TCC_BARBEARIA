@@ -1,0 +1,197 @@
+/* CSS da sessão produtos */
+body{
+    overflow-y: hidden;
+}
+section.produtos{
+    margin-top: 80px;
+    align-items: center;
+    height: 80%;
+    margin: 0 auto;
+    padding: 0 30px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+section.produtos .titulo-produtos{
+    width: 100%;
+    color:#FFFFFF;
+    font-weight: bold;
+    text-align: left;
+    font-size: large;
+}
+
+section.produtos .grid-catalogo-produtos{
+    display: grid;
+    row-gap: 20px;
+    column-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+section.produtos .grid-catalogo-produtos::-webkit-scrollbar{
+    width: 25px;
+    background-color: transparent;
+    border-radius: 15px;
+}
+
+section.produtos .grid-catalogo-produtos::-webkit-scrollbar-thumb{
+    border-radius: 15px;
+    background-color: #888888;
+    border: solid #232323 7px;
+}
+
+
+section.produtos .grid-catalogo-produtos .item-produto{
+    width: 170px;
+    height: 200px;
+    transition: 0.5s;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+section.produtos .grid-catalogo-produtos .item-produto .img-produto{
+    width: 170px;
+    height: 150px;
+}
+
+section.produtos .grid-catalogo-produtos .item-produto .img-produto img{
+    width: 170px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+section.produtos .grid-catalogo-produtos .item-produto .txt-produto{
+    color: #FFFFFF;
+    font-size: 13px;
+    height: 40px;
+    width: 100%;
+}
+
+section.produtos .grid-catalogo-produtos .item-produto .txt-produto h2{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+}
+section.produtos .grid-catalogo-produtos .item-produto .txt-produto p{
+    font-size: 12px;
+    font-weight: 200;
+}
+
+section.produtos .modal{
+    display: none;
+}
+
+#modal-edit{
+    align-content: center;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+#modal-edit form{
+    background-color: #f9f9f9;
+    display: grid;
+    grid-template-columns:  1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 3px;
+    width: 500px;
+    gap: 20px;
+}
+#modal-edit::backdrop{
+    background-color: #23232383;
+}
+#modal-edit p{
+    font-size: 15px;
+    color: #232323;
+    font-weight: bold;
+    
+}
+#modal-edit .input-campo input{
+    padding: 3px 20px 3px 20px
+}
+.input-file {
+    display: none; /* Esconde o input padrão */
+}
+
+.custom-file-button {
+    display: inline-block;
+    background-color: #4065AB;
+    color: #dbe6f9;
+    padding: 5px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 1px 1px 1px #23232348;
+}
+
+.custom-file-button:hover,
+#modal-edit button:hover{
+    background-color: #2f5396;
+}
+#modal-edit .btns-modal{
+    height: 100%;
+}
+#modal-edit button{
+    padding: 5px 15px;
+    background-color: #4065AB;
+    color: #dbe6f9;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #23232348;
+
+
+}
+#img-container{
+    grid-row: 1/4;
+    display: flex;
+    flex-direction: column;
+}
+#img-container .input-campo{
+    position: relative;
+}
+#img-container .input-campo label{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: #fafafa45;
+}
+#preview{
+    border: solid 1px rgb(136, 136, 136);
+    height: 120px;
+    width: 60%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    margin: 0 auto;
+}
+.btn-edit{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    background-color: #4065AB;
+    padding: 5px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f4f4f4;
+    border: #232323 solid 3px;
+}
+.btn-edit{
+    cursor: pointer;
+}
