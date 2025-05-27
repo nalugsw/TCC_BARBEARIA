@@ -44,7 +44,7 @@ $produtos = mostrarProdutos();
                     </div>
                     <div class="txt-produto">
                         <h2><?php echo $produto['nome']; ?></h2>
-                        <p><?php echo $produto['preco']; ?></p>
+                        <p>R$<?php echo $produto['preco']; ?></p>
                     </div>
                     
                     <div class="btn-edit">
@@ -56,7 +56,7 @@ $produtos = mostrarProdutos();
 
         <dialog closed id="modal-edit" >
             <form action="" method="POST" enctype="multipart/form-data">
-                
+                <button id="cancelar-edit" type="button"><img src="../../assets/img/iconeClose.png" alt=""></button>
                 <div id="img-container">
                     <p>*Foto do perfil</p>
                     <div class="input-campo">
@@ -71,14 +71,47 @@ $produtos = mostrarProdutos();
                 </div>
                 <div class="input-campo">
                     <p>*descrição</p>
-                    <input type="text" value="" name="telefone" id="telefone" >
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
                 </div>
-                <div class="btns-edit">
-                    <button type="submit">Atualizar</button>
-                    <button id="cancelar-edit" type="button">Voltar</button>
+                <div class="input-campo">
+                    <p>*preço item</p>
+                    <input type="number" step="0.01" min="0" id="preco-servico" name="valor" placeholder="R$00,00">
+                    <button type="submit" id="btn-atualizar">Atualizar</button>
+                </div>
                 </div>
             </form>
         </dialog>
+        
+        <dialog closed id="modal-create" class="modal">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <button id="cancelar-edit" type="button"><img src="../../assets/img/iconeClose.png" alt=""></button>
+                <div id="img-container">
+                    <p>*Foto do perfil</p>
+                    <div class="input-campo">
+                        <img id="preview" src="" >
+                        <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                    </div>
+                </div>
+                <div class="input-campo">
+                    <p>*Nome do prodto</p>
+                    <input type="text" value="" name="nome">
+                </div>
+                <div class="input-campo">
+                    <p>*descrição</p>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="input-campo">
+                    <p>*preço item</p>
+                    <input type="number" step="0.01" min="0" id="preco-servico" name="valor" placeholder="R$00,00">
+                    <button type="submit" id="btn-atualizar">Atualizar</button>
+                </div>
+                </div>
+            </form>
+        </dialog>
+        <div class="btn-addProduto">
+            <button><img src="../../assets/img/icone-add.png" alt=""></button>
+        </div>
     </section>
         
         <script src="../../assets/js/modal-deslogar.js"></script>
