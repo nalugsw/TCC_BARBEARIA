@@ -65,7 +65,8 @@ CREATE TABLE CLIENTE_SERVICO (
 CREATE TABLE INFORMACOES(
     id_informacoes int AUTO_INCREMENT PRIMARY KEY,
     informacoes_barbeiro TEXT NOT NULL,
-    informacoes_barbearia TEXT NOT NULL
+    informacoes_barbearia TEXT NOT NULL,
+    endereco VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE portfolio(
@@ -103,11 +104,14 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
     REFERENCES SERVICO (id_servico);
 
     INSERT INTO PRODUTO (nome, preco, foto, quantidade, descricao) VALUES
-('barbeador', 15.90,'uploads/produtos/barbeador.png', 100, 'barbeador de alta qualidade'),
-('creme', 15.90,'uploads/produtos/creme.png', 100, 'creme de alta qualidade'),
-('desodorante', 15.90,'uploads/produtos/desodorante.jpg', 100, 'desodorante de alta qualidade'),
-('pente', 15.90,'uploads/produtos/pente.png', 100, 'pente de alta qualidade'),
-('tesoura', 15.90,'uploads/produtos/tesoura.jpg', 100, 'tesoura de alta qualidade');
+('Desodorante', 15.90, 'desodorante.png', 100, 'Desodorante em spray de longa duração'),
+('Shampoo Hidratante', 25.50, 'shampoo_hidratante.png', 50, 'Shampoo para cabelos secos e danificados'),
+('Sabonete Líquido', 7.40, 'sabonete_liquido.png', 200, 'Sabonete líquido com extrato de aloe vera'),
+('Pasta de Dente', 6.30, 'pasta_de_dente.png', 150, 'Pasta de dente para proteção contra cáries'),
+('Creme para Mãos', 12.80, 'creme_para_maos.png', 75, 'Creme hidratante para as mãos'),
+('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 120, 'Condicionador para cabelos macios e brilhantes'),
+('Escova de Dente', 4.50, 'escova_de_dente.png', 180, 'Escova de dente com cerdas macias'),
+('Perfume Feminino', 89.90, 'perfume_feminino.png', 30, 'Perfume floral suave para o dia a dia');
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
 ('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte-masculino.png'),
@@ -134,6 +138,9 @@ INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia)values(
 INSERT INTO USUARIO (email, senha, status, tipo_usuario) VALUES
 ('barbeiro@example.com', SHA2('senha123', 256), 'verificado', 'funcionario');
 
+INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
+('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
+
 INSERT INTO PORTFOLIO (imagem) VALUES
 ('fotocabelo.jpg'),
 ('fotocabelo2.jpg'),
@@ -156,9 +163,6 @@ CREATE TABLE dias_inativos (
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 ('admin@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'administrador');
 --SENHA: 123456789
-
-INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
-('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', 2);
 
 
 --INSERT DE USUARIO FUNCIONARIO PARA TESTE
