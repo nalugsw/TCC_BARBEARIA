@@ -64,12 +64,13 @@ main{
   height: 20px;
 
 }
-/* .form-dias{
+.form-dias{
   margin-top: 30px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .form-dias #enviar{
   margin: 13px 0;
@@ -109,4 +110,4 @@ main{
   border-radius: 3px;
   display: flex;
   justify-content: space-evenly;
-} */
+}

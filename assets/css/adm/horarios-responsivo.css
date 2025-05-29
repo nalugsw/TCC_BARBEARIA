@@ -175,4 +175,14 @@
   .whatsBtn img{
     width: 15px;
   }
+  
+.btn-cancel-horario{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.btn-cancel-horario button{
+  padding: 3px;
+  width: 40%;
+}
 }
