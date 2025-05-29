@@ -110,7 +110,7 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
 ('Creme para Mãos', 12.80, 'creme_para_maos.png', 75, 'Creme hidratante para as mãos'),
 ('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 120, 'Condicionador para cabelos macios e brilhantes'),
 ('Escova de Dente', 4.50, 'escova_de_dente.png', 180, 'Escova de dente com cerdas macias'),
-('Perfume Feminino', 89.90, 'perfume_feminino.png', 30, 'Perfume floral suave para o dia a dia')
+('Perfume Feminino', 89.90, 'perfume_feminino.png', 30, 'Perfume floral suave para o dia a dia'),
 ('Creme para Mãos', 12.80, 'creme_para_maos.png', 75, 'Creme hidratante para as mãos'),
 ('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 120, 'Condicionador para cabelos macios e brilhantes'),
 ('Escova de Dente', 4.50, 'escova_de_dente.png', 180, 'Escova de dente com cerdas macias'),
@@ -141,9 +141,6 @@ INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia)values(
 INSERT INTO USUARIO (email, senha, status, tipo_usuario) VALUES
 ('barbeiro@example.com', SHA2('senha123', 256), 'verificado', 'funcionario');
 
-INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
-('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
-
 INSERT INTO PORTFOLIO (imagem) VALUES
 ('fotocabelo.jpg'),
 ('fotocabelo2.jpg'),
@@ -166,6 +163,9 @@ CREATE TABLE dias_inativos (
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 ('admin@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'administrador');
 --SENHA: 123456789
+
+INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
+('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', 2);
 
 
 --INSERT DE USUARIO FUNCIONARIO PARA TESTE

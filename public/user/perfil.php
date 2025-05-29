@@ -87,13 +87,12 @@ unset($_SESSION['erro']);
             </dialog>
 
             <dialog closed id="cancelar-horario">
-                <form action="">
-                    <h2>
-                        realmente deseja cancelar esse horaio?
-                    </h2>
+                <form action="../../functions/validaAgendamento.php" method="POST">
+                    <input type="hidden" name="id_agendamento" id="input-id-agendamento">
+                    <input type="hidden" name="acao" value="cancelar">
+                    <h2>Realmente deseja cancelar esse horário?</h2>
                     <div class="btn-cancel-horario">
-                        <button type="submit" id="btn-cancelar">Desamarcar
-                        </button>
+                        <button type="submit" id="btn-cancelar">Desmarcar</button>
                         <button id="btn-voltar" type="button">Voltar</button>
                     </div>
                 </form>
@@ -111,7 +110,9 @@ unset($_SESSION['erro']);
                         foreach($dados as $agenda): ?>
                             <div class="horario-caixa">
                                 <div class="desmarcar hide">
-                                    <button class="btn-cancelar-horario"><img src="../../assets/img/delete.png" alt=""></button>
+                                    <button class="btn-cancelar-horario" data-id="<?php echo $agenda['id_agenda']; ?>">
+                                        <img src="../../assets/img/delete.png" alt="">
+                                    </button>
                                 </div>
                                 <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?> </p></div>
                                 <p> - </p>

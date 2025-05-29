@@ -24,7 +24,7 @@ function mostrarAgendamentos($id_usuario, $pdo){
     LEFT JOIN    -- ALTERADO AQUI
     FUNCIONARIO ON AGENDA.id_funcionario = FUNCIONARIO.id_funcionario
     WHERE 
-        USUARIO.id_usuario = :id_usuario";
+        USUARIO.id_usuario = :id_usuario AND agenda.status_agenda = 'pendente'";
 
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":id_usuario", $id_usuario, PDO::PARAM_INT);
@@ -38,6 +38,7 @@ function mostrarAgendamentos($id_usuario, $pdo){
 function buscarAgendamentosPorFuncionario($id_funcionario, $pdo) {
     $sql = "
         SELECT 
+            a.id_agenda,
             c.nome AS nome_cliente,
             c.numero_telefone,
             s.nome AS servico,
