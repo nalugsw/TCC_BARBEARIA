@@ -106,7 +106,7 @@ uksort($agendamentosPorData, function($a, $b) {
 
                                     <div class="horario-cliente">
                                         <h3>Horário</h3>
-                                        <input type="text" disabled placeholder="<?php echo $agenda['horario']; ?>">
+                                        <input type="text" disabled placeholder="<?php echo date('H:i', strtotime($agenda['horario'])); ?>">
                                         <button type="button" class="btn-cancelar-horario" onclick="this.nextElementSibling.showModal();">
                                             <p>Desmarcar Horario</p>
                                             <span class="material-symbols-outlined">delete</span>
