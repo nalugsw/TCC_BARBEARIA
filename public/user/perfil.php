@@ -85,18 +85,7 @@ unset($_SESSION['erro']);
                     </div>
                 </form>
             </dialog>
-
-            <dialog closed id="cancelar-horario">
-                <form action="../../functions/validaAgendamento.php" method="POST">
-                    <input type="hidden" name="id_agendamento" id="input-id-agendamento">
-                    <input type="hidden" name="acao" value="cancelar">
-                    <h2>Realmente deseja cancelar esse horário?</h2>
-                    <div class="btn-cancel-horario">
-                        <button type="submit" id="btn-cancelar">Desmarcar</button>
-                        <button id="btn-voltar" type="button">Voltar</button>
-                    </div>
-                </form>
-            </dialog>
+            
             <div class="horarios-marcados">
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
@@ -108,11 +97,22 @@ unset($_SESSION['erro']);
                     } else {
                         
                         foreach($dados as $agenda): ?>
+                            <dialog id="cancelar-horario-<?php echo $agenda['id_agenda']; ?>" class="cancelar-horario">
+                                <form action="" method="POST" >
+                                    <h2>Realmente deseja cancelar esse horário?</h2>
+                                    <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
+                                    <input type="hidden" name="acao" value="cancelado">
+                                    <div class="btn-cancel-horario">
+                                        <button type="submit" id="btn-cancelar">Desmarcar</button>
+                                        <button type="button" onclick="this.closest('dialog').close();" id="voltar">Voltar</button>
+                                    </div>
+                                </form>
+                            </dialog>
                             <div class="horario-caixa">
                                 <div class="desmarcar hide">
-                                    <button class="btn-cancelar-horario" data-id="<?php echo $agenda['id_agenda']; ?>">
-                                        <img src="../../assets/img/delete.png" alt="">
-                                    </button>
+                                <button type="button" class="btn-cancelar-horario" onclick="document.getElementById('cancelar-horario-<?php echo $agenda['id_agenda']; ?>').showModal();">
+                                    <img src="../../assets/img/delete.png" alt="">
+                                </button>
                                 </div>
                                 <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?> </p></div>
                                 <p> - </p>

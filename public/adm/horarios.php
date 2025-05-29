@@ -113,7 +113,7 @@ uksort($agendamentosPorData, function($a, $b) {
                                         </button>
 
                                         <dialog id="cancelar-horario">
-                                            <form action="../../functions/validaAgendamento.php" method="POST" >
+                                            <form action="" method="POST" >
                                                 <h2>Realmente deseja cancelar esse horário?</h2>
                                                 <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
                                                 <input type="hidden" name="acao" value="cancelado">
