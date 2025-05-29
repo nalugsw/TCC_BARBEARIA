@@ -322,27 +322,23 @@ section{
     margin: 0 auto;
     padding: 10px;
     border-radius: 3px;
-    width: 500px;
+    width: 50%;
     padding: 20px 30px;
+    min-width: 250px;
 }
 
-.btn-cancel-horario #btn-voltar{
-    background-color: #f0f0f0;
-    border: none;
-    padding: 5px 25px;
-    border-radius: 3px;
-    font-weight: 600;
-    font-size: 15px;
-    border: #707070a1 solid 1px;
+.btn-cancel-horario{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
-.btn-cancel-horario #btn-cancelar{
-    background-color: #872121;
-    color: #fad6d6;
-    border: none;
-    padding: 5px 25px;
-    border-radius: 3px;
-    font-weight: 600;
-    font-size: 15px;
+.btn-cancel-horario button{
+    padding: 6px 15px;
+    width: 40%;
+}
+.btn-cancel-horario #voltar{
+    background-color: #bbbbbb;
+    color: #232323;
 }
 #cancelar-horario form h2{
     font-size: 20px;
