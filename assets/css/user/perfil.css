@@ -248,13 +248,15 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
 #modal-edit form{
     background-color: #f9f9f9;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 1fr;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     padding: 25px;
     border-radius: 3px;
-    width: 500px;
+    width: 50%;
+    column-gap: 25px;
+    row-gap: 30px;
 }
 #modal-edit::backdrop{
     background-color: #23232383;
@@ -266,9 +268,10 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     
 }
 #modal-edit .input-campo input{
-    padding: 3px 20px 3px 20px
+    padding: 3px 10px 3px 10px
 }
 .input-file {
+    border: none;
     display: none; /* Esconde o input padrão */
 }
 
@@ -276,12 +279,12 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     display: inline-block;
     background-color: #4065AB;
     color: #dbe6f9;
-    padding: 5px 15px;
     font-size: 13px;
     border-radius: 3px;
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 1px 1px 1px #23232348;
+    padding: 5px 10px;
 }
 
 .custom-file-button:hover,
@@ -305,15 +308,49 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     grid-row: 1/4;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-#preview{
-    border: solid 1px rgb(136, 136, 136);
-    height: 120px;
-    width: 120px;
+#img-container img{
+    height: 150px;
+    width: 100%;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+.input-campo-edit{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.input-campo-edit input{
+    padding: 5px 10px;
+}
+.btns-edit{
+    display: flex;
+    justify-content: space-evenly;
+}
+.btns-edit button{
+    width: 40%;
+    font-weight: 600;
 }
 
+.btns-edit #cancelar-edit{
+    background-color: #8d8d8d;
+    color: #232323;
+}
+.btns-edit #cancelar-edit:hover{
+    background-color: #6d6d6d;
+    cursor: pointer;
+}
+.btns-edit #salvar-edit{
+    background-color: #3c763d;
+    color: #edffed;
+}
+.btns-edit #salvar-edit:hover{
+    cursor: pointer;
+    background-color: #265727;
+    color: #edffed;
+}
 .desmarcar-div{
     align-content: center;
     border: none;
@@ -321,14 +358,13 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     overflow-y: hidden;
     background-color: transparent;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .desmarcar-div::backdrop{
     background-color: #22222283;
 }
-.desmarcar-div form{
-    background-color: #ffffff;
+.desmarcar-div form{    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -336,18 +372,22 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     margin: 0 auto;
     padding: 10px;
     border-radius: 3px;
-    width: 500px;
+    width: 50%;
     padding: 20px 30px;
+    min-width: 250px;
 }
 
-.btn-cancel-horario #btn-voltar{
-    background-color: #f0f0f0;
+.btn-cancel-horario{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.btn-cancel-horario button{
+    padding: 6px 15px;
+    width: 40%;
     border: none;
-    padding: 5px 25px;
     border-radius: 3px;
     font-weight: 600;
-    font-size: 15px;
-    border: #707070a1 solid 1px;
 }
 .btn-cancel-horario #btn-cancelar{
     background-color: #872121;
