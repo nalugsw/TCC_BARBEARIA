@@ -23,7 +23,7 @@ CREATE TABLE PRODUTO (
     nome varchar(30) not null,
     preco decimal(6,2) not null,
     foto varchar(255) null,
-    quantidade int(4) not null,
+    ativo int(1) not null,
     descricao varchar(50) null
 );
 
@@ -103,15 +103,15 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
     FOREIGN KEY (id_servico)
     REFERENCES SERVICO (id_servico);
 
-    INSERT INTO PRODUTO (nome, preco, foto, quantidade, descricao) VALUES
-('Desodorante', 15.90, 'desodorante.png', 100, 'Desodorante em spray de longa duração'),
-('Shampoo Hidratante', 25.50, 'shampoo_hidratante.png', 50, 'Shampoo para cabelos secos e danificados'),
-('Sabonete Líquido', 7.40, 'sabonete_liquido.png', 200, 'Sabonete líquido com extrato de aloe vera'),
-('Pasta de Dente', 6.30, 'pasta_de_dente.png', 150, 'Pasta de dente para proteção contra cáries'),
-('Creme para Mãos', 12.80, 'creme_para_maos.png', 75, 'Creme hidratante para as mãos'),
-('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 120, 'Condicionador para cabelos macios e brilhantes'),
-('Escova de Dente', 4.50, 'escova_de_dente.png', 180, 'Escova de dente com cerdas macias'),
-('Perfume Feminino', 89.90, 'perfume_feminino.png', 30, 'Perfume floral suave para o dia a dia');
+    INSERT INTO PRODUTO (nome, preco, foto, ativo, descricao) VALUES
+('Desodorante', 15.90, 'desodorante.png', 1, 'Desodorante em spray de longa duração'),
+('Shampoo Hidratante', 25.50, 'shampoo_hidratante.png', 1, 'Shampoo para cabelos secos e danificados'),
+('Sabonete Líquido', 7.40, 'sabonete_liquido.png', 1, 'Sabonete líquido com extrato de aloe vera'),
+('Pasta de Dente', 6.30, 'pasta_de_dente.png', 1, 'Pasta de dente para proteção contra cáries'),
+('Creme para Mãos', 12.80, 'creme_para_maos.png', 1, 'Creme hidratante para as mãos'),
+('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 0, 'Condicionador para cabelos macios e brilhantes'),
+('Escova de Dente', 4.50, 'escova_de_dente.png', 1, 'Escova de dente com cerdas macias'),
+('Perfume Feminino', 89.90, 'perfume_feminino.png', 0, 'Perfume floral suave para o dia a dia');
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
 ('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte-masculino.png'),
@@ -125,9 +125,10 @@ INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES
 ('Pigmentação de Barba', 40.00, '00:35:00', 'uploads/servicos/pigmentacao_barba.jpg'),
 ('Relaxamento Capilar', 90.00, '01:45:00', 'uploads/servicos/relaxamento_capilar.jpg');
 
-INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia)values(
+INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia, endereco)values(
     'João é barbeiro há 12 anos. Começou em uma barbearia pequena, aprendendo com mestres da área. Ao longo dos anos, se especializou em cortes modernos, barba estilizada e acabamento perfeito. Já atendeu uma grande variedade de clientes, de estilos clássicos a mais ousados. Ele também fez cursos de coloração e penteados, sempre buscando inovar. João se destaca pela atenção aos detalhes e pela forma descontraída de fazer os clientes se sentirem à vontade. Hoje, tem sua própria barbearia, onde é referência na cidade.',
-    'Na Barbearia do João, tradição e estilo se encontram para oferecer a melhor experiência em cortes e barba. Nossa barbearia combina técnicas clássicas com as últimas tendências, garantindo um atendimento personalizado para cada cliente. Com anos de experiência, João e sua equipe são especialistas em cortes modernos, degradês impecáveis e barbas bem definidas.'
+    'Na Barbearia do João, tradição e estilo se encontram para oferecer a melhor experiência em cortes e barba. Nossa barbearia combina técnicas clássicas com as últimas tendências, garantindo um atendimento personalizado para cada cliente. Com anos de experiência, João e sua equipe são especialistas em cortes modernos, degradês impecáveis e barbas bem definidas.',
+    'Rua seilaoqueénois 994, Jardim sua Tia corna São paulo - SP'
 );
 
 

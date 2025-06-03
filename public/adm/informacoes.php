@@ -50,11 +50,11 @@ $informacoes = buscarInformacoes();
         <form action="../../functions/adm/modificarInformacoes.php" method="POST" enctype="multipart/form-data">
             <div class="input-campo">
                 <p>*Informações Barbeiro</p>
-                <textarea name="informacoes_barbeiro" id="" cols="30" rows="10"></textarea>
+                <textarea name="informacoes_barbeiro" id="" cols="30" rows="10" value="" ><?php echo $informacoes['informacoes_barbeiro']; ?></textarea>
             </div>
             <div class="input-campo">
                 <p>*Informações Barbearia</p>
-                <textarea name="informacoes_barbearia" id="" cols="30" rows="10"></textarea>
+                <textarea name="informacoes_barbearia" id="" cols="30" rows="10" value="" ><?php echo $informacoes['informacoes_barbearia']; ?></textarea>
             </div>
             
             <div class="btns-edit">
