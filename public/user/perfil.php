@@ -4,6 +4,7 @@ include("../../config/conexao.php");
 session_start();
 require_once("../../functions/helpers.php");
 verificaSession("cliente");
+$id_funcionario = dadosFuncionario("id_funcionario");
 require_once("../../functions/agendamento.php");
 require_once("../../functions/user/perfil.php");
 
@@ -80,7 +81,7 @@ unset($_SESSION['erro']);
                         <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
                     </div>
                     <div class="btns-edit">
-                        <button id="salvar-edit" type="submit">Atualizar</button>
+                        <button type="submit">Atualizar</button>
                         <button id="cancelar-edit" type="button">Voltar</button>
                     </div>
                 </form>
@@ -94,19 +95,7 @@ unset($_SESSION['erro']);
                         echo '<div class="txt-sem-horarios"><p>SEM HORÁRIO MARCADO</p></div>';
                     } else {
                         foreach($dados as $agenda): ?>
-                            <dialog id="cancelar-horario-<?php echo $agenda['id_agenda']; ?>" class="cancelar-horario">
-                                <form action="" method="POST" >
-                                    <h2>Realmente deseja cancelar esse horário?</h2>
-                                    <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
-                                    <input type="hidden" name="acao" value="cancelado">
-                                    <div class="btn-cancel-horario">
-                                        <button type="submit" id="btn-cancelar">Desmarcar</button>
-                                        <button type="button" onclick="this.closest('dialog').close();" id="voltar">Voltar</button>
-                                    </div>
-                                </form>
-                            </dialog>
                             <div class="horario-caixa">
-                                <!-- Removi a classe hide -->
                                 <div class="desmarcar hide">
                                     <button class="btn-cancelar-horario" onclick="document.getElementById('cancelar-horario-<?php echo $agenda['id_agenda']; ?>').showModal();">
                                         <img src="../../assets/img/delete.png" alt="">
@@ -130,8 +119,6 @@ unset($_SESSION['erro']);
                                     </p>
                                 </div>
                             </div>
-
-                            <!-- Dialog deve estar DENTRO do loop, mas fora do horario-caixa -->
                             <dialog id="cancelar-horario-<?php echo $agenda['id_agenda']; ?>" class="desmarcar-div">
                                 <form action="" method="POST">
                                     <h2>Realmente deseja cancelar esse horário?</h2>
@@ -148,7 +135,6 @@ unset($_SESSION['erro']);
                     ?>
                 </div>
             </div>
-
         </div>
     </section>
     
