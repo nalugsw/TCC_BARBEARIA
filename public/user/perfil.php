@@ -85,43 +85,30 @@ unset($_SESSION['erro']);
                     </div>
                 </form>
             </dialog>
-
-            <dialog closed id="cancelar-horario">
-                <form action="../../functions/validaAgendamento.php" method="POST">
-                    <input type="hidden" name="id_agendamento" id="input-id-agendamento">
-                    <input type="hidden" name="acao" value="cancelar">
-                    <h2>Realmente deseja cancelar esse horário?</h2>
-                    <div class="btn-cancel-horario">
-                        <button type="submit" id="btn-cancelar">Desmarcar</button>
-                        <button id="btn-voltar" type="button">Voltar</button>
-                    </div>
-                </form>
-            </dialog>
             <div class="horarios-marcados">
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
                     <?php
-                    
                     $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo);
                     if (empty($dados)) {
                         echo '<div class="txt-sem-horarios"><p>SEM HORÁRIO MARCADO</p></div>';
                     } else {
-                        
                         foreach($dados as $agenda): ?>
                             <div class="horario-caixa">
+                                <!-- Removi a classe hide -->
                                 <div class="desmarcar hide">
-                                    <button class="btn-cancelar-horario" data-id="<?php echo $agenda['id_agenda']; ?>">
+                                    <button class="btn-cancelar-horario" onclick="document.getElementById('cancelar-horario-<?php echo $agenda['id_agenda']; ?>').showModal();">
                                         <img src="../../assets/img/delete.png" alt="">
                                     </button>
                                 </div>
-                                <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?> </p></div>
+                                <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?></p></div>
                                 <p> - </p>
                                 <div class="data-barbeiro"><p>
-                                    <?php   $dataNova = new DateTime($agenda['data']);
-                                            echo $dataNova->format('d/m');?> 
+                                    <?php $dataNova = new DateTime($agenda['data']);
+                                    echo $dataNova->format('d/m'); ?> 
                                 </p></div>
                                 <p> | </p>
-                                <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?> </p></div>
+                                <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?></p></div>
                                 <div class="horario-barbeiro">
                                     <p>
                                         <?php 
@@ -132,18 +119,28 @@ unset($_SESSION['erro']);
                                     </p>
                                 </div>
                             </div>
-                    <?php
-                        endforeach;
+
+                            <!-- Dialog deve estar DENTRO do loop, mas fora do horario-caixa -->
+                            <dialog id="cancelar-horario-<?php echo $agenda['id_agenda']; ?>" class="desmarcar-div">
+                                <form action="" method="POST">
+                                    <h2>Realmente deseja cancelar esse horário?</h2>
+                                    <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
+                                    <input type="hidden" name="acao" value="cancelado">
+                                    <div class="btn-cancel-horario">
+                                        <button type="submit" id="btn-cancelar">Desmarcar</button>
+                                        <button type="button" onclick="this.closest('dialog').close();" id="voltar">Voltar</button>
+                                    </div>
+                                </form>
+                            </dialog>
+                        <?php endforeach;
                     }
                     ?>
-                    
-
                 </div>
             </div>
-            
+
         </div>
     </section>
-
+    
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>
         <script src="../../assets/js/modal-cancelar-horario.js"></script>

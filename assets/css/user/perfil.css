@@ -177,12 +177,14 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
     padding: 0 5px;
     border-radius: 0 3px 3px 0;
     transition: 1s;
+    cursor: pointer;
 }
 .desmarcar button{
     background-color: transparent;
     border: none;
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 
 section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa:hover{
@@ -312,7 +314,7 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     margin-bottom: 15px;
 }
 
-#cancelar-horario{
+.desmarcar-div{
     align-content: center;
     border: none;
     overflow-x: hidden;
@@ -322,10 +324,10 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     width: 100vw;
 }
 
-#cancelar-horario::backdrop{
+.desmarcar-div::backdrop{
     background-color: #22222283;
 }
-#cancelar-horario form{
+.desmarcar-div form{
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -355,10 +357,21 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     border-radius: 3px;
     font-weight: 600;
     font-size: 15px;
+    cursor: pointer;
 }
-#cancelar-horario form h2{
+
+.btn-cancel-horario #voltar{
+    background-color: #929292;
+    color: #2c2c2c;
+    border: none;
+    padding: 5px 25px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+.desmarcar-div form h2{
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 15px;
 }
-

@@ -52,10 +52,7 @@ unset($_SESSION['erro']);
                                 <option value="<?= $servico['id_servico'] ?>"><?= $servico['nome'] ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <h2>Selecione o funcionario</h2>
-                       
                     </div>
-                    
                     <button type="submit">Agendar</button>
                 </form>
             </div>
