@@ -5,10 +5,12 @@ session_start();
 include("../../functions/helpers.php");
 verificaSession("cliente");
 include("../../functions/user/home.php");
+include("../../functions/informacoes.php");
 $produtos = mostrarServicos();
 $portfolio = mostrarImagemPortfolio();
 $funcionario = dadosFuncionario();
-
+$informacoes = buscarInformacoes();
+$endereco = $informacoes['endereco'];
 $mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
 $mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
 unset($_SESSION['sucesso']);
@@ -40,7 +42,7 @@ unset($_SESSION['erro']);
     <section class="home">
         <div class="container-home">
             <div class="profile-pic">
-                <img src="<?php echo $funcionario['foto']; ?>" alt="">
+                <img src="../../<?php echo $funcionario['foto']; ?>" alt="">
             </div>
             <div class="informacoes-home">
                 <h1><?php echo $funcionario['nome']; ?></h1>
@@ -52,8 +54,7 @@ unset($_SESSION['erro']);
                     <i class="bi bi-star"></i>
                 </div>
                 <div class="endereco-info">
-                    <p>Estrada Plinio Dias, n°171 -
-                        Itapecerica da Serra</p>
+                    <p><?php echo htmlspecialchars($endereco ?? 'Endereço não disponível'); ?></p>
                 </div>
             </div>
             <div class="marcar-horario">

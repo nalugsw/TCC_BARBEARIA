@@ -66,7 +66,6 @@ unset($_SESSION['erro']);
                         <p>*Foto do perfil</p>
                         <img id="preview" src="<?php echo "../../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
                         <div class="input-campo-edit">
-=====>>>>>>> main
                             <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
                             <label for="arquivo" class="custom-file-button">Escolha a foto</label>
                         </div>
@@ -86,17 +85,14 @@ unset($_SESSION['erro']);
                     </div>
                 </form>
             </dialog>
-            
             <div class="horarios-marcados">
                 <p>Horarios marcados</p>
                 <div class="caixa-horarios">
                     <?php
-                    
                     $dados = mostrarAgendamentos($_SESSION['id_usuario'], $pdo);
                     if (empty($dados)) {
                         echo '<div class="txt-sem-horarios"><p>SEM HORÁRIO MARCADO</p></div>';
                     } else {
-                        
                         foreach($dados as $agenda): ?>
                             <dialog id="cancelar-horario-<?php echo $agenda['id_agenda']; ?>" class="cancelar-horario">
                                 <form action="" method="POST" >
@@ -110,19 +106,20 @@ unset($_SESSION['erro']);
                                 </form>
                             </dialog>
                             <div class="horario-caixa">
+                                <!-- Removi a classe hide -->
                                 <div class="desmarcar hide">
-                                <button type="button" class="btn-cancelar-horario" onclick="document.getElementById('cancelar-horario-<?php echo $agenda['id_agenda']; ?>').showModal();">
-                                    <img src="../../assets/img/delete.png" alt="">
-                                </button>
+                                    <button class="btn-cancelar-horario" onclick="document.getElementById('cancelar-horario-<?php echo $agenda['id_agenda']; ?>').showModal();">
+                                        <img src="../../assets/img/delete.png" alt="">
+                                    </button>
                                 </div>
-                                <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?> </p></div>
+                                <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?></p></div>
                                 <p> - </p>
                                 <div class="data-barbeiro"><p>
-                                    <?php   $dataNova = new DateTime($agenda['data']);
-                                            echo $dataNova->format('d/m');?> 
+                                    <?php $dataNova = new DateTime($agenda['data']);
+                                    echo $dataNova->format('d/m'); ?> 
                                 </p></div>
                                 <p> | </p>
-                                <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?> </p></div>
+                                <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?></p></div>
                                 <div class="horario-barbeiro">
                                     <p>
                                         <?php 
@@ -133,18 +130,28 @@ unset($_SESSION['erro']);
                                     </p>
                                 </div>
                             </div>
-                    <?php
-                        endforeach;
+
+                            <!-- Dialog deve estar DENTRO do loop, mas fora do horario-caixa -->
+                            <dialog id="cancelar-horario-<?php echo $agenda['id_agenda']; ?>" class="desmarcar-div">
+                                <form action="" method="POST">
+                                    <h2>Realmente deseja cancelar esse horário?</h2>
+                                    <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
+                                    <input type="hidden" name="acao" value="cancelado">
+                                    <div class="btn-cancel-horario">
+                                        <button type="submit" id="btn-cancelar">Desmarcar</button>
+                                        <button type="button" onclick="this.closest('dialog').close();" id="voltar">Voltar</button>
+                                    </div>
+                                </form>
+                            </dialog>
+                        <?php endforeach;
                     }
                     ?>
-                    
-
                 </div>
             </div>
-            
+
         </div>
     </section>
-
+    
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>
         <script src="../../assets/js/modal-cancelar-horario.js"></script>
