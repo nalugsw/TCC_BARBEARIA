@@ -23,7 +23,7 @@ CREATE TABLE PRODUTO (
     nome varchar(30) not null,
     preco decimal(6,2) not null,
     foto varchar(255) null,
-    quantidade int(4) not null,
+    ativo int(1) not null,
     descricao varchar(50) null
 );
 
@@ -65,7 +65,8 @@ CREATE TABLE CLIENTE_SERVICO (
 CREATE TABLE INFORMACOES(
     id_informacoes int AUTO_INCREMENT PRIMARY KEY,
     informacoes_barbeiro TEXT NOT NULL,
-    informacoes_barbearia TEXT NOT NULL
+    informacoes_barbearia TEXT NOT NULL,
+    endereco VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE portfolio(
@@ -102,12 +103,15 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
     FOREIGN KEY (id_servico)
     REFERENCES SERVICO (id_servico);
 
-    INSERT INTO PRODUTO (nome, preco, foto, quantidade, descricao) VALUES
-('barbeador', 15.90,'uploads/produtos/barbeador.png', 100, 'barbeador de alta qualidade'),
-('creme', 15.90,'uploads/produtos/creme.png', 100, 'creme de alta qualidade'),
-('desodorante', 15.90,'uploads/produtos/desodorante.jpg', 100, 'desodorante de alta qualidade'),
-('pente', 15.90,'uploads/produtos/pente.png', 100, 'pente de alta qualidade'),
-('tesoura', 15.90,'uploads/produtos/tesoura.jpg', 100, 'tesoura de alta qualidade');
+    INSERT INTO PRODUTO (nome, preco, foto, ativo, descricao) VALUES
+('Desodorante', 15.90, 'desodorante.png', 1, 'Desodorante em spray de longa duração'),
+('Shampoo Hidratante', 25.50, 'shampoo_hidratante.png', 1, 'Shampoo para cabelos secos e danificados'),
+('Sabonete Líquido', 7.40, 'sabonete_liquido.png', 1, 'Sabonete líquido com extrato de aloe vera'),
+('Pasta de Dente', 6.30, 'pasta_de_dente.png', 1, 'Pasta de dente para proteção contra cáries'),
+('Creme para Mãos', 12.80, 'creme_para_maos.png', 1, 'Creme hidratante para as mãos'),
+('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 0, 'Condicionador para cabelos macios e brilhantes'),
+('Escova de Dente', 4.50, 'escova_de_dente.png', 1, 'Escova de dente com cerdas macias'),
+('Perfume Feminino', 89.90, 'perfume_feminino.png', 0, 'Perfume floral suave para o dia a dia');
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
 ('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte-masculino.png'),
@@ -121,9 +125,10 @@ INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES
 ('Pigmentação de Barba', 40.00, '00:35:00', 'uploads/servicos/pigmentacao_barba.jpg'),
 ('Relaxamento Capilar', 90.00, '01:45:00', 'uploads/servicos/relaxamento_capilar.jpg');
 
-INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia)values(
+INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia, endereco)values(
     'João é barbeiro há 12 anos. Começou em uma barbearia pequena, aprendendo com mestres da área. Ao longo dos anos, se especializou em cortes modernos, barba estilizada e acabamento perfeito. Já atendeu uma grande variedade de clientes, de estilos clássicos a mais ousados. Ele também fez cursos de coloração e penteados, sempre buscando inovar. João se destaca pela atenção aos detalhes e pela forma descontraída de fazer os clientes se sentirem à vontade. Hoje, tem sua própria barbearia, onde é referência na cidade.',
-    'Na Barbearia do João, tradição e estilo se encontram para oferecer a melhor experiência em cortes e barba. Nossa barbearia combina técnicas clássicas com as últimas tendências, garantindo um atendimento personalizado para cada cliente. Com anos de experiência, João e sua equipe são especialistas em cortes modernos, degradês impecáveis e barbas bem definidas.'
+    'Na Barbearia do João, tradição e estilo se encontram para oferecer a melhor experiência em cortes e barba. Nossa barbearia combina técnicas clássicas com as últimas tendências, garantindo um atendimento personalizado para cada cliente. Com anos de experiência, João e sua equipe são especialistas em cortes modernos, degradês impecáveis e barbas bem definidas.',
+    'Rua seilaoqueénois 994, Jardim sua Tia corna São paulo - SP'
 );
 
 
@@ -133,6 +138,9 @@ INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia)values(
 -- Inserir um funcionário exemplo
 INSERT INTO USUARIO (email, senha, status, tipo_usuario) VALUES
 ('barbeiro@example.com', SHA2('senha123', 256), 'verificado', 'funcionario');
+
+INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
+('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
 
 INSERT INTO PORTFOLIO (imagem) VALUES
 ('fotocabelo.jpg'),
@@ -156,9 +164,6 @@ CREATE TABLE dias_inativos (
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 ('admin@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'administrador');
 --SENHA: 123456789
-
-INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
-('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', 2);
 
 
 --INSERT DE USUARIO FUNCIONARIO PARA TESTE

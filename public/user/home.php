@@ -7,6 +7,7 @@ verificaSession("cliente");
 include("../../functions/user/home.php");
 $produtos = mostrarServicos();
 $portfolio = mostrarImagemPortfolio();
+$funcionario = dadosFuncionario();
 
 $mensagemSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso']: "";
 $mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro']: "";
@@ -39,10 +40,10 @@ unset($_SESSION['erro']);
     <section class="home">
         <div class="container-home">
             <div class="profile-pic">
-                <img src="../../assets/img/foto-barbeiro-tela-home.png" alt="">
+                <img src="<?php echo $funcionario['foto']; ?>" alt="">
             </div>
             <div class="informacoes-home">
-                <h1>João Pereira</h1>
+                <h1><?php echo $funcionario['nome']; ?></h1>
                 <div class="estrelas-icons">
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>

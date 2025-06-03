@@ -29,7 +29,7 @@ function dadosFuncionario(){
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-    return $stmt->fetchALL(PDO::FETCH_ASSOC);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 function dadosFuncionarioAdm($id_usuario){

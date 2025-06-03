@@ -44,17 +44,9 @@ $horariosAtuais = $stmt->fetchAll(PDO::FETCH_COLUMN);
                 <div>
                     <label for="intervalo">Grade:</label>
                     <select name="intervalo" id="intervalo">
-                        
-                        <option value="10" <?= $intervalo == 10 ? 'selected' : '' ?>>10 minutos</option>
-                        <option value="15" <?= $intervalo == 15 ? 'selected' : '' ?>>15 minutos</option>
-                        <option value="20" <?= $intervalo == 20 ? 'selected' : '' ?>>20 minutos</option>
-                        <option value="25" <?= $intervalo == 25 ? 'selected' : '' ?>>25 minutos</option>
                         <option value="30" <?= $intervalo == 30 ? 'selected' : '' ?>>30 minutos</option>
-                        <option value="35" <?= $intervalo == 35 ? 'selected' : '' ?>>35 minutos</option>
                         <option value="40" <?= $intervalo == 40 ? 'selected' : '' ?>>40 minutos</option>
-                        <option value="45" <?= $intervalo == 45 ? 'selected' : '' ?>>45 minutos</option>
                         <option value="50" <?= $intervalo == 50 ? 'selected' : '' ?>>50 minutos</option>
-                        <option value="55" <?= $intervalo == 55 ? 'selected' : '' ?>>55 minutos</option>
                         <option value="60" <?= $intervalo == 60 ? 'selected' : '' ?>>60 minutos</option>
                     </select>
                     <button type="submit">Aplicar</button>

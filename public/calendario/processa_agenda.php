@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id_cliente_servico = $pdo->lastInsertId();
 
         // Insere o agendamento
-        $stmt = $pdo->prepare("INSERT INTO agenda (data, horario, id_funcionario, id_cliente_servico, status_agenda) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$data, $hora, "1", $id_cliente_servico, "pendente"]);
+        $stmt = $pdo->prepare("INSERT INTO agenda (data, horario, id_cliente_servico, status_agenda) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$data, $hora, $id_cliente_servico, "pendente"]);
         header('Location: ../user/agenda.php?sucesso=1');
         exit();
     } catch (Exception $e) {
