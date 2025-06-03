@@ -224,17 +224,27 @@
         height: 100vh;
     }
 
-    #modal-edit{
-        width: 100%;
+    #modal-edit form p{
+        display: flex;
+        align-self: baseline;
     }
     #modal-edit form{
-        max-width: 300px;
-        margin: 0 auto;
+        width: 80%;
         display: flex;
         flex-direction: column;
     }
-    #modal-edit .input-campo{
-        margin: 15px 0 ;
+    #img-container{
+        width: 100%;
     }
-
+    #modal-edit .input-campo-edit{
+        width: 100%;
+        align-items: center;
+        text-align: left;
+    }
+    .input-campo-edit input{
+        width: 100%;
+    }
+    .btns-edit{
+        width: 100%;
+    }
 } 

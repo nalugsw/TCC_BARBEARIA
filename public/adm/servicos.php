@@ -30,16 +30,6 @@ $servicos = mostrarServicos();
     
     <?php include("../../views/nav-padrao-adm.php"); ?>
 
-    <dialog close id="modal-sair">
-        <div class="modal-sair">
-            <p>Realmente deseja sair?</p>
-            <div class="btns-modal">
-                <a href="../../functions/logout.php"><button class="btn-sair">Sair</button></a>
-                <button id="cancelar">Voltar</button>
-            </div>
-        </div>
-    </dialog>
-
     <main>
     <div class="perfil-container" id="container-cadastro">
         <form action="" method="post" enctype="multipart/form-data">

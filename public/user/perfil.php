@@ -64,23 +64,23 @@ unset($_SESSION['erro']);
                     
                     <div id="img-container">
                         <p>*Foto do perfil</p>
-                        <img id="preview" src="<?php echo "../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
-                        <div class="input-campo">
+                        <img id="preview" src="<?php echo "../../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
+                        <div class="input-campo-edit">
                             <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
                             <label for="arquivo" class="custom-file-button">Escolha a foto</label>
                         </div>
                     </div>
                     <?php $dados = dadosCliente($_SESSION['id_usuario']);?>
-                    <div class="input-campo">
+                    <div class="input-campo-edit">
                         <p>*Nome do perfil</p>
                         <input type="text" value="<?php echo $dados['nome']; ?>" name="nome">
                     </div>
-                    <div class="input-campo">
+                    <div class="input-campo-edit">
                         <p>*Numero do perfil</p>
                         <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
                     </div>
                     <div class="btns-edit">
-                        <button type="submit">Atualizar</button>
+                        <button id="salvar-edit" type="submit">Atualizar</button>
                         <button id="cancelar-edit" type="button">Voltar</button>
                     </div>
                 </form>
