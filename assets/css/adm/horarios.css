@@ -346,3 +346,22 @@ section{
     margin-bottom: 15px;
 }
 
+.sem-horarios{
+    box-shadow: 0px 2px 1px 0px rgba(35, 35, 35, 11%);
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    padding: 50px 14px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    font-weight: 700;
+    font-size: 20px;
+    width: 700px;
+    border-radius: 3px;
+    gap: 11px;
+    
+    /* Estado inicial */
+    overflow: hidden;
+  
+}

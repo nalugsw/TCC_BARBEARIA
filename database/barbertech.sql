@@ -23,8 +23,7 @@ CREATE TABLE PRODUTO (
     nome varchar(30) not null,
     preco decimal(6,2) not null,
     foto varchar(255) null,
-    #status para definir como ativo ou inativo
-    status_produto varchar(10) not null,
+    status_produto enum('Ativo', 'Inativo') not null,
     descricao varchar(50) null
 );
 
@@ -109,15 +108,15 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
     FOREIGN KEY (id_servico)
     REFERENCES SERVICO (id_servico);
 
-    INSERT INTO PRODUTO (nome, preco, foto, status_produto, descricao) VALUES
-('Desodorante', 15.90, 'desodorante.png', 'ativo', 'Desodorante em spray de longa duração'),
-('Shampoo Hidratante', 25.50, 'shampoo_hidratante.png', 'ativo', 'Shampoo para cabelos secos e danificados'),
-('Sabonete Líquido', 7.40, 'sabonete_liquido.png', 'ativo', 'Sabonete líquido com extrato de aloe vera'),
-('Pasta de Dente', 6.30, 'pasta_de_dente.png', 'ativo', 'Pasta de dente para proteção contra cáries'),
-('Creme para Mãos', 12.80, 'creme_para_maos.png', 'ativo', 'Creme hidratante para as mãos'),
-('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 'inativo', 'Condicionador para cabelos macios e brilhantes'),
-('Escova de Dente', 4.50, 'escova_de_dente.png', 'ativo', 'Escova de dente com cerdas macias'),
-('Perfume Feminino', 89.90, 'perfume_feminino.png', 'inativo', 'Perfume floral suave para o dia a dia');
+    INSERT INTO PRODUTO (nome, preco, foto, ativo, descricao) VALUES
+('Desodorante', 15.90, 'desodorante.png', 1, 'Desodorante em spray de longa duração'),
+('Shampoo Hidratante', 25.50, 'shampoo_hidratante.png', 1, 'Shampoo para cabelos secos e danificados'),
+('Sabonete Líquido', 7.40, 'sabonete_liquido.png', 1, 'Sabonete líquido com extrato de aloe vera'),
+('Pasta de Dente', 6.30, 'pasta_de_dente.png', 1, 'Pasta de dente para proteção contra cáries'),
+('Creme para Mãos', 12.80, 'creme_para_maos.png', 1, 'Creme hidratante para as mãos'),
+('Condicionador Nutritivo', 19.90, 'condicionador_nutritivo.png', 0, 'Condicionador para cabelos macios e brilhantes'),
+('Escova de Dente', 4.50, 'escova_de_dente.png', 1, 'Escova de dente com cerdas macias'),
+('Perfume Feminino', 89.90, 'perfume_feminino.png', 0, 'Perfume floral suave para o dia a dia');
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
 ('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte-masculino.png'),
