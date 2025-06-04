@@ -12,6 +12,7 @@ function buscaImagemUsuario($id_usuario){
     if ($imagem && !empty($imagem['foto'])) {
         return $imagem['foto'];
     }
+}
 
     $sql = "SELECT foto FROM FUNCIONARIO WHERE id_usuario = ?";
     $stmt = $pdo->prepare($sql);
@@ -20,8 +21,7 @@ function buscaImagemUsuario($id_usuario){
 
     if ($imagem && !empty($imagem['foto'])) {
         return $imagem['foto']; 
-    }
-    return "../../assets/img/avatar-padrao.jpg"; // Retorna a imagem padrão se não tiver nenhuma de nenhum cliente ou funcionario
+
 }
 
 ?>

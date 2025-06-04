@@ -44,7 +44,7 @@ if($total_reg > 0){
     $sql = "INSERT INTO cliente(nome, foto, numero_telefone, id_usuario) values(:nome, :foto, :numero_telefone, :id_usuario)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":nome", $nome);
-    $stmt->bindValue(":foto", "assets/img/avatar-padrao.png"); 
+    $stmt->bindValue(":foto", "assets/img/avatar-padrao.jpg"); 
     $stmt->bindParam(":numero_telefone", $numero_telefone);
     $stmt->bindParam(":id_usuario", $id_usuario);
     $cadastro = $stmt->execute();

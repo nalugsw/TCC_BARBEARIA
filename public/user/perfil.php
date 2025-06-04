@@ -38,7 +38,7 @@ unset($_SESSION['erro']);
     <section class="perfil">
         <div class="container-perfil">
             <div class="foto-perfil">
-            <div class="profile-pic"><img src="<?php echo buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
+            <div class="profile-pic"><img src="../../<?php echo buscaImagemUsuario($_SESSION['id_usuario']); ?>" alt=""></div>
                 <div class="btn-alterar-foto">
                     <span class="material-symbols-outlined btn-edit" id="btn-edit-foto">edit</span>
                 </div>
@@ -120,10 +120,10 @@ unset($_SESSION['erro']);
                                 </div>
                             </div>
                             <dialog id="cancelar-horario-<?php echo $agenda['id_agenda']; ?>" class="desmarcar-div">
-                                <form action="" method="POST">
+                                <form action="../../functions/validaAgendamento.php" method="POST">
                                     <h2>Realmente deseja cancelar esse horário?</h2>
                                     <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
-                                    <input type="hidden" name="acao" value="cancelado">
+                                    <input type="hidden" name="acao" value="cancelado_cliente">
                                     <div class="btn-cancel-horario">
                                         <button type="submit" id="btn-cancelar">Desmarcar</button>
                                         <button type="button" onclick="this.closest('dialog').close();" id="voltar">Voltar</button>

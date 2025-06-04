@@ -32,7 +32,7 @@ if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
     // }
 
     $nome_foto = $id_usuario . "." . $extensao;
-    $novo_caminho_foto = "../../uploads/fotos/" . $nome_foto;
+    $novo_caminho_foto = "uploads/fotos/" . $nome_foto;
     
     if (file_exists($caminho_atual_foto) && 
         $caminho_atual_foto != $novo_caminho_foto &&

@@ -52,6 +52,7 @@ unset($_SESSION['erro']);
                                 <option value="<?= $servico['id_servico'] ?>"><?= $servico['nome'] ?></option>
                             <?php endforeach; ?>
                         </select>
+                        <input type="hidden" id="idFuncionario" name="id_funcionario" value="<?php echo $funcionarios['id_funcionario']; ?>">
                     </div>
                     <button type="submit">Agendar</button>
                 </form>

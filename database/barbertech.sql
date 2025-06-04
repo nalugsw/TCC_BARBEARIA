@@ -33,7 +33,6 @@ CREATE TABLE FUNCIONARIO (
     numero_telefone varchar(11) not null UNIQUE,
     biografia varchar(255) null,
     foto varchar(255) null,
-    portfolio varchar(255) null,
     id_usuario int
 );
 
@@ -77,6 +76,12 @@ CREATE TABLE portfolio(
 CREATE TABLE horarios_disponiveis (
   id INT AUTO_INCREMENT PRIMARY KEY,
   horario TIME NOT NULL
+);
+
+CREATE TABLE dias_inativos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_inativa DATE NOT NULL UNIQUE,
+    motivo VARCHAR(255)
 );
 
 ALTER TABLE CLIENTE ADD CONSTRAINT fk_id_usuario
@@ -153,12 +158,6 @@ INSERT INTO PORTFOLIO (imagem) VALUES
 ('fotocabelo8.jpg'),
 ('fotocabelo9.jpg'),
 ('fotocabelo10.jpg');
-
-CREATE TABLE dias_inativos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    data_inativa DATE NOT NULL UNIQUE,
-    motivo VARCHAR(255)
-);
 
 --INSERT DE USUARIO ADMIN PARA TESTE
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
