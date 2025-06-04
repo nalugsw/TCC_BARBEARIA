@@ -69,6 +69,7 @@ unset($_SESSION['erro']);
                         <div class="input-campo-edit">
                             <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
                             <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                        <button type="submit" name="apagar_foto" value="1">Apagar</button>
                         </div>
                     </div>
                     <?php $dados = dadosCliente($_SESSION['id_usuario']);?>

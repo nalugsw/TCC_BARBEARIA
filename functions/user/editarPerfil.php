@@ -16,6 +16,17 @@ $telefone = $_POST['telefone'];
 
 $caminho_atual_foto = buscaImagemUsuario($id_usuario);
 $caminho_foto = $caminho_atual_foto;
+$foto_padrao = "uploads/fotos/avatar-padrao.jpg"; // Altere para o caminho real da imagem padrão
+
+if (isset($_POST['apagar_foto'])) {
+    // Apaga a foto antiga se não for a padrão
+    if (file_exists($caminho_atual_foto) && strpos($caminho_atual_foto, 'avatar-padrao.jpg') === false) {
+        unlink($caminho_atual_foto);
+    }
+
+    // Atualiza o caminho da foto para o padrão
+    $caminho_foto = $foto_padrao;
+}
 
 if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
     $foto = $_FILES['foto'];
