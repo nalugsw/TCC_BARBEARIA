@@ -69,67 +69,73 @@ uksort($agendamentosPorData, function($a, $b) {
             </div>
         </div>
         <section>
-            <div class="horaios-marcados">
-                <?php foreach ($agendamentosPorData as $data => $agendamentosDoDia): ?>
-                    <div class="cliente-hora">
-                        <div class="dia-servicos">
-                            <h2><?php echo getDiaSemana($data) . ' - ' . date('d/m/Y', strtotime($data)); ?></h2>
-                        </div>
-                        
-                        <?php foreach($agendamentosDoDia as $agenda): ?>
-                                <div class="servico-marcado">
-                                    <div class="foto-cliente">
-                                        <img src="../../<?php echo $agenda['foto_cliente']; ?>" alt="foto cliente">
-                                        <form action="../../functions/validaAgendamento.php" method="POST">
-                                            <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>" >
-                                            <input type="hidden" name="acao" value="finalizado">
-                                            <button type="submit">Finalizar</button>
-                                        </form>
-                                    </div>
+    <div class="horaios-marcados">
+        <?php if (empty($agendamentosPorData)): ?>
+            <div class="sem-horarios">
+                <p>Sem horários marcados</p>
+            </div>
+        <?php else: ?>
+            <?php foreach ($agendamentosPorData as $data => $agendamentosDoDia): ?>
+                <div class="cliente-hora">
+                    <div class="dia-servicos">
+                        <h2><?php echo getDiaSemana($data) . ' - ' . date('d/m/Y', strtotime($data)); ?></h2>
+                    </div>
+                    
+                    <?php foreach($agendamentosDoDia as $agenda): ?>
+                        <div class="servico-marcado">
+                            <div class="foto-cliente">
+                                <img src="../../<?php echo $agenda['foto_cliente']; ?>" alt="foto cliente">
+                                <form action="../../functions/validaAgendamento.php" method="POST">
+                                    <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>" >
+                                    <input type="hidden" name="acao" value="finalizado">
+                                    <button type="submit">Finalizar</button>
+                                </form>
+                            </div>
 
-                                    <div class="nome-cliente">
-                                        <h3>Nome</h3>
-                                        <input type="text" disabled placeholder="<?php echo $agenda['nome_cliente']; ?>">
-                                    </div>
+                            <div class="nome-cliente">
+                                <h3>Nome</h3>
+                                <input type="text" disabled placeholder="<?php echo $agenda['nome_cliente']; ?>">
+                            </div>
 
-                                    <div class="numero-cliente">
-                                        <h3>Telefone</h3>
-                                        <input type="text" value="<?php echo $agenda['numero_telefone']; ?>" class="numero-telefone" readonly>
-                                        <button class="copyButton"><img src="../../assets/img/icone-copy.png" alt="Copiar"></button>
-                                        <button class="whatsBtn"><img src="../../assets/img/icone-whatsapp.png" alt="WhatsApp"></button>
-                                    </div>
+                            <div class="numero-cliente">
+                                <h3>Telefone</h3>
+                                <input type="text" value="<?php echo $agenda['numero_telefone']; ?>" class="numero-telefone" readonly>
+                                <button class="copyButton"><img src="../../assets/img/icone-copy.png" alt="Copiar"></button>
+                                <button class="whatsBtn"><img src="../../assets/img/icone-whatsapp.png" alt="WhatsApp"></button>
+                            </div>
 
-                                    <div class="servico-cliente">
-                                        <h3>Serviço</h3>
-                                        <input type="text" disabled placeholder="<?php echo $agenda['servico']; ?>">
-                                    </div>
+                            <div class="servico-cliente">
+                                <h3>Serviço</h3>
+                                <input type="text" disabled placeholder="<?php echo $agenda['servico']; ?>">
+                            </div>
 
-                                    <div class="horario-cliente">
-                                        <h3>Horário</h3>
-                                        <input type="text" disabled placeholder="<?php echo date('H:i', strtotime($agenda['horario'])); ?>">
-                                        <button type="button" class="btn-cancelar-horario" onclick="this.nextElementSibling.showModal();">
-                                            <p>Desmarcar Horario</p>
-                                            <span class="material-symbols-outlined">delete</span>
-                                        </button>
+                            <div class="horario-cliente">
+                                <h3>Horário</h3>
+                                <input type="text" disabled placeholder="<?php echo date('H:i', strtotime($agenda['horario'])); ?>">
+                                <button type="button" class="btn-cancelar-horario" onclick="this.nextElementSibling.showModal();">
+                                    <p>Desmarcar Horario</p>
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
 
-                                        <dialog id="cancelar-horario">
-                                            <form action="../../functions/validaAgendamento.php" method="POST" >
-                                                <h2>Realmente deseja cancelar esse horário?</h2>
-                                                <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
-                                                <input type="hidden" name="acao" value="cancelado">
-                                                <div class="btn-cancel-horario">
-                                                    <button type="submit" id="btn-cancelar">Desmarcar</button>
-                                                    <button type="button" onclick="this.closest('dialog').close();" id="voltar">Voltar</button>
-                                                </div>
-                                            </form>
-                                        </dialog>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
+                                <dialog id="cancelar-horario">
+                                    <form action="../../functions/validaAgendamento.php" method="POST" >
+                                        <h2>Realmente deseja cancelar esse horário?</h2>
+                                        <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
+                                        <input type="hidden" name="acao" value="cancelado">
+                                        <div class="btn-cancel-horario">
+                                            <button type="submit" id="btn-cancelar">Desmarcar</button>
+                                            <button type="button" onclick="this.closest('dialog').close();" id="voltar">Voltar</button>
+                                        </div>
+                                    </form>
+                                </dialog>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
-            </section>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</section>
     </main>
     <script src="../../assets/js/modal-cancelar-horario.js"></script>
     <script src="../../assets/js/msg-whatsap.js"></script>
