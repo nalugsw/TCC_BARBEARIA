@@ -98,7 +98,7 @@ section.produtos .modal{
     display: none;
 }
 
-#modal-edit{
+.modal-edicao{
     align-content: center;
     border: none;
     overflow-x: hidden;
@@ -107,7 +107,7 @@ section.produtos .modal{
     height: 100%;
     width: 100%;
 }
-#modal-edit form{
+.modal-edicao form{
     background-color: #f9f9f9;
     display: flex;
     width: 50%;
@@ -118,30 +118,30 @@ section.produtos .modal{
     flex-direction: column;
     position: relative;
 }
-#modal-edit::backdrop{
+.modal-edicaot::backdrop{
     background-color: #23232383;
 }
-#modal-edit p{
+.modal-edicaot p{
     font-size: 15px;
     color: #232323;
     font-weight: bold;
     
 }
-#modal-edit .input-campo {
+.modal-edicao .input-campo {
     margin-bottom: 5px;
 }
-#modal-edit .input-campo input{
+.modal-edicao .input-campo input{
     padding: 3px 5px ;
     width: 100%;
 }
-#modal-edit .input-campo:last-child input{
+.modal-edicao.input-campo:last-child input{
     width: 48%;
 }
-#modal-edit .input-campo p{
+.modal-edicao.input-campo p{
     margin-bottom: 5px;
 }
 
-#modal-edit .input-campo textarea{
+.modal-edicao .input-campo textarea{
     padding: 5px 20px 3px 5px;
     width: 100%;
     height: 70px;
@@ -163,7 +163,7 @@ section.produtos .modal{
     position: absolute;
 }
 
-#modal-edit .btns-modal{
+.modal-edicao .btns-modal{
     height: 100%;
 }
 #img-container{
@@ -189,7 +189,7 @@ section.produtos .modal{
     align-items: center;
     justify-content: center;
 }
-#preview{
+.preview{
     border: solid 1px rgb(136, 136, 136);
     width:100% ;
     height: 100%;
@@ -197,7 +197,7 @@ section.produtos .modal{
     margin: 0 auto;
     object-fit: cover;
 }
-.btn-edit{
+.btn-edit button{
     position: absolute;
     right: 0;
     bottom: 10px;
@@ -209,11 +209,9 @@ section.produtos .modal{
     align-items: center;
     color: #f4f4f4;
     border: #232323 solid 3px;
-}
-.btn-edit{
     cursor: pointer;
 }
-#cancelar-edit{
+.cancelar-edit{
     border-radius: 100%;
     position: absolute;
     right: 5px;
@@ -228,15 +226,15 @@ section.produtos .modal{
     align-items: center;
     cursor: pointer;
 }
-#cancelar-edit:hover{
+.cancelar-edit:hover{
     background-color: #585858;
 }
 
-#cancelar-edit img{
+.cancelar-edit img{
     border-radius: 100%;
     width: 20px;
 }
-#btn-atualizar{
+.btn-atualizar{
     width: 49%;
     padding: 5px 0;
     background-color: #0A6A2B ;
@@ -245,9 +243,10 @@ section.produtos .modal{
     border-radius: 3px;
     font-weight: 500;
     cursor: pointer;
+    margin-top: 10px;
 }
 
-#btn-atualizar:hover{
+.btn-atualizar:hover{
     background-color: #07461d ;
 }
 .btn-addProduto{
@@ -266,4 +265,67 @@ section.produtos .modal{
 }
 .btn-addProduto button img{
     width: 50px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000a3;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-container #popup-descricao{
+    width: 308px;
+    font-size: 11px;
+    text-align: left;
+    font-weight: 800;
+    color: #3d3d3d;
+}
+
+.popup-container {
+    background: white;
+    padding: 30px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.popup-container p{
+    font-weight: bold;
+}
+
+.popup-container img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    color: #B3B6BC;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.btn-fechar:hover {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    color: #6b8fdb;
+    font-size: 20px;
 }
