@@ -108,15 +108,15 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
     FOREIGN KEY (id_servico)
     REFERENCES SERVICO (id_servico);
 
-    INSERT INTO PRODUTO (nome, preco, foto, ativo, descricao) VALUES
-('Desodorante', 15.90, 'uploads/produtos/desodorante.jpg', 1, 'Desodorante em spray de longa duração'),
-('Shampoo Hidratante', 25.50, 'uploads/produtos/shampoo.png', 1, 'Shampoo para cabelos secos e danificados'),
-('creme nutritivo', 7.40, 'uploads/produtos/creme.png', 1, 'creme com extrato de aloe vera'),
-('barbeador profissional', 6.30, 'uploads/produtos/barbeador.png', 1, 'lamina de corte profissional'),
-('minoxidil', 12.80, 'uploads/produtos/minoxidil.jpeg', 1, 'super minoxidil para barba e cabelo '),
-('kit barba', 19.90, 'uploads/produtos/kitBarba.jpeg', 0, 'kit util para cuidados da barba'),
-('tesoura sem ponta', 4.50, 'uploads/produtos/tesoura.jpg', 1, 'tesoura sem ponta para cortes simples'),
-('pente simples', 89.90, 'uploads/produtos/pente.png', 0, 'pente de alta qualidade');
+    INSERT INTO PRODUTO (nome, preco, foto, status_produto, descricao) VALUES
+('Desodorante', 15.90, 'uploads/produtos/desodorante.jpg', 'Ativo', 'Desodorante em spray de longa duração'),
+('Shampoo Hidratante', 25.50, 'uploads/produtos/shampoo.png', 'Ativo', 'Shampoo para cabelos secos e danificados'),
+('creme nutritivo', 7.40, 'uploads/produtos/creme.png', 'Ativo', 'creme com extrato de aloe vera'),
+('barbeador profissional', 6.30, 'uploads/produtos/barbeador.png','Ativo', 'lamina de corte profissional'),
+('minoxidil', 12.80, 'uploads/produtos/minoxidil.jpeg', 'Ativo', 'super minoxidil para barba e cabelo '),
+('kit barba', 19.90, 'uploads/produtos/kitBarba.jpeg', 'Inativo', 'kit util para cuidados da barba'),
+('tesoura sem ponta', 4.50, 'uploads/produtos/tesoura.jpg', 'Ativo', 'tesoura sem ponta para cortes simples'),
+('pente simples', 89.90, 'uploads/produtos/pente.png', 'Inativo', 'pente de alta qualidade');
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
 ('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte-masculino.png'),

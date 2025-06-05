@@ -419,3 +419,13 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     font-weight: 300;
     margin-bottom: 15px;
 }
+.item-produto.inativo {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    pointer-events: none; /* opcional, impede interações */
+}
+
+.item-produto.inativo .btn-edit,
+.item-produto.inativo .estoque {
+    pointer-events: auto; /* reativa os botões de estoque e edição */
+}

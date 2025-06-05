@@ -339,3 +339,47 @@ section.produtos .modal[open] {
 #btn-cadastrar:hover{
     background-color: #07461d;
 }
+.estoque{
+    position: absolute;
+    right: 0;
+    display: flex;
+    box-shadow: 1px 1px 4px #181f1886 ;
+    border-radius: 50%;
+    
+}
+.estoque button{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+}
+.estoque button img{
+    width: 19px;
+}
+.estoque .btn-ativo{
+    border-radius: 20px 0 0 20px;
+    background-color:#0A6A2B;
+    cursor: pointer;
+    transition: 0.05s;
+}
+
+.estoque .btn-ativo:hover{
+    background-color:#074b1f;
+    scale: 1.1;
+}
+.estoque .btn-inativo{
+    border-radius: 0 20px 20px 0;
+    background-color: #bb3838;
+    cursor: pointer;
+    transition: 0.05s;
+}
+
+.estoque .btn-inativo:hover{
+    background-color: #761c1c;
+    scale: 1.1;
+}
+.item-produto.inativo {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}

@@ -37,7 +37,15 @@ $produtos = mostrarProdutos();
         </div>
         <div class="grid-catalogo-produtos">
             <?php foreach($produtos as $produto): ?>
-                <div class="item-produto" data-titulo="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" data-descricao="<?php echo $produto['descricao']; ?>">
+                <div class="item-produto <?php echo "item-" . ($produto['status_produto'] == 'inativo') ? 'ativo' : ''; ?>" data-titulo="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" data-descricao="<?php echo $produto['descricao']; ?>" value="<?php echo $produto['status_produto']; ?>">
+                    <div class="estoque" >
+                        <button class="btn-ativo">
+                            <img src="../../assets/img/icone-add.png" alt="ativo">
+                        </button>
+                        <button class="btn-inativo">
+                            <img src="../../assets/img/icone-remove.png" alt="">
+                        </button>
+                    </div>
                     <div class="img-produto">
                         <img src="<?php echo "../../" . $produto['foto']; ?>" alt="produto">
                     </div>
@@ -183,7 +191,25 @@ function loadFile(event, previewId = 'preview') {
         }
     }
 }
+    document.querySelectorAll('.item-produto').forEach(function(produto) {
+        const btnAtivo = produto.querySelector('.btn-ativo');
+        const btnInativo = produto.querySelector('.btn-inativo');
+
+        btnAtivo.addEventListener('click', function() {
+            produto.classList.remove('inativo');
+            produto.classList.add('ativo');
+            // Aqui você pode também fazer um fetch/AJAX para atualizar o status no backend
+        });
+
+        btnInativo.addEventListener('click', function() {
+            
+            produto.classList.remove('ativo');
+            produto.classList.add('inativo');
+            // Aqui você pode também fazer um fetch/AJAX para atualizar o status no backend
+        });
+    });
 </script>
+
     
 </body>
 </html>
