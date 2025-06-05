@@ -23,7 +23,7 @@ CREATE TABLE PRODUTO (
     nome varchar(30) not null,
     preco decimal(6,2) not null,
     foto varchar(255) null,
-    ativo int(1) not null,
+    status_produto enum('Ativo', 'Inativo') not null,
     descricao varchar(50) null
 );
 
