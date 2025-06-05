@@ -32,8 +32,7 @@ $servicos = mostrarServicos();
 
     <main>
     <div class="perfil-container" id="container-cadastro">
-        <form action="" method="post" enctype="multipart/form-data">
-            <!-- Seu formulário de cadastro atual -->
+        <form action="../../functions/adm/servicos.php" method="post" enctype="multipart/form-data">
             <div class="info">
                 <div class="dados-perfil">
                     <p>Coloque a imagem do serviço</p>
@@ -43,6 +42,7 @@ $servicos = mostrarServicos();
                         <label for="arquivo" class="custom-file-button">Escolha a foto</label>
                         <img id="preview" src="">
                     </div>
+                    <input type="hidden" name="acao" value="cadastro" >
                 </div>
                 <div class="dados-perfil">
                     <div>
@@ -66,12 +66,13 @@ $servicos = mostrarServicos();
     </div>
     
     <div class="perfil-container" id="container-edicao" style="display: none;">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="../../functions/adm/servicos.php" method="post" enctype="multipart/form-data">
             <input type="hidden" id="servico-id" name="id">
             <div class="info">
                 <div class="dados-perfil">
                     <p>Coloque a imagem do serviço</p>
                     
+                    <input type="hidden" id="id-servico" name="id" value="<?php echo $servicos['id_servico'];  ?>" >
                     
                     <div class="input-campo">
                         <input type="file" id="arquivo-edicao" class="input-file" name="foto" accept="image/*" onchange="loadFileEdicao(event)">
