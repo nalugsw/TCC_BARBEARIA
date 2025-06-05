@@ -317,13 +317,13 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     margin-bottom: 10px;
 }
 .input-campo-edit{
-    height: 100%;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 .input-campo-edit input{
     padding: 5px 10px;
+    width: 90%;
 }
 .btns-edit{
     display: flex;
@@ -350,6 +350,10 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
     cursor: pointer;
     background-color: #265727;
     color: #edffed;
+}
+.input-campo-edit #apagar-foto{
+    margin-left: 10px;
+    cursor: pointer;
 }
 .desmarcar-div{
     align-content: center;

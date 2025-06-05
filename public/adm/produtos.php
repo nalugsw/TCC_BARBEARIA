@@ -84,75 +84,106 @@ $produtos = mostrarProdutos();
                 </dialog>
             <?php endforeach; ?>
         </div>
-        <div id="popup" class="popup">
-            <div class="popup-container">
-                <span class="btn-fechar"><i class="bi bi-x-circle-fill"></i></span>
-                <img id="popup-img" src="" alt="Imagem do Produto">
-                <h2 id="popup-titulo"></h2>
-                <p id="popup-preco"></p>
-                <br>
-                <p>Descrição</p>
-                <br>
-                <p id="popup-descricao"></p>
-            </div>
-        </div>
-        <dialog closed id="modal-create" class="modal">
+        <dialog  id="modal-create" class="modal">
             <form action="" method="POST" enctype="multipart/form-data">
-                <button id="cancelar-edit" type="button"><img src="../../assets/img/iconeClose.png" alt=""></button>
+                <button id="cancelar-edit" type="button" class="btn-fechar-modal">
+                    <img src="../../assets/img/iconeClose.png" alt="Fechar modal">
+                </button>
+                
                 <div id="img-container">
-                    <p>*Foto do perfil</p>
+                    <p>*Foto do produto</p>  
                     <div class="input-campo">
-                        <img id="preview" src="" >
-                        <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                        <img id="preview" class="preview" src="" >
+                        <input type="file" id="arquivo" class="input-file" name="foto" accept="image/*" onchange="loadFile(event)">
                         <label for="arquivo" class="custom-file-button">Escolha a foto</label>
                     </div>
                 </div>
+                
                 <div class="input-campo">
-                    <p>*Nome do prodto</p>
-                    <input type="text" value="" name="nome">
+                    <p>*Nome do produto</p>  
+                    <input type="text" name="nome" required>
                 </div>
+                
                 <div class="input-campo">
-                    <p>*descrição</p>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <p>*Descrição</p>
+                    <textarea name="descricao" cols="30" rows="10" required></textarea> 
                 </div>
+                
                 <div class="input-campo">
-                    <p>*preço item</p>
-                    <input type="number" step="0.01" min="0" id="preco-servico" name="valor" placeholder="R$00,00">
-                    <button type="submit" id="btn-atualizar">Atualizar</button>
-                </div>
+                    <p>*Preço do item</p>
+                    <input type="number" step="0.01" min="0" name="valor" placeholder="R$00,00" required>
+                    <button type="submit" id="btn-cadastrar">Cadastrar</button> 
                 </div>
             </form>
         </dialog>
-        <div class="btn-addProduto btn-edit">
-            <button><img src="../../assets/img/icone-add.png" alt=""></button>
-        </div>
+
+    
+            <button id="btn-abrir-modal" class="btn-addProduto">
+                <img src="../../assets/img/icone-add.png" alt="Adicionar produto">
+            </button>
+
     </section>
 </main>
-    <script>
-    function abrirModalEdicao(modalId, nome, descricao, preco, foto) {
-        const modal = document.getElementById(modalId);
-        
-        // Preenche os campos do modal
-        modal.querySelector('input[name="nome"]').value = nome;
-        modal.querySelector('textarea[name="descricao"]').value = descricao;
-        modal.querySelector('input[name="valor"]').value = preco;
-        modal.querySelector('img[id^="preview-"]').src = foto;
-        
-        // Abre o modal
-        modal.showModal();
+<script>
+// Funções para o modal de criação
+document.addEventListener('DOMContentLoaded', function() {
+    // Modal de criação
+    const modalCreate = document.getElementById('modal-create');
+    const btnAbrirModal = document.getElementById('btn-abrir-modal');
+    const btnFecharModal = document.getElementById('cancelar-edit');
+    
+    // Abrir modal de criação
+    if(btnAbrirModal && modalCreate) {
+        btnAbrirModal.addEventListener('click', () => {
+            console.log('Abrindo modal de criação'); // Debug
+            modalCreate.showModal();
+        });
     }
+    
+    // Fechar modal de criação
+    if(btnFecharModal) {
+        btnFecharModal.addEventListener('click', () => {
+            modalCreate.close();
+        });
+    }
+    
+    // Fechar ao clicar fora (para todos os modais)
+    document.querySelectorAll('dialog').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if(e.target === modal) {
+                modal.close();
+            }
+        });
+    });
+});
 
-    function loadFile(event, previewId) {
-        const output = document.getElementById(previewId);
+// Função para edição (já existente)
+function abrirModalEdicao(modalId, nome, descricao, preco, foto) {
+    const modal = document.getElementById(modalId);
+    
+    modal.querySelector('input[name="nome"]').value = nome;
+    modal.querySelector('textarea[name="descricao"]').value = descricao;
+    modal.querySelector('input[name="valor"]').value = preco;
+    
+    // Atualiza a pré-visualização da imagem
+    const previewId = 'preview-' + modalId.split('-').pop();
+    const preview = document.getElementById(previewId);
+    if(preview) preview.src = foto;
+    
+    modal.showModal();
+}
+
+// Função para pré-visualização de imagem (atualizada)
+function loadFile(event, previewId = 'preview') {
+    const output = document.getElementById(previewId);
+    if(output && event.target.files[0]) {
         output.src = URL.createObjectURL(event.target.files[0]);
         output.onload = function() {
             URL.revokeObjectURL(output.src);
         }
     }
-    </script>
+}
+</script>
     
-    <script src="../../assets/js/popup-produtos.js"></script>
-    <script src="../../assets/js/modal-perfilEdit.js"></script>
-    <script src="../../assets/js/preview-img.js"></script>
 </body>
 </html>

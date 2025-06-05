@@ -69,7 +69,7 @@ unset($_SESSION['erro']);
                         <div class="input-campo-edit">
                             <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
                             <label for="arquivo" class="custom-file-button">Escolha a foto</label>
-                        <button type="submit" name="apagar_foto" value="1">Apagar</button>
+                            <button type="submit" name="apagar_foto" id="apagar-foto" value="1">Apagar</button>
                         </div>
                     </div>
                     <?php $dados = dadosCliente($_SESSION['id_usuario']);?>
@@ -82,7 +82,7 @@ unset($_SESSION['erro']);
                         <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
                     </div>
                     <div class="btns-edit">
-                        <button type="submit">Atualizar</button>
+                        <button id="salvar-edit" type="submit">Atualizar</button>
                         <button id="cancelar-edit" type="button">Voltar</button>
                     </div>
                 </form>

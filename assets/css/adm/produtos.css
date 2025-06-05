@@ -94,8 +94,8 @@ section.produtos .grid-catalogo-produtos .item-produto .txt-produto p{
     font-weight: 200;
 }
 
-section.produtos .modal{
-    display: none;
+section.produtos .modal[open] {
+    display: block;
 }
 
 .modal-edicao{
@@ -117,13 +117,14 @@ section.produtos .modal{
     padding: 20px;
     flex-direction: column;
     position: relative;
+    border-radius: 3px;
 }
-.modal-edicaot::backdrop{
-    background-color: #23232383;
+.modal-edicao::backdrop{
+    background-color: #23232394;
 }
-.modal-edicaot p{
-    font-size: 15px;
-    color: #232323;
+.modal-edicao p{
+    font-size: 13px;
+    color: #474747;
     font-weight: bold;
     
 }
@@ -249,83 +250,92 @@ section.produtos .modal{
 .btn-atualizar:hover{
     background-color: #07461d ;
 }
-.btn-addProduto{
-    position: absolute;
+.btn-addProduto {
+    position: fixed;
     right: 50px;
-    bottom: -10px;
-}
-.btn-addProduto button{
-    border-radius: 100%;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
     background-color: #4065AB;
-    border: none;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-.btn-addProduto button img{
-    width: 50px;
+    z-index: 900; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.popup {
-    display: none;
+.btn-addProduto img {
+    width: 30px;
+    height: 30px;
+}
+#modal-create {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000000a3;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-container #popup-descricao{
-    width: 308px;
-    font-size: 11px;
-    text-align: left;
-    font-weight: 800;
-    color: #3d3d3d;
-}
-
-.popup-container {
-    background: white;
-    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9f9f9;
+    width: 50%;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 20px;
     border-radius: 3px;
-    position: relative;
+    border: none;
+    z-index: 1000;
 }
 
-.popup-container p{
-    font-weight: bold;
+#modal-create::backdrop {
+    background-color: rgba(35, 35, 35, 0.58);
 }
 
-.popup-container img {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
+#modal-create form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.btn-fechar {
+#modal-create .btn-fechar-modal {
     position: absolute;
-    top: 10px;
     right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
     cursor: pointer;
+    background-color: #a7a7a7;
     border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    color: #B3B6BC;
-    font-size: 20px;
-    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#modal-create form textarea{
+    height: 50px;
+    padding: 5px;
+    width: 100%;
 }
 
-.btn-fechar:hover {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    border-radius: 100%;
+#modal-create form input{
+    padding: 5px;
+    width: 100%;
+}
+
+#modal-create form #img-container .input-campo{
+    height: 300px;
+}
+#modal-create .btn-fechar-modal img {
     width: 20px;
-    height: 20px;
-    color: #6b8fdb;
-    font-size: 20px;
+}
+#btn-cadastrar{
+    margin-top: 10px;
+    background-color:#0A6A2B;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    color: #e2ffec;
+    padding: 5px 10px;
+
+}
+
+#btn-cadastrar:hover{
+    background-color: #07461d;
 }
