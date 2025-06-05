@@ -108,15 +108,15 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
     FOREIGN KEY (id_servico)
     REFERENCES SERVICO (id_servico);
 
-    INSERT INTO PRODUTO (nome, preco, foto, ativo, descricao) VALUES
-('Desodorante', 15.90, 'uploads/produtos/desodorante.jpg', 1, 'Desodorante em spray de longa duração'),
-('Shampoo Hidratante', 25.50, 'uploads/produtos/shampoo.png', 1, 'Shampoo para cabelos secos e danificados'),
-('creme nutritivo', 7.40, 'uploads/produtos/creme.png', 1, 'creme com extrato de aloe vera'),
-('barbeador profissional', 6.30, 'uploads/produtos/barbeador.png', 1, 'lamina de corte profissional'),
-('minoxidil', 12.80, 'uploads/produtos/minoxidil.jpeg', 1, 'super minoxidil para barba e cabelo '),
-('kit barba', 19.90, 'uploads/produtos/kitBarba.jpeg', 0, 'kit util para cuidados da barba'),
-('tesoura sem ponta', 4.50, 'uploads/produtos/tesoura.jpg', 1, 'tesoura sem ponta para cortes simples'),
-('pente simples', 89.90, 'uploads/produtos/pente.png', 0, 'pente de alta qualidade');
+    INSERT INTO PRODUTO (nome, preco, foto, status_produto, descricao) VALUES
+('Desodorante', 15.90, 'uploads/produtos/desodorante.jpg', 'Ativo', 'Desodorante em spray de longa duração'),
+('Shampoo Hidratante', 25.50, 'uploads/produtos/shampoo.png', 'Ativo', 'Shampoo para cabelos secos e danificados'),
+('creme nutritivo', 7.40, 'uploads/produtos/creme.png', 'Ativo', 'creme com extrato de aloe vera'),
+('barbeador profissional', 6.30, 'uploads/produtos/barbeador.png', 'Ativo', 'lamina de corte profissional'),
+('minoxidil', 12.80, 'uploads/produtos/minoxidil.jpeg', 'Ativo', 'super minoxidil para barba e cabelo '),
+('kit barba', 19.90, 'uploads/produtos/kitBarba.jpeg', 'Inativo', 'kit util para cuidados da barba'),
+('tesoura sem ponta', 4.50, 'uploads/produtos/tesoura.jpg', 'Ativo', 'tesoura sem ponta para cortes simples'),
+('pente simples', 89.90, 'uploads/produtos/pente.png', 'Inativo', 'pente de alta qualidade');
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
 ('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte-masculino.png'),
@@ -140,7 +140,7 @@ INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia, endereco)v
 
 
 
--- Inserir um funcionário exemplo
+/* Inserir um funcionário exemplo */
 INSERT INTO USUARIO (email, senha, status, tipo_usuario) VALUES
 ('barbeiro@example.com', SHA2('senha123', 256), 'verificado', 'funcionario');
 
@@ -159,19 +159,19 @@ INSERT INTO PORTFOLIO (imagem) VALUES
 ('fotocabelo9.jpg'),
 ('fotocabelo10.jpg');
 
---INSERT DE USUARIO ADMIN PARA TESTE
+/* INSERT DE USUARIO ADMIN PARA TESTE */
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 ('admin@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'administrador');
---SENHA: 123456789
+/* SENHA: 123456789 */
 
 
---INSERT DE USUARIO FUNCIONARIO PARA TESTE
+/* INSERT DE USUARIO FUNCIONARIO PARA TESTE */
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 ('barbeiro@gmail.com', '$2y$10$y6Dmzy51zweP4GuOb66T1eaoNNDJp3ixw81iLbzRwfZGbcKw0Rs7i', 'verificado', 'funcionario');
---SENHA: barbeiro123
+/* SENHA: barbeiro123 */
 
 
---INSERT DOS HORÁRIOS DISPONÍVEIS DA AGENDA
+/* INSERT DOS HORÁRIOS DISPONÍVEIS DA AGENDA */
 INSERT INTO horarios_disponiveis (horario) VALUES
 ('08:00:00'), ('08:30:00'), ('09:00:00'), ('10:00:00'), ('11:00:00'),
 ('14:00:00'), ('15:00:00'), ('16:00:00'), ('17:00:00'), ('18:00:00');
@@ -179,22 +179,23 @@ INSERT INTO horarios_disponiveis (horario) VALUES
 
 
 
--- COMANDO PARA TRAZER OS DADOS PARA A PAGINA DE FUNCIONARIO/ADMIN
+/* COMANDO PARA TRAZER OS DADOS PARA A PAGINA DE FUNCIONARIO/ADMIN
 -- SELECT 
 --     c.nome AS nome_cliente,
 --     c.numero_telefone AS telefone_cliente,
 --     s.nome AS servico_agendado,
---     a.data AS data_agendamento,
+--    a.data AS data_agendamento,
 --     a.horario AS horario_agendamento,
 --     c.foto AS foto_cliente
--- FROM 
---     AGENDA a
--- JOIN 
+--  FROM 
+--      AGENDA a
+--  JOIN 
 --     CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
 -- JOIN 
 --     CLIENTE c ON cs.id_cliente = c.id_cliente
 -- JOIN 
---     SERVICO s ON cs.id_servico = s.id_servico
+-- -   SERVICO s ON cs.id_servico = s.id_servico
 -- ORDER BY 
---     a.data, 
---     a.horario;
+--   a.data, 
+--  a.horario; 
+*/

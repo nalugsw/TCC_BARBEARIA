@@ -57,14 +57,19 @@ $dadosGraficoServicos = [];
 try {
     // Consulta para atendimentos
     $sqlAtendimentos = "
-        SELECT a.data, s.nome AS servico, s.valor, c.nome AS cliente
-        FROM AGENDA a
-        JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
-        JOIN SERVICO s ON cs.id_servico = s.id_servico
-        JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
-        WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
-        ORDER BY a.data DESC
-    ";
+    SELECT 
+        a.data,
+        a.horario,
+        s.nome AS servico, 
+        s.valor, 
+        c.nome AS cliente
+    FROM AGENDA a
+    JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
+    JOIN SERVICO s ON cs.id_servico = s.id_servico
+    JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
+    WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+    ORDER BY a.data ASC, a.horario ASC
+";
     $stmtAtendimentos = $pdo->query($sqlAtendimentos);
     $atendimentos = $stmtAtendimentos->fetchAll(PDO::FETCH_ASSOC);
 
@@ -212,7 +217,7 @@ $dadosGraficos = [
             <?php if(!empty($atendimentos)): ?>
                 <?php foreach($atendimentos as $atendimento): ?>
                 <tr>
-                    <td><?= date('d/m/Y H:i', strtotime($atendimento['data'])) ?></td>
+                <td><?= date('d/m/Y H:i', strtotime($atendimento['data'] . ' ' . $atendimento['horario'])) ?></td>
                     <td><?= htmlspecialchars($atendimento['servico']) ?></td>
                     <td>R$ <?= number_format($atendimento['valor'], 2, ',', '.') ?></td>
                     <td><?= htmlspecialchars($atendimento['cliente']) ?></td>
