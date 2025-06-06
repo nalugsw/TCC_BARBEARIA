@@ -72,7 +72,7 @@ $servicos = mostrarServicos();
                 <div class="dados-perfil">
                     <p>Coloque a imagem do serviço</p>
                     
-                    <input type="hidden" id="id-servico" name="id" value="<?php echo $servicos['id_servico'];  ?>" >
+                    <input type="hidden" id="id-servico" name="id" value="<?php echo $servicos['id_servico'];?>">
                     
                     <div class="input-campo">
                         <input type="file" id="arquivo-edicao" class="input-file" name="foto" accept="image/*" onchange="loadFileEdicao(event)">

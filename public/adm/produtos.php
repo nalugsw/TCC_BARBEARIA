@@ -86,7 +86,10 @@ $produtos = mostrarProdutos();
                         <div class="input-campo">
                             <p>*Preço do item</p>
                             <input type="number" step="0.01" min="0" name="valor" value="<?php echo $produto['preco']; ?>" placeholder="R$00,00">
-                            <button type="submit" class="btn-atualizar">Atualizar</button>
+                            <div class="input-btn">
+                                <button type="submit" class="btn-atualizar">Atualizar</button>
+                                <button class="btn-excluir">Excluir</button>
+                            </div>
                         </div>
                     </form>
                 </dialog>
