@@ -41,31 +41,31 @@ verificaSession("administrador");
             </div>
         </div>
     
-    <dialog closed id="modal-edit" >
-        <form action="" method="POST" enctype="multipart/form-data">
-            
-            <div id="img-container">
-                <p>*Foto do perfil</p>
-                <img id="preview" src="" >
-                <div class="input-campo">
-                    <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
-                    <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+        <dialog closed id="modal-edit" >
+            <form action="" method="POST" enctype="multipart/form-data">
+                
+                <div id="img-container">
+                    <p>*Foto do perfil</p>
+                    <img id="preview" src="" >
+                    <div class="input-campo-edit">
+                        <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                    </div>
                 </div>
-            </div>
-            <div class="input-campo">
-                <p>*Nome do perfil</p>
-                <input type="text" value="" name="nome">
-            </div>
-            <div class="input-campo">
-                <p>*Numero do perfil</p>
-                <input type="text" value="" name="telefone" id="telefone" >
-            </div>
-            <div class="btns-edit">
-                <button type="submit">Atualizar</button>
-                <button id="cancelar-edit" type="button">Voltar</button>
-            </div>
-        </form>
-    </dialog>
+                <div class="input-campo-edit">
+                    <p>*Nome do perfil</p>
+                    <input type="text" value="" name="nome">
+                </div>
+                <div class="input-campo-edit">
+                    <p>*Endereço do perfil</p>
+                    <input type="text" value="" name="telefone" id="telefone" >
+                </div>
+                <div class="btns-edit">
+                    <button type="submit">Atualizar</button>
+                    <button id="cancelar-edit" type="button">Voltar</button>
+                </div>
+            </form>
+        </dialog>
     
         <div class="galeria">
             <div class="imagem-item">

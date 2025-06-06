@@ -8,6 +8,7 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .form-intervalo{
@@ -102,12 +103,90 @@ main{
   display: flex;
   justify-content: space-evenly;
 }
+.checks div{
+  display: flex;
+  align-items: center;
+}
+.checks div input{
+  width: 17px;
+  height: 17px;
+}
+.checks label{
+  margin-left: 5px;
+  font-weight: 600;
+  color: #ffffff;
+}
 .horariosDias{
   width: 90%;
   background-color: #3f3f3f;
   padding: 15px 30px;
-  margin:10px 0 20px 0;
+  margin:5px 0 20px 0;
   border-radius: 3px;
   display: flex;
   justify-content: space-evenly;
+  gap: 30px;
+}
+.horariosDias .horario{
+  text-align: center;
+  width: 50%;
+  position: relative;
+}
+.horariosDias .horario:first-child::before{
+  content: " ";
+  display: block;
+  width: 2px;
+  background-color: #4b4b4b;
+  height: 120%;
+  position: absolute;
+  right: -15px;
+  top: -5px;
+}
+
+.horariosDias .horario h5{
+  font-weight: 600;
+  font-size: 15px;
+}
+.hora{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.input{
+  display: flex;
+  align-items: center;
+}
+.input label{
+  font-weight: 700;
+  font-size: 14px;
+  margin-right: 4px;
+}
+.input input{
+  padding: 2px;
+  border-radius: 5px;
+  border: 2px solid #2f2f2f;
+}
+.dia{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
 }

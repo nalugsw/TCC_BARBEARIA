@@ -87,4 +87,35 @@ function enviarEmail($email, $assunto, $mensagem, $cabecalho){
     return mail($email, $assunto, $mensagem, $cabecalho);
 }
 
+function gerarHorariosDisponiveis($intervalo, $primeiroInicio, $primeiroFim, $segundoInicio, $segundoFim) {
+    // Garante que $intervalo é um inteiro válido
+    $intervalo = (int) $intervalo;
+    $horarios = [];
+
+    // Vetor de períodos (início/fim) já no formato adequado
+    $periodos = [
+        ['inicio' => $primeiroInicio, 'fim' => $primeiroFim],
+        ['inicio' => $segundoInicio,   'fim' => $segundoFim]
+    ];
+
+    foreach ($periodos as $p) {
+        // Cria objetos DateTime para início e fim
+        $inicio = DateTime::createFromFormat('H:i', $p['inicio']);
+        $fim    = DateTime::createFromFormat('H:i', $p['fim']);
+
+        if (!$inicio || !$fim) {
+            // Se algum horário vier inválido, apenas ignora esse período
+            continue;
+        }
+
+        // Enquanto $inicio for menor que $fim, adiciona à lista e soma intervalo
+        while ($inicio < $fim) {
+            $horarios[] = $inicio->format('H:i:s');
+            // Soma corretamente "$intervalo minutes"
+            $inicio->modify("+{$intervalo} minutes");
+        }
+    }
+
+    return $horarios;
+}
 ?>

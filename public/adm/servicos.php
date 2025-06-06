@@ -71,9 +71,8 @@ $servicos = mostrarServicos();
             <div class="info">
                 <div class="dados-perfil">
                     <p>Coloque a imagem do serviço</p>
-                    
                     <input type="hidden" id="id-servico" name="id" value="<?php echo $servicos['id_servico'];?>">
-                    
+
                     <div class="input-campo">
                         <input type="file" id="arquivo-edicao" class="input-file" name="foto" accept="image/*" onchange="loadFileEdicao(event)">
                         <label for="arquivo-edicao" class="custom-file-button">Escolha a foto</label>
