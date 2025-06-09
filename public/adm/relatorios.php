@@ -68,6 +68,7 @@ try {
     JOIN SERVICO s ON cs.id_servico = s.id_servico
     JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
     WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+    AND LOWER(a.status_agenda) LIKE 'pendente%'
     ORDER BY a.data ASC, a.horario ASC
 ";
     $stmtAtendimentos = $pdo->query($sqlAtendimentos);
