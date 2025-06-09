@@ -90,13 +90,13 @@ uksort($agendamentosPorData, function($a, $b) {
                                 </button>
                             </div>
 
-                            <dialog id="finalizar-horario-<?php echo $agenda['id_agenda']; ?>">
+                            <dialog id="finalizar-horario-<?php echo $agenda['id_agenda']; ?>" class="horariofinalizar">
                                 <form action="../../functions/validaAgendamento.php" method="POST" >
                                     <h2>Finalizou o serviço?</h2>
                                     <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
                                     <input type="hidden" name="acao" value="finalizado">
                                     <div class="btn-cancel-horario">
-                                        <button type="submit" id="btn-cancelar">Finalizar</button>
+                                        <button type="submit" id="btn-finalizar" class="btn-finalizar-horario">Finalizar</button>
                                         <button type="button" onclick="this.closest('dialog').close();" id="voltar">Voltar</button>
                                     </div>
                                 </form>

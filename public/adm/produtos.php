@@ -61,6 +61,7 @@ $produtos = mostrarProdutos();
                     </div>
                 </div>
                 
+                
                 <dialog id="editar-produto-<?php echo $produto['id_produto']; ?>" class="modal-edicao">
                     <form action="" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
