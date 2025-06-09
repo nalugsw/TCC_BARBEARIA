@@ -13,6 +13,35 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+  /* Estilos para os botões de download */
+.botoes-download {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-download {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #45a049;
+}
+
+.btn-download i {
+    font-size: 16px;
+}
   
   h1 {
     text-align: center;

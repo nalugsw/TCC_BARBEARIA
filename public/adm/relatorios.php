@@ -156,6 +156,14 @@ $dadosGraficos = [
     <?php include("../../views/nav-padrao-adm.php"); ?>
     <main>
         <div class="relatorio-container">
+            <div class="botoes-download">
+            <button onclick="gerarPDF()" class="btn-download">
+                <i class="bi bi-file-earmark-pdf"></i> Baixar PDF
+            </button>
+            <button onclick="gerarExcel()" class="btn-download">
+                <i class="bi bi-file-earmark-excel"></i> Baixar Excel
+            </button>
+        </div>
             <h1>Relatórios de Atendimentos</h1>
                 <div class="estatisticas">
                     <div class="filtros">
@@ -371,5 +379,6 @@ $dadosGraficos = [
             </div>
         </div> -->
         <script src="../../assets/js/relatorios.js"></script>
+        <script src="../../assets/js/gerar_pdf_script.js"></script>
         
     </main>

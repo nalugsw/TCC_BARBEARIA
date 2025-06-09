@@ -124,4 +124,5 @@
 </nav>
 
 <script src="../../assets/js/modal-deslogar.js"></script>
+<script src="../../assets/js/marcarmenu-user.js"></script>
 </html>

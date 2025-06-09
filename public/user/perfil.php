@@ -102,12 +102,12 @@ unset($_SESSION['erro']);
                                     </button>
                                 </div>
                                 <div class="nome-barbeiro"><p><?php echo $agenda['servico']; ?></p></div>
-                                <p> - </p>
+                                <p>|</p>
                                 <div class="data-barbeiro"><p>
                                     <?php $dataNova = new DateTime($agenda['data']);
                                     echo $dataNova->format('d/m'); ?> 
                                 </p></div>
-                                <p> | </p>
+                                <p>|</p>
                                 <div class="dia-barbeiro"><p><?php echo diaDaSemana($agenda['data']); ?></p></div>
                                 <div class="horario-barbeiro">
                                     <p>

@@ -1,113 +1,443 @@
-main{
+/* Estilos Gerais Compactados */
+main {
   grid-column: 2/3;
   grid-row: 2/3;
-  padding: 0 60px;
+  padding: 20px 30px;
   color: #f4f4f4;
-}
-.container-horarios{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: linear-gradient(135deg, #232323 0%, #2a2a2a 100%);
+  min-height: 100vh;
 }
 
-.form-intervalo{
-  display: grid;
-  grid-template-columns:1fr 1fr 1fr;
-  row-gap: 10px;
-  column-gap: 10px;
+main h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
-.form-intervalo h3{
-  grid-column: 1/4;
-  text-align: center;
-  font-size: 20px;
-}
-.form-intervalo p{
-  grid-column: 1/3;
-  font-weight: 500;
-}
-.form-intervalo div button{
-  background-color: #4065AB;
-  color: #f4f4f4;
-  padding: 3px 15px;
-  border: none;
-  border-radius: 3px;
-  font-weight: 600;
-}
-#formHorarios{
-  margin-top: 30px;
+main h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #4065AB, #5577CC);
+  border-radius: 2px;
 }
 
-#formHorarios h3{
-  text-align: center;
-}
-
-#formHorarios button{
-  padding: 3px 10px ;
-  background-color: #0A6A28;
-  font-weight: 600;
-  border-radius: 3px;
-  border: none;
-  color: #cae6d3;
-}
-.grade-horaria{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 5px;
-  margin-top: 10px;
-}
-
-.grade-horaria input{
-  margin-right: 5px;
-  width: 20px;
-  height: 20px;
-
-}
-.form-dias{
-  margin-top: 30px;
-  width: 100%;
+.container-horarios {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-.form-dias #enviar{
-  margin: 13px 0;
-  padding: 6px 20px ;
-  background-color: #0A6A28;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: 3px;
-  border: none;
-  color: #cae6d3;
-}
-.intervaloDia{
-  width: 100%;
-  background-color: #353535;
-  padding: 15px 30px;
-  text-align: center;
-  border-radius: 3px;
-}
-.intervaloDia h4{
-  font-size: 17px;
-}
-.intervaloDia hr{
-  color: #2f2f2f;
-  border: solid 1.5px;
-  margin: 15px 0;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.intervaloDia .checks{
-  display: flex;
-  justify-content: space-evenly;
+/* Formulário de Intervalo Compacto */
+.form-intervalo {
+  background: linear-gradient(135deg, #313131 0%, #3a3a3a 100%);
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
 }
-.horariosDias{
-  width: 90%;
-  background-color: #3f3f3f;
-  padding: 15px 30px;
-  margin:10px 0 20px 0;
+
+.form-intervalo h3 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+
+.form-intervalo p {
+  font-weight: 400;
+  color: #d4d4d4;
+  text-align: center;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.form-intervalo > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.form-intervalo label {
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.form-intervalo select {
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #2a2a2a, #353535);
+  border: 2px solid rgba(64, 101, 171, 0.3);
   border-radius: 3px;
-  display: flex;
-  justify-content: space-evenly;
+  color: #6688DD;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 120px;
 }
+
+.form-intervalo select option{
+  color: #232323;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-intervalo select:hover {
+  border-color: rgba(64, 101, 171, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(64, 101, 171, 0.2);
+}
+
+.form-intervalo select:focus {
+  outline: none;
+  border-color: #4065AB;
+  box-shadow: 0 0 0 3px rgba(64, 101, 171, 0.3);
+}
+
+.form-intervalo button {
+  background: linear-gradient(135deg, #4065AB, #5577CC);
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-width: 90px;
+}
+
+.form-intervalo button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.form-intervalo button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(64, 101, 171, 0.4);
+  background: linear-gradient(135deg, #5577CC, #6688DD);
+}
+
+.form-intervalo button:hover::before {
+  left: 100%;
+}
+
+.form-intervalo button:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+/* Formulário de Horários Compacto */
+#formHorarios {
+  background: linear-gradient(135deg, #313131 0%, #3a3a3a 100%);
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#formHorarios h3 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+/* Grade Horária Compacta */
+.grade-horaria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.horario-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #2a2a2a, #353535);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.horario-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(10, 106, 40, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.horario-option:hover {
+  transform: translateY(-2px);
+  border-color: rgba(10, 106, 40, 0.5);
+  box-shadow: 0 6px 15px rgba(10, 106, 40, 0.2);
+  background: linear-gradient(135deg, #353535, #404040);
+}
+
+.horario-option:hover::before {
+  left: 100%;
+}
+
+.horario-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0A6A28;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.horario-option input[type="checkbox"]:checked {
+  transform: scale(1.1);
+}
+
+.horario-option span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #d4d4d4;
+  transition: color 0.3s ease;
+}
+
+.horario-option:hover span {
+  color: #ffffff;
+}
+
+.horario-option input[type="checkbox"]:checked + span {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Indicador visual para horários selecionados */
+.horario-option:has(input:checked) {
+  background: linear-gradient(135deg, #0A6A28, #0d7a30);
+  border-color: #10a83a;
+  box-shadow: 0 4px 12px rgba(10, 106, 40, 0.3);
+}
+
+.horario-option:has(input:checked)::after {
+  content: '✓';
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Botão de Salvar Compacto */
+#formHorarios button {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #0A6A28, #0d7a30);
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0;
+  display: block;
+  min-width: 160px;
+}
+
+#formHorarios button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+#formHorarios button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(10, 106, 40, 0.4);
+  background: linear-gradient(135deg, #0d7a30, #10a83a);
+}
+
+#formHorarios button:hover::before {
+  left: 100%;
+}
+
+#formHorarios button:active {
+  transform: translateY(-1px);
+  transition: transform 0.1s ease;
+}
+
+/* Responsividade Compacta */
+@media screen and (max-width: 768px) {
+  main {
+    padding: 15px 20px;
+  }
+  
+  main h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .container-horarios {
+    gap: 15px;
+  }
+  
+  .form-intervalo,
+  #formHorarios {
+    padding: 15px;
+  }
+  
+  .form-intervalo > div {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .grade-horaria {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  .horario-option {
+    padding: 8px 10px;
+  }
+  
+  .horario-option span {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    padding: 12px 15px;
+  }
+  
+  .grade-horaria {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .form-intervalo select,
+  .form-intervalo button {
+    width: 100%;
+  }
+  
+  .horario-option {
+    padding: 6px 8px;
+  }
+  
+  .horario-option span {
+    font-size: 12px;
+  }
+  
+  #formHorarios button {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-width: 140px;
+  }
+}
+
+/* Animações de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-intervalo,
+#formHorarios {
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.horario-option {
+  animation: fadeInUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.horario-option:nth-child(1) { animation-delay: 0.1s; }
+.horario-option:nth-child(2) { animation-delay: 0.15s; }
+.horario-option:nth-child(3) { animation-delay: 0.2s; }
+.horario-option:nth-child(4) { animation-delay: 0.25s; }
+.horario-option:nth-child(5) { animation-delay: 0.3s; }
+.horario-option:nth-child(n+6) { animation-delay: 0.35s; }
