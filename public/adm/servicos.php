@@ -67,12 +67,9 @@ $servicos = mostrarServicos();
     
     <div class="perfil-container" id="container-edicao" style="display: none;">
         <form action="../../functions/adm/servicos.php" method="post" enctype="multipart/form-data">
-            <input type="hidden" id="servico-id" name="id">
             <div class="info">
                 <div class="dados-perfil">
                     <p>Coloque a imagem do serviço</p>
-                    <input type="hidden" id="id-servico" name="id" value="<?php echo $servicos['id_servico'];?>">
-
                     <div class="input-campo">
                         <input type="file" id="arquivo-edicao" class="input-file" name="foto" accept="image/*" onchange="loadFileEdicao(event)">
                         <label for="arquivo-edicao" class="custom-file-button">Escolha a foto</label>
@@ -99,6 +96,7 @@ $servicos = mostrarServicos();
                         <button type="button" id="cancelar-edicao">Cancelar</button>
                     </div>
                 </div>
+                <input type="hidden" id="id-servico" name="id" value="">
             </div>
         </form>
     </div>
