@@ -96,7 +96,8 @@ $servicos = mostrarServicos();
                         <button type="button" id="cancelar-edicao">Cancelar</button>
                     </div>
                 </div>
-                <input type="hidden" id="id-servico" name="id" value="">
+                <input type="hidden" id="id-servico" name="id" value="<?php echo $servico['id_servico']; ?>">
+                <input type="hidden" name="acao" value="atualizacao">
             </div>
         </form>
     </div>
@@ -104,7 +105,7 @@ $servicos = mostrarServicos();
             <div class="grid" id="grid2">
                 <!-- Exemplo de itens do grid (substitua pelo seu PHP real) -->
                  <?php foreach($servicos as $servico): ?>
-                    <div class="item" >
+                    <div class="item" data-id="<?php echo $servico['id_servico']; ?>">
                         <img src="../../<?php echo $servico['foto']; ?>" alt="Serviço 1">
                         <div class="txt-teste">
                             <h1><?php echo $servico['nome']; ?></h1>

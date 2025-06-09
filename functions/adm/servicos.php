@@ -18,9 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $caminhoDestino)) {
                 $stmt = $pdo->prepare("INSERT INTO servico (nome, duracao, valor, foto) VALUES (?, ?, ?, ?)");
                 $stmt->execute([$nome, $duracao, $valor, $caminhoRelativo]);
+                header("Location: ../../public/adm/servicos.php");
             }
         }
-    } else {
+    }elseif($acao === 'atualizacao'){
         $id = $_POST['id'] ?? null;
 
         if ($id) {
