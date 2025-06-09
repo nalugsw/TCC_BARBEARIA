@@ -58,11 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const servicoData = {
                     id: itemServico.dataset.id || '',
-                    nome: itemServico.querySelector('h1')?.textContent || '',
-                    valor: itemServico.querySelector('.preco p')?.textContent.replace('R$', '') || '0',
-                    duracao: formatarTempoParaInput(itemServico.querySelector('.duracao')?.textContent || '0 min'),
-                    imagem: itemServico.querySelector('img')?.src || ''
+                    nome: itemServico.dataset.nome || '',
+                    valor: itemServico.dataset.valor || '0',
+                    duracao: formatarTempoParaInput(itemServico.dataset.duracao || '0 min'),
+                    imagem: itemServico.dataset.imagem || ''
                 };
+
                 
                 mostrarFormEdicao(servicoData);
             });
