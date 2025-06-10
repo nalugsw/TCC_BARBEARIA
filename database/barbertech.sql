@@ -110,18 +110,18 @@ ALTER TABLE CLIENTE_SERVICO ADD CONSTRAINT fk_id_servico
 
     INSERT INTO PRODUTO (nome, preco, foto, status_produto, descricao) VALUES
 ('Desodorante', 15.90, 'uploads/produtos/desodorante.jpg', 'Ativo', 'Desodorante em spray de longa duração'),
-('Shampoo Hidratante', 25.50, 'uploads/produtos/shampoo.png', 'Ativo', 'Shampoo para cabelos secos e danificados'),
-('creme nutritivo', 7.40, 'uploads/produtos/creme.png', 'Ativo', 'creme com extrato de aloe vera'),
-('barbeador profissional', 6.30, 'uploads/produtos/barbeador.png', 'Ativo', 'lamina de corte profissional'),
+('Shampoo Hidratante', 25.50, 'uploads/produtos/shampoo.jpg', 'Ativo', 'Shampoo para cabelos secos e danificados'),
+('creme nutritivo', 7.40, 'uploads/produtos/creme.jpg', 'Ativo', 'creme com extrato de aloe vera'),
+('barbeador profissional', 6.30, 'uploads/produtos/barbeador.jpg', 'Ativo', 'lamina de corte profissional'),
 ('minoxidil', 12.80, 'uploads/produtos/minoxidil.jpeg', 'Ativo', 'super minoxidil para barba e cabelo '),
 ('kit barba', 19.90, 'uploads/produtos/kitBarba.jpeg', 'Inativo', 'kit util para cuidados da barba'),
 ('tesoura sem ponta', 4.50, 'uploads/produtos/tesoura.jpg', 'Ativo', 'tesoura sem ponta para cortes simples'),
 ('pente simples', 89.90, 'uploads/produtos/pente.png', 'Inativo', 'pente de alta qualidade');
 
 INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES 
-('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte-masculino.png'),
+('Corte Masculino', 35.00, '00:30:00', 'uploads/servicos/corte_Masculo.jpg'),
 ('Corte Infantil', 25.00, '00:30:00', 'uploads/servicos/corte-infantil.jpg'),
-('Barba Completa', 30.00, '00:25:00', 'uploads/servicos/barba_completa.jpg'),
+('Barba Completa', 30.00, '00:25:00', 'uploads/servicos/corte_e_barba.jpg'),
 ('Corte e Barba', 60.00, '01:00:00', 'uploads/servicos/corte_e_barba.jpg'),
 ('Sobrancelha', 15.00, '00:15:00', 'uploads/servicos/sobrancelha.jpg'),
 ('Luzes Masculinas', 80.00, '01:30:00', 'uploads/servicos/luzes_masculinas.jpg'),
@@ -175,7 +175,51 @@ INSERT INTO horarios_disponiveis (horario) VALUES
 ('14:00:00'), ('15:00:00'), ('16:00:00'), ('17:00:00'), ('18:00:00');
 
 
+-- Inserir 20 clientes aleatórios com seus respectivos usuários
+INSERT INTO USUARIO (email, senha, status, tipo_usuario) VALUES
+('cliente1@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente2@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente3@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente4@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente5@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente6@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente7@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente8@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente9@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente10@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente11@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente12@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente13@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente14@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente15@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente16@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente17@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente18@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente19@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente'),
+('cliente20@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'cliente');
 
+-- Inserir os clientes associados aos usuários criados
+INSERT INTO CLIENTE (nome, numero_telefone, id_usuario) VALUES
+('Carlos Silva', '11987654321', 3),
+('João Oliveira', '11987654322', 4),
+('Pedro Santos', '11987654323', 5),
+('Lucas Pereira', '11987654324', 6),
+('Marcos Souza', '11987654325', 7),
+('André Costa', '11987654326', 8),
+('Rafael Almeida', '11987654327', 9),
+('Daniel Fernandes', '11987654328', 10),
+('Paulo Rodrigues', '11987654329', 11),
+('Thiago Gonçalves', '11987654330', 12),
+('Felipe Martins', '11987654331', 13),
+('Eduardo Carvalho', '11987654332', 14),
+('Roberto Gomes', '11987654333', 15),
+('Bruno Lopes', '11987654334', 16),
+('Leandro Barbosa', '11987654335', 17),
+('Gustavo Ribeiro', '11987654336', 18),
+('Alexandre Dias', '11987654337', 19),
+('Vitor Nunes', '11987654338', 20),
+('Diego Moreira', '11987654339', 21),
+('Ricardo Castro', '11987654340', 22);
 
 /* COMANDO PARA TRAZER OS DADOS PARA A PAGINA DE FUNCIONARIO/ADMIN
 -- SELECT 

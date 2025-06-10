@@ -1,0 +1,95 @@
+
+.container {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.cliente-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+.cliente-card:hover {
+    background-color: #f9f9f9;
+}
+.cliente-foto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 2px solid #ddd;
+}
+.cliente-info {
+    flex-grow: 1;
+}
+.cliente-nome {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+.cliente-telefone {
+    color: #666;
+    font-size: 14px;
+}
+.paginacao {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 5px;
+}
+.paginacao button {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+}
+.paginacao button.active {
+    background-color: #4065AB;
+    color: white;
+    border-color: rgb(3, 112, 228);
+}
+.paginacao button:hover:not(.active) {
+    background-color: #f1f1f1;
+}
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+#search-input {
+    padding: 10px;
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+}
+#search-button {
+    padding: 10px 20px;
+    background-color: #4065AB;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}

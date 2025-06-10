@@ -70,6 +70,12 @@
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </a>
             </li>
+            <li class="item-menu">
+                <a href="editUsers.php">
+                    <span class="txt-link">Buscar Usuario</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </a>
+            </li>
         </ul>
         <a href=""><button id="btn-voltar-config">Voltar</button></a>
     </nav>
