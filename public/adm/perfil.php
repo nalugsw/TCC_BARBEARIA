@@ -5,6 +5,9 @@ include("../../config/conexao.php");
 session_start();
 require_once("../../functions/helpers.php");
 verificaSession("administrador");
+$funcionario = dadosFuncionario();
+require("../../functions/informacoes.php");
+$informacoes = buscarInformacoes();
 
 ?>
 
@@ -31,14 +34,19 @@ verificaSession("administrador");
         <div class="perfil-container">
             <div class="info">
                 <div class="foto-perfil">
-                    <img src="../../assets/img/foto-barbeiro-tela-home.png" alt="foto de perfil adm">
+                    <!-- <img src="../../assets/img/foto-barbeiro-tela-home.png" alt="foto de perfil adm"> -->
+                    <img src="../../<?php echo $funcionario['foto']; ?>" alt="foto de perfil adm">
                     <a href="" class="btn-edit"><span class="material-symbols-outlined editar-icon">edit</span> </a>
                 </div>
                 <div class="dados-perfil">
-                    <h1>Luis Pereira</h1>
-                    <p>Rua Naoseioque, n°171 - Jardim Setadoido</p>
+                    <h1><?php echo $funcionario['nome']; ?></h1>
+                    <p><?php echo $informacoes['endereco']; ?></p>
                 </div>
             </div>
+        </div>
+
+        <div class="perfil-container">
+        <button type="submit">Adicionar foto de destaque</button>
         </div>
     
         <dialog closed id="modal-edit" >

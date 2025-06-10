@@ -18,3 +18,4 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Erro: Elementos do modal não encontrados.");
   }
 });
+
