@@ -141,8 +141,6 @@ INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia, endereco)v
 
 
 /* Inserir um funcionário exemplo */
-INSERT INTO USUARIO (email, senha, status, tipo_usuario) VALUES
-('barbeiro@example.com', SHA2('senha123', 256), 'verificado', 'funcionario');
 
 INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
 ('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());

@@ -83,6 +83,8 @@ function verificaSession($permissao){
     }
 }
 
+//FUNÇÃO DE ENVIAR EMAIL
+
 function enviarEmail($email, $assunto, $mensagem, $cabecalho){
     return mail($email, $assunto, $mensagem, $cabecalho);
 }

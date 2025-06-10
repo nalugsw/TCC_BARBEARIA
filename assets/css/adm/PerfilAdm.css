@@ -78,6 +78,26 @@ body::-webkit-scrollbar-thumb{
     gap: 1px;
 }
 
+.perfil-container button{
+    padding: 7px 10px ;
+    border: none;
+    background-color: #0A6A28;
+    color: #D3FAE0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #4e4e4e4b;
+    text-transform:capitalize;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.perfil-container  button:hover{
+    background-color: #05581f;
+    scale: 1.05;
+}
+
 
 /* imagens */
 .galeria {

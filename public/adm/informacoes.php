@@ -41,7 +41,7 @@ $informacoes = buscarInformacoes();
         </div>
         <div class="info-projeto">
             <h2>Projeto Berbertech</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatibus molestiae blanditiis, facilis voluptatem adipisci voluptas distinctio delectus necessitatibus iusto.</p>
+            <p>O Barbertech é um sistema de agendamento inteligente desenvolvido para modernizar e otimizar a gestão de barbearias. Com uma plataforma intuitiva, o software permite que clientes agendem horários online, enquanto os barbeiros administram sua agenda de forma eficiente. O projeto visa reduzir filas, evitar sobrecargas e melhorar a experiência do usuário, integrando funcionalidades como lembretes automáticos e histórico de serviços. Desenvolvido com tecnologias web robustas, o Barbertech busca unir praticidade e inovação, tornando-se uma solução acessível para empreendedores do setor. Este TCC demonstra como a tecnologia pode transformar negócios tradicionais, elevando a qualidade e a organização do atendimento.</p>
         </div>
             
     </main>
