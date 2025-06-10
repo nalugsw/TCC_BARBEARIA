@@ -138,13 +138,7 @@ INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia, endereco)v
 
 
 
-
-
-/* Inserir um funcionário exemplo */
-
-INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
-('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
-
+/*---------*/ 
 INSERT INTO PORTFOLIO (imagem) VALUES
 ('fotocabelo.jpg'),
 ('fotocabelo2.jpg'),
@@ -168,6 +162,11 @@ INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 ('barbeiro@gmail.com', '$2y$10$y6Dmzy51zweP4GuOb66T1eaoNNDJp3ixw81iLbzRwfZGbcKw0Rs7i', 'verificado', 'funcionario');
 /* SENHA: barbeiro123 */
 
+
+/* Inserir um funcionário exemplo */
+
+INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
+('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
 
 /* INSERT DOS HORÁRIOS DISPONÍVEIS DA AGENDA */
 INSERT INTO horarios_disponiveis (horario) VALUES

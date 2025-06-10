@@ -102,3 +102,16 @@ body {
     font-size: 1.2em;
     margin-top: 5px;
 }
+
+.status-finalizado {
+  color: green;
+
+}
+
+.status-pendente {
+  color: rgb(154, 154, 2);
+}
+
+.status-cancelado {
+  color: red;
+}

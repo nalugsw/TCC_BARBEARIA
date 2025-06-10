@@ -62,13 +62,16 @@ try {
         a.horario,
         s.nome AS servico, 
         s.valor, 
-        c.nome AS cliente
+        c.nome AS cliente,
+        a.status_agenda AS status
     FROM AGENDA a
     JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
     JOIN SERVICO s ON cs.id_servico = s.id_servico
     JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
     WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
-    AND LOWER(a.status_agenda) LIKE 'pendente%'
+    AND (LOWER(a.status_agenda) LIKE 'pendente%'
+    OR LOWER(a.status_agenda) LIKE 'finalizado%'
+    OR LOWER(a.status_agenda) LIKE 'cancelado%')
     ORDER BY a.data ASC, a.horario ASC
 ";
     $stmtAtendimentos = $pdo->query($sqlAtendimentos);
@@ -88,6 +91,7 @@ try {
         JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
         JOIN SERVICO s ON cs.id_servico = s.id_servico
         WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+        AND LOWER(a.status_agenda) LIKE 'finalizado%'
     ";
     $stmtEstatisticas = $pdo->query($sqlEstatisticas);
     $stats = $stmtEstatisticas->fetch(PDO::FETCH_ASSOC);
@@ -101,6 +105,7 @@ try {
         JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
         JOIN SERVICO s ON cs.id_servico = s.id_servico
         WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+        AND LOWER(a.status_agenda) LIKE 'pendente%'
         GROUP BY DATE(a.data)
         ORDER BY DATE(a.data)
     ";
@@ -205,32 +210,47 @@ $dadosGraficos = [
             </div>
             
             <div class="relatorio-resultados">
-    <table id="tabelaRelatorio">
-        <thead>
+            <table id="tabelaRelatorio">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Serviço</th>
+            <th>Valor</th>
+            <th>Cliente</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php if(!empty($atendimentos)): ?>
+            <?php foreach($atendimentos as $atendimento): ?>
             <tr>
-                <th>Data</th>
-                <th>Serviço</th>
-                <th>Valor</th>
-                <th>Cliente</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if(!empty($atendimentos)): ?>
-                <?php foreach($atendimentos as $atendimento): ?>
-                <tr>
                 <td><?= date('d/m/Y H:i', strtotime($atendimento['data'] . ' ' . $atendimento['horario'])) ?></td>
-                    <td><?= htmlspecialchars($atendimento['servico']) ?></td>
-                    <td>R$ <?= number_format($atendimento['valor'], 2, ',', '.') ?></td>
-                    <td><?= htmlspecialchars($atendimento['cliente']) ?></td>
-                </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="4" class="sem-registros">Nenhum atendimento encontrado neste período</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+                <td><?= htmlspecialchars($atendimento['servico']) ?></td>
+                <td>R$ <?= number_format($atendimento['valor'], 2, ',', '.') ?></td>
+                <td><?= htmlspecialchars($atendimento['cliente']) ?></td>
+                <td>
+                    <?php 
+                    $status = strtolower($atendimento['status']);
+                    if(strpos($status, 'pendente') !== false) {
+                        echo '<span class="status-pendente">Pendente</span>';
+                    } elseif(strpos($status, 'finalizado') !== false) {
+                        echo '<span class="status-finalizado">Finalizado</span>';
+                    } elseif(strpos($status, 'cancelado') !== false) {
+                        echo '<span class="status-cancelado">Cancelado</span>';
+                    } else {
+                        echo htmlspecialchars($atendimento['status']);
+                    }
+                    ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="5" class="sem-registros">Nenhum atendimento encontrado neste período</td>
+            </tr>
+        <?php endif; ?>
+    </tbody>
+</table>
 </div>
         </div>
     </main>
