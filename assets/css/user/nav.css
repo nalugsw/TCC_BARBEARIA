@@ -83,25 +83,90 @@ nav.menu-lateral-desktop .btn-sair{
   margin-right: 80px;
 }
 
-
+/* Botão sair com efeito wave igual ao login */
 nav.menu-lateral-desktop .btn-sair {
   border: none;
   cursor: pointer;
   height: 25px;
   font-size: 12px;
   font-weight: bold;
-  padding: 3px  10px;
+  padding: 3px 10px;
   color: #d4d4d4;
   background-color: #4065AB;
   border-radius: 3px;
-  transition: 0.5s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 1px 1px 2px rgba(55, 55, 55, 0.34);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
 }
 
-nav.menu-lateral-desktop .btn-sair:hover{
-  scale: 1.02;
+nav.menu-lateral-desktop .btn-sair::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+  pointer-events: none;
+}
+
+nav.menu-lateral-desktop .btn-sair:hover {
+  transform: translateY(-2px);
   background-color: #31579c;
-  
+  box-shadow: 0 8px 25px rgba(64, 101, 171, 0.3);
+}
+
+nav.menu-lateral-desktop .btn-sair:hover::before {
+  width: 300px;
+  height: 300px;
+  animation: wave-pulse 0.6s ease-out;
+}
+
+nav.menu-lateral-desktop .btn-sair:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+@keyframes wave-pulse {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* Efeito adicional de ondulação contínua */
+nav.menu-lateral-desktop .btn-sair::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+nav.menu-lateral-desktop .btn-sair:hover::after {
+  left: 100%;
 }
 
 nav.menu-lateral-desktop .btn-sair img{
@@ -109,6 +174,7 @@ nav.menu-lateral-desktop .btn-sair img{
   vertical-align: middle;
 }
 
+/* Modal com transição suave */
 #modal-sair{
   margin: auto;
   margin-top: 150px;
@@ -116,7 +182,25 @@ nav.menu-lateral-desktop .btn-sair img{
   border-radius: 3px;
   width: 300px;
   border: none;
+  opacity: 0;
+  transform: scale(0.7) translateY(-50px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+#modal-sair[open] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+#modal-sair::backdrop{
+  background-color: rgba(35, 35, 35, 0);
+  transition: background-color 0.4s ease;
+}
+
+#modal-sair[open]::backdrop{
+  background-color: rgba(35, 35, 35, 0.51);
+}
+
 .modal-sair{
   height: 150px;
   display: flex;
@@ -137,24 +221,90 @@ nav.menu-lateral-desktop .btn-sair img{
   padding: 5px;
   width: 70px;
 }
-#modal-sair::backdrop{
-  background-color: #23232383;
-}
 
+/* Botões do modal com efeito wave vermelho */
 .btn-sair{
   background-color: #a23333;
   color: #ffeaea;
   border: none;
   border-radius: 3px;
   box-shadow: 1px 1px 2px rgba(119, 119, 119, 0.333);
-  transition: 0.5s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.btn-sair::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+  pointer-events: none;
 }
 
 .btn-sair:hover{
   cursor: pointer;
   background-color: #8b2323;
   scale: 1.01;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(162, 51, 51, 0.3);
 }
+
+.btn-sair:hover::before {
+  width: 300px;
+  height: 300px;
+  animation: wave-pulse-red 0.6s ease-out;
+}
+
+.btn-sair:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+@keyframes wave-pulse-red {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* Efeito adicional de ondulação contínua vermelha */
+.btn-sair::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-sair:hover::after {
+  left: 100%;
+}
+
 #cancelar-sair{
   background-color: #ababab;
   border: none;
@@ -288,6 +438,8 @@ nav.menu-mobile ul{
     transform: translateX(0);
     display: flex;
   }
+  
+  /* Botão sair mobile com efeito wave */
   .div-btn .btn-sair{
     border: none;
     cursor: pointer;
@@ -298,16 +450,62 @@ nav.menu-mobile ul{
     color: #d4d4d4;
     background-color: #4065AB;
     border-radius: 3px;
-    transition: 0.5s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 1px 1px 2px rgba(55, 55, 55, 0.34);
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
   }
-  .div-btn .btn-sair{
+
+  .div-btn .btn-sair::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+    pointer-events: none;
+  }
+
+  .div-btn .btn-sair:hover{
     scale: 1.02;
     background-color: #31579c;
     width: 100px;
     display: flex;
     align-items: flex-start;
     align-items: center;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(64, 101, 171, 0.3);
+  }
+
+  .div-btn .btn-sair:hover::before {
+    width: 300px;
+    height: 300px;
+    animation: wave-pulse 0.6s ease-out;
+  }
+
+  .div-btn .btn-sair::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  .div-btn .btn-sair:hover::after {
+    left: 100%;
   }
   
   .div-btn .btn-sair img{

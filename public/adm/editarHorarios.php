@@ -46,7 +46,6 @@ if (isset($_SESSION['msg_erro'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuração de Horários</title>
-    <link rel="stylesheet" href="../../assets/css/adm/Horarios.css">
     <link rel="stylesheet" href="../../assets/css/adm/editarHorarios.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
