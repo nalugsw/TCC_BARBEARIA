@@ -45,16 +45,12 @@ $informacoes = buscarInformacoes();
             </div>
         </div>
 
-        <div class="perfil-container">
-        <button type="submit">Adicionar foto de destaque</button>
-        </div>
-    
         <dialog closed id="modal-edit" >
             <form action="" method="POST" enctype="multipart/form-data">
                 
                 <div id="img-container">
                     <p>*Foto do perfil</p>
-                    <img id="preview" src="" >
+                    <img id="preview" src="../../<?php echo $funcionario['foto']; ?>" >
                     <div class="input-campo-edit">
                         <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
                         <label for="arquivo" class="custom-file-button">Escolha a foto</label>
@@ -62,11 +58,11 @@ $informacoes = buscarInformacoes();
                 </div>
                 <div class="input-campo-edit">
                     <p>*Nome do perfil</p>
-                    <input type="text" value="" name="nome">
+                    <input type="text" value="<?php echo $funcionario['nome']; ?>" name="nome">
                 </div>
                 <div class="input-campo-edit">
                     <p>*Endereço do perfil</p>
-                    <input type="text" value="" name="telefone" id="telefone" >
+                    <input type="text" value="<?php echo $informacoes['endereco']; ?>" name="telefone" id="telefone" >
                 </div>
                 <div class="btns-edit">
                     <button type="submit">Atualizar</button>
@@ -75,68 +71,137 @@ $informacoes = buscarInformacoes();
             </form>
         </dialog>
     
+        <div class="Desq-container">
+            <form action="">
+                <div class="addDesataque">
+                    <div class="img-container-desq">
+                        <img id="cadDestaque" src="" >
+                        <div class="input-campo-cad">
+                            <input required type="file" id="arquivoDestaque" class="input-file" name="foto"accept="image/*" onchange="loadFileDestaque(event)">
+                            <label for="arquivoDestaque" class="custom-desq-button">Escolha a foto</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Adicionar foto de destaque</button>
+            </form>
+        </div>
+    
         <div class="galeria">
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid2.png" alt="Imagem 1">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo.jpg" alt="Imagem 1">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo.jpg" onclick="abrirModalExcluir(this)" data-id="">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid3.png" alt="Imagem 2">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo.jpg" alt="Imagem 2">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo.jpg" onclick="abrirModalExcluir(this)"data-id="">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid1.png" alt="Imagem 3">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo2.jpg" alt="Imagem 3">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo2.jpg" onclick="abrirModalExcluir(this)"data-id="">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid2.png" alt="Imagem 1">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo3.jpg" alt="Imagem 1">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo3.jpg" onclick="abrirModalExcluir(this)"data-id="">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid3.png" alt="Imagem 2">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo4.jpg" alt="Imagem 2">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo4.jpg" onclick="abrirModalExcluir(this)"data-id="">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid1.png" alt="Imagem 3">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo5.jpg" alt="Imagem 3">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo5.jpg" onclick="abrirModalExcluir(this)">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid2.png" alt="Imagem 1">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo6.jpg" alt="Imagem 1">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo6.jpg" onclick="abrirModalExcluir(this)">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid3.png" alt="Imagem 2">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo7.jpg" alt="Imagem 2">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo7.jpg" onclick="abrirModalExcluir(this)">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid1.png" alt="Imagem 3">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo8.jpg" alt="Imagem 3">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo8.jpg" onclick="abrirModalExcluir(this)">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid5.png" alt="Imagem 4">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo9.jpg" alt="Imagem 4">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo9.jpg" onclick="abrirModalExcluir(this)">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
             <div class="imagem-item">
-                <img src="../../assets/img/foto-grid2.png" alt="Imagem 1">
-                <span class="material-symbols-outlined">more_vert</span>
-            </div>
-            <div class="imagem-item">
-                <img src="../../assets/img/foto-grid3.png" alt="Imagem 2">
-                <span class="material-symbols-outlined">more_vert</span>
-            </div>
-            <div class="imagem-item">
-                <img src="../../assets/img/foto-grid1.png" alt="Imagem 3">
-                <span class="material-symbols-outlined">more_vert</span>
-            </div>
-            <div class="imagem-item">
-                <img src="../../assets/img/foto-grid5.png" alt="Imagem 4">
-                <span class="material-symbols-outlined">more_vert</span>
+                <img src="../../uploads/portfolio/fotocabelo10.jpg" alt="Imagem 1">
+                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo10.jpg" onclick="abrirModalExcluir(this)">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
         </div>
+        <dialog id="modal-excluir">
+            <form action="excluir_foto.php" method="POST">
+                <h2>Realmente deseja excluir esta foto?</h2>
+                <img id="imagem-modal-excluir" src="" >
+                <input type="hidden" name="id" id="input-id-foto">
+                <input type="hidden" name="acao" value="excluir-foto">
+                <div class="btn-cancel-desq">
+                    <button type="submit" id="btn-cancelar">Excluir</button>
+                    <button type="button" onclick="fecharModalExcluir()">Voltar</button>
+                </div>
+            </form>
+        </dialog>
     </main>
     
     
-            
+    <script>
+        var loadFileDestaque = function(event) {
+        var file = event.target.files[0];
+        if (!file) return;
+
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('cadDestaque');
+            output.style.display = 'block';
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+        };
+
+        function abrirModalExcluir(botao) {
+            const modal = document.getElementById("modal-excluir");
+            const imagem = document.getElementById("imagem-modal-excluir");
+            const inputId = document.getElementById("input-id-foto");
+
+            const src = botao.getAttribute("data-src");
+            const id = botao.getAttribute("data-id");
+
+            imagem.src = src;
+            inputId.value = id;
+
+            modal.showModal();
+        }
+
+        function fecharModalExcluir() {
+            const modal = document.getElementById("modal-excluir");
+            modal.close();
+        }
+    </script>
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>
 </body>

@@ -113,7 +113,6 @@ nav.menu-lateral-desktop ul li.item-menu.active::before {
   left: 0;
   top: 0;
   height: 100%;
-  width: 2px;
   background: linear-gradient(180deg, #4065AB, #5577CC);
   border-radius: 0 2px 2px 0;
   box-shadow: 0 0 8px rgba(64, 101, 171, 0.008);

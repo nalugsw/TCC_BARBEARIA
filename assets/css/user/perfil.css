@@ -239,12 +239,12 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
 /* Botão de cancelar */
 .desmarcar {
     position: absolute;
-    right: -10px;
-    top: 20px;
+    right: 0px;
+    top: 15px;
     background-color: #bb3838;
-    width: 28px;
+    width: 0px;
     height: 28px;
-    border-radius: 50%;
+    border-radius: 50% 0 0 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -256,7 +256,8 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
 
 section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa:hover .desmarcar {
     opacity: 1;
-    right: -5px;
+    right: 0px;
+    width: 28PX;
 }
 
 .desmarcar button {
@@ -267,8 +268,8 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
 }
 
 .desmarcar img {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     filter: brightness(0) invert(1);
 }
 

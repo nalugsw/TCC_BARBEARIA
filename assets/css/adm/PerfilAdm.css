@@ -103,6 +103,7 @@ body::-webkit-scrollbar-thumb{
 .galeria {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    max-width: 1000px;
     gap: 10px;
     width: 90%;
     margin: 0 auto;
@@ -132,14 +133,21 @@ body::-webkit-scrollbar-thumb{
 }
 
 .imagem-item {
-    position: relative; 
+    position: relative;
     display: inline-block;
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    max-width: 300px;
+    min-width: 200px;
+    min-height: 200px;
 }
 
 .imagem-item img {
     display: block;
-    width: 100%; 
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -176,7 +184,9 @@ main .material-symbols-outlined {
 }
 
 .galeria .material-symbols-outlined:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(31, 31, 31, 0.8);
+    scale: 1.05
+    ;
 }
 
 
@@ -359,4 +369,96 @@ main .material-symbols-outlined {
     cursor: pointer;
     background-color: #265727;
     color: #edffed;
+}
+.btn-excluir{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+}
+.input-campo-cad{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#cadDestaque{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.custom-desq-button{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa38;
+}
+.img-container-desq{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.addDesataque{
+    width: 300px;
+    height: 300px;
+}
+.Desq-container form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.Desq-container form button{
+    margin-top: 20px;
+    background-color: #0A6A28;
+    padding: 7px 10px ;
+    border: none;
+    color: #D3FAE0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #4e4e4e4b;
+    text-transform:capitalize;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.2s;
+    box-shadow: 2px 2px 5px rgba(24, 24, 24, 0.466);
+}
+.Desq-container{
+    padding: 20px;
+    background-color: #313131;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgba(24, 24, 24, 0.466);
+}
+#modal-excluir{
+    top:30%;
+    width: 300px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 3px 2px 4px #1a1a1aa9;
+}
+
+#modal-excluir form{
+    margin: 20px;
+
+}
+
+#modal-excluir form img{
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+}
+.btn-cancel-desq{
+    width: 100%;
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-between;
+}
+.btn-cancel-desq button{
+    padding: 5px 10px ;
+    font-weight: 600;
+    
 }
