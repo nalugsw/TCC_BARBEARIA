@@ -77,22 +77,25 @@ try {
     $stmtAtendimentos = $pdo->query($sqlAtendimentos);
     $atendimentos = $stmtAtendimentos->fetchAll(PDO::FETCH_ASSOC);
 
-    // Consulta para estatísticas
+    // Consulta para estatísticass
     $sqlEstatisticas = "
-        SELECT 
-            COUNT(*) AS total_atendimentos,
-            (SELECT s.nome FROM SERVICO s 
-             JOIN CLIENTE_SERVICO cs ON s.id_servico = cs.id_servico
-             JOIN AGENDA a ON cs.id_cliente_servico = a.id_cliente_servico
-             WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
-             GROUP BY s.nome ORDER BY COUNT(*) DESC LIMIT 1) AS servico_mais_popular,
-            COALESCE(SUM(s.valor), 0) AS lucro_total
-        FROM AGENDA a
-        JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
-        JOIN SERVICO s ON cs.id_servico = s.id_servico
-        WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
-        AND LOWER(a.status_agenda) LIKE 'finalizado%'
-    ";
+    SELECT 
+        COUNT(*) AS total_atendimentos,
+        (SELECT s.nome 
+            FROM SERVICO s 
+         JOIN CLIENTE_SERVICO cs ON s.id_servico = cs.id_servico
+         JOIN AGENDA a ON cs.id_cliente_servico = a.id_cliente_servico
+         WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+         AND LOWER(a.status_agenda) LIKE 'finalizado%'  -- ADICIONEI ESTA CONDIÇÃO
+         GROUP BY s.nome 
+         ORDER BY COUNT(*) DESC LIMIT 1) AS servico_mais_popular,
+        COALESCE(SUM(s.valor), 0) AS lucro_total
+    FROM AGENDA a
+    JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
+    JOIN SERVICO s ON cs.id_servico = s.id_servico
+    WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+    AND LOWER(a.status_agenda) LIKE 'finalizado%'
+";
     $stmtEstatisticas = $pdo->query($sqlEstatisticas);
     $stats = $stmtEstatisticas->fetch(PDO::FETCH_ASSOC);
 
