@@ -35,12 +35,19 @@ $produtos = mostrarProdutos();
         <div class="titulo-produtos">
             <h1>PRODUTOS</h1>
         </div>
-
         <div class="grid-catalogo-produtos">
             <?php foreach($produtos as $produto): ?>
-                <div class="item-produto" data-titulo="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" data-descricao="<?php echo $produto['descricao']; ?>">
+                <div class="item-produto <?php echo "item-" . ($produto['status_produto'] == 'inativo') ? 'ativo' : ''; ?>" data-titulo="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" data-descricao="<?php echo $produto['descricao']; ?>" value="<?php echo $produto['status_produto']; ?>">
+                    <div class="estoque" >
+                        <button class="btn-ativo">
+                            <img src="../../assets/img/icone-add.png" alt="ativo">
+                        </button>
+                        <button class="btn-inativo">
+                            <img src="../../assets/img/icone-remove.png" alt="">
+                        </button>
+                    </div>
                     <div class="img-produto">
-                        <img src="<?php echo "../../" . $produto['foto']; ?> " alt="produto">
+                        <img src="<?php echo "../../" . $produto['foto']; ?>" alt="produto">
                     </div>
                     <div class="txt-produto">
                         <h2><?php echo $produto['nome']; ?></h2>
@@ -48,75 +55,165 @@ $produtos = mostrarProdutos();
                     </div>
                     
                     <div class="btn-edit">
+                        <button onclick="abrirModalEdicao('editar-produto-<?php echo $produto['id_produto']; ?>', '<?php echo $produto['nome']; ?>', '<?php echo $produto['descricao']; ?>', '<?php echo $produto['preco']; ?>', '<?php echo "../../" . $produto['foto']; ?>')">
                             <span class="material-symbols-outlined">edit</span>
+                        </button>
                     </div>
                 </div>
+                
+                
+                <dialog id="editar-produto-<?php echo $produto['id_produto']; ?>" class="modal-edicao">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
+                        <button type="button" class="cancelar-edit" onclick="this.closest('dialog').close();">
+                            <img src="../../assets/img/iconeClose.png" alt="Fechar">
+                        </button>
+                        <div id="img-container">
+                            <p>*Foto do produto</p>
+                            <div class="input-campo">
+                                <img id="preview-<?php echo $produto['id_produto']; ?>" src="<?php echo "../../" . $produto['foto']; ?>" class="preview">
+                                <input type="file" id="arquivo-<?php echo $produto['id_produto']; ?>" class="input-file" name="foto" accept="image/*" onchange="loadFile(event, 'preview-<?php echo $produto['id_produto']; ?>')">
+                                <label for="arquivo-<?php echo $produto['id_produto']; ?>" class="custom-file-button">Escolha a foto</label>
+                            </div>
+                        </div>
+                        <div class="input-campo">
+                            <p>*Nome do produto</p>
+                            <input type="text" name="nome" value="<?php echo $produto['nome']; ?>">
+                        </div>
+                        <div class="input-campo">
+                            <p>*Descrição</p>
+                            <textarea name="descricao" cols="30" rows="10"><?php echo $produto['descricao']; ?></textarea>
+                        </div>
+                        <div class="input-campo">
+                            <p>*Preço do item</p>
+                            <input type="number" step="0.01" min="0" name="valor" value="<?php echo $produto['preco']; ?>" placeholder="R$00,00">
+                            <div class="input-btn">
+                                <button type="submit" class="btn-atualizar">Atualizar</button>
+                                <button class="btn-excluir">Excluir</button>
+                            </div>
+                        </div>
+                    </form>
+                </dialog>
             <?php endforeach; ?>
         </div>
+        <dialog  id="modal-create" class="modal">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <button id="cancelar-edit" type="button" class="btn-fechar-modal">
+                    <img src="../../assets/img/iconeClose.png" alt="Fechar modal">
+                </button>
+                
+                <div id="img-container">
+                    <p>*Foto do produto</p>  
+                    <div class="input-campo">
+                        <img id="preview" class="preview" src="" >
+                        <input type="file" id="arquivo" class="input-file" name="foto" accept="image/*" onchange="loadFile(event)">
+                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                    </div>
+                </div>
+                
+                <div class="input-campo">
+                    <p>*Nome do produto</p>  
+                    <input type="text" name="nome" required>
+                </div>
+                
+                <div class="input-campo">
+                    <p>*Descrição</p>
+                    <textarea name="descricao" cols="30" rows="10" required></textarea> 
+                </div>
+                
+                <div class="input-campo">
+                    <p>*Preço do item</p>
+                    <input type="number" step="0.01" min="0" name="valor" placeholder="R$00,00" required>
+                    <button type="submit" id="btn-cadastrar">Cadastrar</button> 
+                </div>
+            </form>
+        </dialog>
 
-        <dialog closed id="modal-edit" >
-            <form action="" method="POST" enctype="multipart/form-data">
-                <button id="cancelar-edit" type="button"><img src="../../assets/img/iconeClose.png" alt=""></button>
-                <div id="img-container">
-                    <p>*Foto do perfil</p>
-                    <div class="input-campo">
-                        <img id="preview" src="" >
-                        <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
-                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
-                    </div>
-                </div>
-                <div class="input-campo">
-                    <p>*Nome do prodto</p>
-                    <input type="text" value="" name="nome">
-                </div>
-                <div class="input-campo">
-                    <p>*descrição</p>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                </div>
-                <div class="input-campo">
-                    <p>*preço item</p>
-                    <input type="number" step="0.01" min="0" id="preco-servico" name="valor" placeholder="R$00,00">
-                    <button type="submit" id="btn-atualizar">Atualizar</button>
-                </div>
-                </div>
-            </form>
-        </dialog>
-        
-        <dialog closed id="modal-create" class="modal">
-            <form action="" method="POST" enctype="multipart/form-data">
-                <button id="cancelar-edit" type="button"><img src="../../assets/img/iconeClose.png" alt=""></button>
-                <div id="img-container">
-                    <p>*Foto do perfil</p>
-                    <div class="input-campo">
-                        <img id="preview" src="" >
-                        <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
-                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
-                    </div>
-                </div>
-                <div class="input-campo">
-                    <p>*Nome do prodto</p>
-                    <input type="text" value="" name="nome">
-                </div>
-                <div class="input-campo">
-                    <p>*descrição</p>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                </div>
-                <div class="input-campo">
-                    <p>*preço item</p>
-                    <input type="number" step="0.01" min="0" id="preco-servico" name="valor" placeholder="R$00,00">
-                    <button type="submit" id="btn-atualizar">Atualizar</button>
-                </div>
-                </div>
-            </form>
-        </dialog>
-        <div class="btn-addProduto btn-edit">
-            <button><img src="../../assets/img/icone-add.png" alt=""></button>
-        </div>
+    
+            <button id="btn-abrir-modal" class="btn-addProduto">
+                <img src="../../assets/img/icone-add.png" alt="Adicionar produto">
+            </button>
+
     </section>
 </main>
-        <script src="../../assets/js/modal-deslogar.js"></script>
-        
-        <script src="../../assets/js/modal-perfilEdit.js"></script>
-        <script src="../../assets/js/preview-img.js"></script>
+<script>
+// Funções para o modal de criação
+document.addEventListener('DOMContentLoaded', function() {
+    // Modal de criação
+    const modalCreate = document.getElementById('modal-create');
+    const btnAbrirModal = document.getElementById('btn-abrir-modal');
+    const btnFecharModal = document.getElementById('cancelar-edit');
+    
+    // Abrir modal de criação
+    if(btnAbrirModal && modalCreate) {
+        btnAbrirModal.addEventListener('click', () => {
+            console.log('Abrindo modal de criação'); // Debug
+            modalCreate.showModal();
+        });
+    }
+    
+    // Fechar modal de criação
+    if(btnFecharModal) {
+        btnFecharModal.addEventListener('click', () => {
+            modalCreate.close();
+        });
+    }
+    
+    // Fechar ao clicar fora (para todos os modais)
+    document.querySelectorAll('dialog').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if(e.target === modal) {
+                modal.close();
+            }
+        });
+    });
+});
+
+// Função para edição (já existente)
+function abrirModalEdicao(modalId, nome, descricao, preco, foto) {
+    const modal = document.getElementById(modalId);
+    
+    modal.querySelector('input[name="nome"]').value = nome;
+    modal.querySelector('textarea[name="descricao"]').value = descricao;
+    modal.querySelector('input[name="valor"]').value = preco;
+    
+    // Atualiza a pré-visualização da imagem
+    const previewId = 'preview-' + modalId.split('-').pop();
+    const preview = document.getElementById(previewId);
+    if(preview) preview.src = foto;
+    
+    modal.showModal();
+}
+
+// Função para pré-visualização de imagem (atualizada)
+function loadFile(event, previewId = 'preview') {
+    const output = document.getElementById(previewId);
+    if(output && event.target.files[0]) {
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+            URL.revokeObjectURL(output.src);
+        }
+    }
+}
+    document.querySelectorAll('.item-produto').forEach(function(produto) {
+        const btnAtivo = produto.querySelector('.btn-ativo');
+        const btnInativo = produto.querySelector('.btn-inativo');
+
+        btnAtivo.addEventListener('click', function() {
+            produto.classList.remove('inativo');
+            produto.classList.add('ativo');
+            // Aqui você pode também fazer um fetch/AJAX para atualizar o status no backend
+        });
+
+        btnInativo.addEventListener('click', function() {
+            
+            produto.classList.remove('ativo');
+            produto.classList.add('inativo');
+            // Aqui você pode também fazer um fetch/AJAX para atualizar o status no backend
+        });
+    });
+</script>
+
+    
 </body>
 </html>

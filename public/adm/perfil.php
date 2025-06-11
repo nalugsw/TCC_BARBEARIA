@@ -5,6 +5,9 @@ include("../../config/conexao.php");
 session_start();
 require_once("../../functions/helpers.php");
 verificaSession("administrador");
+$funcionario = dadosFuncionario();
+require("../../functions/informacoes.php");
+$informacoes = buscarInformacoes();
 
 ?>
 
@@ -31,41 +34,46 @@ verificaSession("administrador");
         <div class="perfil-container">
             <div class="info">
                 <div class="foto-perfil">
-                    <img src="../../assets/img/foto-barbeiro-tela-home.png" alt="foto de perfil adm">
+                    <!-- <img src="../../assets/img/foto-barbeiro-tela-home.png" alt="foto de perfil adm"> -->
+                    <img src="../../<?php echo $funcionario['foto']; ?>" alt="foto de perfil adm">
                     <a href="" class="btn-edit"><span class="material-symbols-outlined editar-icon">edit</span> </a>
                 </div>
                 <div class="dados-perfil">
-                    <h1>Luis Pereira</h1>
-                    <p>Rua Naoseioque, n°171 - Jardim Setadoido</p>
+                    <h1><?php echo $funcionario['nome']; ?></h1>
+                    <p><?php echo $informacoes['endereco']; ?></p>
                 </div>
             </div>
         </div>
+
+        <div class="perfil-container">
+        <button type="submit">Adicionar foto de destaque</button>
+        </div>
     
-    <dialog closed id="modal-edit" >
-        <form action="" method="POST" enctype="multipart/form-data">
-            
-            <div id="img-container">
-                <p>*Foto do perfil</p>
-                <img id="preview" src="" >
-                <div class="input-campo">
-                    <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
-                    <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+        <dialog closed id="modal-edit" >
+            <form action="" method="POST" enctype="multipart/form-data">
+                
+                <div id="img-container">
+                    <p>*Foto do perfil</p>
+                    <img id="preview" src="" >
+                    <div class="input-campo-edit">
+                        <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                    </div>
                 </div>
-            </div>
-            <div class="input-campo">
-                <p>*Nome do perfil</p>
-                <input type="text" value="" name="nome">
-            </div>
-            <div class="input-campo">
-                <p>*Numero do perfil</p>
-                <input type="text" value="" name="telefone" id="telefone" >
-            </div>
-            <div class="btns-edit">
-                <button type="submit">Atualizar</button>
-                <button id="cancelar-edit" type="button">Voltar</button>
-            </div>
-        </form>
-    </dialog>
+                <div class="input-campo-edit">
+                    <p>*Nome do perfil</p>
+                    <input type="text" value="" name="nome">
+                </div>
+                <div class="input-campo-edit">
+                    <p>*Endereço do perfil</p>
+                    <input type="text" value="" name="telefone" id="telefone" >
+                </div>
+                <div class="btns-edit">
+                    <button type="submit">Atualizar</button>
+                    <button id="cancelar-edit" type="button">Voltar</button>
+                </div>
+            </form>
+        </dialog>
     
         <div class="galeria">
             <div class="imagem-item">

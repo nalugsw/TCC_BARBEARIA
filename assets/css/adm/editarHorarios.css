@@ -6,6 +6,14 @@ main {
   color: #f4f4f4;
   background: linear-gradient(135deg, #232323 0%, #2a2a2a 100%);
   min-height: 100vh;
+
+}
+.container-horarios{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+
 }
 
 main h1 {
@@ -16,6 +24,7 @@ main h1 {
   color: #ffffff;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   position: relative;
+  overflow: hidden;
 }
 
 main h1::after {

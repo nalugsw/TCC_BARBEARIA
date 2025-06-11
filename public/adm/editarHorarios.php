@@ -4,18 +4,40 @@ session_start();
 require_once("../../functions/helpers.php");
 verificaSession("administrador");
 
-// Processar o formulário de intervalo, se enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['intervalo'])) {
     $intervalo = (int)$_POST['intervalo'];
     $_SESSION['intervalo_horarios'] = $intervalo;
 } else {
-    // Usar intervalo padrão de 30 minutos se não estiver definido
     $intervalo = $_SESSION['intervalo_horarios'] ?? 30;
 }
 
-// Busca horários atuais no banco
 $stmt = $pdo->query("SELECT TIME_FORMAT(horario, '%H:%i') as horario FROM horarios_disponiveis");
 $horariosAtuais = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+$diasInativos = [];
+$stmt = $pdo->query("SELECT 
+    DAYOFWEEK(data_inativa) as dia_semana, 
+    motivo 
+    FROM dias_inativos 
+    GROUP BY dia_semana, motivo");
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $diasMap = [1 => 'domingo', 2 => 'segunda', 3 => 'terca', 4 => 'quarta', 5 => 'quinta', 6 => 'sexta', 7 => 'sabado'];
+    $diaId = $diasMap[$row['dia_semana']];
+    $diasInativos[$diaId] = [
+        'fechado' => true,
+        'emergencia' => ($row['motivo'] == 'Emergência')
+    ];
+}
+
+if (isset($_SESSION['msg_sucesso'])) {
+    echo '<div class="alert alert-success">' . $_SESSION['msg_sucesso'] . '</div>';
+    unset($_SESSION['msg_sucesso']);
+}
+
+if (isset($_SESSION['msg_erro'])) {
+    echo '<div class="alert alert-danger">' . $_SESSION['msg_erro'] . '</div>';
+    unset($_SESSION['msg_erro']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,73 +73,72 @@ $horariosAtuais = $stmt->fetchAll(PDO::FETCH_COLUMN);
                     <button type="submit">Aplicar</button>
                 </div>
              </form>
-            
-            <!-- Formulário para selecionar horários disponíveis -->
-            <form id="formHorarios" method="POST" action="../../functions/adm/salvarHorarios.php">
-                <h3>Escolha os horários disponíveis:</h3>
-                <div class="grade-horaria">
-                    <?php
-                    // Gerar grade horária dinâmica com base no intervalo
-                    $horaInicial = strtotime('07:00');
-                    $horaFinal = strtotime('22:00');
-                    
-                    while ($horaInicial <= $horaFinal) {
-                        $horaFormatada = date('H:i', $horaInicial);
-                        echo '<label class="horario-option">';
-                        echo '<input type="checkbox" name="horarios[]" value="' . $horaFormatada . '"';
-                        echo in_array($horaFormatada, $horariosAtuais) ? ' checked' : '';
-                        echo '>';
-                        echo '<span>' . $horaFormatada . '</span>';
-                        echo '</label>';
-                        
-                        // Adicionar intervalo
-                        $horaInicial = strtotime("+$intervalo minutes", $horaInicial);
-                    }
-                    ?>
-                </div>
-                <br>
-                <button type="submit">Salvar Horários</button>
-            </form>
-        <!--<form action="" class="form-dias">
+            <form action="../../functions/adm/diasInativos.php" method="POST" class="form-dias">
                 <h3>Grade Dias</h3>
                 <button type="submit" id="enviar">Salvar Configuração</button>
-                <div class="">
+                <div class="horariosDias">
+                        <div class="horario">
+                            <h5>Primeiro Horario</h5>
+                            <div class="hora">
+                                <div class="input">
+                                    <label for="priHoraIni">Abrir:</label>
+                                    <input type="time"  id="priHoraIni" value="08:00">
+                                </div>
+                                <div class="input">
+                                    <label for="priHoraFech">Fechar:</label>
+                                    <input type="time"  id="priHoraFech" value="12:00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="horario">
+                            <h5>Segundo Horario</h5>
+                            <div class="hora">
+                                <div class="input">
+                                    <label for="segHoraIni">Abrir:</label>
+                                    <input type="time" id="segHoraIni" value="14:00">
+                                </div>
+                                <div class="input">
+                                    <label for="segHoraFech">Fechar:</label>
+                                    <input type="time" id="segHoraFech" value="20:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                $diasSemana = [
+                    'Segunda-feira' => 'segunda',
+                    'Terça-feira' => 'terca',
+                    'Quarta-feira' => 'quarta',
+                    'Quinta-feira' => 'quinta',
+                    'Sexta-feira' => 'sexta',
+                    'Sábado' => 'sabado',
+                    'Domingo' => 'domingo'
+                ];
+                
+                foreach ($diasSemana as $diaNome => $diaId): 
+                    $diaConfig = $diasInativos[$diaId] ?? [];
+                ?>
+                <div class="dia">
                     <div class="intervaloDia">
-                        <h4>Segunda-feira</h4>
+                        <h4><?= $diaNome ?></h4>
                         <hr>
                         <div class="checks">
                             <div>
-                                <label for="fechadoSegunda">fechado</label>
-                                <input type="checkbox" name="fechado" id="fechadoSegunda">
+                                <input type="checkbox" name="dias[<?= $diaId ?>][fechado]" id="fechado<?= ucfirst($diaId) ?>" 
+                                    <?= isset($diaConfig['fechado']) ? 'checked' : '' ?>>
+                                <label for="fechado<?= ucfirst($diaId) ?>">fechado</label>
                             </div>
                             <div>
-                                <label for="emergenciaSegunda">emergência</label>
-                                <input type="checkbox" name="emergencia" id="emergenciaSegunda">
+                                <input type="checkbox" name="dias[<?= $diaId ?>][emergencia]" id="emergencia<?= ucfirst($diaId) ?>"
+                                    <?= isset($diaConfig['emergencia']) && $diaConfig['emergencia'] ? 'checked' : '' ?>>
+                                <label for="emergencia<?= ucfirst($diaId) ?>">emergência</label>
                             </div>
                         </div>
                     </div>
-                    <div class="horariosDias">
-                        <div class="horario">
-                            <h5>Primeiro horario</h5>
-                            <div class="hora">
-                                <label for="priHoraIniSeg">Abrir</label>
-                                <input type="time" name="priHoraIniSeg" id="priHoraIniSeg">
-                                <label for="priHoraFechSeg">Fechar</label>
-                                <input type="time" name="priHoraFechSeg" id="priHoraFechSeg">
-                            </div>
-                        </div>
-                        <div class="horario">
-                            <h5>Segundo horario</h5>
-                            <div class="hora">
-                                <label for="SegHoraIniSeg">Abrir</label>
-                                <input type="time" name="SegHoraIniSeg" id="SegHoraIniSeg">
-                                <label for="SegHoraFechSeg">Fechar</label>
-                                <input type="time" name="SegHoraFechSeg" id="SegHoraFechSeg">
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
-            </form> -->
+                <?php endforeach; ?>
+            </form>
         </div>
     </main>
 

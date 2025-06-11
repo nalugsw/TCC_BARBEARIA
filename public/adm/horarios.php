@@ -85,12 +85,23 @@ uksort($agendamentosPorData, function($a, $b) {
                         <div class="servico-marcado">
                             <div class="foto-cliente">
                                 <img src="../../<?php echo $agenda['foto_cliente']; ?>" alt="foto cliente">
-                                <form action="../../functions/validaAgendamento.php" method="POST">
-                                    <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>" >
-                                    <input type="hidden" name="acao" value="finalizado">
-                                    <button type="submit">Finalizar</button>
-                                </form>
+                                <button type="button" class="btn-finalizar-horario" onclick="document.getElementById('finalizar-horario-<?php echo $agenda['id_agenda']; ?>').showModal();">
+                                    Finalizar
+                                </button>
                             </div>
+
+                            <dialog id="finalizar-horario-<?php echo $agenda['id_agenda']; ?>" class="horariofinalizar">
+                                <form action="../../functions/validaAgendamento.php" method="POST" >
+                                    <h2>Finalizou o serviço?</h2>
+                                    <input type="hidden" name="id" value="<?php echo $agenda['id_agenda']; ?>">
+                                    <input type="hidden" name="acao" value="finalizado">
+                                    <div class="btn-cancel-horario">
+                                        <button type="submit" id="btn-finalizar" class="btn-finalizar-horario">Finalizar</button>
+                                        <button type="button" onclick="this.closest('dialog').close();" id="voltar">Voltar</button>
+                                    </div>
+                                </form>
+                            </dialog>
+
 
                             <div class="nome-cliente">
                                 <h3>Nome</h3>
@@ -137,6 +148,7 @@ uksort($agendamentosPorData, function($a, $b) {
     </div>
 </section>
     </main>
+    <script src="../../assets/js/modal-finalizar-horario.js"></script>
     <script src="../../assets/js/modal-cancelar-horario.js"></script>
     <script src="../../assets/js/msg-whatsap.js"></script>
     <script>

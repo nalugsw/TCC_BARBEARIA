@@ -94,11 +94,11 @@ section.produtos .grid-catalogo-produtos .item-produto .txt-produto p{
     font-weight: 200;
 }
 
-section.produtos .modal{
-    display: none;
+section.produtos .modal[open] {
+    display: block;
 }
 
-#modal-edit{
+.modal-edicao{
     align-content: center;
     border: none;
     overflow-x: hidden;
@@ -107,7 +107,7 @@ section.produtos .modal{
     height: 100%;
     width: 100%;
 }
-#modal-edit form{
+.modal-edicao form{
     background-color: #f9f9f9;
     display: flex;
     width: 50%;
@@ -117,31 +117,32 @@ section.produtos .modal{
     padding: 20px;
     flex-direction: column;
     position: relative;
+    border-radius: 3px;
 }
-#modal-edit::backdrop{
-    background-color: #23232383;
+.modal-edicao::backdrop{
+    background-color: #23232394;
 }
-#modal-edit p{
-    font-size: 15px;
-    color: #232323;
+.modal-edicao p{
+    font-size: 13px;
+    color: #474747;
     font-weight: bold;
     
 }
-#modal-edit .input-campo {
+.modal-edicao .input-campo {
     margin-bottom: 5px;
 }
-#modal-edit .input-campo input{
+.modal-edicao .input-campo input{
     padding: 3px 5px ;
     width: 100%;
 }
-#modal-edit .input-campo:last-child input{
+.modal-edicao.input-campo:last-child input{
     width: 48%;
 }
-#modal-edit .input-campo p{
+.modal-edicao.input-campo p{
     margin-bottom: 5px;
 }
 
-#modal-edit .input-campo textarea{
+.modal-edicao .input-campo textarea{
     padding: 5px 20px 3px 5px;
     width: 100%;
     height: 70px;
@@ -163,7 +164,7 @@ section.produtos .modal{
     position: absolute;
 }
 
-#modal-edit .btns-modal{
+.modal-edicao .btns-modal{
     height: 100%;
 }
 #img-container{
@@ -189,7 +190,7 @@ section.produtos .modal{
     align-items: center;
     justify-content: center;
 }
-#preview{
+.preview{
     border: solid 1px rgb(136, 136, 136);
     width:100% ;
     height: 100%;
@@ -197,7 +198,7 @@ section.produtos .modal{
     margin: 0 auto;
     object-fit: cover;
 }
-.btn-edit{
+.btn-edit button{
     position: absolute;
     right: 0;
     bottom: 10px;
@@ -209,11 +210,9 @@ section.produtos .modal{
     align-items: center;
     color: #f4f4f4;
     border: #232323 solid 3px;
-}
-.btn-edit{
     cursor: pointer;
 }
-#cancelar-edit{
+.cancelar-edit{
     border-radius: 100%;
     position: absolute;
     right: 5px;
@@ -228,16 +227,21 @@ section.produtos .modal{
     align-items: center;
     cursor: pointer;
 }
-#cancelar-edit:hover{
+.cancelar-edit:hover{
     background-color: #585858;
 }
 
-#cancelar-edit img{
+.cancelar-edit img{
     border-radius: 100%;
     width: 20px;
 }
-#btn-atualizar{
-    width: 49%;
+.input-btn{
+    width: 100%;
+    display: flex;
+    gap: 7px;
+}
+.btn-atualizar{
+    width: 50%;
     padding: 5px 0;
     background-color: #0A6A2B ;
     border: none;
@@ -245,25 +249,157 @@ section.produtos .modal{
     border-radius: 3px;
     font-weight: 500;
     cursor: pointer;
+    margin-top: 10px;
 }
 
-#btn-atualizar:hover{
+.btn-atualizar:hover{
     background-color: #07461d ;
 }
-.btn-addProduto{
-    position: absolute;
-    right: 50px;
-    bottom: -10px;
-}
-.btn-addProduto button{
-    border-radius: 100%;
-    background-color: #4065AB;
+.btn-excluir{
+    width: 50%;
+    padding: 5px 0;
+    background-color: #bb3838 ;
     border: none;
+    color: #ffe7e7;
+    border-radius: 3px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-excluir{
+    background-color: #741313 ;
+}
+.btn-addProduto {
+    position: fixed;
+    right: 50px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #4065AB;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index: 900; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-.btn-addProduto button img{
-    width: 50px;
+
+.btn-addProduto img {
+    width: 30px;
+    height: 30px;
+}
+#modal-create {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9f9f9;
+    width: 50%;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 3px;
+    border: none;
+    z-index: 1000;
+}
+
+#modal-create::backdrop {
+    background-color: rgba(35, 35, 35, 0.58);
+}
+
+#modal-create form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#modal-create .btn-fechar-modal {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-color: #a7a7a7;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#modal-create form textarea{
+    height: 50px;
+    padding: 5px;
+    width: 100%;
+}
+
+#modal-create form input{
+    padding: 5px;
+    width: 100%;
+}
+
+#modal-create form #img-container .input-campo{
+    height: 300px;
+}
+#modal-create .btn-fechar-modal img {
+    width: 20px;
+}
+#btn-cadastrar{
+    margin-top: 10px;
+    background-color:#0A6A2B;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    color: #e2ffec;
+    padding: 5px 10px;
+
+}
+
+#btn-cadastrar:hover{
+    background-color: #07461d;
+}
+.estoque{
+    position: absolute;
+    right: 0;
+    display: flex;
+    box-shadow: 1px 1px 4px #181f1886 ;
+    border-radius: 50%;
+    
+}
+.estoque button{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+}
+.estoque button img{
+    width: 19px;
+}
+.estoque .btn-ativo{
+    border-radius: 20px 0 0 20px;
+    background-color:#0A6A2B;
+    cursor: pointer;
+    transition: 0.05s;
+}
+
+.estoque .btn-ativo:hover{
+    background-color:#074b1f;
+    scale: 1.1;
+}
+.estoque .btn-inativo{
+    border-radius: 0 20px 20px 0;
+    background-color: #bb3838;
+    cursor: pointer;
+    transition: 0.05s;
+}
+
+.estoque .btn-inativo:hover{
+    background-color: #761c1c;
+    scale: 1.1;
+}
+.item-produto.inativo {
+    opacity: 0.5;
+    filter: grayscale(100%);
 }

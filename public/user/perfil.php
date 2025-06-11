@@ -69,6 +69,7 @@ unset($_SESSION['erro']);
                         <div class="input-campo-edit">
                             <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
                             <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                            <button type="submit" name="apagar_foto" id="apagar-foto" value="1">Apagar</button>
                         </div>
                     </div>
                     <?php $dados = dadosCliente($_SESSION['id_usuario']);?>
@@ -81,7 +82,7 @@ unset($_SESSION['erro']);
                         <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
                     </div>
                     <div class="btns-edit">
-                        <button type="submit">Atualizar</button>
+                        <button id="salvar-edit" type="submit">Atualizar</button>
                         <button id="cancelar-edit" type="button">Voltar</button>
                     </div>
                 </form>
@@ -137,6 +138,49 @@ unset($_SESSION['erro']);
             </div>
         </div>
     </section>
+    <script>
+document.getElementById("arquivo").addEventListener("change", async function(event) {
+    const file = event.target.files[0];
+    if (!file || !file.type.startsWith("image/")) return;
+
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        img.src = e.target.result;
+    };
+
+    img.onload = function() {
+        const canvas = document.createElement("canvas");
+
+        const maxWidth = 800;
+        const scale = maxWidth / img.width;
+        canvas.width = maxWidth;
+        canvas.height = img.height * scale;
+
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        canvas.toBlob(function(blob) {
+            const compressedFile = new File([blob], file.name, {
+                type: "image/jpeg",
+                lastModified: Date.now()
+            });
+
+            // Substitui o arquivo original pelo comprimido
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(compressedFile);
+            event.target.files = dataTransfer.files;
+
+            // Atualiza a imagem de preview
+            document.getElementById("preview").src = URL.createObjectURL(compressedFile);
+        }, "image/jpeg", 0.7);
+    };
+
+    reader.readAsDataURL(file);
+});
+</script>
+
     
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>

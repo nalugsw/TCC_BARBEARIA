@@ -126,12 +126,10 @@ unset($_SESSION['erro']);
                         doisSemanasDepois.setDate(doisSemanasDepois.getDate() + 13); // hoje + 13 dias
 
                         // Verifica se é domingo
-                        const ehDomingo = dataDia.getDay() === 0;
                         const dataStr = `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
 
                         if (dataDia < hoje || 
                             dataDia > doisSemanasDepois || 
-                            ehDomingo || 
                             (data.inativos && data.inativos.includes(dataStr))) {
                             diaElement.classList.add('inativo');
                         } else {

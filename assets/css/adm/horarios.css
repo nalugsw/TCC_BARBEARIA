@@ -360,8 +360,37 @@ section{
     width: 700px;
     border-radius: 3px;
     gap: 11px;
-    
-    /* Estado inicial */
     overflow: hidden;
   
+}
+.horariofinalizar{ 
+    align-content: center;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+.horariofinalizar form{
+    background-color: #f9f9f9;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 3px;
+    width: 500px;
+}
+.btn-cancel-horario .btn-finalizar-horario{
+    border-radius: 3PX;
+    background-color: #0A6A28;
+    border: none;
+    color: #f0fff5;
+    font-weight: 600;
+}
+.btn-cancel-horario #voltar{
+    border-radius: 3px;
+    font-weight: 600;
 }

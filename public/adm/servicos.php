@@ -32,8 +32,7 @@ $servicos = mostrarServicos();
 
     <main>
     <div class="perfil-container" id="container-cadastro">
-        <form action="" method="post" enctype="multipart/form-data">
-            <!-- Seu formulário de cadastro atual -->
+        <form action="../../functions/adm/servicos.php" method="post" enctype="multipart/form-data">
             <div class="info">
                 <div class="dados-perfil">
                     <p>Coloque a imagem do serviço</p>
@@ -43,6 +42,7 @@ $servicos = mostrarServicos();
                         <label for="arquivo" class="custom-file-button">Escolha a foto</label>
                         <img id="preview" src="">
                     </div>
+                    <input type="hidden" name="acao" value="cadastro" >
                 </div>
                 <div class="dados-perfil">
                     <div>
@@ -66,13 +66,10 @@ $servicos = mostrarServicos();
     </div>
     
     <div class="perfil-container" id="container-edicao" style="display: none;">
-        <form action="" method="post" enctype="multipart/form-data">
-            <input type="hidden" id="servico-id" name="id">
+        <form action="../../functions/adm/servicos.php" method="post" enctype="multipart/form-data">
             <div class="info">
                 <div class="dados-perfil">
                     <p>Coloque a imagem do serviço</p>
-                    
-                    
                     <div class="input-campo">
                         <input type="file" id="arquivo-edicao" class="input-file" name="foto" accept="image/*" onchange="loadFileEdicao(event)">
                         <label for="arquivo-edicao" class="custom-file-button">Escolha a foto</label>
@@ -99,6 +96,8 @@ $servicos = mostrarServicos();
                         <button type="button" id="cancelar-edicao">Cancelar</button>
                     </div>
                 </div>
+                <input type="hidden" id="id-servico" name="id" value="<?php echo $servico['id_servico']; ?>">
+                <input type="hidden" name="acao" value="atualizacao">
             </div>
         </form>
     </div>
@@ -106,7 +105,7 @@ $servicos = mostrarServicos();
             <div class="grid" id="grid2">
                 <!-- Exemplo de itens do grid (substitua pelo seu PHP real) -->
                  <?php foreach($servicos as $servico): ?>
-                    <div class="item" >
+                    <div class="item" data-id="<?php echo $servico['id_servico']; ?>">
                         <img src="../../<?php echo $servico['foto']; ?>" alt="Serviço 1">
                         <div class="txt-teste">
                             <h1><?php echo $servico['nome']; ?></h1>

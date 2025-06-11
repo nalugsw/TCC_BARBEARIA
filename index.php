@@ -66,12 +66,12 @@ unset($_SESSION['erro']);
                         <form action="functions/autenticacao.php" method="POST">
                             <div class="input-container">
                                 <label for="email">Email</label>
-                                <input type="text" id="email" name="email" placeholder="Digite seu email ou telefone" >
+                                <input type="email" id="email" name="email" required placeholder="Digite seu email ou telefone" >
                             </div>
 
                             <div class="input-container">
                                 <label for="senha">Senha</label>
-                                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" >
+                                <input type="password" id="senha" name="senha" required  placeholder="Digite sua senha" >
                             </div>
                             <div class="esqueceusenha">
                                 <a href="public/user/redefinicaoSenha.html"><p>ESQUECEU SUA SENHA?</p></a>

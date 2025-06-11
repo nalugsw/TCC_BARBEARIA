@@ -1,18 +1,18 @@
 <?php
-// Conexão com o banco de dados
-$banco = 'barbertech';
-$usuario = 'root';
-$senha = '';
-$servidor = 'localhost';
+// // Conexão com o banco de dados
+// $banco = 'barbertech';
+// $usuario = 'root';
+// $senha = '';
+// $servidor = 'localhost';
 
-date_default_timezone_set('America/Sao_Paulo');
+// date_default_timezone_set('America/Sao_Paulo');
 
-try {
-    $pdo = new PDO("mysql:dbname=$banco;host=$servidor;charset=utf8", "$usuario", "$senha");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die('Não conectado ao Banco de Dados! Erro: ' . $e->getMessage());
-}
+// try {
+//     $pdo = new PDO("mysql:dbname=$banco;host=$servidor;charset=utf8", "$usuario", "$senha");
+//     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// } catch (PDOException $e) {
+//     die('Não conectado ao Banco de Dados! Erro: ' . $e->getMessage());
+// }
 
 
 include("../../config/conexao.php");
@@ -57,14 +57,20 @@ $dadosGraficoServicos = [];
 try {
     // Consulta para atendimentos
     $sqlAtendimentos = "
-        SELECT a.data, s.nome AS servico, s.valor, c.nome AS cliente
-        FROM AGENDA a
-        JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
-        JOIN SERVICO s ON cs.id_servico = s.id_servico
-        JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
-        WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
-        ORDER BY a.data DESC
-    ";
+    SELECT 
+        a.data,
+        a.horario,
+        s.nome AS servico, 
+        s.valor, 
+        c.nome AS cliente
+    FROM AGENDA a
+    JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
+    JOIN SERVICO s ON cs.id_servico = s.id_servico
+    JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
+    WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+    AND LOWER(a.status_agenda) LIKE 'pendente%'
+    ORDER BY a.data ASC, a.horario ASC
+";
     $stmtAtendimentos = $pdo->query($sqlAtendimentos);
     $atendimentos = $stmtAtendimentos->fetchAll(PDO::FETCH_ASSOC);
 
@@ -220,7 +226,7 @@ $dadosGraficos = [
             <?php if(!empty($atendimentos)): ?>
                 <?php foreach($atendimentos as $atendimento): ?>
                 <tr>
-                    <td><?= date('d/m/Y H:i', strtotime($atendimento['data'])) ?></td>
+                <td><?= date('d/m/Y H:i', strtotime($atendimento['data'] . ' ' . $atendimento['horario'])) ?></td>
                     <td><?= htmlspecialchars($atendimento['servico']) ?></td>
                     <td>R$ <?= number_format($atendimento['valor'], 2, ',', '.') ?></td>
                     <td><?= htmlspecialchars($atendimento['cliente']) ?></td>

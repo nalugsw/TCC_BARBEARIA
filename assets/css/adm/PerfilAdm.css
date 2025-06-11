@@ -78,6 +78,26 @@ body::-webkit-scrollbar-thumb{
     gap: 1px;
 }
 
+.perfil-container button{
+    padding: 7px 10px ;
+    border: none;
+    background-color: #0A6A28;
+    color: #D3FAE0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #4e4e4e4b;
+    text-transform:capitalize;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.perfil-container  button:hover{
+    background-color: #05581f;
+    scale: 1.05;
+}
+
 
 /* imagens */
 .galeria {
@@ -218,6 +238,10 @@ main .material-symbols-outlined {
     background: rgba(0, 0, 0, 0.8);
 }
 
+#modal-sair::backdrop{
+    background-color: #23232383;
+}
+
 #modal-edit{
     align-content: center;
     border: none;
@@ -230,13 +254,15 @@ main .material-symbols-outlined {
 #modal-edit form{
     background-color: #f9f9f9;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 1fr;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     padding: 25px;
     border-radius: 3px;
-    width: 500px;
+    width: 50%;
+    column-gap: 25px;
+    row-gap: 30px;
 }
 #modal-edit::backdrop{
     background-color: #23232383;
@@ -248,9 +274,10 @@ main .material-symbols-outlined {
     
 }
 #modal-edit .input-campo input{
-    padding: 3px 20px 3px 20px
+    padding: 3px 10px 3px 10px
 }
 .input-file {
+    border: none;
     display: none; /* Esconde o input padrão */
 }
 
@@ -258,12 +285,13 @@ main .material-symbols-outlined {
     display: inline-block;
     background-color: #4065AB;
     color: #dbe6f9;
-    padding: 5px 15px;
     font-size: 13px;
     border-radius: 3px;
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 1px 1px 1px #23232348;
+    padding: 5px 10px;
+    text-align: center;
 }
 
 .custom-file-button:hover,
@@ -287,12 +315,48 @@ main .material-symbols-outlined {
     grid-row: 1/4;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-#preview{
-    border: solid 1px rgb(136, 136, 136);
-    height: 120px;
-    width: 120px;
+#img-container img{
+    height: 150px;
+    width: 100%;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
-/* Responsividade */
+.input-campo-edit{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+.input-campo-edit input{
+    padding: 5px 10px;
+    width: 90% ;
+}
+.btns-edit{
+    display: flex;
+    justify-content: space-evenly;
+}
+.btns-edit button{
+    width: 40%;
+    font-weight: 600;
+}
+
+.btns-edit #cancelar-edit{
+    background-color: #8d8d8d;
+    color: #232323;
+}
+.btns-edit #cancelar-edit:hover{
+    background-color: #6d6d6d;
+    cursor: pointer;
+}
+.btns-edit #salvar-edit{
+    background-color: #3c763d;
+    color: #edffed;
+}
+.btns-edit #salvar-edit:hover{
+    cursor: pointer;
+    background-color: #265727;
+    color: #edffed;
+}

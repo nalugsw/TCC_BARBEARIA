@@ -416,13 +416,13 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
     margin-bottom: 10px;
 }
 .input-campo-edit{
-    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
 }
 .input-campo-edit input{
     padding: 5px 10px;
+    width: 90%;
 }
 .btns-edit{
     display: flex;
@@ -449,6 +449,10 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
     cursor: pointer;
     background-color: #265727;
     color: #edffed;
+}
+.input-campo-edit #apagar-foto{
+    margin-left: 10px;
+    cursor: pointer;
 }
 .desmarcar-div{
     align-content: center;
@@ -513,4 +517,14 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 15px;
+}
+.item-produto.inativo {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    pointer-events: none; /* opcional, impede interações */
+}
+
+.item-produto.inativo .btn-edit,
+.item-produto.inativo .estoque {
+    pointer-events: auto; /* reativa os botões de estoque e edição */
 }
