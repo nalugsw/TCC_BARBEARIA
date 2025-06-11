@@ -46,14 +46,22 @@ unset($_SESSION['erro']);
                     <input type="hidden" id="horaAgendamento" name="horaAgendamento">
                     
                     <div class="form-group">
-                        <h2>Selecione o Serviço</h2>
-                        <select name="servico" id="servico" required>
-                            <?php foreach($servicos as $servico): ?>
-                                <option value="<?= $servico['id_servico'] ?>"><?= $servico['nome'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                        <input type="hidden" id="idFuncionario" name="id_funcionario" value="<?php echo $funcionarios['id_funcionario']; ?>">
-                    </div>
+    <h2>Selecione o Serviço</h2>
+    <select name="servico" id="servico" required onchange="mostrarPreco()">
+        <option value="" disabled selected>Selecione...</option> <!-- opção vazia -->
+        <?php foreach($servicos as $servico): ?>
+            <option value="<?= $servico['id_servico'] ?>" data-preco="<?= number_format($servico['valor'], 2, '.', '') ?>">
+                <?= $servico['nome'] ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+
+    <div id="precoServico" style="display: none;">
+        <p>Preço: <span id="valorServico"></span></p>
+    </div>
+
+    <input type="hidden" id="idFuncionario" name="id_funcionario" value="<?= $funcionarios['id_funcionario']; ?>">
+</div>
                     <button type="submit">Agendar</button>
                 </form>
             </div>
@@ -199,6 +207,9 @@ unset($_SESSION['erro']);
             document.getElementById('horariosContainer').style.display = 'grid';
             document.getElementById('dataSelecionadaTitulo').style.display = 'block';
             document.getElementById('formularioAgendamento').style.display = 'none';
+            // Rola a página até o container de horários
+            document.getElementById('horariosContainer').scrollIntoView({ behavior: 'smooth' });
+        
         })
         .catch(error => {
             console.error('Erro ao buscar horários:', error);
@@ -211,6 +222,19 @@ unset($_SESSION['erro']);
             document.getElementById('horaAgendamento').value = horario;
             document.getElementById('formularioAgendamento').style.display = 'block';
         }
+        function mostrarPreco() {
+    const select = document.getElementById("servico");
+    const preco = select.options[select.selectedIndex]?.getAttribute("data-preco");
+
+    if (preco) {
+        document.getElementById("valorServico").innerText = "R$ " + parseFloat(preco).toFixed(2);
+        document.getElementById("precoServico").style.display = "block";
+    } else {
+        document.getElementById("valorServico").innerText = "";
+        document.getElementById("precoServico").style.display = "none";
+    }
+}
+        
     </script>
 
     <script src="../../assets/js/modal.js"></script>
