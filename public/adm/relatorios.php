@@ -62,13 +62,16 @@ try {
         a.horario,
         s.nome AS servico, 
         s.valor, 
-        c.nome AS cliente
+        c.nome AS cliente,
+        a.status_agenda AS status
     FROM AGENDA a
     JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
     JOIN SERVICO s ON cs.id_servico = s.id_servico
     JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
     WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
-    AND LOWER(a.status_agenda) LIKE 'pendente%'
+    AND (LOWER(a.status_agenda) LIKE 'pendente%'
+    OR LOWER(a.status_agenda) LIKE 'finalizado%'
+    OR LOWER(a.status_agenda) LIKE 'cancelado%')
     ORDER BY a.data ASC, a.horario ASC
 ";
     $stmtAtendimentos = $pdo->query($sqlAtendimentos);
@@ -88,6 +91,7 @@ try {
         JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
         JOIN SERVICO s ON cs.id_servico = s.id_servico
         WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+        AND LOWER(a.status_agenda) LIKE 'finalizado%'
     ";
     $stmtEstatisticas = $pdo->query($sqlEstatisticas);
     $stats = $stmtEstatisticas->fetch(PDO::FETCH_ASSOC);
@@ -101,6 +105,7 @@ try {
         JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
         JOIN SERVICO s ON cs.id_servico = s.id_servico
         WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+        AND LOWER(a.status_agenda) LIKE 'finalizado%'
         GROUP BY DATE(a.data)
         ORDER BY DATE(a.data)
     ";
@@ -116,6 +121,7 @@ try {
         JOIN CLIENTE_SERVICO cs ON a.id_cliente_servico = cs.id_cliente_servico
         JOIN SERVICO s ON cs.id_servico = s.id_servico
         WHERE DATEDIFF(CURRENT_DATE(), a.data) <= $dias
+        AND LOWER(a.status_agenda) LIKE 'finalizado%'
         GROUP BY s.nome
         ORDER BY COUNT(*) DESC
         LIMIT 5
@@ -139,7 +145,7 @@ $dadosGraficos = [
     ]
 ];
 ?>
-?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -162,6 +168,14 @@ $dadosGraficos = [
     <?php include("../../views/nav-padrao-adm.php"); ?>
     <main>
         <div class="relatorio-container">
+            <div class="botoes-download">
+            <button onclick="gerarPDF()" class="btn-download">
+                <i class="bi bi-file-earmark-pdf"></i> Baixar PDF
+            </button>
+            <button onclick="gerarExcel()" class="btn-download">
+                <i class="bi bi-file-earmark-excel"></i> Baixar Excel
+            </button>
+        </div>
             <h1>Relatórios de Atendimentos</h1>
                 <div class="estatisticas">
                     <div class="filtros">
@@ -205,32 +219,48 @@ $dadosGraficos = [
             </div>
             
             <div class="relatorio-resultados">
-    <table id="tabelaRelatorio">
-        <thead>
+            <table id="tabelaRelatorio">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Serviço</th>
+            <th>Valor</th>
+            <th>Cliente</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody id="relatorio_atendimento">
+        <?php if(!empty($atendimentos)): ?>
+            <?php foreach($atendimentos as $atendimento): ?>
             <tr>
-                <th>Data</th>
-                <th>Serviço</th>
-                <th>Valor</th>
-                <th>Cliente</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if(!empty($atendimentos)): ?>
-                <?php foreach($atendimentos as $atendimento): ?>
-                <tr>
                 <td><?= date('d/m/Y H:i', strtotime($atendimento['data'] . ' ' . $atendimento['horario'])) ?></td>
-                    <td><?= htmlspecialchars($atendimento['servico']) ?></td>
-                    <td>R$ <?= number_format($atendimento['valor'], 2, ',', '.') ?></td>
-                    <td><?= htmlspecialchars($atendimento['cliente']) ?></td>
-                </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="4" class="sem-registros">Nenhum atendimento encontrado neste período</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+                <td><?= htmlspecialchars($atendimento['servico']) ?></td>
+                <td>R$ <?= number_format($atendimento['valor'], 2, ',', '.') ?></td>
+                <td><?= htmlspecialchars($atendimento['cliente']) ?></td>
+                <td>
+                    <?php 
+                    $status = strtolower($atendimento['status']);
+                    if(strpos($status, 'pendente') !== false) {
+                        echo '<span class="status-pendente">Pendente</span>';
+                    } elseif(strpos($status, 'finalizado') !== false) {
+                        echo '<span class="status-finalizado">Finalizado</span>';
+                    } elseif(strpos($status, 'cancelado') !== false) {
+                        echo '<span class="status-cancelado">Cancelado</span>';
+                    } else {
+                        echo htmlspecialchars($atendimento['status']);
+                    }
+                    ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="5" class="sem-registros">Nenhum atendimento encontrado neste período</td>
+            </tr>
+        <?php endif; ?>
+    </tbody>
+</table>
+<div id="paginacao" class="paginacao-container"></div>
 </div>
         </div>
     </main>
@@ -345,6 +375,40 @@ $dadosGraficos = [
                 });
             }
         });
+        document.addEventListener("DOMContentLoaded", function () {
+    const linhasPorPagina = 15;
+    const tabela = document.getElementById("tabelaRelatorio").getElementsByTagName("tbody")[0];
+    const linhas = Array.from(tabela.getElementsByTagName("tr"));
+    const totalPaginas = Math.ceil(linhas.length / linhasPorPagina);
+    const paginacaoContainer = document.getElementById("paginacao");
+
+    function mostrarPagina(pagina) {
+        const inicio = (pagina - 1) * linhasPorPagina;
+        const fim = inicio + linhasPorPagina;
+
+        linhas.forEach((linha, index) => {
+            linha.style.display = (index >= inicio && index < fim) ? "" : "none";
+        });
+
+        atualizarControles(pagina);
+    }
+
+    function atualizarControles(paginaAtual) {
+        paginacaoContainer.innerHTML = "";
+
+        for (let i = 1; i <= totalPaginas; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i;
+            btn.className = (i === paginaAtual) ? "ativo" : "";
+            btn.onclick = () => mostrarPagina(i);
+            paginacaoContainer.appendChild(btn);
+        }
+    }
+
+    if (linhas.length > 0) {
+        mostrarPagina(1);
+    }
+});
     </script>
 </body>
 </html>
@@ -377,5 +441,6 @@ $dadosGraficos = [
             </div>
         </div> -->
         <script src="../../assets/js/relatorios.js"></script>
+        <script src="../../assets/js/gerar_pdf_script.js"></script>
         
     </main>

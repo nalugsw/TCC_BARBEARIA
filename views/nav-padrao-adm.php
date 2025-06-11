@@ -151,6 +151,7 @@
         <a href=""><button id="btn-voltar-config-mobile">Voltar</button></a>
     </nav>
 
+    <script src="../../assets/js/marcarmenu.js"></script>
     <script src="../../assets/js/modal-deslogar.js"></script>
     <script src="../../assets/js/modal-cancelar-horario.js"></script>
     <script src="../../assets/js/ativar-config.js"></script>

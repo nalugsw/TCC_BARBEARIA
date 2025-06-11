@@ -167,6 +167,8 @@ INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 /* SENHA: barbeiro123 */
 
 
+/* Inserir um funcionário exemplo */
+
 INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
 ('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
 /* INSERT DOS HORÁRIOS DISPONÍVEIS DA AGENDA */

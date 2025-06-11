@@ -27,6 +27,7 @@ main{
     background-color: #313131;
     border-radius: 3px;
     width: 100%;
+        max-width: 700px;
     padding: 20px;
     height: 160px;
 }
