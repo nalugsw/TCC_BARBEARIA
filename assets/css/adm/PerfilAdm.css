@@ -386,6 +386,7 @@ main .material-symbols-outlined {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 .custom-desq-button{
     width: 100%;
@@ -403,6 +404,7 @@ main .material-symbols-outlined {
 .addDesataque{
     width: 300px;
     height: 300px;
+    
 }
 .Desq-container form{
     width: 100%;
@@ -423,7 +425,9 @@ main .material-symbols-outlined {
     justify-content: space-evenly;
     align-items: center;
     font-weight: 600;
+    cursor: pointer;
     transition: 0.2s;
+    
     box-shadow: 2px 2px 5px rgba(24, 24, 24, 0.466);
 }
 .Desq-container{

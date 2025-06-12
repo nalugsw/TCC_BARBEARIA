@@ -82,11 +82,11 @@ if (isset($_SESSION['msg_erro'])) {
                             <div class="hora">
                                 <div class="input">
                                     <label for="priHoraIni">Abrir:</label>
-                                    <input type="time"  id="priHoraIni" value="08:00">
+                                    <input type="time"  id="priHoraIni" name="priHoraIni" value="">
                                 </div>
                                 <div class="input">
                                     <label for="priHoraFech">Fechar:</label>
-                                    <input type="time"  id="priHoraFech" value="12:00">
+                                    <input type="time"  id="priHoraFech" name="priHoraFech" value="">
                                 </div>
                             </div>
                         </div>
@@ -95,11 +95,11 @@ if (isset($_SESSION['msg_erro'])) {
                             <div class="hora">
                                 <div class="input">
                                     <label for="segHoraIni">Abrir:</label>
-                                    <input type="time" id="segHoraIni" value="14:00">
+                                    <input type="time" id="segHoraIni" name="segHoraIni" value="">
                                 </div>
                                 <div class="input">
                                     <label for="segHoraFech">Fechar:</label>
-                                    <input type="time" id="segHoraFech" value="20:00">
+                                    <input type="time" id="segHoraFech" name="segHoraFech" value="">
                                 </div>
                             </div>
                         </div>

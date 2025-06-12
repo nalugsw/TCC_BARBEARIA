@@ -72,16 +72,17 @@ $informacoes = buscarInformacoes();
         </dialog>
     
         <div class="Desq-container">
-            <form action="">
+            <form action="../../functions/adm/perfil.php" enctype="multipart/form-data" method="POST">
                 <div class="addDesataque">
                     <div class="img-container-desq">
                         <img id="cadDestaque" src="" >
                         <div class="input-campo-cad">
-                            <input required type="file" id="arquivoDestaque" class="input-file" name="foto"accept="image/*" onchange="loadFileDestaque(event)">
+                            <input type="file" id="arquivoDestaque" class="input-file" name="foto" accept="image/*" onchange="loadFileDestaque(event)" required>
                             <label for="arquivoDestaque" class="custom-desq-button">Escolha a foto</label>
                         </div>
                     </div>
                 </div>
+                <input type="hidden" id="id-servico" name="acao">
                 <button type="submit">Adicionar foto de destaque</button>
             </form>
         </div>

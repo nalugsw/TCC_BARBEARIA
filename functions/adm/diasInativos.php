@@ -59,10 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $intervalo = 30;
         }
         
-        $primeiroInicio = $_POST['dias'][$dia]['primeiro_abertura'] ?? '08:00';
-        $primeiroFim = $_POST['dias'][$dia]['primeiro_fechamento'] ?? '12:00';
-        $segundoInicio = $_POST['dias'][$dia]['segundo_abertura'] ?? '14:00';
-        $segundoFim = $_POST['dias'][$dia]['segundo_fechamento'] ?? '22:00';
+        $primeiroInicio = $_POST['priHoraIni'] ?? '08:00';
+        $primeiroFim = $_POST['priHoraFech'] ?? '12:00';
+        $segundoInicio = $_POST['segHoraIni'] ?? '14:00';
+        $segundoFim = $_POST['segHoraFech'] ?? '20:00';
 
         $horariosGerados = gerarHorariosDisponiveis($intervalo, $primeiroInicio, $primeiroFim, $segundoInicio, $segundoFim);
         $stmt = $pdo->prepare("INSERT INTO horarios_disponiveis (horario) VALUES (?)");
