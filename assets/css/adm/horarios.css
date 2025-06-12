@@ -21,9 +21,11 @@ section{
     justify-content: center;
     margin-top: 30px;
 }
-.horarios-marcados{
+.horaios-marcados{
     display: flex;
     flex-direction: column;
+    box-shadow: 1Px 1px 7px rgb(27, 27, 27);
+    border-radius: 6px;
 }
 .servico-marcado{
     display: grid;

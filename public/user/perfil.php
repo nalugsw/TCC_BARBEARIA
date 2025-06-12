@@ -56,6 +56,7 @@ unset($_SESSION['erro']);
                             <input type="text" placeholder="<?php $dados = dadosCliente($_SESSION['id_usuario']); echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" readonly>
                             <a href="" class="btn-edit"><span class="material-symbols-outlined ">edit</span></a>
                         </div>
+                        
                     </form>
                 </div>
             </div>
@@ -66,10 +67,10 @@ unset($_SESSION['erro']);
                     <div id="img-container">
                         <p>*Foto do perfil</p>
                         <img id="preview" src="<?php echo "../../" . buscaImagemUsuario($_SESSION['id_usuario']); ?>" >
-                        <div class="input-campo-edit">
+                        <div class="btn_foto">
                             <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
-                            <label for="arquivo" class="custom-file-button">Escolha a foto</label>
-                            <button type="submit" name="apagar_foto" id="apagar-foto" value="1">Apagar</button>
+                            <label for="arquivo" class="custom-file-button"><span class="material-symbols-outlined ">edit</span></label>
+                            <button type="submit" name="apagar_foto" id="apagar-foto" value="1"><img src="../../assets/img/delete.png" alt=""></button>
                         </div>
                     </div>
                     <?php $dados = dadosCliente($_SESSION['id_usuario']);?>
@@ -80,6 +81,10 @@ unset($_SESSION['erro']);
                     <div class="input-campo-edit">
                         <p>*Numero do perfil</p>
                         <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
+                    </div>
+                    <div class="input-campo-edit">
+                        <p>*Email</p>
+                        <input type="text" value="<?php echo $dados['email']; ?>" name="email" id="email" >
                     </div>
                     <div class="btns-edit">
                         <button id="salvar-edit" type="submit">Atualizar</button>

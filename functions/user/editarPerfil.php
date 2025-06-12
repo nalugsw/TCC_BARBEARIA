@@ -13,6 +13,7 @@ $cliente = dadosCliente($id_usuario);
 
 $nome = $_POST['nome'];
 $telefone = $_POST['telefone'];
+$email = $_POST['email'];
 
 $caminho_atual_foto = buscaImagemUsuario($id_usuario);
 $caminho_foto = $caminho_atual_foto;
