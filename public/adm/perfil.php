@@ -8,6 +8,8 @@ verificaSession("administrador");
 $funcionario = dadosFuncionario();
 require("../../functions/informacoes.php");
 $informacoes = buscarInformacoes();
+require("../../functions/user/home.php");
+$portfolio = mostrarImagemPortfolio();
 
 ?>
 
@@ -46,7 +48,8 @@ $informacoes = buscarInformacoes();
         </div>
 
         <dialog closed id="modal-edit" >
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="../../functions/adm/perfil.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="acao" value="atualizarPerfil">
                 
                 <div id="img-container">
                     <p>*Foto do perfil</p>
@@ -77,6 +80,7 @@ $informacoes = buscarInformacoes();
                     <div class="img-container-desq">
                         <img id="cadDestaque" src="" >
                         <div class="input-campo-cad">
+                            <input type="hidden" name="acao" value="adicionarImagem">
                             <input type="file" id="arquivoDestaque" class="input-file" name="foto" accept="image/*" onchange="loadFileDestaque(event)" required>
                             <label for="arquivoDestaque" class="custom-desq-button">Escolha a foto</label>
                         </div>
@@ -88,83 +92,25 @@ $informacoes = buscarInformacoes();
         </div>
     
         <div class="galeria">
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo.jpg" alt="Imagem 1">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo.jpg" onclick="abrirModalExcluir(this)" data-id="">
+            <?php foreach($portfolio as $imagem): ?>
+                <div class="imagem-item">
+                    <img src="../../<?php echo $imagem['imagem']; ?>" alt="<?php echo 'imagem' . ' ' . $imagem['id_portfolio']; ?>">
+                    <form action="../../functions/adm/perfil.php" method="post">
+                        <input type="hidden" name="acao" value="deletarPortfolio">
+                        <button type="submit" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo.jpg" onclick="abrirModalExcluir(this)" data-id="">
+                    </form>  
                     <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo.jpg" alt="Imagem 2">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo.jpg" onclick="abrirModalExcluir(this)"data-id="">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo2.jpg" alt="Imagem 3">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo2.jpg" onclick="abrirModalExcluir(this)"data-id="">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo3.jpg" alt="Imagem 1">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo3.jpg" onclick="abrirModalExcluir(this)"data-id="">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo4.jpg" alt="Imagem 2">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo4.jpg" onclick="abrirModalExcluir(this)"data-id="">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo5.jpg" alt="Imagem 3">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo5.jpg" onclick="abrirModalExcluir(this)">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo6.jpg" alt="Imagem 1">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo6.jpg" onclick="abrirModalExcluir(this)">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo7.jpg" alt="Imagem 2">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo7.jpg" onclick="abrirModalExcluir(this)">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo8.jpg" alt="Imagem 3">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo8.jpg" onclick="abrirModalExcluir(this)">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo9.jpg" alt="Imagem 4">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo9.jpg" onclick="abrirModalExcluir(this)">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
-            <div class="imagem-item">
-                <img src="../../uploads/portfolio/fotocabelo10.jpg" alt="Imagem 1">
-                <button type="button" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo10.jpg" onclick="abrirModalExcluir(this)">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-            </div>
+                    </button>
+                </div>
+            <?php endforeach; ?>
         </div>
         <dialog id="modal-excluir">
-            <form action="excluir_foto.php" method="POST">
-                <h2>Realmente deseja excluir esta foto?</h2>
-                <img id="imagem-modal-excluir" src="" >
-                <input type="hidden" name="id" id="input-id-foto">
-                <input type="hidden" name="acao" value="excluir-foto">
-                <div class="btn-cancel-desq">
-                    <button type="submit" id="btn-cancelar">Excluir</button>
-                    <button type="button" onclick="fecharModalExcluir()">Voltar</button>
-                </div>
+            <form action="../../functions/adm/perfil.php" method="post">
+                <input type="hidden" name="acao" value="deletarPortfolio">
+                <input type="hidden" name="id" value="<?php echo $imagem['id_portfolio']; ?>">
+                <button type="submit" class="btn-excluir">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </form>
         </dialog>
     </main>

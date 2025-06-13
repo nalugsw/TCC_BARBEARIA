@@ -139,19 +139,17 @@ INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia, endereco)v
 
 
 
-
-
 INSERT INTO PORTFOLIO (imagem) VALUES
-('fotocabelo.jpg'),
-('fotocabelo2.jpg'),
-('fotocabelo3.jpg'),
-('fotocabelo4.jpg'),
-('fotocabelo5.jpg'),
-('fotocabelo6.jpg'),
-('fotocabelo7.jpg'),
-('fotocabelo8.jpg'),
-('fotocabelo9.jpg'),
-('fotocabelo10.jpg');
+('uploads/portfolio/fotocabelo.jpg'),
+('uploads/portfolio/fotocabelo2.jpg'),
+('uploads/portfolio/fotocabelo3.jpg'),
+('uploads/portfolio/fotocabelo4.jpg'),
+('uploads/portfolio/fotocabelo5.jpg'),
+('uploads/portfolio/fotocabelo6.jpg'),
+('uploads/portfolio/fotocabelo7.jpg'),
+('uploads/portfolio/fotocabelo8.jpg'),
+('uploads/portfolio/fotocabelo9.jpg'),
+('uploads/portfolio/fotocabelo10.jpg');
 
 /* INSERT DE USUARIO ADMIN PARA TESTE */
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
