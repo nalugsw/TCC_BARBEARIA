@@ -169,6 +169,6 @@
     .btn-addProduto{
         position: absolute;
         right: 25px;
-        bottom: -10px;
+        z-index: 60;
     }
 }

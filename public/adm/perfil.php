@@ -46,34 +46,33 @@ $portfolio = mostrarImagemPortfolio();
                 </div>
             </div>
         </div>
-
-        <dialog id="modal-edit" >
+        <dialog closed id="modal-edit" >
             <form action="../../functions/adm/perfil.php" method="POST" enctype="multipart/form-data">
-                
-                <div id="img-container">
-                    <p>*Foto do perfil</p>
-                    <img id="preview" src="../../<?php echo $funcionario['foto']; ?>" >
-                    <div class="input-campo-edit">
-                        <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
-                        <label for="arquivo" class="custom-file-button">Escolha a foto</label>
+                    
+                    <div id="img-container">
+                        <p>*Foto do perfil</p>
+                        <img id="preview" src="../../<?php echo $funcionario['foto']; ?>" >
+                        <div class="btn_foto">
+                            <input type="file" id="arquivo" class="input-file" name="foto"accept="image/*" onchange="loadFile(event)">
+                            <label for="arquivo" class="custom-file-button"><span class="material-symbols-outlined ">edit</span></label>
+                        </div>
                     </div>
-                </div>
-                <div class="input-campo-edit">
-                    <p>*Nome do perfil</p>
-                    <input type="text" value="<?php echo $funcionario['nome']; ?>" name="nome">
-                </div>
-                <div class="input-campo-edit">
-                    <p>*Endereço do perfil</p>
-                    <input type="text" value="<?php echo $informacoes['endereco']; ?>" name="endereco" id="endereco" >
-                </div>
-                <input type="hidden" name="acao" value="atualizarPerfil">
-                <div class="btns-edit">
-                    <button type="submit">Atualizar</button>
-                    <button id="cancelar-edit" type="button">Voltar</button>
-                </div>
-            </form>
-        </dialog>
-    
+                    <div class="input-campo-edit">
+                        <p>*Nome do perfil</p>
+                        <input type="text" value="<?php echo $funcionario['nome']; ?>" name="nome">
+                    </div>
+                    <div class="input-campo-edit">
+                        <p>*endereço</p>
+                        <input type="text" value="<?php echo $informacoes['endereco']; ?>" name="telefone" id="telefone" >
+                    </div>
+                    <div class="btns-edit">
+                        <button id="salvar-edit" type="submit">Atualizar</button>
+                        <button id="cancelar-edit" type="button">Voltar</button>
+                    </div>
+                </form>
+            </dialog>
+
+        <dialog  id="modal-create" class="modal">
         <div class="Desq-container">
             <form action="../../functions/adm/perfil.php" enctype="multipart/form-data" method="POST">
                 <div class="addDesataque">
@@ -90,6 +89,7 @@ $portfolio = mostrarImagemPortfolio();
                 <button type="submit">Adicionar foto de destaque</button>
             </form>
         </div>
+        </dialog>
     
         <div class="galeria">
             <?php foreach($portfolio as $imagem): ?>
@@ -117,6 +117,10 @@ $portfolio = mostrarImagemPortfolio();
 
     </main>
     
+    <button id="btn-abrir-modal" class="btn-addFoto">
+        <img src="../../assets/img/icone-add.png" alt="Adicionar fotoo">
+    </button>
+
     
     <script>
         var loadFileDestaque = function(event) {
@@ -150,6 +154,36 @@ $portfolio = mostrarImagemPortfolio();
             const modal = document.getElementById("modal-excluir");
             modal.close();
         }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal de criação
+            const modalCreate = document.getElementById('modal-create');
+            const btnAbrirModal = document.getElementById('btn-abrir-modal');
+            const btnFecharModal = document.getElementById('cancelar-edit');
+            
+            // Abrir modal de criação
+            if(btnAbrirModal && modalCreate) {
+                btnAbrirModal.addEventListener('click', () => {
+                    console.log('Abrindo modal de criação'); // Debug
+                    modalCreate.showModal();
+                });
+            }
+            
+            // Fechar modal de criação
+            if(btnFecharModal) {
+                btnFecharModal.addEventListener('click', () => {
+                    modalCreate.close();
+                });
+            }
+            
+            // Fechar ao clicar fora (para todos os modais)
+            document.querySelectorAll('dialog').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if(e.target === modal) {
+                        modal.close();
+                    }
+                });
+            });
+        });
     </script>
         <script src="../../assets/js/modal-perfilEdit.js"></script>
         <script src="../../assets/js/preview-img.js"></script>
