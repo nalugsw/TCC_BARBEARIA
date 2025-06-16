@@ -71,7 +71,7 @@ unset($_SESSION['erro']);
             <div class="grid" id="grid1">
                 <?php foreach ($portfolio as $imagemPortfolio): ?>
                     <div class="item-portifolio">
-                        <img src="../../uploads/portfolio/<?php echo $imagemPortfolio['imagem']; ?> " alt="">
+                        <img src="../../<?php echo $imagemPortfolio['imagem']; ?> " alt="">
                     </div>
                 <?php endforeach; ?>
             </div>

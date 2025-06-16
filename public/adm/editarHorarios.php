@@ -38,6 +38,9 @@ if (isset($_SESSION['msg_erro'])) {
     echo '<div class="alert alert-danger">' . $_SESSION['msg_erro'] . '</div>';
     unset($_SESSION['msg_erro']);
 }
+$stmt = $pdo->query("SELECT TIME_FORMAT(horario, '%H:%i') as horario FROM horarios_disponiveis");
+$horariosAtuais = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +76,24 @@ if (isset($_SESSION['msg_erro'])) {
                     <button type="submit">Aplicar</button>
                 </div>
              </form>
+             <?php
+             $manha = [];
+             $tarde = [];
+             
+             foreach ($horariosAtuais as $horario) {
+                 if ($horario <= '12:00') {
+                     $manha[] = $horario;
+                 } else {
+                     $tarde[] = $horario;
+                 }
+             }
+             
+             // Define horários de abertura e fechamento com fallback
+             $primeiroInicio = $manha[0] ?? '08:00';
+             $primeiroFim    = end($manha) ?? '12:00';
+             $segundoInicio  = $tarde[0] ?? '14:00';
+             $segundoFim     = end($tarde) ?? '20:00';
+             ?>
             <form action="../../functions/adm/diasInativos.php" method="POST" class="form-dias">
                 <h3>Grade Dias</h3>
                 <button type="submit" id="enviar">Salvar Configuração</button>
@@ -82,11 +103,11 @@ if (isset($_SESSION['msg_erro'])) {
                             <div class="hora">
                                 <div class="input">
                                     <label for="priHoraIni">Abrir:</label>
-                                    <input type="time"  id="priHoraIni" name="priHoraIni" value="">
+                                    <input type="time"  id="priHoraIni" name="priHoraIni" value="<?= $primeiroInicio ?>">
                                 </div>
                                 <div class="input">
                                     <label for="priHoraFech">Fechar:</label>
-                                    <input type="time"  id="priHoraFech" name="priHoraFech" value="">
+                                    <input type="time"  id="priHoraFech" name="priHoraFech" value="<?= $primeiroFim ?>">
                                 </div>
                             </div>
                         </div>
@@ -95,15 +116,16 @@ if (isset($_SESSION['msg_erro'])) {
                             <div class="hora">
                                 <div class="input">
                                     <label for="segHoraIni">Abrir:</label>
-                                    <input type="time" id="segHoraIni" name="segHoraIni" value="">
+                                    <input type="time" id="segHoraIni" name="segHoraIni" value="<?= $segundoInicio ?>">
                                 </div>
                                 <div class="input">
                                     <label for="segHoraFech">Fechar:</label>
-                                    <input type="time" id="segHoraFech" name="segHoraFech" value="">
+                                    <input type="time" id="segHoraFech" name="segHoraFech" value="<?= $segundoFim  ?>">
                                 </div>
                             </div>
                         </div>
                     </div>
+                <h2>Dias fechados</h2>
                 <?php
                 $diasSemana = [
                     'Segunda-feira' => 'segunda',
