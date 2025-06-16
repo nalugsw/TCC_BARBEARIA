@@ -47,9 +47,8 @@ $portfolio = mostrarImagemPortfolio();
             </div>
         </div>
 
-        <dialog closed id="modal-edit" >
+        <dialog id="modal-edit" >
             <form action="../../functions/adm/perfil.php" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="acao" value="atualizarPerfil">
                 
                 <div id="img-container">
                     <p>*Foto do perfil</p>
@@ -65,8 +64,9 @@ $portfolio = mostrarImagemPortfolio();
                 </div>
                 <div class="input-campo-edit">
                     <p>*Endereço do perfil</p>
-                    <input type="text" value="<?php echo $informacoes['endereco']; ?>" name="telefone" id="telefone" >
+                    <input type="text" value="<?php echo $informacoes['endereco']; ?>" name="endereco" id="endereco" >
                 </div>
+                <input type="hidden" name="acao" value="atualizarPerfil">
                 <div class="btns-edit">
                     <button type="submit">Atualizar</button>
                     <button id="cancelar-edit" type="button">Voltar</button>
@@ -86,7 +86,7 @@ $portfolio = mostrarImagemPortfolio();
                         </div>
                     </div>
                 </div>
-                <input type="hidden" id="id-servico" name="acao">
+                <input type="hidden" id="id-servico" name="acao" value="adicionarImagem">
                 <button type="submit">Adicionar foto de destaque</button>
             </form>
         </div>
@@ -97,22 +97,24 @@ $portfolio = mostrarImagemPortfolio();
                     <img src="../../<?php echo $imagem['imagem']; ?>" alt="<?php echo 'imagem' . ' ' . $imagem['id_portfolio']; ?>">
                     <form action="../../functions/adm/perfil.php" method="post">
                         <input type="hidden" name="acao" value="deletarPortfolio">
-                        <button type="submit" class="btn-excluir" data-src="../../uploads/portfolio/fotocabelo.jpg" onclick="abrirModalExcluir(this)" data-id="">
+                        <button type="button" class="btn-excluir" data-src="../../<?php echo $imagem['imagem']; ?>" onclick="abrirModalExcluir(this)" data-id="<?php echo $imagem['id_portfolio']; ?>">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
                     </form>  
-                    <span class="material-symbols-outlined">delete</span>
-                    </button>
                 </div>
             <?php endforeach; ?>
         </div>
         <dialog id="modal-excluir">
             <form action="../../functions/adm/perfil.php" method="post">
                 <input type="hidden" name="acao" value="deletarPortfolio">
-                <input type="hidden" name="id" value="<?php echo $imagem['id_portfolio']; ?>">
-                <button type="submit" class="btn-excluir">
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
+                <input type="hidden" name="id" id="input-id-foto">
+                <img id="imagem-modal-excluir" style="max-width: 100%; margin-bottom: 10px;" />
+                <p>Tem certeza que deseja excluir a imagem?</p>
+                <button type="submit">Confirmar</button>
+                <button type="button" onclick="fecharModalExcluir()">Cancelar</button>
             </form>
         </dialog>
+
     </main>
     
     

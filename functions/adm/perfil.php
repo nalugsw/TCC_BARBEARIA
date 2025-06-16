@@ -28,30 +28,32 @@ switch ($acao) {
 
 function atualizarPerfil($pdo) {
     $nome = $_POST['nome'] ?? '';
-    $endereco = $_POST['telefone'] ?? '';
+    $endereco = $_POST['endereco'] ?? '';
     $id_usuario = $_SESSION['id_usuario']; // ajuste conforme sua session
 
     // Atualizar imagem se enviada
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
-        $caminhoDestino = 'uploads/fotos/funcionarios/';
-        $nomeArquivo = uniqid() . "_" . $_FILES['foto']['name'];
+        $caminhoDestino = 'uploads/fotos/funcionario/';
+        $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+        $nomeArquivo = $id_usuario . '.' . $extensao;
         $caminhoCompleto = $caminhoDestino . $nomeArquivo;
+
         move_uploaded_file($_FILES['foto']['tmp_name'], "../../" . $caminhoCompleto);
 
-        $sqlFoto = "UPDATE FUNCIONARIO SET foto = :foto WHERE id_usuario = :id";
+        $sqlFoto = "UPDATE funcionario SET foto = :foto WHERE id_usuario = :id";
         $stmt = $pdo->prepare($sqlFoto);
         $stmt->execute(['foto' => $caminhoCompleto, 'id' => $id_usuario]);
     }
 
     // Atualizar nome
-    $stmt = $pdo->prepare("UPDATE FUNCIONARIO SET nome = :nome WHERE id_usuario = :id");
+    $stmt = $pdo->prepare("UPDATE funcionario SET nome = :nome WHERE id_usuario = :id");
     $stmt->execute(['nome' => $nome, 'id' => $id_usuario]);
 
     // Atualizar endereço na tabela INFORMACOES
     $stmt = $pdo->prepare("UPDATE INFORMACOES SET endereco = :endereco WHERE id_informacoes = 1");
     $stmt->execute(['endereco' => $endereco]);
 
-    header("Location: ../../views/adm/perfilAdm.php");
+    header("Location: ../../public/adm/perfil.php");
     exit();
 }
 
@@ -66,7 +68,7 @@ function adicionarImagemPortfolio($pdo) {
         $stmt = $pdo->prepare("INSERT INTO portfolio (imagem) VALUES (:imagem)");
         $stmt->execute(['imagem' => $caminhoCompleto]);
 
-        header("Location: ../../views/adm/perfilAdm.php");
+        header("Location: ../../public/adm/perfil.php");
         exit();
     } else {
         echo "Erro ao enviar imagem.";
