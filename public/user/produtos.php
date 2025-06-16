@@ -45,7 +45,7 @@ $produtos = mostrarProdutos();
                     </div>
                     <div class="txt-produto">
                         <h2><?php echo $produto['nome']; ?></h2>
-                        <p><?php echo $produto['preco']; ?></p>
+                        <p>R$<?php echo $produto['preco']; ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -56,7 +56,9 @@ $produtos = mostrarProdutos();
                 <span class="btn-fechar"><i class="bi bi-x-circle-fill"></i></span>
                 <img id="popup-img" src="" alt="Imagem do Produto">
                 <h2 id="popup-titulo"></h2>
-                <p id="popup-preco"></p>
+                <div class="pDiv">
+                    <p>R$</p><p id="popup-preco"></p>
+                </div>
                 <br>
                 <p>Descrição</p>
                 <br>

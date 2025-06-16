@@ -53,6 +53,7 @@ h1{
   color: #232323;
   border-radius: 3px;
   padding: 30px;
+  box-shadow: 1px 5px 10px #0000007a;
 }
 .info-barbearia h2,
 .info-barbeiro h2,

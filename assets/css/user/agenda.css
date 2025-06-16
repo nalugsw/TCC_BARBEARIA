@@ -5,7 +5,7 @@
     background: #fafafa;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 5px 10px #0000007a;
     grid-row: 2/3;
     grid-column: 2/3;
     overflow-y: scroll;
@@ -36,6 +36,7 @@ h1, h2 {
     border: #232323 1px solid;
     font-weight: 600;
     border-radius: 5px;
+    box-shadow: 1px 2px 5px #afafaf7a;
 }
 
 #calendario {
@@ -167,7 +168,7 @@ th {
     background-color: #e0e0e0;
     width: 95%;
     margin: 0 auto;
-    box-shadow: 1px 1px 4px #23232333;
+    box-shadow: 1px 2px 5px #afafaf7a;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 40px 1fr;
@@ -233,6 +234,7 @@ th {
     align-items: center;
     height: 100%;
     padding-bottom: 10px;
+    box-shadow: 1px 1px 5px #8585857a;
 }
 .horariosDisponiveis-select{
     grid-column: 1/2;
@@ -257,12 +259,13 @@ th {
 }
 .formularioAgendamento-select form button{
     background-color: #3c763d;
-    border: rgb(37, 85, 38) solid 1px;
     border-radius: 3px;
     padding: 10px;
     color: #f4f4f4;
-    font-weight: 500;
+    font-weight: 600;
     width: 100%;
+    border: rgb(62 129 63) solid 1px;
+    box-shadow: 1px 1px 5px #adadad7a;
 }
 
 /* Estilo para a mensagem de nenhum horário disponível */

@@ -30,6 +30,7 @@ section.perfil .container-perfil .foto-perfil .profile-pic img{
     height:150px;
     object-fit: cover;
     border-radius: 100%;
+    box-shadow: 1px 5px 10px #0000007a;
 }
 
 section.perfil .container-perfil .foto-perfil .btn-alterar-foto{
@@ -123,6 +124,7 @@ section.perfil .container-perfil .form form input{
     height: 40px;
     display: block;
     transition: 0.1s;
+    box-shadow: 1px 5px 10px #0000007a;
 }
 
 .hide{
@@ -136,7 +138,7 @@ section.perfil .container-perfil .horarios-marcados {
     margin-top: 30px;
     background-color: #FDFDFD;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 1px 5px 12px rgba(0, 0, 0, 0.555);
     padding: 20px;
 }
 
