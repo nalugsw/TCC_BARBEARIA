@@ -76,8 +76,6 @@
     }
 
     section.perfil .container-perfil .horarios-marcados p{
-        font-size: 10px;
-        color: #9e9e9e;
         font-weight: bold;
         margin-top: 8px;
         margin-bottom: 5px;
@@ -90,10 +88,7 @@
     }
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios p{
-        font-size: 11px;
-        color: #898989;
         font-weight: 500;
-
     }
 }
 
@@ -121,11 +116,18 @@
     section.perfil{
         grid-row: 2/3;
         grid-column: 1/3;
+        margin: 0 auto;
+        width: 90%;
     }
 
     section.perfil .container-perfil{
         display: flex;
         flex-direction: column;
+        width: 100%;
+    }
+
+    section.perfil .container-perfil .form-perfil {
+        width: 100%;
     }
 
     section.perfil .container-perfil .foto-perfil{
@@ -187,13 +189,12 @@
         border: none;
         transition: 0.1s;
         margin-right: 0;
-        width: 260px;
     }
 
     section.perfil .container-perfil .horarios-marcados{
         display: block;
-        width: 260px;
         margin: 0;
+        padding: 10px;
     }
 
     section.perfil .container-perfil .horarios-marcados p{
@@ -202,7 +203,7 @@
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios{
         height: 110px;
-        width: 260px;
+        width: 100%;
         border-radius: 3px;
         padding: 3px;
     }
@@ -211,12 +212,11 @@
         font-size: 10px;
     }
     section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa{
-        grid-template-columns: 75px 5px 35px 5px 50px 35px;
+        padding:5px 0 5px 5px;
         margin-bottom: 3px;
     }
 
     section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-caixa p{
-        color: #232323;
         font-size: 12px;
     }
 

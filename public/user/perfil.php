@@ -101,7 +101,7 @@ unset($_SESSION['erro']);
                         echo '<div class="txt-sem-horarios"><p>SEM HORÁRIO MARCADO</p></div>';
                     } else {
                         foreach($dados as $agenda): ?>
-                            <div class="horario-caixa">
+                            <div class="horario-caixa"  title="Esta é uma informação adicional">
                                 <div class="desmarcar hide">
                                     <button class="btn-cancelar-horario" onclick="document.getElementById('cancelar-horario-<?php echo $agenda['id_agenda']; ?>').showModal();">
                                         <img src="../../assets/img/delete.png" alt="">
