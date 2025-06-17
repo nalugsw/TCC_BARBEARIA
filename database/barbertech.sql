@@ -157,8 +157,8 @@ INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 /* SENHA: 123456789 */
 
 /* Inserir um funcionário exemplo */
-INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
-('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
+INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, foto, id_usuario) VALUES
+('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', "uploads/fotos/funcionario/avatar-padrao.jpg", LAST_INSERT_ID());
 
 /* INSERT DE USUARIO FUNCIONARIO PARA TESTE */
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
@@ -169,7 +169,7 @@ INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
 /* Inserir um funcionário exemplo */
 
 INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, id_usuario) VALUES
-('Luis Pereira', '11987654321', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
+('Luis Pereira', '11987653329', 'Barbeiro profissional com 10 anos de experiência', LAST_INSERT_ID());
 /* INSERT DOS HORÁRIOS DISPONÍVEIS DA AGENDA */
 INSERT INTO horarios_disponiveis (horario) VALUES
 ('08:00:00'), ('08:30:00'), ('09:00:00'), ('10:00:00'), ('11:00:00'),

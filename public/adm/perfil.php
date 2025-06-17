@@ -63,8 +63,9 @@ $portfolio = mostrarImagemPortfolio();
                     </div>
                     <div class="input-campo-edit">
                         <p>*endereço</p>
-                        <input type="text" value="<?php echo $informacoes['endereco']; ?>" name="telefone" id="telefone" >
+                        <input type="text" value="<?php echo $informacoes['endereco']; ?>" name="endereco" id="endereco" >
                     </div>
+                    <input type="hidden" name="acao" value="atualizarPerfil">
                     <div class="btns-edit">
                         <button id="salvar-edit" type="submit">Atualizar</button>
                         <button id="cancelar-edit" type="button">Voltar</button>

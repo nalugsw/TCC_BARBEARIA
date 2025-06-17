@@ -63,7 +63,7 @@ $produtos = mostrarProdutos();
                 
                 
                 <dialog id="editar-produto-<?php echo $produto['id_produto']; ?>" class="modal-edicao">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="../../functions/adm/produtos.php" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
                         <button type="button" class="cancelar-edit" onclick="this.closest('dialog').close();">
                             <img src="../../assets/img/iconeClose.png" alt="Fechar">
@@ -97,7 +97,7 @@ $produtos = mostrarProdutos();
             <?php endforeach; ?>
         </div>
         <dialog  id="modal-create" class="modal">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="../../functions/adm/produtos.php" method="POST" enctype="multipart/form-data">
                 <button id="cancelar-edit" type="button" class="btn-fechar-modal">
                     <img src="../../assets/img/iconeClose.png" alt="Fechar modal">
                 </button>
@@ -126,6 +126,7 @@ $produtos = mostrarProdutos();
                     <input type="number" step="0.01" min="0" name="valor" placeholder="R$00,00" required>
                     <button type="submit" id="btn-cadastrar">Cadastrar</button> 
                 </div>
+                <input type="hidden" name="acao" value="adicionarProduto">
             </form>
         </dialog>
 
