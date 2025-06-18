@@ -416,7 +416,7 @@ nav.menu-mobile ul{
   }
   
   #abrir-mobile:checked~ .menu-linhas{
-    transform: translateX(-185px);
+    transform: translateX(-155px);
     top: 35px;
   }
   #abrir-mobile:checked~ .menu-linhas span:nth-child(1){

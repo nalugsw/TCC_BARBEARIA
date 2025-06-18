@@ -345,8 +345,8 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: transparent;
-    height: 100%;
-    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
 }
 #modal-edit form{
     background-color: #f0f2f5;

@@ -497,7 +497,7 @@
     
     section.home .grids-container{
         overflow: hidden;
-        height: 70%;
+        height: 50%;
     }
 
     section.home .grids-container #grid1 .item-portifolio{
@@ -567,4 +567,26 @@
         padding-bottom: 5px;
     }
     
+}
+
+@media screen and (max-width: 425px){
+    #grid1{
+        grid-template-columns: repeat(2, 1fr);
+        width: 300px;
+        height: 80%;
+    }
+    section.home .grids-container #grid1 .item-portifolio {
+        width: 100%;
+        height: 135px;
+    }
+    
+    section.home .container-home {
+        width: 300px;
+    }    
+    section.home .container-home .informacoes-home .endereco-info p {
+        font-size: 13px;
+    }
+    section.home .container-home .informacoes-home {
+        width: 160px;
+    }
 }
