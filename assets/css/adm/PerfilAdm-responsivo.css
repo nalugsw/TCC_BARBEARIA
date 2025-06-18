@@ -1,11 +1,19 @@
 @media screen and (max-width:1095px) {
     .galeria{
         max-width: 800px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         height: 100%;
     }
 }
 @media screen and (max-width:768px){
+
+    .galeria{
+        max-width: 800px;
+        width: 95%;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+    }
+
     main{
         grid-column: 1/3;
     }

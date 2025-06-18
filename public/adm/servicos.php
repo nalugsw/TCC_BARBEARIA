@@ -16,7 +16,7 @@ $servicos = mostrarServicos();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/adm/servicosAdm.css">
-    <link rel="stylesheet" href="../../assets/css/adm/servicosAdm-responsividade.css">
+    <link rel="stylesheet" href="../../assets/css/adm/servicosAdm-responsivo.css">
 
     <link rel="stylesheet" href="../../assets/css/adm/nav.css">
 
