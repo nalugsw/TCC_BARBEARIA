@@ -545,3 +545,7 @@ main .material-symbols-outlined {
 #modal-create::backdrop {
     background-color: rgba(35, 35, 35, 0.58);
 }
+.imagem-item .btn-excluir{
+    background-color: transparent;
+    border: none;
+}

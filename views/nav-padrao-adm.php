@@ -42,7 +42,7 @@
     </nav>
     <dialog close id="modal-sair" >
         <div class="modal-sair">
-            <p>realmente deseja sair?</p>
+            <p>Realmente deseja sair?</p>
             <div class="btns-modal">
                 <a href="../../functions/logout.php">
                     <button class="btn-sair">Sair</button>
