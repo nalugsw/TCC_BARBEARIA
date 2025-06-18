@@ -26,6 +26,8 @@ section{
     flex-direction: column;
     box-shadow: 1Px 1px 7px rgb(27, 27, 27);
     border-radius: 6px;
+    max-width: 700px;
+    width: 95%;
 }
 .servico-marcado{
     display: grid;
@@ -359,7 +361,7 @@ section{
     display: flex;
     font-weight: 700;
     font-size: 20px;
-    width: 700px;
+    width: 100%;
     border-radius: 3px;
     gap: 11px;
     overflow: hidden;

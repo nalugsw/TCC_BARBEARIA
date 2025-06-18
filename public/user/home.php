@@ -46,13 +46,6 @@ unset($_SESSION['erro']);
             </div>
             <div class="informacoes-home">
                 <h1><?php echo $funcionario['nome']; ?></h1>
-                <div class="estrelas-icons">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                </div>
                 <div class="endereco-info">
                     <p><?php echo htmlspecialchars($endereco ?? 'Endereço não disponível'); ?></p>
                 </div>
@@ -91,40 +84,6 @@ unset($_SESSION['erro']);
                     </div>
                 <?php endforeach; ?>
             </div>
-
-            <div class="grid" id="grid3">
-                <div class="container">
-                <h1>Agende seu horário</h1>
-                    
-                <div id="calendario">
-                    <input type="month" id="mesSelecionado" onchange="carregaCalendario()">
-                    <div id="diasCalendario"></div>
-                </div>
-                    
-                <h2 id="dataSelecionadaTitulo" style="display: none;"></h2>
-                <div id="horariosContainer" style="display:none;">
-                        <h3 id="TituloDia">horarios selecionados</h3>
-                        <div id="horariosDisponiveis" class="horariosDisponiveis" ></div>
-                        <div id="formularioAgendamento" style="display:none;">
-                            <h2>Selecione o Serviço</h2>
-                            <form action="../calendario/processa_agenda.php" method="post">
-                                <input type="hidden" id="dataAgendamento" name="dataAgendamento">
-                                <input type="hidden" id="horaAgendamento" name="horaAgendamento">
-                                
-                                <div class="form-group">
-                                    <select name="servico" id="servico" required>
-                                        <?php foreach($servicos as $servico): ?>
-                                            <option value="<?php echo $servico['id_servico']; ?>"><?php echo $servico['nome']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                                
-                                <button type="submit">Confirmar Agendamento</button>
-                            </form>
-                        </div>
-                </div>
-            </div>
-            
         </div>
     </section>
     <script>

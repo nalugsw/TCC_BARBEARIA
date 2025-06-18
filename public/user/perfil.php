@@ -82,10 +82,7 @@ unset($_SESSION['erro']);
                         <p>*Numero do perfil</p>
                         <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
                     </div>
-                    <div class="input-campo-edit">
-                        <p>*Email</p>
-                        <input type="text" value="<?php echo $dados['email']; ?>" name="email" id="email" >
-                    </div>
+                    
                     <div class="btns-edit">
                         <button id="salvar-edit" type="submit">Atualizar</button>
                         <button id="cancelar-edit" type="button">Voltar</button>
