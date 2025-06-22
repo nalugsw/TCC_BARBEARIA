@@ -125,9 +125,12 @@ $produtos = mostrarProdutos();
                 <div class="input-campo">
                     <p>*Preço do item</p>
                     <input type="number" step="0.01" min="0" name="valor" placeholder="R$00,00" required>
-                    <button type="submit" id="btn-cadastrar">Cadastrar</button> 
                 </div>
+
                 <input type="hidden" name="acao" value="adicionarProduto">
+                
+                <button type="submit" id="btn-cadastrar">Cadastrar</button> 
+                
             </form>
         </dialog>
 

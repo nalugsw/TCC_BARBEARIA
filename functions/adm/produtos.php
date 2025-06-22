@@ -63,6 +63,34 @@ if ($acao == 'atualizarStatus') {
 
     header("Location: ../../public/adm/produtos.php");
     exit;
+
+}else if($acao == 'adicionarProduto'){
+
+        $nome = trim($_POST['nome']);
+        $descricao = trim($_POST['descricao']);
+        $valor = floatval($_POST['valor']);
+
+        // Verifica se a imagem foi enviada
+        if (isset($_FILES['foto']) && $_FILES['foto']['error'] === 0) {
+            $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+            $nomeArquivo = uniqid('produto_') . "." . $extensao;
+            $caminhoFinal = "../../uploads/produtos/" . $nomeArquivo;
+            $caminhoDB = "uploads/produtos/" . $nomeArquivo;
+
+            // Move a imagem
+            if (move_uploaded_file($_FILES['foto']['tmp_name'], $caminhoFinal)) {
+                $stmt = $pdo->prepare("INSERT INTO produto (nome, descricao, preco, foto, status_produto) VALUES (?, ?, ?, ?, 'ativo')");
+                $stmt->execute([$nome, $descricao, $valor, $caminhoDB]);
+
+                header("Location: ../../public/adm/produtos.php");
+                exit;
+            } else {
+                header("Location: ../../public/adm/produtos.php?msg=erro_upload");
+            }
+        } else {
+            header("Location: ../../public/adm/produtos.php?msg=erro_imagem");
+        }
+
 }
 
 ?>
