@@ -37,13 +37,13 @@ $produtos = mostrarProdutos();
         </div>
         <div class="grid-catalogo-produtos">
             <?php foreach($produtos as $produto): ?>
-                <div class="item-produto <?php echo "item-" . ($produto['status_produto'] == 'inativo') ? 'ativo' : ''; ?>" data-titulo="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" data-descricao="<?php echo $produto['descricao']; ?>" value="<?php echo $produto['status_produto']; ?>">
+                <div class="item-produto <?php echo ($produto['status_produto'] == 'inativo') ? 'item-ativo' : ''; ?>" data-id="<?php echo $produto['id_produto']; ?>" data-titulo="<?php echo $produto['nome']; ?>" data-preco="<?php echo $produto['preco']; ?>" data-descricao="<?php echo $produto['descricao']; ?>" value="<?php echo $produto['status_produto']; ?>">
                     <div class="estoque" >
                         <button class="btn-ativo">
                             <img src="../../assets/img/icone-add.png" alt="ativo">
                         </button>
                         <button class="btn-inativo">
-                            <img src="../../assets/img/icone-remove.png" alt="">
+                            <img src="../../assets/img/icone-remove.png" alt="inativo">
                         </button>
                     </div>
                     <div class="img-produto">
@@ -65,6 +65,7 @@ $produtos = mostrarProdutos();
                 <dialog id="editar-produto-<?php echo $produto['id_produto']; ?>" class="modal-edicao">
                     <form action="../../functions/adm/produtos.php" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
+                        <input type="hidden" name="acao" value="editarProduto">
                         <button type="button" class="cancelar-edit" onclick="this.closest('dialog').close();">
                             <img src="../../assets/img/iconeClose.png" alt="Fechar">
                         </button>
@@ -89,7 +90,7 @@ $produtos = mostrarProdutos();
                             <input type="number" step="0.01" min="0" name="valor" value="<?php echo $produto['preco']; ?>" placeholder="R$00,00">
                             <div class="input-btn">
                                 <button type="submit" class="btn-atualizar">Atualizar</button>
-                                <button class="btn-excluir">Excluir</button>
+                                <button type="submit" name="acao" value="excluirProduto" class="btn-excluir">Excluir</button>
                             </div>
                         </div>
                     </form>
@@ -124,9 +125,12 @@ $produtos = mostrarProdutos();
                 <div class="input-campo">
                     <p>*Preço do item</p>
                     <input type="number" step="0.01" min="0" name="valor" placeholder="R$00,00" required>
-                    <button type="submit" id="btn-cadastrar">Cadastrar</button> 
                 </div>
+
                 <input type="hidden" name="acao" value="adicionarProduto">
+                
+                <button type="submit" id="btn-cadastrar">Cadastrar</button> 
+                
             </form>
         </dialog>
 
@@ -197,22 +201,39 @@ function loadFile(event, previewId = 'preview') {
     }
 }
     document.querySelectorAll('.item-produto').forEach(function(produto) {
-        const btnAtivo = produto.querySelector('.btn-ativo');
-        const btnInativo = produto.querySelector('.btn-inativo');
+    const btnAtivo = produto.querySelector('.btn-ativo');
+    const btnInativo = produto.querySelector('.btn-inativo');
+    const idProduto = produto.getAttribute('data-id'); // você precisa adicionar esse atributo no HTML
 
-        btnAtivo.addEventListener('click', function() {
-            produto.classList.remove('inativo');
-            produto.classList.add('ativo');
-            // Aqui você pode também fazer um fetch/AJAX para atualizar o status no backend
-        });
-
-        btnInativo.addEventListener('click', function() {
-            
-            produto.classList.remove('ativo');
-            produto.classList.add('inativo');
-            // Aqui você pode também fazer um fetch/AJAX para atualizar o status no backend
-        });
+    btnAtivo.addEventListener('click', function() {
+        atualizarStatus(idProduto, 'ativo', produto);
     });
+
+    btnInativo.addEventListener('click', function() {
+        atualizarStatus(idProduto, 'inativo', produto);
+    });
+});
+
+function atualizarStatus(id, novoStatus, elemento) {
+    fetch('../../functions/adm/produtos.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `acao=atualizarStatus&id_produto=${id}&status=${novoStatus}`
+    })
+    .then(res => res.text())
+    .then(data => {
+        if (novoStatus === 'ativo') {
+            elemento.classList.remove('inativo');
+            elemento.classList.add('ativo');
+        } else {
+            elemento.classList.remove('ativo');
+            elemento.classList.add('inativo');
+        }
+    })
+    .catch(err => console.error('Erro:', err));
+}
 </script>
 
     
