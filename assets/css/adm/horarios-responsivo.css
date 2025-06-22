@@ -1,9 +1,5 @@
 @media screen and (max-width: 1075px){
-  .perfil-adm,
-  .servico-marcado{
-    width: 500px;
-  }
-    
+
   .foto-adm{
     width: 130px;
     height: 130px;
@@ -22,20 +18,7 @@
     color: #f4f4f4;
     text-decoration: none;
   }
-  .perfil-adm{
-    margin: 95px 0 50px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto;
-  }
 
-  .servico-marcado{
-    grid-template-rows: 35px 35px 35px 35px;
-  }
-  .servico-marcado .foto-cliente img{
-    width: 75px;
-  }
   .servico-marcado .foto-cliente button{
     width: 100px;
     font-size: 13px;
@@ -51,9 +34,6 @@
   font-size: 16px;
   }
     
-  .horario-cliente input{
-    width: 45%;
-  }
 
   .horario-cliente button {
     font-size: 12px;
@@ -70,6 +50,12 @@
   .whatsBtn{
     left:260px
   }
+
+}
+@media screen and (max-width: 900px){
+  .nome-cliente, .servico-cliente, .horario-cliente, .numero-cliente {
+    grid-template-columns: 20% 55% 25%;
+}
 }
 @media screen and (max-width: 768px){
   main{
@@ -83,13 +69,33 @@
     margin-top: 20px;
   }
     
-}
-@media screen and (max-width:530px) {
-  .perfil-adm,
-  .servico-marcado{
-    width: 320px;
+  .horario-cliente button p{
+    display: none;
+  }
+  section {
+    height: 50vh;
+    overflow: hidden;
+    overflow-y: scroll;
   }
   
+  section::-webkit-scrollbar{
+    width: 20px;
+    background-color: #232323;
+    border-radius: 10px;
+  }
+  section::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #797979;
+    border: solid #232323 5px;
+  }
+}
+@media screen and (max-width:425px) {
+  section{
+    margin-left: 10px;
+  }
+  .horaios-marcados{
+    width: 100%;
+  }
   .foto-adm{
     width: 90px;
     height: 90px;
@@ -118,15 +124,12 @@
     margin-top:20px;
   }
 
-  .servico-marcado{
-    grid-template-columns: 110px 1fr;
-    grid-template-rows: 33px 33px 33px 33px;
-  }
   .servico-marcado .foto-cliente img{
-    width: 70px;
+    width: 60px;
+    height: 60px;
   }
   .servico-marcado .foto-cliente button{
-    width: 80px;
+    width: 65px;
     font-size: 12px;
     padding:  4px 7px;
   }
@@ -143,19 +146,11 @@
     font-size: 13px;
   }
     
-  .horario-cliente input{
-    width: 50%;
-  }
 
   .horario-cliente button {
     font-size: 12px;
     padding: 3px ;
-    width: 23%;
   }
-  .horario-cliente button p{
-    display: none;
-  }
-    
   .servico-marcado input{
     padding: 10px 10px;
   }
@@ -186,5 +181,12 @@
 .btn-cancel-horario button{
   padding: 3px;
   width: 40%;
+}
+.nome-cliente, .servico-cliente, .horario-cliente, .numero-cliente {
+  grid-template-columns: 25% 55% 20%;
+}
+
+.servico-cliente span{
+  font-size: 11px;
 }
 }

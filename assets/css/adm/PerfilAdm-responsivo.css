@@ -1,24 +1,24 @@
 @media screen and (max-width:1095px) {
     .galeria{
         max-width: 800px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         height: 100%;
     }
 }
 @media screen and (max-width:768px){
-
-    .galeria{
-        max-width: 800px;
-        width: 95%;
-        grid-template-columns: 1fr 1fr;
-        height: 100%;
-    }
 
     main{
         grid-column: 1/3;
     }
     body{
         overflow: hidden;
+    }
+    .galeria{
+        max-width: 800px;
+        width: 95%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(auto-fill, 200px);
+        height: 100%;
     }
     .perfil-container{
         margin: 10px;
@@ -52,6 +52,52 @@
         border: solid #232323 5px;
     }
 
+    .btn-addFoto {
+        right: 30px;
+        bottom: 80px;
+    }
+    .imagem-item {
+        max-height: 200px;
+        min-height: 200px;
+    }
     
-
+    #modal-edit form p{
+        display: flex;
+        align-self: baseline;
+    }
+    #modal-edit form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    #img-container{
+        width: 100%;
+    }
+    #modal-edit .input-campo-edit{
+        width: 100%;
+        align-items: center;
+        text-align: left;
+    }
+    .input-campo-edit input{
+        width: 100%;
+        background-color: transparent;
+    }
+    .btns-edit{
+        width: 100%;
+    }
+    
+    #img-container p{
+        text-align: center;
+    }
+}
+@media screen and (max-width:425px){
+    .galeria{
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: repeat(auto-fill, 150px);
+    }
+    
+    .imagem-item {
+        max-height: 150px;
+        min-height: 150px;
+    }
 }

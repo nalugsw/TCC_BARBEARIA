@@ -31,14 +31,12 @@ section{
 }
 .servico-marcado{
     display: grid;
-    grid-template-columns: 150px  1fr;
-    grid-template-rows: 40px 40px 40px 40px;
-    margin: 2px 2px 4px 2px  ;
+    grid-template-columns: 25% 75%;
     border-radius: 6px;
+    margin-bottom: 3px;
 }
 .servico-marcado .foto-cliente{
     grid-column: 1/2;
-    grid-row: 1/5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,18 +79,14 @@ section{
     border-radius: 3px 3px 0 0;
     padding: 6px 0;
     color: #f4f4f4;
+    margin-bottom: 3px;
 }
-.nome-cliente{
-    grid-column: 2/3;
-    grid-row: 1/2;
-    display: flex;
-    margin-bottom: 2px;
-    border-radius: 6px;
-}
+.nome-cliente,
+.servico-cliente,
+.horario-cliente,
 .numero-cliente{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    display: flex;
+    grid-template-columns: 20% 60% 20%;
+    display: grid;
     margin-bottom: 2px;
     border-radius: 6px;
     position: relative;
@@ -122,21 +116,8 @@ section{
 .whatsBtn img{
     width: 24px;
 }
-.servico-cliente{
-    grid-column: 2/3;
-    grid-row: 3/4;
-    display: flex;
-    margin-bottom: 2px;
-    border-radius: 6px;
-}
-.horario-cliente{
-    grid-column: 2/3;
-    grid-row: 4/5;
-    display: flex;
-    border-radius: 6px;
-}
-.servico-marcado h3{
-    width: 25%;
+
+.info h3{
     padding-left: 10px;
     background-color: #666;
     padding: 8px 10px;
@@ -144,10 +125,9 @@ section{
     font-weight: 400;
     border-radius: 6px 0 0 6px;
 }
-.servico-marcado input{
-   width: 75%;
+.info input{
+    grid-column: 2/4;
    border: none;
-   border-radius: 0;
    background-color: #878787;
    padding: 10px 20px;
    font-size: 20px;
@@ -158,14 +138,15 @@ section{
     font-weight: bold;
 }
 .horario-cliente input{
-    width: 45%;
+    grid-column: 2/3;
 }
-
+.horario-cliente{
+    margin-bottom: 0;
+}
 .cliente-hora a{
     text-decoration: none;
 }
 .horario-cliente button {
-    width: 29%;
     background-color: #b13434;
     color: #FFEAEA;
     border: none;
@@ -176,7 +157,8 @@ section{
     transition: 0.2s;
     height: 100%;
     border-radius: 6px;
-    margin: 0 auto;
+    margin-left: 2px;
+    padding: 5px;
 }
 .horario-cliente button:hover{
     background-color: #861616;
@@ -184,8 +166,21 @@ section{
 .cliente-hora{
     background-color: #4e4e4e;
     border-radius: 6px;
-    padding-bottom: 0.1px;
     margin-bottom: 3px;
+    padding: 3px;
+}
+.servico-cliente input{
+    border-radius: 0;
+    grid-column: 2/3;
+    margin-right: 0;
+}
+.servico-cliente span{
+    background-color: #878787;
+    color: #f4f4f4;
+    border-radius: 0 6px 6px 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 .foto-adm{
     width: 150px;
@@ -218,10 +213,9 @@ section{
     text-decoration: none;
 }
 .perfil-adm{
-    margin: 95px 0 50px 0;
     display: flex;
     align-items: center;
-    width: 700px;
+    width: 70%;
     margin: 0 auto;
     gap: 60px;
 }

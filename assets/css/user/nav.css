@@ -14,7 +14,6 @@ body{
   grid-template-rows: 70px 1fr;
   overflow-y: hidden;
   overflow-x: hidden;
-  height: 100vh;
 }
 
 /* CSS do Menu Lateral DESKTOP e seus comportamnentos */
@@ -338,9 +337,7 @@ nav.menu-mobile ul{
 
 
 @media screen and (max-width: 768px){
-  body{
-    height: 100vh;
-  }
+
   nav.menu-lateral-desktop{
       display: none;
   }
@@ -384,7 +381,7 @@ nav.menu-mobile ul{
     right: 0px;
     top: 0;
     width: 250px;
-    height: 100%;
+    height: 100vh;
     background-color: #313131;
     display: none;
     flex-direction: column;
@@ -426,7 +423,7 @@ nav.menu-mobile ul{
   }
   
   #abrir-mobile:checked~ .menu-linhas{
-    transform: translateX(-155px);
+    transform: translateX(-175px);
     top: 35px;
   }
   #abrir-mobile:checked~ .menu-linhas span:nth-child(1){
