@@ -8,6 +8,7 @@ section.perfil{
     padding: 0 40px;
     grid-column: 2/3;
     grid-row: 1/3;
+    height: 100vh;
 }
 
 section.perfil .container-perfil{

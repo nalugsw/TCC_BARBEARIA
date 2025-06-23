@@ -327,7 +327,9 @@ nav.menu-lateral-desktop .btn-sair img{
   scale: 0.95;
   cursor: pointer;
 }
-
+nav.menu-mobile{
+  display: none;
+}
 nav.menu-mobile ul{
   display: none;
   transform: translateX(100%);

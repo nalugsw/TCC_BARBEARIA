@@ -52,7 +52,6 @@
     
         
     section.home .submenu button {
-        width: 220px;
         height: 40px;
         background-color: transparent;
         border: none;
@@ -192,7 +191,6 @@
         padding-left: 0px;
     }
     section.home .submenu button {
-        width: 175px;
         height: 40px;
         background-color: transparent;
         border: none;
@@ -439,14 +437,13 @@
         margin-left: 4px;
     }
     section.home .submenu{
-        max-width: 350px;
+        max-width: 320px;
         height: 35px;
         margin: 0 auto;
         display: flex;
     }
 
     section.home .submenu button {
-        width: 110px;
         background-color: transparent;
         border: none;
         font-size: 15px;

@@ -1,15 +1,11 @@
-/* CSS da sessão produtos */
-body{
-    align-items: center;
-}
+
 section.produtos{
-    margin-top: 80px;
     align-items: center;
-    height: 80%;
+    height: 80vh;
     margin: 0 auto;
     padding: 0 30px;
     grid-column: 2/3;
-    grid-row: 1/3;
+    grid-row: 2/3;
 }
 
 section.produtos .titulo-produtos{

@@ -1,6 +1,5 @@
 @media screen and (max-width: 925px){
     section.perfil{
-        height: 100%;
         margin: 0 51px;
         grid-row: 1/3;
     }
