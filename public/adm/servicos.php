@@ -128,11 +128,11 @@ $servicos = mostrarServicos();
             </div>
             
             <dialog id="modal-excluir">
-                <form action="../../functions/adm/perfil.php" method="post">
-                    <input type="hidden" name="acao" value="deletarPortfolio">
+                <form action="../../functions/adm/servicos.php" method="post">
+                    <input type="hidden" name="acao" value="excluirServico">
                     <input type="hidden" name="id" id="input-id-foto">
                     <img id="imagem-modal-excluir" style="max-width: 100%; margin-bottom: 10px;" />
-                    <p>Tem certeza que deseja excluir a imagem?</p>
+                    <p>Tem certeza que deseja excluir esse serviço?</p>
                     <div>
                         <button type="submit">Confirmar</button>
                         <button type="button" onclick="fecharModalExcluir()">Cancelar</button>

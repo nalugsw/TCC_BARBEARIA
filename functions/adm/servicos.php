@@ -1,10 +1,11 @@
 <?php
+
 include("../../config/conexao.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $acao = $_POST['acao'] ?? null;
 
-    if ($acao === 'cadastro') {
+    if ($acao == 'cadastro') {
         $nome = $_POST['nome'] ?? '';
         $duracao = $_POST['duracao'] ?? '';
         $valor = $_POST['valor'] ?? 0;
@@ -21,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: ../../public/adm/servicos.php");
             }
         }
-    }elseif($acao === 'atualizacao'){
+    }else if($acao == 'atualizacao'){
         $id = $_POST['id'] ?? null;
 
         if ($id) {
@@ -47,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $novoCaminho = 'uploads/servicos/' . $nomeImagem;
                     $caminhoDestino = '../../' . $novoCaminho;
 
-                    // Apagar imagem antiga
                     $imagemAntiga = '../../' . $servicoAtual['foto'];
                     if (file_exists($imagemAntiga)) {
                         unlink($imagemAntiga);
@@ -64,6 +64,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } catch (Exception $e) {
                 $pdo->rollBack();
                 echo "Erro: " . $e->getMessage();
+            }
+        }
+    }else if($acao == "excluirServico"){
+        $id = $_POST['id'] ?? null;
+
+        if ($id) {
+            $stmt = $pdo->prepare("SELECT foto FROM servico WHERE id_servico = ?");
+            $stmt->execute([$id]);
+            $servico = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($servico) {
+                $caminhoImagem = '../../'.$servico['foto'];
+                if (file_exists($caminhoImagem)) {
+                    unlink($caminhoImagem);
+                }
+                
+                $stmt = $pdo->prepare("DELETE FROM servico WHERE id_servico = ?");
+                $stmt->execute([$id]);
+
+                header("Location: ../../public/adm/servicos.php");
+                exit;
+            } else {
+                echo "Serviço não encontrado.";
             }
         }
     }
