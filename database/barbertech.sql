@@ -133,7 +133,7 @@ INSERT INTO SERVICO (nome, valor, duracao, foto) VALUES
 INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia, endereco)values(
     'João é barbeiro há 12 anos. Começou em uma barbearia pequena, aprendendo com mestres da área. Ao longo dos anos, se especializou em cortes modernos, barba estilizada e acabamento perfeito. Já atendeu uma grande variedade de clientes, de estilos clássicos a mais ousados. Ele também fez cursos de coloração e penteados, sempre buscando inovar. João se destaca pela atenção aos detalhes e pela forma descontraída de fazer os clientes se sentirem à vontade. Hoje, tem sua própria barbearia, onde é referência na cidade.',
     'Na Barbearia do João, tradição e estilo se encontram para oferecer a melhor experiência em cortes e barba. Nossa barbearia combina técnicas clássicas com as últimas tendências, garantindo um atendimento personalizado para cada cliente. Com anos de experiência, João e sua equipe são especialistas em cortes modernos, degradês impecáveis e barbas bem definidas.',
-    'Rua seilaoqueénois 994, Jardim sua Tia corna São paulo - SP'
+    'Estr. Plínio Dias, 90 - Chácara Sonho Azul, São Paulo - SP, 04961-020'
 );
 
 

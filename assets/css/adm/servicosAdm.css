@@ -481,3 +481,43 @@ main .btn-excluir {
 #excluir-btn:hover {
     background-color: #d32f2f;
 }
+#modal-excluir{
+    width: 95%;
+    max-width: 400px;
+    align-self: center;
+    border: none;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+#modal-excluir::backdrop{
+    background-color: #31313162;
+}
+
+#imagem-modal-excluir{
+    border-radius: 3px;
+    max-height: 300px;
+}
+#modal-excluir form{
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-excluir form div{
+    display: flex; 
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#modal-excluir form div button{
+    width: 100%;
+    padding: 3px 0
+}
+
+#modal-excluir form div button:first-child{
+    background-color: #0A6A28;
+    border: none;
+    color: #e9fff0;
+    border-radius: 3px;
+}
