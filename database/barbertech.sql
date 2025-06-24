@@ -140,7 +140,6 @@ INSERT INTO informacoes (informacoes_barbeiro, informacoes_barbearia, endereco)v
 
 
 INSERT INTO PORTFOLIO (imagem) VALUES
-('uploads/portfolio/fotocabelo.jpg'),
 ('uploads/portfolio/fotocabelo2.jpg'),
 ('uploads/portfolio/fotocabelo3.jpg'),
 ('uploads/portfolio/fotocabelo4.jpg'),
