@@ -6,6 +6,7 @@ session_start();
 require_once("../../functions/helpers.php");
 require_once("../../functions/agendamento.php");
 verificaSession("administrador");
+$funcionario = dadosFuncionario();
 $id_funcionario = dadosFuncionario("id_funcionario");
 $agendamento = buscarAgendamentosPorFuncionario($id_funcionario, $pdo);
 
@@ -62,10 +63,10 @@ uksort($agendamentosPorData, function($a, $b) {
     <main>
         <div class="perfil-adm">
             <div class="foto-adm">
-                <img src="../../assets/img/homem-sorrindo-teste.avif" alt="foto barbeiro">
+                <img src="../../<?php echo $funcionario['foto']; ?>" alt="foto barbeiro">
             </div>
             <div class="informacoes-home">
-                <h1>Luis Pereira</h1>
+                <h1><?php echo $funcionario['nome']; ?></h1>
             </div>
         </div>
         <section>

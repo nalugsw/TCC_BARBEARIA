@@ -24,7 +24,7 @@ CREATE TABLE PRODUTO (
     preco decimal(6,2) not null,
     foto varchar(255) null,
     status_produto enum('Ativo', 'Inativo') not null,
-    descricao varchar(50) null
+    descricao TEXT null
 );
 
 CREATE TABLE FUNCIONARIO (
