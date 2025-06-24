@@ -153,8 +153,8 @@ INSERT INTO PORTFOLIO (imagem) VALUES
 
 /* INSERT DE USUARIO ADMIN PARA TESTE */
 INSERT INTO usuario (email, senha, status, tipo_usuario) VALUES
-('admin@gmail.com', '$2y$10$P6Bif0wy/RL.LMHOsy1oo.dI4XWBP9arKmwHHDySuuRjYakjodB/u', 'verificado', 'administrador');
-/* SENHA: 123456789 */
+('admin@gmail.com', '$2y$10$TFpaiTdRzstoyXPks8VPy.TGuycIz5evjEjDIcAtgg3EprTKDorim', 'verificado', 'administrador');
+/* SENHA: admin123 */
 
 /* Inserir um funcionário exemplo */
 INSERT INTO FUNCIONARIO (nome, numero_telefone, biografia, foto, id_usuario) VALUES
