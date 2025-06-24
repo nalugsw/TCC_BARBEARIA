@@ -35,7 +35,7 @@ $servicos = mostrarServicos();
         <form action="../../functions/adm/servicos.php" method="post" enctype="multipart/form-data">
             <div class="info">
                 <div class="dados-perfil">
-                    <p>Coloque a imagem do serviço</p>
+                    <p>Imagem do serviço</p>
                     <div class="input-campo">
                        
                         <input type="file" id="arquivo" class="input-file" name="foto" accept="image/*" onchange="loadFile(event)">
@@ -71,7 +71,7 @@ $servicos = mostrarServicos();
         <form action="../../functions/adm/servicos.php" method="post" enctype="multipart/form-data">
             <div class="info">
                 <div class="dados-perfil">
-                    <p>Coloque a imagem do serviço</p>
+                    <p>Imagem do serviço</p>
                     <div class="input-campo">
                         <input type="file" id="arquivo-edicao" class="input-file" name="foto" accept="image/*" onchange="loadFileEdicao(event)">
                         <label for="arquivo-edicao" class="custom-file-button">Escolha a foto</label>
@@ -120,7 +120,7 @@ $servicos = mostrarServicos();
                         <div class="icone-editar">
                             <span class="material-symbols-outlined">edit</span>
                         </div>
-                        <button type="button" class="btn-excluir" data-src="">
+                        <button type="button" class="btn-excluir" data-id="<?php echo $servico['id_servico']; ?>">
                             <span class="material-symbols-outlined">delete</span>
                         </button>
                     </div>
@@ -133,8 +133,10 @@ $servicos = mostrarServicos();
                     <input type="hidden" name="id" id="input-id-foto">
                     <img id="imagem-modal-excluir" style="max-width: 100%; margin-bottom: 10px;" />
                     <p>Tem certeza que deseja excluir a imagem?</p>
-                    <button type="submit">Confirmar</button>
-                    <button type="button" onclick="fecharModalExcluir()">Cancelar</button>
+                    <div>
+                        <button type="submit">Confirmar</button>
+                        <button type="button" onclick="fecharModalExcluir()">Cancelar</button>
+                    </div>
                 </form>
             </dialog>
         </div>
@@ -146,52 +148,60 @@ $servicos = mostrarServicos();
 <script src="../../assets/js/atualizar-servico.js"></script>
 <script>
     
-    function abrirModalExcluir(botao) {
-            const modal = document.getElementById("modal-excluir");
-            const imagem = document.getElementById("imagem-modal-excluir");
-            const inputId = document.getElementById("input-id-foto");
+    document.addEventListener('DOMContentLoaded', function() {
+    // Configurar eventos de clique para os botões de excluir
+    document.querySelectorAll('.btn-excluir').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const item = this.closest('.item');
+            const id = item.getAttribute('data-id');
+            const imagemSrc = item.querySelector('img').src;
+            
+            abrirModalExcluir(id, imagemSrc);
+        });
+    });
 
-            const src = botao.getAttribute("data-src");
-            const id = botao.getAttribute("data-id");
+    // Modal de criação
+    const modalCreate = document.getElementById('modal-create');
+    const btnAbrirModal = document.getElementById('btn-abrir-modal');
+    const btnFecharModal = document.getElementById('cancelar-edit');
+    
+    // Abrir modal de criação
+    if(btnAbrirModal && modalCreate) {
+        btnAbrirModal.addEventListener('click', () => {
+            modalCreate.showModal();
+        });
+    }
+    
+    // Fechar modal de criação
+    if(btnFecharModal) {
+        btnFecharModal.addEventListener('click', () => {
+            modalCreate.close();
+        });
+    }
+});
 
-            imagem.src = src;
-            inputId.value = id;
+function abrirModalExcluir(id, imagemSrc) {
+    const modal = document.getElementById("modal-excluir");
+    const imagem = document.getElementById("imagem-modal-excluir");
+    const inputId = document.getElementById("input-id-foto");
 
-            modal.showModal();
-        }
+    imagem.src = imagemSrc;
+    inputId.value = id;
 
-        function fecharModalExcluir() {
-            const modal = document.getElementById("modal-excluir");
+    modal.showModal();
+}
+
+function fecharModalExcluir() {
+    const modal = document.getElementById("modal-excluir");
+    modal.close();
+}
+
+// Fechar ao clicar fora (para todos os modais)
+document.querySelectorAll('dialog').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+        if(e.target === modal) {
             modal.close();
         }
-        document.addEventListener('DOMContentLoaded', function() {
-            // Modal de criação
-            const modalCreate = document.getElementById('modal-create');
-            const btnAbrirModal = document.getElementById('btn-abrir-modal');
-            const btnFecharModal = document.getElementById('cancelar-edit');
-            
-            // Abrir modal de criação
-            if(btnAbrirModal && modalCreate) {
-                btnAbrirModal.addEventListener('click', () => {
-                    console.log('Abrindo modal de criação'); // Debug
-                    modalCreate.showModal();
-                });
-            }
-            
-            // Fechar modal de criação
-            if(btnFecharModal) {
-                btnFecharModal.addEventListener('click', () => {
-                    modalCreate.close();
-                });
-            }
-            
-            // Fechar ao clicar fora (para todos os modais)
-            document.querySelectorAll('dialog').forEach(modal => {
-                modal.addEventListener('click', function(e) {
-                    if(e.target === modal) {
-                        modal.close();
-                    }
-                });
-            });
-        });
+    });
+});
 </script>

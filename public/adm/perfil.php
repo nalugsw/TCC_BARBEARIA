@@ -111,8 +111,10 @@ $portfolio = mostrarImagemPortfolio();
                 <input type="hidden" name="id" id="input-id-foto">
                 <img id="imagem-modal-excluir" style="max-width: 100%; margin-bottom: 10px;" />
                 <p>Tem certeza que deseja excluir a imagem?</p>
-                <button type="submit">Confirmar</button>
-                <button type="button" onclick="fecharModalExcluir()">Cancelar</button>
+                <div>
+                    <button type="submit">Confirmar</button>
+                    <button type="button" onclick="fecharModalExcluir()">Cancelar</button>
+                </div>
             </form>
         </dialog>
 
