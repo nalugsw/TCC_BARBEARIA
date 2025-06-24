@@ -206,7 +206,7 @@ main{
     border-radius: 10px;
 }
 
-main .material-symbols-outlined {
+main .icone-editar {
     position: absolute;
     bottom: 10px; 
     right: 10px; 
@@ -219,6 +219,21 @@ main .material-symbols-outlined {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+main .btn-excluir {
+    position: absolute;
+    bottom: 10px; 
+    right: 50px; 
+    background: #c03939;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
 }
 
 

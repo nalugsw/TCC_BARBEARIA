@@ -80,7 +80,7 @@ unset($_SESSION['erro']);
                     </div>
                     <div class="input-campo-edit">
                         <p>*Numero do perfil</p>
-                        <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" >
+                        <input type="text" value="<?php echo $dados['numero_telefone']; ?>" name="telefone" id="telefone" minlength="11" maxlength="11">
                     </div>
                     
                     <div class="btns-edit">

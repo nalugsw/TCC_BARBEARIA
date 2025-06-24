@@ -251,4 +251,15 @@
     #img-container p{
         text-align: center;
     }
+    .desmarcar-div form{
+        padding: 10px 15px;
+    }
+    .btn-cancel-horario #btn-cancelar {
+        font-size: 13px;
+        padding: 5px 5px;
+    }
+    .btn-cancel-horario #voltar {
+        font-size: 13px;
+        padding: 5px 5px;
+    }
 } 

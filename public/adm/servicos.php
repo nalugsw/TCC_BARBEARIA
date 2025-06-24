@@ -61,6 +61,8 @@ $servicos = mostrarServicos();
                     </div>
                     <button type="submit">Cadastrar</button>
                 </div>
+                <input type="hidden" name="acao" value="deletarPortfolio">
+                
             </div>
         </form>
     </div>
@@ -118,9 +120,23 @@ $servicos = mostrarServicos();
                         <div class="icone-editar">
                             <span class="material-symbols-outlined">edit</span>
                         </div>
+                        <button type="button" class="btn-excluir" data-src="">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
                     </div>
                 <?php endforeach; ?>
             </div>
+            
+            <dialog id="modal-excluir">
+                <form action="../../functions/adm/perfil.php" method="post">
+                    <input type="hidden" name="acao" value="deletarPortfolio">
+                    <input type="hidden" name="id" id="input-id-foto">
+                    <img id="imagem-modal-excluir" style="max-width: 100%; margin-bottom: 10px;" />
+                    <p>Tem certeza que deseja excluir a imagem?</p>
+                    <button type="submit">Confirmar</button>
+                    <button type="button" onclick="fecharModalExcluir()">Cancelar</button>
+                </form>
+            </dialog>
         </div>
         
        
@@ -128,3 +144,54 @@ $servicos = mostrarServicos();
 </body>
 
 <script src="../../assets/js/atualizar-servico.js"></script>
+<script>
+    
+    function abrirModalExcluir(botao) {
+            const modal = document.getElementById("modal-excluir");
+            const imagem = document.getElementById("imagem-modal-excluir");
+            const inputId = document.getElementById("input-id-foto");
+
+            const src = botao.getAttribute("data-src");
+            const id = botao.getAttribute("data-id");
+
+            imagem.src = src;
+            inputId.value = id;
+
+            modal.showModal();
+        }
+
+        function fecharModalExcluir() {
+            const modal = document.getElementById("modal-excluir");
+            modal.close();
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal de criação
+            const modalCreate = document.getElementById('modal-create');
+            const btnAbrirModal = document.getElementById('btn-abrir-modal');
+            const btnFecharModal = document.getElementById('cancelar-edit');
+            
+            // Abrir modal de criação
+            if(btnAbrirModal && modalCreate) {
+                btnAbrirModal.addEventListener('click', () => {
+                    console.log('Abrindo modal de criação'); // Debug
+                    modalCreate.showModal();
+                });
+            }
+            
+            // Fechar modal de criação
+            if(btnFecharModal) {
+                btnFecharModal.addEventListener('click', () => {
+                    modalCreate.close();
+                });
+            }
+            
+            // Fechar ao clicar fora (para todos os modais)
+            document.querySelectorAll('dialog').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if(e.target === modal) {
+                        modal.close();
+                    }
+                });
+            });
+        });
+</script>

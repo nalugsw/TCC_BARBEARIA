@@ -223,16 +223,16 @@ unset($_SESSION['erro']);
             document.getElementById('formularioAgendamento').style.display = 'block';
         }
         function mostrarPreco() {
-    const select = document.getElementById("servico");
-    const preco = select.options[select.selectedIndex]?.getAttribute("data-preco");
+            const select = document.getElementById("servico");
+            const preco = select.options[select.selectedIndex]?.getAttribute("data-preco");
 
-    if (preco) {
-        document.getElementById("valorServico").innerText = "R$ " + parseFloat(preco).toFixed(2);
-        document.getElementById("precoServico").style.display = "block";
-    } else {
-        document.getElementById("valorServico").innerText = "";
-        document.getElementById("precoServico").style.display = "none";
-    }
+            if (preco) {
+                document.getElementById("valorServico").innerText = "R$ " + parseFloat(preco).toFixed(2);
+                document.getElementById("precoServico").style.display = "block";
+            } else {
+                document.getElementById("valorServico").innerText = "";
+                document.getElementById("precoServico").style.display = "none";
+            }
 }
         
     </script>

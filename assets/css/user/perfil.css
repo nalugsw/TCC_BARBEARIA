@@ -280,8 +280,6 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
 .desmarcar-div {
     border: none;
     border-radius: 8px;
-    padding: 25px;
-    width: 90%;
 }
 
 .desmarcar-div::backdrop {
@@ -347,7 +345,7 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
     overflow-y: hidden;
     background-color: transparent;
     margin: 0 auto;
-    margin-top: 100px;
+    height: 100vh;
 }
 #modal-edit form{
     background-color: #f0f2f5;
@@ -358,7 +356,6 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
     margin: 0 auto;
     padding: 25px;
     border-radius: 5px;
-    width: 50%;
     column-gap: 25px;
     row-gap: 30px;
 }
@@ -493,7 +490,7 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
     overflow-y: hidden;
     background-color: transparent;
     height: 100vh;
-    width: 100%;
+    margin: 0 auto;
 }
 .desmarcar-div::backdrop{
     background-color: #22222283;
@@ -506,7 +503,7 @@ section.perfil .container-perfil .horarios-marcados .caixa-horarios .horario-cai
     margin: 0 auto;
     padding: 10px;
     border-radius: 3px;
-    width: 50%;
+    width: 100%;
     padding: 20px 30px;
     min-width: 250px;
 }

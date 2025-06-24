@@ -45,7 +45,6 @@ body::-webkit-scrollbar-thumb{
 .foto-perfil img {
     width: 150px; 
     height: 150px;
-    margin-left: 30px;
     border-radius: 50%;
 }
 
@@ -259,6 +258,7 @@ main .material-symbols-outlined {
     background-color: transparent;
     height: 100%;
     width: 100%;
+    margin: 0 auto;
 }
 #modal-edit{
     align-content: center;
