@@ -5,7 +5,7 @@ session_start();
 require("../../functions/helpers.php");
 verificaSession("cliente");
 require("../../functions/produtos.php");
-$produtos = mostrarProdutos();
+$produtos = mostrarProdutosAtivos();
 
 ?>
 
