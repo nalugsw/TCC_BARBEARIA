@@ -12,6 +12,32 @@
     margin: 0 auto;
   }
   .relatorio-container{
-    width: 80%;
+    width: 95%;
+    padding: 15px;
   }
+  h1{
+    font-size: 20px;
+  }
+  .estatistica-item{
+    font-size: 13px;
+  }
+  .filtros{
+    gap: 10px;
+  }
+  #graficoValores{
+    width: 100%;
+  }
+  #graficoServicos{
+    width: 100%;
+  }
+  table{
+    font-size: 11px;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+}
+.estatisticas {
+  padding: 10px;
+}
 }

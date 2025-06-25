@@ -4,6 +4,12 @@
     grid-column: 1/3;
     margin: 0 auto;
   }
+  #modal-edit{
+    width: 95%;
+  }
+  #modal-edit form{
+    padding: 10px;
+  }
 }
 @media screen and (max-width:600px){
   main{

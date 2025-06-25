@@ -62,13 +62,14 @@ body{
   }
   
 #modal-edit{
-    align-content: center;
     border: none;
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: transparent;
-    height: 100%;
+    margin: 0 auto;
+    align-self: center;
     width: 100%;
+    max-width: 500px;
 }
 #modal-edit form{
     background-color: #f9f9f9;
@@ -78,7 +79,8 @@ body{
     margin: 0 auto;
     padding: 25px;
     border-radius: 3px;
-    width: 70%;
+    width: 100%;
+    max-width: 500px;
     flex-direction: column;
 }
 #modal-edit::backdrop{

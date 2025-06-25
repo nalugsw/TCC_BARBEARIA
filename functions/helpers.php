@@ -4,7 +4,8 @@ $id_usuario = $_SESSION['id_usuario'];
 
 //CAMINHO ABSOLUTO DE PASTAS E ARQUIVOS
 
-define("BASE_URL", "http://localhost/TCC_BARBEARIA/");
+define("BASE_URL", "https://localhost/TCC_BARBEARIA/");
+// define("BASE_URL", "https://4afe-2804-7f0-a22d-1180-45bd-c8cd-ed29-4519.ngrok-free.app/TCC_BARBEARIA/");
 
 //RECUPERA OS DADOS DO CLIENTE
 

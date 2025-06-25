@@ -44,7 +44,7 @@
             <button id="btn-sair" class="btn-sair"><img src="../../assets/img/icon-sair.png" alt="">SAIR</button>
             <a href="" ><button id="btn-setting"><span class="material-symbols-outlined">settings</span></button></a>
         </div>
-    </nav>
+</nav>
     <dialog close id="modal-sair" >
         <div class="modal-sair">
             <p>Realmente deseja sair?</p>
@@ -57,7 +57,7 @@
         </div>
     </dialog>
 
-    <nav id="menu-settings" class="menu-lateral-settings-desktop  hide">
+<nav id="menu-settings" class="menu-lateral-settings-desktop  hide">
         <div class="logo">
             <a href="./horarios.php"><img src="../../assets/img/LOGO.png" alt=""></a>
         </div>
@@ -83,9 +83,9 @@
             </li>
         </ul>
         <a href=""><button id="btn-voltar-config">Voltar</button></a>
-    </nav>
+</nav>
         
-    <nav id="menu-padrao-mobile" class="menu-mobile">
+<nav id="menu-padrao-mobile" class="menu-mobile">
         <div class="logo-mobile">
         <a href="./horarios.php"><img src="../../assets/img/LOGO.png" alt=""></a>
         </div>
@@ -136,9 +136,9 @@
                 <a href="" ><button id="btn-setting-mobile"><span class="material-symbols-outlined">settings</span></button></a>
             </div>
         </ul>
-    </nav>
+</nav>
 
-    <nav id="menu-settings-mobile" class="menu-settings-mobile hide">
+<nav id="menu-settings-mobile" class="menu-settings-mobile hide">
         
         <div class="logo-mobile">
             <a href="./horarios.php"><img src="../../assets/img/LOGO.png" alt=""></a>
@@ -146,20 +146,26 @@
         <h2>configurações</h2>
         <ul>
             <li class="item-menu">
-                <a href="horaios.php">
+                <a href="../../public/adm/informacoes.php">
                     <span class="txt-link">Informações</span>
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="perfil.html">
+                <a href="editarHorarios.php">
                     <span class="txt-link">Dias e Horaios</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="editUsers.php">
+                    <span class="txt-link">Buscar Usuario</span>
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </a>
             </li>
         </ul>
         <a href=""><button id="btn-voltar-config-mobile">Voltar</button></a>
-    </nav>
+</nav>
 
     <script src="../../assets/js/marcarmenu.js"></script>
     <script src="../../assets/js/modal-deslogar.js"></script>

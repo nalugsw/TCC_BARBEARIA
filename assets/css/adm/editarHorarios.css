@@ -480,70 +480,32 @@ main h1::after {
 }
 @media screen and (max-width: 768px) {
   main {
-    padding: 15px 20px;
+    grid-column: 1 / 3;
+    margin-top: 20px;
+    padding: 0;
   }
   
   main h1 {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 20px;
   }
-  
-  .container-horarios {
-    gap: 15px;
-  }
-  
-  .form-intervalo,
-  #formHorarios {
-    padding: 15px;
-  }
-  
-  .form-intervalo > div {
+  .horariosDias {
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    gap: 10px;
   }
-  
-  .grade-horaria {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 8px;
-    padding: 12px;
+    .horariosDias .horario:first-child::before {
+      display: none;
   }
-  
-  .horario-option {
-    padding: 8px 10px;
+  .container-horarios {
+    width: 95%;
   }
-  
-  .horario-option span {
-    font-size: 13px;
-  }
+  .horariosDias .horario {
+    width: 100%;
+}
 }
 
 @media screen and (max-width: 480px) {
-  main {
-    padding: 12px 15px;
-  }
-  
-  .grade-horaria {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
-  
-  .form-intervalo select,
-  .form-intervalo button {
-    width: 100%;
-  }
-  
-  .horario-option {
-    padding: 6px 8px;
-  }
-  
-  .horario-option span {
-    font-size: 12px;
-  }
-  
-  #formHorarios button {
-    padding: 10px 20px;
-    font-size: 14px;
-    min-width: 140px;
-  }
+
 }
 
 /* Animações de entrada */
