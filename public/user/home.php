@@ -31,7 +31,6 @@ unset($_SESSION['erro']);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!-- Importando pacote de icones do Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
@@ -87,7 +86,7 @@ unset($_SESSION['erro']);
         </div>
     </section>
     <script>
-        // Carrega o calendário ao abrir a página
+  
         window.onload = function() {
             carregaCalendario();
         };
@@ -105,7 +104,7 @@ unset($_SESSION['erro']);
                 mes = dataAtual.getMonth() + 1;
             }
             
-            // Buscar dias inativos e agendamentos via AJAX
+      
             fetch(`../calendario/includes/funcoes.php?acao=carregaCalendario&ano=${ano}&mes=${mes}`)
                 .then(response => response.json())
                 .then(data => {
@@ -121,23 +120,23 @@ unset($_SESSION['erro']);
                         diasCalendario.appendChild(diaSemanaElement);
                     });
                     
-                    // Primeiro dia do mês
+           
                     const primeiroDia = new Date(ano, mes - 1, 1);
                     // Último dia do mês
                     const ultimoDia = new Date(ano, mes, 0);
-                    // Dias do mês anterior para preencher o calendário
+                   
                     const diasMesAnterior = primeiroDia.getDay();
-                    // Total de dias no mês
+                   
                     const totalDias = ultimoDia.getDate();
                     
-                    // Preenche com dias do mês anterior (se necessário)
+       
                     for (let i = 0; i < diasMesAnterior; i++) {
                         const diaElement = document.createElement('div');
                         diaElement.className = 'dia outro-mes';
                         diasCalendario.appendChild(diaElement);
                     }
                     
-                    // Preenche os dias do mês atual
+         
                     for (let dia = 1; dia <= totalDias; dia++) {
                         const diaElement = document.createElement('div');
                         diaElement.className = 'dia';
@@ -147,14 +146,14 @@ unset($_SESSION['erro']);
                         const hoje = new Date();
                         hoje.setHours(0, 0, 0, 0);
                         
-                        // Verifica se é um dia passado ou inativo
+
                         if (dataAtual < hoje || data.inativos.includes(`${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`)) {
                             diaElement.classList.add('inativo');
                         } else {
                             diaElement.onclick = function() { selecionaDia(this, ano, mes, dia); };
                         }
                         
-                        // Marca dias com agendamentos
+        
                         const dataStr = `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
                         if (data.agendamentos[dataStr] && data.agendamentos[dataStr].length > 0) {
                             diaElement.classList.add('com-agendamento');
@@ -166,17 +165,17 @@ unset($_SESSION['erro']);
         }
 
         function selecionaDia(elemento, ano, mes, dia) {
-            // Formata a data selecionada
+
             const dataSelecionada = new Date(ano, mes - 1, dia);
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             document.getElementById('dataSelecionadaTitulo').textContent = 
                 dataSelecionada.toLocaleDateString('pt-BR', options);
             
-            // Armazena a data selecionada no formulário
+          
             document.getElementById('dataAgendamento').value = 
                 `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
             
-            // Busca horários disponíveis via AJAX
+         
             fetch(`../calendario/includes/funcoes.php?acao=buscaHorarios&data=${ano}-${mes}-${dia}`)
                 .then(response => response.json())
                 .then(horarios => {
@@ -201,7 +200,7 @@ unset($_SESSION['erro']);
                         container.appendChild(botaoHorario);
                     });
                     
-                    // Mostra o container de horários
+              
                     document.getElementById('horariosContainer').style.display = 'grid';
                     document.getElementById('dataSelecionadaTitulo').style.display = 'block';
                     document.getElementById('formularioAgendamento').style.display = 'none';

@@ -6,12 +6,10 @@ verificaSession("administrador");
 
 header('Content-Type: application/json');
 
-// Parâmetros da paginação
 $pagina = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
 $porPagina = 15;
 $offset = ($pagina - 1) * $porPagina;
 
-// Verifica se há termo de busca
 $termoBusca = isset($_GET['search']) ? trim($_GET['search']) : '';
 $where = '';
 $params = [];
@@ -44,7 +42,6 @@ $stmt->bindParam(':porPagina', $porPagina, PDO::PARAM_INT);
 $stmt->execute();
 $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Consulta para contar o total de clientes (para paginação)
 $sqlCount = "SELECT COUNT(*) as total FROM CLIENTE $where";
 $stmtCount = $pdo->prepare($sqlCount);
 
@@ -56,7 +53,6 @@ $stmtCount->execute();
 $totalClientes = $stmtCount->fetch(PDO::FETCH_ASSOC)['total'];
 $totalPaginas = ceil($totalClientes / $porPagina);
 
-// Retorna os dados em JSON
 echo json_encode([
     'clientes' => $clientes,
     'paginaAtual' => $pagina,

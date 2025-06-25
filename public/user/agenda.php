@@ -69,7 +69,6 @@ unset($_SESSION['erro']);
     </div>
 
     <script>
-        // Carrega o calendário ao abrir a página
         window.onload = function() {
             carregaCalendario();
         };
@@ -87,7 +86,6 @@ unset($_SESSION['erro']);
                 mes = dataAtual.getMonth() + 1;
             }
             
-            // Buscar dias inativos e agendamentos via AJAX
             fetch(`../calendario/includes/funcoes.php?acao=carregaCalendario&ano=${ano}&mes=${mes}`)
                 .then(response => response.json())
                 .then(data => {
@@ -103,23 +101,22 @@ unset($_SESSION['erro']);
                         diasCalendario.appendChild(diaSemanaElement);
                     });
                     
-                    // Primeiro dia do mês
+              
                     const primeiroDia = new Date(ano, mes - 1, 1);
-                    // Último dia do mês
+              
                     const ultimoDia = new Date(ano, mes, 0);
-                    // Dias do mês anterior para preencher o calendário
+                
                     const diasMesAnterior = primeiroDia.getDay();
-                    // Total de dias no mês
+                 
                     const totalDias = ultimoDia.getDate();
                     
-                    // Preenche com dias do mês anterior (se necessário)
                     for (let i = 0; i < diasMesAnterior; i++) {
                         const diaElement = document.createElement('div');
                         diaElement.className = 'dia outro-mes';
                         diasCalendario.appendChild(diaElement);
                     }
                     
-                    // Preenche os dias do mês atual
+
                     for (let dia = 1; dia <= totalDias; dia++) {
                         const diaElement = document.createElement('div');
                         diaElement.className = 'dia';
@@ -129,11 +126,11 @@ unset($_SESSION['erro']);
                         const hoje = new Date();
                         hoje.setHours(0, 0, 0, 0);
                         
-                        // Verifica se é um dia passado ou inativo
+        
                         const doisSemanasDepois = new Date();
                         doisSemanasDepois.setDate(doisSemanasDepois.getDate() + 13); // hoje + 13 dias
 
-                        // Verifica se é domingo
+           
                         const dataStr = `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
 
                         if (dataDia < hoje || 
@@ -144,7 +141,7 @@ unset($_SESSION['erro']);
                             diaElement.onclick = function() { selecionaDia(this, ano, mes, dia); };
                         }
 
-                        // Marca dias completamente ocupados (todos horários marcados)
+                
                         if (data.agendamentos && data.agendamentos[dataStr] && 
                             data.totalHorariosPorDia && data.totalHorariosPorDia[dataStr] &&
                             data.agendamentos[dataStr].length >= data.totalHorariosPorDia[dataStr]) {
@@ -161,17 +158,17 @@ unset($_SESSION['erro']);
         }
 
         function selecionaDia(elemento, ano, mes, dia) {
-    // Formata a data selecionada
+
     const dataSelecionada = new Date(ano, mes - 1, dia);
     const options = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' };
     document.getElementById('dataSelecionadaTitulo').textContent = 
         dataSelecionada.toLocaleDateString('pt-BR', options);
     
-    // Armazena a data selecionada no formulário
+ 
     document.getElementById('dataAgendamento').value = 
         `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
     
-    // Busca horários disponíveis via AJAX
+
     fetch(`../calendario/includes/funcoes.php?acao=buscaHorarios&data=${ano}-${mes}-${dia}`)
         .then(response => response.json())
         .then(horarios => {
@@ -180,10 +177,10 @@ unset($_SESSION['erro']);
             container.innerHTML = '';
             
             if (horarios.length === 0) {
-                tituloDia.style.display = 'none'; // Esconde o título quando não há horários
+                tituloDia.style.display = 'none';
                 container.innerHTML = '<p>Não há horários disponíveis para este dia</p>';
             } else {
-                tituloDia.style.display = 'block'; // Mostra o título quando há horários
+                tituloDia.style.display = 'block'; 
                 horarios.forEach(horario => {
                     const botaoHorario = document.createElement('button');
                     botaoHorario.className = 'botao-horario';
@@ -203,18 +200,18 @@ unset($_SESSION['erro']);
                 });
             }
             
-            // Mostra o container de horários
+     
             document.getElementById('horariosContainer').style.display = 'grid';
             document.getElementById('dataSelecionadaTitulo').style.display = 'block';
             document.getElementById('formularioAgendamento').style.display = 'none';
-            // Rola a página até o container de horários
+            
             document.getElementById('horariosContainer').scrollIntoView({ behavior: 'smooth' });
         
         })
         .catch(error => {
             console.error('Erro ao buscar horários:', error);
             document.getElementById('horariosDisponiveis').innerHTML = '<p>Erro ao carregar horários. Tente novamente.</p>';
-            document.getElementById('TituloDia').style.display = 'none'; // Esconde o título em caso de erro
+            document.getElementById('TituloDia').style.display = 'none'; 
         });
 }
 

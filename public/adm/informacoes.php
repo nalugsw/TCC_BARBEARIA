@@ -16,7 +16,6 @@ $informacoes = buscarInformacoes();
     <title>Tela de Perfil</title>
     <link rel="stylesheet" href="../../assets/css/adm/informacoes.css">
     <link rel="stylesheet" href="../../assets/css/adm/informacoes-responsivo.css">
-<!-- Importando pacote de icones do Google Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">

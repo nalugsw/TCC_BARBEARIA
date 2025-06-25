@@ -142,29 +142,24 @@ $produtos = mostrarProdutos();
     </section>
 </main>
 <script>
-// Funções para o modal de criação
 document.addEventListener('DOMContentLoaded', function() {
-    // Modal de criação
     const modalCreate = document.getElementById('modal-create');
     const btnAbrirModal = document.getElementById('btn-abrir-modal');
     const btnFecharModal = document.getElementById('cancelar-edit');
-    
-    // Abrir modal de criação
+
     if(btnAbrirModal && modalCreate) {
         btnAbrirModal.addEventListener('click', () => {
-            console.log('Abrindo modal de criação'); // Debug
+            console.log('Abrindo modal de criação');
             modalCreate.showModal();
         });
     }
-    
-    // Fechar modal de criação
+
     if(btnFecharModal) {
         btnFecharModal.addEventListener('click', () => {
             modalCreate.close();
         });
     }
-    
-    // Fechar ao clicar fora (para todos os modais)
+
     document.querySelectorAll('dialog').forEach(modal => {
         modal.addEventListener('click', function(e) {
             if(e.target === modal) {
@@ -174,15 +169,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Função para edição (já existente)
 function abrirModalEdicao(modalId, nome, descricao, preco, foto) {
     const modal = document.getElementById(modalId);
     
     modal.querySelector('input[name="nome"]').value = nome;
     modal.querySelector('textarea[name="descricao"]').value = descricao;
     modal.querySelector('input[name="valor"]').value = preco;
-    
-    // Atualiza a pré-visualização da imagem
+
     const previewId = 'preview-' + modalId.split('-').pop();
     const preview = document.getElementById(previewId);
     if(preview) preview.src = foto;
@@ -190,7 +183,6 @@ function abrirModalEdicao(modalId, nome, descricao, preco, foto) {
     modal.showModal();
 }
 
-// Função para pré-visualização de imagem (atualizada)
 function loadFile(event, previewId = 'preview') {
     const output = document.getElementById(previewId);
     if(output && event.target.files[0]) {
@@ -203,7 +195,7 @@ function loadFile(event, previewId = 'preview') {
     document.querySelectorAll('.item-produto').forEach(function(produto) {
     const btnAtivo = produto.querySelector('.btn-ativo');
     const btnInativo = produto.querySelector('.btn-inativo');
-    const idProduto = produto.getAttribute('data-id'); // você precisa adicionar esse atributo no HTML
+    const idProduto = produto.getAttribute('data-id');
 
     btnAtivo.addEventListener('click', function() {
         atualizarStatus(idProduto, 'ativo', produto);

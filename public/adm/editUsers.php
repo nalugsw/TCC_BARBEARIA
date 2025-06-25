@@ -4,7 +4,6 @@ session_start();
 require_once("../../functions/helpers.php");
 verificaSession("administrador");
 
-// Consulta para contar o total de clientes
 $stmt = $pdo->query("SELECT COUNT(*) as total FROM CLIENTE");
 $total_clientes = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
 $total_paginas = ceil($total_clientes / 15);

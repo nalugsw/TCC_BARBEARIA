@@ -29,9 +29,8 @@ switch ($acao) {
 function atualizarPerfil($pdo) {
     $nome = $_POST['nome'] ?? '';
     $endereco = $_POST['endereco'] ?? '';
-    $id_usuario = $_SESSION['id_usuario']; // ajuste conforme sua session
+    $id_usuario = $_SESSION['id_usuario']; 
 
-    // Atualizar imagem se enviada
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
         $caminhoDestino = 'uploads/fotos/funcionario/';
         $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
@@ -45,11 +44,9 @@ function atualizarPerfil($pdo) {
         $stmt->execute(['foto' => $caminhoCompleto, 'id' => $id_usuario]);
     }
 
-    // Atualizar nome
     $stmt = $pdo->prepare("UPDATE funcionario SET nome = :nome WHERE id_usuario = :id");
     $stmt->execute(['nome' => $nome, 'id' => $id_usuario]);
 
-    // Atualizar endereço na tabela INFORMACOES
     $stmt = $pdo->prepare("UPDATE INFORMACOES SET endereco = :endereco WHERE id_informacoes = 1");
     $stmt->execute(['endereco' => $endereco]);
 
@@ -83,19 +80,16 @@ function deletarImagemPortfolio($pdo) {
         exit();
     }
 
-    // Recuperar caminho da imagem
     $stmt = $pdo->prepare("SELECT imagem FROM portfolio WHERE id_portfolio = :id");
     $stmt->execute(['id' => $id]);
     $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($imagem) {
-        // Excluir arquivo do servidor
         $caminhoImagem = "../../" . $imagem['imagem'];
         if (file_exists($caminhoImagem)) {
             unlink($caminhoImagem);
         }
 
-        // Excluir do banco
         $stmt = $pdo->prepare("DELETE FROM portfolio WHERE id_portfolio = :id");
         $stmt->execute(['id' => $id]);
 
