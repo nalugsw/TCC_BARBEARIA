@@ -61,7 +61,6 @@ $horariosAtuais = $stmt->fetchAll(PDO::FETCH_COLUMN);
     <main>
             <h1>Dias e Horários</h1>
         <div class="container-horarios">
-            <!-- Formulário para definir o intervalo -->
             <form method="POST" class="form-intervalo">
                 <h3>Grade Horária</h3>
                 <p>Definir intervalos de marcação de cada serviço -</p>

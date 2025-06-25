@@ -32,7 +32,7 @@ $servicos = mostrarServicos();
 
     <main>
     <div class="perfil-container" id="container-cadastro">
-        <form action="../../functions/adm/servicos.php" method="post" enctype="multipart/form-data">
+        <form action="../../functions/adm/servicos.php" method="POST" enctype="multipart/form-data">
             <div class="info">
                 <div class="dados-perfil">
                     <p>Imagem do serviço</p>
@@ -61,7 +61,6 @@ $servicos = mostrarServicos();
                     </div>
                     <button type="submit">Cadastrar</button>
                 </div>
-                <input type="hidden" name="acao" value="deletarPortfolio">
                 
             </div>
         </form>
@@ -105,7 +104,6 @@ $servicos = mostrarServicos();
     </div>
         <div class="grids-container">
             <div class="grid" id="grid2">
-                <!-- Exemplo de itens do grid (substitua pelo seu PHP real) -->
                  <?php foreach($servicos as $servico): ?>
                     <div class="item" data-id="<?php echo $servico['id_servico']; ?>">
                         <img src="../../<?php echo $servico['foto']; ?>" alt="Serviço 1">
@@ -149,7 +147,6 @@ $servicos = mostrarServicos();
 <script>
     
     document.addEventListener('DOMContentLoaded', function() {
-    // Configurar eventos de clique para os botões de excluir
     document.querySelectorAll('.btn-excluir').forEach(btn => {
         btn.addEventListener('click', function() {
             const item = this.closest('.item');

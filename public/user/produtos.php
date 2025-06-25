@@ -30,7 +30,6 @@ $produtos = mostrarProdutosAtivos();
 
 <?php include("../../views/nav-padrao.php"); ?>
     
-    <!-- Fim do menu Desktop e inicio da sessão perfil -->
 
     <section class="produtos">
         <div class="titulo-produtos">

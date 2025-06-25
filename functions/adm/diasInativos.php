@@ -10,14 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $pdo->beginTransaction();
         }
 
-        // Limpa as tabelas antes de inserir
         $truncateDias = $pdo->prepare("TRUNCATE TABLE dias_inativos");
         $truncateDias->execute();
 
         $truncateHorarios = $pdo->prepare("TRUNCATE TABLE horarios_disponiveis");
         $truncateHorarios->execute();
 
-        // Inserir dias inativos
         $diasRecebidos = $_POST['dias'] ?? [];
         $diasSemana = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo'];
         $insertStmt = $pdo->prepare("INSERT INTO dias_inativos (data_inativa, motivo) VALUES (?, ?)");

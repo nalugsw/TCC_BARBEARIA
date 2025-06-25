@@ -36,7 +36,6 @@ $portfolio = mostrarImagemPortfolio();
         <div class="perfil-container">
             <div class="info">
                 <div class="foto-perfil">
-                    <!-- <img src="../../assets/img/foto-barbeiro-tela-home.png" alt="foto de perfil adm"> -->
                     <img src="../../<?php echo $funcionario['foto']; ?>" alt="foto de perfil adm">
                     <a href="" class="btn-edit"><span class="material-symbols-outlined editar-icon">edit</span> </a>
                 </div>
@@ -158,12 +157,10 @@ $portfolio = mostrarImagemPortfolio();
             modal.close();
         }
         document.addEventListener('DOMContentLoaded', function() {
-            // Modal de criação
             const modalCreate = document.getElementById('modal-create');
             const btnAbrirModal = document.getElementById('btn-abrir-modal');
             const btnFecharModal = document.getElementById('cancelar-edit');
             
-            // Abrir modal de criação
             if(btnAbrirModal && modalCreate) {
                 btnAbrirModal.addEventListener('click', () => {
                     console.log('Abrindo modal de criação'); // Debug
@@ -171,14 +168,12 @@ $portfolio = mostrarImagemPortfolio();
                 });
             }
             
-            // Fechar modal de criação
             if(btnFecharModal) {
                 btnFecharModal.addEventListener('click', () => {
                     modalCreate.close();
                 });
             }
             
-            // Fechar ao clicar fora (para todos os modais)
             document.querySelectorAll('dialog').forEach(modal => {
                 modal.addEventListener('click', function(e) {
                     if(e.target === modal) {

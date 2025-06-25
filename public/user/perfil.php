@@ -169,12 +169,11 @@ document.getElementById("arquivo").addEventListener("change", async function(eve
                 lastModified: Date.now()
             });
 
-            // Substitui o arquivo original pelo comprimido
             const dataTransfer = new DataTransfer();
             dataTransfer.items.add(compressedFile);
             event.target.files = dataTransfer.files;
 
-            // Atualiza a imagem de preview
+         
             document.getElementById("preview").src = URL.createObjectURL(compressedFile);
         }, "image/jpeg", 0.7);
     };
